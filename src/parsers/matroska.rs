@@ -674,7 +674,7 @@ fn handle_block(r: &mut Reader, size: u64, cluster_tc: u64, duration: Option<u64
     if t.timestamps.len() < 64 {
         t.timestamps.push(ts);
     }
-    if t.frames_for_codec.len() < 4 {
+    if t.frames_for_codec.len() < if t.kind == 2 { 32 } else { 4 } {
         let want = first_frame_len.min(512 * 1024);
         let data_pos = start + header_len + first_frame_off as u64;
         let mut data = r.read_vec_at(data_pos, want);
@@ -1104,14 +1104,12 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             if t.channels > 0 {
                 s.set_if_empty("Channel(s)", t.channels.to_string());
             }
-            if t.bit_depth > 0 && !matches!(s.get("Format"), "AAC" | "MPEG Audio" | "AC-3" | "E-AC-3" | "DTS" | "Vorbis") {
+            if t.bit_depth > 0 && !matches!(s.get("Format"), "AAC" | "MPEG Audio" | "Vorbis") {
                 s.set_if_empty("BitDepth", t.bit_depth.to_string());
             }
         }
-        if report_sizes && t.bytes > 0 {
-            s.set("StreamSize", t.bytes.to_string());
-            sizes_sum += t.bytes;
-        }
+        // (Constant-rate streams get BitRate × Duration below, once the duration is known.)
+        let mut stream_bytes = if report_sizes && t.bytes > 0 { Some(t.bytes) } else { None };
         let tag_duration = ctx.tags.iter().filter(|(_, uid, _)| *uid == t.uid && t.uid != 0).flat_map(|(_, _, tags)| tags.iter()).find(|(k, _)| k.eq_ignore_ascii_case("DURATION")).and_then(|(_, v)| parse_hms(v));
         // Timing from blocks
         if let (Some(first), Some(last)) = (t.first_ts, t.last_ts) {
@@ -1140,6 +1138,14 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
         }
         // Flags, names, languages
+        if let Some(bytes) = stream_bytes.take() {
+            let computed = match (s.get_f64("BitRate"), s.get_f64("Duration")) {
+                (Some(br), Some(d)) if kind == StreamKind::Audio && br > 0.0 && d > 0.0 => (br * d / 8000.0).round() as u64,
+                _ => bytes,
+            };
+            s.set("StreamSize", computed.to_string());
+            sizes_sum += computed;
+        }
         if !t.name.is_empty() {
             s.set("Title", &t.name);
         }
@@ -1549,9 +1555,7 @@ fn apply_codec(s: &mut Stream, t: &Track, _ctx: &Ctx, kind: StreamKind) {
             "A_AC3" | "A_EAC3" | "A_AC3/BSID9" | "A_AC3/BSID10" => {
                 s.set("Format", if id == "A_EAC3" { "E-AC-3" } else { "AC-3" });
                 for f in &frames {
-                    if ac3::apply_frame(s, f) {
-                        break;
-                    }
+                    ac3::apply_frame(s, f);
                 }
                 s.set("Compression_Mode", "Lossy");
             }
@@ -1581,9 +1585,7 @@ fn apply_codec(s: &mut Stream, t: &Track, _ctx: &Ctx, kind: StreamKind) {
             "A_MPEG/L3" | "A_MPEG/L2" | "A_MPEG/L1" => {
                 s.set("Format", "MPEG Audio");
                 for f in &frames {
-                    if mpeg_audio::apply_frame(s, f) {
-                        break;
-                    }
+                    mpeg_audio::apply_frame(s, f);
                 }
                 if !s.has("Format_Profile") {
                     s.set("Format_Profile", format!("Layer {}", &id[8..]));

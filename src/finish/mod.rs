@@ -359,10 +359,6 @@ fn finish_common(s: &mut Stream) {
             s.derive(&format!("{base}/String"), if version.is_empty() { name } else { format!("{name} {version}") });
         }
     }
-    if s.has("Title") && kind == StreamKind::General {
-        let t = s.get("Title").to_string();
-        s.set_if_empty("Movie", t);
-    }
     // Any remaining plain "X" with a schema "X/String" twin that is still empty gets a copy for the
     // obvious identity cases.
     for base in ["HDR_Format", "Codec", "Format_Settings_Matrix", "StreamSize_Demuxed"] {
@@ -507,11 +503,6 @@ fn finish_audio(s: &mut Stream) {
             if let Some(d) = s.get_f64("Duration") {
                 s.set_int("SamplingCount", (d / 1000.0 * sr).round() as i128);
             }
-        }
-    }
-    if !s.has("FrameCount") && s.has("StreamSize") {
-        if let (Some(d), Some(f)) = (s.get_f64("Duration"), s.get_f64("FrameRate")) {
-            s.set_int("FrameCount", (d / 1000.0 * f).round() as i128);
         }
     }
     if s.has("FrameCount") {
