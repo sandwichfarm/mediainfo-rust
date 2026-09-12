@@ -657,7 +657,7 @@ fn finish_general(doc: &mut Doc) {
     // Elementary stream: the single stream's encoder info also describes the file.
     let elementary: Option<Vec<(String, String)>> = {
         let streams: Vec<&Stream> = doc.iter().filter(|s| s.kind != StreamKind::General).collect();
-        if streams.len() == 1 && streams[0].get("Format") == doc.general_ref().get("Format") && streams[0].get("Format") != "FLAC" {
+        if streams.len() == 1 && streams[0].get("Format") == doc.general_ref().get("Format") && streams[0].get("Format") != "FLAC" && (streams[0].has("Encoded_Library_Settings") || streams[0].kind == StreamKind::Audio) {
             Some(["Encoded_Library", "Encoded_Library_Settings", "Encoded_Library_Name", "Encoded_Library_Version", "Encoded_Library/String"].iter().map(|k| (k.to_string(), streams[0].get(k).to_string())).filter(|(_, v)| !v.is_empty()).collect())
         } else {
             None

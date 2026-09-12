@@ -1238,7 +1238,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                         }
                     }
                 }
-                if !s.has("ChannelLayout") {
+                if !s.has("ChannelLayout") && s.get("Format") != "ALAC" {
                     let (pos, layout) = audio::layout_for_count(s.get_u64("Channel(s)").unwrap_or(0) as u32);
                     if !pos.is_empty() {
                         s.set("ChannelPositions", pos);
@@ -1721,7 +1721,6 @@ fn apply_audio_codec(s: &mut Stream, t: &Track, codec: &str, _ctx: &Ctx) {
             s.set("Format", "ALAC");
             s.set("CodecID", codec);
             alac::apply_cookie(s, &t.alac);
-            s.set("Compression_Mode", "Lossless");
         }
         "Opus" => {
             s.set("Format", "Opus");
@@ -1769,7 +1768,6 @@ fn apply_audio_codec(s: &mut Stream, t: &Track, codec: &str, _ctx: &Ctx) {
                 pcm::apply_pcm(s, little, signed, float, bits);
                 s.set("BitDepth", bits.to_string());
             }
-            s.set("Compression_Mode", "Lossless");
             s.set("BitRate_Mode", "CBR");
         }
         "ima4" => {

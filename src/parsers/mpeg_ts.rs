@@ -810,6 +810,8 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             m.set("List_StreamKind", kinds.join(" / "));
             m.set("List_StreamPos", poss.join(" / "));
             m.set("List", ids.join(" / "));
+            let strings: Vec<String> = entries.iter().map(|e| format!("{} ({})", id_string(e.2 as u64), e.3)).collect();
+            m.set("List/String", strings.join(" / "));
         }
         if let Some(d) = pcr_duration {
             m.set("Duration", format!("{d:.6}"));
