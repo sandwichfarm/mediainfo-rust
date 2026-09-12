@@ -11,7 +11,7 @@
 //! ```
 
 // Stylistic lints that do not improve parser code written against binary formats.
-#![allow(clippy::type_complexity, clippy::if_same_then_else, clippy::field_reassign_with_default, clippy::too_many_arguments, clippy::collapsible_if, clippy::collapsible_else_if, clippy::manual_range_contains, clippy::needless_range_loop, clippy::items_after_test_module, clippy::new_without_default)]
+#![allow(unknown_lints, clippy::collapsible_match, clippy::type_complexity, clippy::if_same_then_else, clippy::field_reassign_with_default, clippy::too_many_arguments, clippy::collapsible_if, clippy::collapsible_else_if, clippy::manual_range_contains, clippy::needless_range_loop, clippy::items_after_test_module, clippy::new_without_default)]
 
 pub mod cli;
 pub mod finish;
