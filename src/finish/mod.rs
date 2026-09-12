@@ -241,7 +241,7 @@ fn finish_common(s: &mut Stream) {
             s.set_if_empty(&format!("{base}/String"), frame_rate_string(f, None));
         }
     }
-    for base in ["FrameRate_Mode", "FrameRate_Mode_Original"] {
+    for base in ["FrameRate_Mode"] {
         let v = s.get(base).to_string();
         if !v.is_empty() {
             let t = match v.as_str() {
@@ -679,6 +679,20 @@ fn finish_general(doc: &mut Doc) {
         }
     }
     finish_common(g);
+}
+
+/// For NTSC-style rates (24000/1001, 30000/1001, 60000/1001 …) set `FrameRate_Num`/`FrameRate_Den`
+/// and the `29.970 (30000/1001) FPS` string form.
+pub fn set_frame_rate_fraction(s: &mut Stream, fps: f64) {
+    for num in [24000u32, 30000, 60000, 48000, 120000] {
+        let v = num as f64 / 1001.0;
+        if (fps - v).abs() < 0.0005 {
+            s.set("FrameRate_Num", num.to_string());
+            s.set("FrameRate_Den", "1001");
+            s.set("FrameRate/String", format!("{} ({num}/1001) FPS", format!("{v:.3}")));
+            return;
+        }
+    }
 }
 
 /// Extension of a path, lower-cased.

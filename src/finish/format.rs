@@ -157,7 +157,7 @@ pub fn aspect_ratio_string(ratio: f64) -> String {
         (2.4, "2.40:1"),
     ];
     for (v, name) in named {
-        if (ratio - v).abs() < 0.0015 {
+        if (ratio - v).abs() < 0.011 {
             return name.to_string();
         }
     }
@@ -230,6 +230,7 @@ mod tests {
         assert_eq!(aspect_ratio_string(1.333), "4:3");
         assert_eq!(aspect_ratio_string(1.778), "16:9");
         assert_eq!(aspect_ratio_string(2.0), "2.000:1");
+        assert_eq!(aspect_ratio_string(1.768), "16:9");
         assert_eq!(proportion(4596.0, 10690.0), "0.42993");
     }
 }

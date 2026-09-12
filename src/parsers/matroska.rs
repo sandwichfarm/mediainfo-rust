@@ -12,6 +12,9 @@ const DOCTYPE: u32 = 0x4282;
 const DOCTYPE_VERSION: u32 = 0x4287;
 const SEGMENT: u32 = 0x18538067;
 const SEEKHEAD: u32 = 0x114D9B74;
+const SEEK: u32 = 0x4DBB;
+const SEEK_ID: u32 = 0x53AB;
+const SEEK_POSITION: u32 = 0x53AC;
 const INFO: u32 = 0x1549A966;
 const TIMECODE_SCALE: u32 = 0x2AD7B1;
 const DURATION: u32 = 0x4489;
@@ -249,6 +252,8 @@ struct Ctx {
     clusters_seen: u64,
     header_size: u64,
     first_cluster_pos: Option<u64>,
+    seeks: Vec<(u32, u64)>,
+    fully_scanned: bool,
 }
 
 const MAX_CLUSTER_SCAN_BYTES: u64 = 24 * 1024 * 1024;
@@ -307,7 +312,8 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
             CHAPTERS => parse_chapters(r, elem_end, &mut ctx),
             TAGS => parse_tags(r, elem_end, &mut ctx),
             ATTACHMENTS => parse_attachments(r, elem_end, &mut ctx),
-            SEEKHEAD | VOID | CRC32 => {}
+            SEEKHEAD => parse_seekhead(r, elem_end, &mut ctx),
+            VOID | CRC32 => {}
             _ => {}
         }
         if !size_known && id == CLUSTER {
@@ -316,11 +322,65 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
         }
         r.seek(elem_end);
     }
+    ctx.fully_scanned = scanned_all;
     if !scanned_all {
+        // Elements after the clusters: reach them through the SeekHead instead of walking every cluster.
+        let resume = r.pos();
+        let mut visited = 0;
+        let seeks = ctx.seeks.clone();
+        for (id, pos) in seeks {
+            let abs = ctx.segment_pos + pos;
+            if abs < resume || abs >= seg_end || visited > 64 {
+                continue;
+            }
+            visited += 1;
+            r.seek(abs);
+            let Some((eid, size, _)) = read_header(r) else { continue };
+            if eid != id {
+                continue;
+            }
+            let end = size.map(|s| r.pos() + s).unwrap_or(seg_end).min(seg_end);
+            match eid {
+                CUES => parse_cues(r, end, &mut ctx),
+                CHAPTERS => parse_chapters(r, end, &mut ctx),
+                TAGS => parse_tags(r, end, &mut ctx),
+                ATTACHMENTS => parse_attachments(r, end, &mut ctx),
+                SEEKHEAD => parse_seekhead(r, end, &mut ctx),
+                INFO => parse_info(r, end, &mut ctx),
+                TRACKS => parse_tracks(r, end, &mut ctx),
+                _ => {}
+            }
+        }
         scan_tail(r, seg_end, &mut ctx);
     }
     emit(doc, &ctx, r.len());
     true
+}
+
+fn parse_seekhead(r: &mut Reader, end: u64, ctx: &mut Ctx) {
+    while r.pos() < end {
+        let Some((id, size, _)) = read_header(r) else { break };
+        let size = size.unwrap_or(0);
+        let next = r.pos() + size;
+        if id == SEEK {
+            let (mut sid, mut spos) = (0u32, 0u64);
+            while r.pos() < next {
+                let Some((id, size, _)) = read_header(r) else { break };
+                let size = size.unwrap_or(0);
+                let n2 = r.pos() + size;
+                match id {
+                    SEEK_ID => sid = read_uint(r, size).unwrap_or(0) as u32,
+                    SEEK_POSITION => spos = read_uint(r, size).unwrap_or(0),
+                    _ => {}
+                }
+                r.seek(n2);
+            }
+            if sid != 0 && ctx.seeks.len() < 256 {
+                ctx.seeks.push((sid, spos));
+            }
+        }
+        r.seek(next);
+    }
 }
 
 fn parse_info(r: &mut Reader, end: u64, ctx: &mut Ctx) {
@@ -676,23 +736,38 @@ fn parse_cues(r: &mut Reader, end: u64, ctx: &mut Ctx) {
 /// When the file is large we stop scanning clusters early; parse the last cluster for the tail
 /// timestamps so durations stay accurate.
 fn scan_tail(r: &mut Reader, seg_end: u64, ctx: &mut Ctx) {
-    let last = ctx.cues_cluster_positions.iter().max().copied().map(|p| ctx.segment_pos + p);
     let mut candidates: Vec<u64> = Vec::new();
-    if let Some(p) = last {
-        candidates.push(p);
-    }
-    // Fallback: search backwards for the last cluster ID in the final 4 MiB.
-    if candidates.is_empty() {
-        let tail_len = seg_end.min(4 * 1024 * 1024);
-        let start = seg_end - tail_len;
-        let data = r.read_vec_at(start, tail_len as usize);
-        let mut i = data.len().saturating_sub(4);
-        while i > 0 {
-            if data[i..i + 4] == [0x1F, 0x43, 0xB6, 0x75] {
-                candidates.push(start + i as u64);
-                break;
+    // The last cluster: search backwards through the final MiBs for a cluster ID whose element ends
+    // exactly at the segment end or at another known top-level element.
+    let tail_len = seg_end.min(8 * 1024 * 1024);
+    let start = seg_end - tail_len;
+    let data = r.read_vec_at(start, tail_len as usize);
+    let mut i = data.len().saturating_sub(4);
+    let mut checked = 0;
+    while i > 0 && checked < 4096 {
+        if data[i..i + 4] == [0x1F, 0x43, 0xB6, 0x75] {
+            checked += 1;
+            let pos = start + i as u64;
+            r.seek(pos);
+            if let Some((id, size, _)) = read_header(r) {
+                if id == CLUSTER {
+                    let end = size.map(|sz| r.pos() + sz).unwrap_or(seg_end);
+                    let valid = end == seg_end || {
+                        r.seek(end);
+                        matches!(read_header(r).map(|h| h.0), Some(CUES | TAGS | CHAPTERS | ATTACHMENTS | CLUSTER | SEEKHEAD | VOID | INFO | TRACKS))
+                    };
+                    if valid {
+                        candidates.push(pos);
+                        break;
+                    }
+                }
             }
-            i -= 1;
+        }
+        i -= 1;
+    }
+    if candidates.is_empty() {
+        if let Some(p) = ctx.cues_cluster_positions.iter().max().copied().map(|p| ctx.segment_pos + p) {
+            candidates.push(p);
         }
     }
     for pos in candidates {
@@ -911,6 +986,24 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         doc.general().set_extra("Attachments", names.join(" / "), "", OPT_SHOWN);
     }
 
+    // The reference only knows stream sizes when it had to read the whole file, i.e. when no
+    // stream parser could finish early (fast codecs) and every video track is CFR.
+    let fast = |id: &str| id.starts_with("V_MPEG4/ISO/AVC") || id.starts_with("V_MPEGH") || id.starts_with("V_VP") || id.starts_with("A_AAC") || id == "A_FLAC" || id == "A_OPUS" || id == "A_VORBIS";
+    let vfr_video = ctx.tracks.iter().any(|t| {
+        if t.kind != 1 {
+            return false;
+        }
+        match t.default_duration.filter(|d| *d > 0) {
+            None => true,
+            Some(dd) => {
+                let fps = 1_000_000_000.0 / dd as f64;
+                measure_frame_rate(&t.timestamps).0.map(|m| (m - fps).abs() / fps >= 0.02).unwrap_or(false)
+            }
+        }
+    });
+    let report_sizes = ctx.fully_scanned && (vfr_video || !ctx.tracks.iter().any(|t| fast(&t.codec_id)));
+    let mut sizes_sum = 0u64;
+
     let mut order = 0usize;
     for t in &ctx.tracks {
         let kind = match t.kind {
@@ -937,8 +1030,9 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
         }
         apply_codec(&mut s, t, ctx, kind);
-        if codec_id == "V_MPEG4/ISO/AVC" {
-            // The reference shows x264's library string without the separator inside Matroska.
+        let has_encoder_tag = ctx.tags.iter().any(|(_, uid, tags)| *uid == t.uid && t.uid != 0 && tags.iter().any(|(k, _)| k.eq_ignore_ascii_case("ENCODER")));
+        if codec_id == "V_MPEG4/ISO/AVC" && has_encoder_tag {
+            // The reference shows x264's library string without the separator when a tag also names an encoder.
             let lib = s.get("Encoded_Library").to_string();
             if let Some((n, v)) = lib.split_once(" - ") {
                 if n == "x264" {
@@ -978,14 +1072,30 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 _ => {}
             }
             let stream_mode = s.get("FrameRate_Mode").to_string();
+            let (measured, regular) = measure_frame_rate(&t.timestamps);
             if let Some(dd) = t.default_duration.filter(|d| *d > 0) {
                 let fps = 1_000_000_000.0 / dd as f64;
-                s.set("FrameRate", format!("{fps:.3}"));
-                s.set("FrameRate_Mode", "CFR");
-            } else if t.timestamps.len() >= 2 {
-                if let Some(fps) = estimate_frame_rate(&t.timestamps) {
+                let consistent = measured.map(|m| (m - fps).abs() / fps < 0.02).unwrap_or(true);
+                if consistent {
                     s.set("FrameRate", format!("{fps:.3}"));
+                    crate::finish::set_frame_rate_fraction(&mut s, fps);
+                    s.set("FrameRate_Mode", "CFR");
+                } else {
                     s.set("FrameRate_Mode", "VFR");
+                    if fps > 1000.0 {
+                        // Nonsense DefaultDuration (e.g. 1 µs): the reference reports it as the original rate.
+                        s.set("FrameRate_Original", format!("{fps:.3}"));
+                    }
+                    if regular {
+                        if let Some(m) = measured {
+                            s.set("FrameRate", format!("{m:.3}"));
+                        }
+                    }
+                }
+            } else if let Some(m) = measured {
+                s.set("FrameRate_Mode", "VFR");
+                if regular {
+                    s.set("FrameRate", format!("{m:.3}"));
                 }
             }
             if !stream_mode.is_empty() && stream_mode != s.get("FrameRate_Mode") {
@@ -1010,6 +1120,11 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 s.set_if_empty("BitDepth", t.bit_depth.to_string());
             }
         }
+        if report_sizes && t.bytes > 0 {
+            s.set("StreamSize", t.bytes.to_string());
+            sizes_sum += t.bytes;
+        }
+        let tag_duration = ctx.tags.iter().filter(|(_, uid, _)| *uid == t.uid && t.uid != 0).flat_map(|(_, _, tags)| tags.iter()).find(|(k, _)| k.eq_ignore_ascii_case("DURATION")).and_then(|(_, v)| parse_hms(v));
         // Timing from blocks
         if let (Some(first), Some(last)) = (t.first_ts, t.last_ts) {
             let frame_dur = t.last_duration.or_else(|| t.default_duration.map(|d| d as f64 / 1_000_000.0)).or_else(|| {
@@ -1022,7 +1137,9 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 }
             });
             let dur = last - first + frame_dur.unwrap_or(0.0);
-            if dur > 0.0 {
+            if let Some(tag) = tag_duration.filter(|_| frame_dur.is_none() || !ctx.fully_scanned) {
+                s.set("Duration", format!("{tag:.6}"));
+            } else if dur > 0.0 {
                 let precise = t.last_duration.is_some() || t.default_duration.is_some();
                 s.set("Duration", if precise { format!("{dur:.6}") } else { format!("{}", dur.round() as i64) });
             }
@@ -1048,6 +1165,10 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             s.set("Disabled", "Yes");
         }
         doc.streams[kind as usize].push(s);
+    }
+
+    if report_sizes && sizes_sum > 0 && sizes_sum <= file_size {
+        doc.general().set_int("StreamSize", (file_size - sizes_sum) as i128);
     }
 
     // Audio delay relative to the first video stream
@@ -1103,20 +1224,24 @@ fn stereo_mode_name(m: u64) -> &'static str {
     }
 }
 
-/// Median frame interval from the first timestamps (VFR streams without DefaultDuration).
-fn estimate_frame_rate(ts: &[f64]) -> Option<f64> {
+/// Frame rate from the first timestamps: (median-based rate, whether the intervals are regular).
+fn measure_frame_rate(ts: &[f64]) -> (Option<f64>, bool) {
+    if ts.len() < 2 {
+        return (None, false);
+    }
     let mut sorted: Vec<f64> = ts.to_vec();
     sorted.sort_by(|a, b| a.partial_cmp(b).unwrap());
     let mut deltas: Vec<f64> = sorted.windows(2).map(|w| w[1] - w[0]).filter(|d| *d > 0.0).collect();
     if deltas.is_empty() {
-        return None;
+        return (None, false);
     }
     deltas.sort_by(|a, b| a.partial_cmp(b).unwrap());
     let median = deltas[deltas.len() / 2];
     if median <= 0.0 {
-        return None;
+        return (None, false);
     }
-    Some(1000.0 / median)
+    let regular = deltas.iter().filter(|d| ((*d - median) / median).abs() < 0.05).count() * 10 >= deltas.len() * 8;
+    (Some(1000.0 / median), regular)
 }
 
 fn audio_frame_duration_ms(s: &Stream) -> Option<f64> {
