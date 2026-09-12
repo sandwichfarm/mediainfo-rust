@@ -167,8 +167,8 @@ fn finish_common(s: &mut Stream) {
     let fps = if matches!(kind, StreamKind::Video | StreamKind::General) { s.get_f64("FrameRate") } else { None };
     for base in ["Duration", "Duration_FirstFrame", "Duration_LastFrame", "Source_Duration", "Source_Duration_FirstFrame", "Source_Duration_LastFrame"] {
         if let Some(ms) = s.get_f64(base) {
-            let d = duration_strings(ms, fps);
-            set_strings(s, base, &d, base == "Duration" || base == "Source_Duration");
+            let d = duration_strings(ms, if base == "Duration" { fps } else { None });
+            set_strings(s, base, &d, base == "Duration");
         }
     }
     for base in ["Delay", "Delay_Original", "Video_Delay", "Video0_Delay", "TimeStamp_FirstFrame"] {
@@ -260,7 +260,7 @@ fn finish_common(s: &mut Stream) {
         let l = language::strings(&lang);
         set_strings(s, "Language", &[l[0].clone(), l[1].clone(), l[2].clone(), l[3].clone(), l[4].clone()], false);
     }
-    for base in ["Default", "Forced", "Disabled", "AlternateGroup", "ServiceKind", "Compression_Mode", "ScanType", "ScanOrder", "ScanType_Original", "ScanOrder_Original", "ScanType_StoreMethod", "Interlacement", "Compilation", "Alignment", "Rotation", "Format_Settings_CABAC", "Format_Settings_BVOP", "Format_Settings_QPel", "Format_Settings_GMC", "Format_Settings_Matrix", "Format_Settings_SBR", "Format_Settings_PS", "Encoded_Application", "Gop_OpenClosed", "Gop_OpenClosed_FirstFrame", "ActiveFormatDescription", "Interleave_Duration", "Interleave_Preload", "ReplayGain_Gain", "Album_ReplayGain_Gain", "ChromaSubsampling", "Resolution", "OriginalSourceMedium_ID", "MenuID"] {
+    for base in ["Default", "Forced", "Disabled", "AlternateGroup", "ServiceKind", "Compression_Mode", "ScanType", "ScanOrder", "ScanType_Original", "ScanOrder_Original", "ScanType_StoreMethod", "Interlacement", "Compilation", "Alignment", "Format_Settings_CABAC", "Format_Settings_BVOP", "Format_Settings_QPel", "Format_Settings_GMC", "Format_Settings_Matrix", "Format_Settings_SBR", "Format_Settings_PS", "Encoded_Application", "Gop_OpenClosed", "Gop_OpenClosed_FirstFrame", "ActiveFormatDescription", "Interleave_Duration", "Interleave_Preload", "ReplayGain_Gain", "Album_ReplayGain_Gain", "ChromaSubsampling", "Resolution", "OriginalSourceMedium_ID", "MenuID"] {
         let v = s.get(base).to_string();
         if !v.is_empty() {
             let text = match base {
@@ -403,13 +403,6 @@ fn finish_video(s: &mut Stream) {
             s.set_if_empty(&format!("{base}/String"), aspect_ratio_string(d));
         }
     }
-    for base in ["PixelAspectRatio", "PixelAspectRatio_Original"] {
-        if let Some(p) = s.get_f64(base) {
-            if (p - 1.0).abs() > 0.0005 {
-                s.set_if_empty(&format!("{base}/String"), format!("{p:.3}"));
-            }
-        }
-    }
     // Frame count from duration × rate
     if !s.has("FrameCount") {
         if let (Some(d), Some(f)) = (s.get_f64("Duration"), s.get_f64("FrameRate")) {
@@ -500,6 +493,13 @@ fn finish_audio(s: &mut Stream) {
     if !s.has("FrameCount") && s.has("StreamSize") {
         if let (Some(d), Some(f)) = (s.get_f64("Duration"), s.get_f64("FrameRate")) {
             s.set_int("FrameCount", (d / 1000.0 * f).round() as i128);
+        }
+    }
+    if s.has("FrameCount") {
+        if let (Some(d), Some(f)) = (s.get_f64("Duration"), s.get_f64("FrameRate")) {
+            let ds = duration_strings(d, Some(f));
+            s.set_if_empty("Duration/String4", &ds[4]);
+            s.set("Duration/String5", &ds[5]);
         }
     }
     if !s.has("Source_FrameCount") {
@@ -613,9 +613,16 @@ fn finish_general(doc: &mut Doc) {
     }
     let first_video: Option<Stream> = doc.streams[StreamKind::Video as usize].first().cloned();
     let stream_durations: Vec<f64> = doc.iter().filter(|s| s.kind != StreamKind::General).filter_map(|s| s.get_f64("Duration")).collect();
+    // Overall mode: variable if any stream is variable, constant only if every stream is constant.
     let single_mode: Option<String> = {
-        let modes: Vec<String> = doc.iter().filter(|s| s.kind != StreamKind::General).map(|s| s.get("BitRate_Mode").to_string()).filter(|m| !m.is_empty()).collect();
-        if !modes.is_empty() && modes.iter().all(|m| *m == modes[0]) { Some(modes[0].clone()) } else { None }
+        let modes: Vec<String> = doc.iter().filter(|s| matches!(s.kind, StreamKind::Video | StreamKind::Audio)).map(|s| s.get("BitRate_Mode").to_string()).collect();
+        if modes.iter().any(|m| m == "VBR") {
+            Some("VBR".to_string())
+        } else if !modes.is_empty() && modes.iter().all(|m| m == "CBR") {
+            Some("CBR".to_string())
+        } else {
+            None
+        }
     };
     let sizes_known: Option<u64> = {
         let v: Vec<Option<u64>> = doc.iter().filter(|s| s.kind != StreamKind::General).map(|s| s.get_u64("StreamSize")).collect();

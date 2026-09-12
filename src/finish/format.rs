@@ -127,6 +127,9 @@ pub fn frames_string(n: u64) -> String {
 
 /// `FrameRate/String`: 3 decimals with thousands separator, optional samples-per-frame suffix.
 pub fn frame_rate_string(fps: f64, spf: Option<u64>) -> String {
+    if !fps.is_finite() {
+        return String::new();
+    }
     let s = format!("{fps:.3}");
     let (i, d) = s.split_once('.').unwrap();
     let base = format!("{}.{} FPS", thousands(i.parse().unwrap_or(0)), d);
