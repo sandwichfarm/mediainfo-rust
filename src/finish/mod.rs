@@ -238,7 +238,9 @@ fn finish_common(s: &mut Stream) {
             s.derive(&format!("{base}/String2"), &z[2]);
             s.derive(&format!("{base}/String3"), &z[3]);
             s.derive(&format!("{base}/String4"), &z[4]);
-            s.derive(&format!("{base}/String5"), format!("{}{pct}", z[0]));
+            if !pct.is_empty() {
+                s.derive(&format!("{base}/String5"), format!("{}{pct}", z[0]));
+            }
             if let Some(f) = s.get_f64("__FileSize").or(file_size).filter(|f| *f >= b as f64) {
                 if base != "StreamSize_Demuxed" {
                     s.derive(&format!("{base}_Proportion"), proportion(b as f64, f));
