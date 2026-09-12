@@ -2,7 +2,7 @@
 name = "mediainfo-rust"
 version = "0.1.0"
 edition = "2021"
-description = "Cleanroom pure-Rust reimplementation of MediaInfo (library + CLI, no GUI)"
+description = "Pure-Rust MediaInfo: library and CLI reporting container and stream metadata of media files with MediaInfoLib-compatible fields, text/XML/JSON reports and API — no dependencies"
 license = "BSD-2-Clause"
 repository = "https://github.com/sandwichfarm/mediainfo-rust"
 readme = "README.md"
