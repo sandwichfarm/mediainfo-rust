@@ -414,7 +414,13 @@ fn apply_codec(s: &mut Stream, general: &mut Stream, st: &LogicalStream) {
             s.set("Format", "Speex");
             speex::apply_header(s, p0);
             if !p1.is_empty() {
+                // The Speex version string is the writing library; the comment vendor is not.
+                let lib = s.get("Encoded_Library").to_string();
                 vorbis::apply_comments(s, general, p1);
+                if !lib.is_empty() {
+                    s.set("Encoded_Library", lib);
+                    s.clear("Encoded_Library/String");
+                }
             }
             s.set_if_empty("Compression_Mode", "Lossy");
         }

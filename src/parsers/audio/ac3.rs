@@ -293,6 +293,7 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
     }
     let duration_ms = (total_frames * spf / sr * 1000.0).round();
     s.set("Duration", format!("{duration_ms}"));
+    s.set("FrameCount", format!("{}", total_frames.round() as u64));
     s.set("StreamSize", size.to_string());
     let bitrate = s.get("BitRate").to_string();
     let g = doc.general();

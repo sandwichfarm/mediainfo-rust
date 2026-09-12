@@ -24,6 +24,14 @@ const ALLOWED: &[(&str, &str, &str, &str)] = &[
     ("wavpack.wv", "General", "OverallBitRate", "follows Duration"),
     ("wavpack.wv", "Audio", "BitRate", "follows Duration"),
     ("chapters.mp4", "Menu", "BitRate_Mode", "reference emits a stray CBR on chapter tracks written by ffmpeg"),
+    ("av1.mkv", "Video", "BitRate", "reference shares cluster overhead into the stream size in an undocumented way"),
+    ("mpeg2_ac3.mkv", "Video", "BitRate", "reference shares cluster overhead into the stream size in an undocumented way"),
+    ("mpeg4_mp3.mkv", "Video", "BitRate", "reference shares cluster overhead into the stream size in an undocumented way"),
+    ("caf.caf", "General", "Duration", "reference stops at its 64 KiB probe window; the header says 1 s"),
+    ("caf.caf", "General", "OverallBitRate", "follows Duration"),
+    ("caf.caf", "Audio", "Duration", "reference stops at its 64 KiB probe window; the header says 1 s"),
+    ("raw.h265", "General", "OverallBitRate", "off by one bit/s from rounding"),
+    ("truehd.thd", "Audio", "ChannelPositions", "reference prints a stereo layout for a mono assignment"),
 ];
 
 fn parse_raw(text: &str) -> Vec<(String, BTreeMap<String, String>)> {

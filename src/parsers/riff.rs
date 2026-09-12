@@ -20,7 +20,7 @@ const MAX_INDEX_ENTRIES: usize = 1 << 20;
 /// Cap on nested RIFF (`AVIX`) chunks visited.
 const MAX_RIFF_CHUNKS: usize = 4096;
 /// Frames kept per stream for the codec helpers.
-const MAX_FRAMES_FOR_CODEC: usize = 4;
+const MAX_FRAMES_FOR_CODEC: usize = 64;
 const MAX_VIDEO_FRAME_BYTES: usize = 1 << 20;
 const MAX_AUDIO_FRAME_BYTES: usize = 64 << 10;
 /// Bytes of WAVE `data` handed to the audio frame helpers.
@@ -288,10 +288,17 @@ fn apply_audio_format(s: &mut Stream, fmt: &[u8], frames: &[Vec<u8>]) -> Option<
         }
     }
     // Frame-level helpers for the formats that carry their own headers.
+    // MPEG audio and AC-3 keep accumulating (LAME string, dialnorm statistics) over the frames.
     for frame in frames {
         let done = match tag {
-            0x0050 | 0x0055 => mpeg_audio::apply_frame(s, frame),
-            0x2000 => ac3::apply_frame(s, frame),
+            0x0050 | 0x0055 => {
+                mpeg_audio::apply_frame(s, frame);
+                false
+            }
+            0x2000 => {
+                ac3::apply_frame(s, frame);
+                false
+            }
             0x2001 => dts::apply_frame(s, frame),
             _ => true,
         };
