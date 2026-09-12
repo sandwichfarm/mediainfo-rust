@@ -11,6 +11,8 @@ pub mod mpeg4v;
 pub mod mpegv;
 pub mod prores;
 pub mod rawvideo;
+#[cfg(test)]
+pub mod testutil;
 pub mod theora;
 pub mod vc1;
 pub mod vp8;
