@@ -1,0 +1,82 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/mpeg2_pcm.mxf
+Format                                   : MXF
+Format version                           : 1.3
+Format profile                           : OP-1a
+Format settings                          : Closed / Complete
+File size                                : 135 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 1 102 kb/s
+Encoded date                             : 0-00-00 00:00:00.000
+Writing application                      : FFmpeg OP1a Muxer 63.1.101.0.0
+Writing library                          : Lavf (linux) 63.1.101.0.0
+
+Video
+ID                                       : 2
+Format                                   : MPEG Video
+Format version                           : Version 2
+Format profile                           : Main@Main
+Format settings, BVOP                    : No
+Format settings, Matrix                  : Default
+Format settings, wrapping mode           : Frame
+Codec ID                                 : 0D01030102046001-0401020201011100
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 200 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Compression mode                         : Lossy
+Bits/(Pixel*Frame)                       : 2.604
+Time code of first frame                 : 00:00:00:00
+Time code source                         : Group of pictures header
+Stream size                              : 24.4 KiB (18%)
+Color range                              : Limited
+
+Audio
+ID                                       : 3
+Format                                   : PCM
+Format settings                          : Little
+Format settings, wrapping mode           : Frame (AES)
+Codec ID                                 : 0D01030102060300
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 768 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 25.000 FPS (1920 SPF)
+Bit depth                                : 16 bits
+Stream size                              : 93.8 KiB (70%)
+Locked                                   : Yes
+
+Other #1
+ID                                       : 1-Material
+Type                                     : Time code
+Format                                   : MXF TC
+Frame rate                               : 25.000 FPS
+Time code of first frame                 : 00:00:00:00
+Time code settings                       : Material Package
+Time code, striped                       : Yes
+
+Other #2
+ID                                       : 1-Source
+Type                                     : Time code
+Format                                   : MXF TC
+Frame rate                               : 25.000 FPS
+Time code of first frame                 : 00:00:00:00
+Time code settings                       : Source Package
+Time code, striped                       : Yes
+
+Other #3
+Type                                     : Time code
+Format                                   : SMPTE TC
+Muxing mode                              : SDTI
+Frame rate                               : 25.000 FPS
+Time code of first frame                 : 00:00:00:00
+

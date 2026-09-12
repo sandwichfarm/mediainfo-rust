@@ -1,0 +1,132 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	AAC LC		N NT
+30	Audio_Format_WithHint_List	AAC LC		N NT
+31	Audio_Codec_List	AAC LC		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/aac.m4a		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	aac.m4a		N NT
+52	FileName	aac		N NT
+53	FileExtension	m4a		N NTY
+59	Format	MPEG-4		N YTY
+60	Format/String	MPEG-4		Y NT
+63	Format/Extensions	braw mov mp4 m4v m4a m4b m4p m4r 3ga 3gpa 3gpp 3gp 3gpp2 3g2 k3g jpm jpx mqv ismv isma ismt f4a f4b f4v		N NT
+64	Format_Commercial	MPEG-4		N NT
+67	Format_Profile	Apple audio with iTunes info		Y YTY
+72	InternetMediaType	audio/mp4		N YT
+73	CodecID	M4A 		N YTY
+74	CodecID/String	M4A  (M4A /isom/iso2)		Y NT
+77	CodecID/Url	http://www.apple.com/itunes/		N NT
+80	CodecID_Compatible	M4A /isom/iso2		N YTY
+89	FileSize	5103	 byte	N YTY
+90	FileSize/String	4.98 KiB		Y NT
+91	FileSize/String1	5 KiB		N NT
+92	FileSize/String2	5.0 KiB		N NT
+93	FileSize/String3	4.98 KiB		N NT
+94	FileSize/String4	4.983 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+101	Duration/String5	00:00:01.000		N NT
+104	OverallBitRate_Mode	CBR		N YTY
+105	OverallBitRate_Mode/String	Constant		Y NT
+106	OverallBitRate	40824	 bps	N YFY
+107	OverallBitRate/String	40.8 kb/s		Y NT
+130	StreamSize	1087	 byte	N YIY
+131	StreamSize/String	1.06 KiB (21%)		N NT
+132	StreamSize/String1	1 KiB		N NT
+133	StreamSize/String2	1.1 KiB		N NT
+134	StreamSize/String3	1.06 KiB		N NT
+135	StreamSize/String4	1.062 KiB		N NT
+136	StreamSize/String5	1.06 KiB (21%)		N NT
+137	StreamSize_Proportion	0.21301		N NT
+145	HeaderSize	36		N YIY
+146	DataSize	4113		N YIY
+147	FooterSize	954		N YIY
+148	IsStreamable	No		N YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:52		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:52		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+== Audio #0 (282 fields)
+0	Count	282		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	AAC		N YTY
+19	Format/String	AAC LC		Y NT
+20	Format/Info	Advanced Audio Codec Low Complexity		Y NT
+22	Format_Commercial	AAC		N YT
+29	Format_Settings_SBR	No (Explicit)	Yes	N YTY
+30	Format_Settings_SBR/String	No (Explicit)		N NT
+43	Format_AdditionalFeatures	LC		N YTY
+48	CodecID	mp4a-40-2		Y YTY
+70	Duration	1000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+75	Duration/String4	00:00:01:00		N NT
+76	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+91	Source_Duration	1021	 ms	N YFY
+92	Source_Duration/String	1 s 21 ms		Y NT
+93	Source_Duration/String1	1 s 21 ms		N NT
+94	Source_Duration/String2	1 s 21 ms		N NT
+95	Source_Duration/String3	00:00:01.021		N NT
+105	Source_Duration_LastFrame	-3	 ms	N YFY
+106	Source_Duration_LastFrame/String	-3 ms		Y NT
+107	Source_Duration_LastFrame/String1	-3 ms		N NT
+108	Source_Duration_LastFrame/String2	-3 ms		N NT
+109	Source_Duration_LastFrame/String3	-00:00:00.003		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	32154	 bps	N YFY
+115	BitRate/String	32.2 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+130	ChannelPositions	Front: C		N YTY
+132	ChannelPositions/String2	1/0/0		N NT
+136	ChannelLayout	C		Y YTY
+139	SamplesPerFrame	1024		N YFY
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+144	FrameRate	46.875	 fps	N YFY
+145	FrameRate/String	46.875 FPS (1024 SPF)		Y NT
+148	FrameCount	47		N NIY
+149	Source_FrameCount	48		N NIY
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+199	StreamSize	4016	 byte	N YIY
+200	StreamSize/String	3.92 KiB (79%)		Y NT
+201	StreamSize/String1	4 KiB		N NT
+202	StreamSize/String2	3.9 KiB		N NT
+203	StreamSize/String3	3.92 KiB		N NT
+204	StreamSize/String4	3.922 KiB		N NT
+205	StreamSize/String5	3.92 KiB (79%)		N NT
+206	StreamSize_Proportion	0.78699		N NTY
+214	Source_StreamSize	4105	 byte	N YIY
+215	Source_StreamSize/String	4.01 KiB (80%)		Y NT
+216	Source_StreamSize/String1	4 KiB		N NT
+217	Source_StreamSize/String2	4.0 KiB		N NT
+218	Source_StreamSize/String3	4.01 KiB		N NT
+219	Source_StreamSize/String4	4.009 KiB		N NT
+220	Source_StreamSize/String5	4.01 KiB (80%)		N NT
+221	Source_StreamSize_Proportion	0.80443		N NTY
+271	Default	Yes	Yes	N YTY
+272	Default/String	Yes		Y NT
+275	AlternateGroup	1	Yes	N YTY
+276	AlternateGroup/String	1		Y NT
+280	Source_Delay	-21		N NT
+281	Source_Delay_Source	Container		N NT

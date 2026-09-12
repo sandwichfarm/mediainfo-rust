@@ -1,0 +1,35 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/rv20_ac3.rm
+Format                                   : RealMedia
+File size                                : 16.6 KiB
+Duration                                 : 1 s 24 ms
+Overall bit rate                         : 114 kb/s
+
+Video
+ID                                       : 0
+Format                                   : RealVideo 2
+Codec ID                                 : RV20
+Codec ID/Info                            : Based on H.263, Real Player 6
+Duration                                 : 1 s 0 ms
+Bit rate                                 : 50.0 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Bits/(Pixel*Frame)                       : 0.651
+Stream size                              : 6.10 KiB (37%)
+
+Audio
+ID                                       : 1
+Format                                   : AC-3
+Format/Info                              : Audio Coding 3
+Codec ID                                 : dnet
+Codec ID/Info                            : Real Player 3
+Duration                                 : 1 s 24 ms
+Bit rate                                 : 64.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression mode                         : Lossy
+Stream size                              : 8.00 KiB (48%)
+

@@ -1,0 +1,16 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_rgb24.png
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+File size                                : 848 Bytes
+
+Image
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+Format_Compression                       : LZ77
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Bit depth                                : 24 bits
+Compression mode                         : Lossless
+Stream size                              : 848 Bytes (100%)
+

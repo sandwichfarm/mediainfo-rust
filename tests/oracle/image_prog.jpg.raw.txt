@@ -1,0 +1,64 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+23	ImageCount	1		N NIY
+41	Image_Format_List	JPEG		N NT
+42	Image_Format_WithHint_List	JPEG		N NT
+43	Image_Codec_List	JPEG		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_prog.jpg		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	image_prog.jpg		N NT
+52	FileName	image_prog		N NT
+53	FileExtension	jpg		N NTY
+59	Format	JPEG		N YTY
+60	Format/String	JPEG		Y NT
+63	Format/Extensions	h3d jpeg jpg jpe jps mpo		N NT
+64	Format_Commercial	JPEG		N NT
+72	InternetMediaType	image/jpeg		N YT
+89	FileSize	1351	 byte	N YTY
+90	FileSize/String	1.32 KiB		Y NT
+91	FileSize/String1	1 KiB		N NT
+92	FileSize/String2	1.3 KiB		N NT
+93	FileSize/String3	1.32 KiB		N NT
+94	FileSize/String4	1.319 KiB		N NT
+130	StreamSize	0	 byte	N YIY
+131	StreamSize/String	0.00 Byte (0%)		N NT
+132	StreamSize/String1	 Byte0		N NT
+133	StreamSize/String2	0.0 Byte		N NT
+134	StreamSize/String3	0.00 Byte		N NT
+135	StreamSize/String4	0.000 Byte		N NT
+136	StreamSize/String5	0.00 Byte (0%)		N NT
+137	StreamSize_Proportion	0.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:56		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:56		N NTY
+== Image #0 (124 fields)
+0	Count	124		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Image		N NT
+4	StreamKind/String	Image		N NT
+5	StreamKindID	0		N NI
+19	Format	JPEG		N YTY
+20	Format/String	JPEG		Y NT
+23	Format_Commercial	JPEG		N NT
+33	InternetMediaType	image/jpeg		N YT
+45	Width	64	 pixel	N YIY
+46	Width/String	64 pixels		Y NT
+51	Height	48	 pixel	N YIY
+52	Height/String	48 pixels		Y NT
+65	ColorSpace	YUV		Y YTY
+66	ChromaSubsampling	4:2:0		Y YTY
+69	BitDepth	8	 bit	N YIY
+70	BitDepth/String	8 bits		Y NT
+71	Compression_Mode	Lossy		N YTY
+72	Compression_Mode/String	Lossy		Y NT
+74	StreamSize	1351	 byte	N YIY
+75	StreamSize/String	1.32 KiB (100%)		Y NT
+76	StreamSize/String1	1 KiB		N NT
+77	StreamSize/String2	1.3 KiB		N NT
+78	StreamSize/String3	1.32 KiB		N NT
+79	StreamSize/String4	1.319 KiB		N NT
+80	StreamSize/String5	1.32 KiB (100%)		N NT
+81	StreamSize_Proportion	1.00000		N NT

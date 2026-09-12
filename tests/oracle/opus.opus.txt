@@ -1,0 +1,18 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/opus.opus
+Format                                   : Ogg
+File size                                : 5.00 KiB
+Duration                                 : 1 s 7 ms
+Overall bit rate                         : 40.7 kb/s
+Writing application                      : Lavc63.1.101 libopus
+
+Audio
+ID                                       : 3154276864 (0xBC027200)
+Format                                   : Opus
+Duration                                 : 1 s 7 ms
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Compression mode                         : Lossy
+Writing library                          : Lavf63.1.101
+

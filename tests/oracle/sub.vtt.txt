@@ -1,0 +1,9 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/sub.vtt
+Format                                   : WebVTT
+File size                                : 69.0 Bytes
+
+Text
+Format                                   : WebVTT
+Compression mode                         : Lossless
+

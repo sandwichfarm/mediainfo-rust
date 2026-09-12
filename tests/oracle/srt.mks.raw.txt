@@ -1,0 +1,80 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+14	UniqueID	70928874514869861604749699460875432415		N YTY
+15	UniqueID/String	70928874514869861604749699460875432415 (0x355C67827F6AE2C2444EDB588AD831DF)		Y NT
+21	TextCount	1		N NIY
+33	Text_Format_List	UTF-8		N NT
+34	Text_Format_WithHint_List	UTF-8		N NT
+35	Text_Codec_List	UTF-8		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/srt.mks		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	srt.mks		N NT
+52	FileName	srt		N NT
+53	FileExtension	mks		N NTY
+59	Format	Matroska		N YTY
+60	Format/String	Matroska		Y NT
+62	Format/Url	https://matroska.org/downloads/windows.html		N NT
+63	Format/Extensions	mkv mk3d mka mks		N NT
+64	Format_Commercial	Matroska		N NT
+66	Format_Version	Version 4		Y YTY
+89	FileSize	590	 byte	N YTY
+90	FileSize/String	590 Bytes		Y NT
+91	FileSize/String1	590 Bytes		N NT
+92	FileSize/String2	590 Bytes		N NT
+93	FileSize/String3	590 Bytes		N NT
+94	FileSize/String4	590.0 Bytes		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+101	Duration/String5	00:00:01.000		N NT
+106	OverallBitRate	4720	 bps	N YFY
+107	OverallBitRate/String	4 720 b/s		Y NT
+130	StreamSize	590	 byte	N YIY
+131	StreamSize/String	590 Bytes (100%)		N NT
+132	StreamSize/String1	590 Bytes		N NT
+133	StreamSize/String2	590 Bytes		N NT
+134	StreamSize/String3	590 Bytes		N NT
+135	StreamSize/String4	590.0 Bytes		N NT
+136	StreamSize/String5	590 Bytes (100%)		N NT
+137	StreamSize_Proportion	1.00000		N NT
+148	IsStreamable	Yes		N YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:52		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:52		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+276	Encoded_Library	Lavf63.1.101		N YTY
+277	Encoded_Library/String	Lavf63.1.101		Y NT
+331	ErrorDetectionType	Per level 1		Y NT
+== Text #0 (238 fields)
+0	Count	238		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Text		N NT
+4	StreamKind/String	Text		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+14	UniqueID	15125276397589116048		N YTY
+18	Format	UTF-8		N YTY
+19	Format/String	UTF-8		Y NT
+22	Format_Commercial	UTF-8		N NT
+33	CodecID	S_TEXT/UTF8		Y YTY
+35	CodecID/Info	UTF-8 Plain Text		Y NT
+44	Duration	1000.000000	 ms	N YFY
+45	Duration/String	1 s 0 ms		Y NT
+46	Duration/String1	1 s 0 ms		N NT
+47	Duration/String2	1 s 0 ms		N NT
+48	Duration/String3	00:00:01.000		N NT
+50	Duration/String5	00:00:01.000		N NT
+209	Encoded_Library	Lavc63.1.101 srt		N YT
+210	Encoded_Library/String	Lavc63.1.101 srt		Y NT
+228	Default	No	Yes	N YTY
+229	Default/String	No		Y NT
+230	Forced	No	Yes	N YTY
+231	Forced/String	No		Y NT

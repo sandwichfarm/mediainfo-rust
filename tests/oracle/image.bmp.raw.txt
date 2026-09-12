@@ -1,0 +1,44 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+23	ImageCount	1		N NIY
+41	Image_Format_List	RGB		N NT
+42	Image_Format_WithHint_List	RGB		N NT
+43	Image_Codec_List	RGB		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.bmp		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	image.bmp		N NT
+52	FileName	image		N NT
+53	FileExtension	bmp		N NTY
+59	Format	Bitmap		N YTY
+60	Format/String	Bitmap		Y NT
+63	Format/Extensions	bmp bms		N NT
+64	Format_Commercial	Bitmap		N NT
+72	InternetMediaType	image/bmp		N YT
+89	FileSize	9270	 byte	N YTY
+90	FileSize/String	9.05 KiB		Y NT
+91	FileSize/String1	9 KiB		N NT
+92	FileSize/String2	9.1 KiB		N NT
+93	FileSize/String3	9.05 KiB		N NT
+94	FileSize/String4	9.053 KiB		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:56		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:56		N NTY
+== Image #0 (124 fields)
+0	Count	124		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Image		N NT
+4	StreamKind/String	Image		N NT
+5	StreamKindID	0		N NI
+19	Format	RGB		N YTY
+20	Format/String	RGB		Y NT
+23	Format_Commercial	RGB		N NT
+45	Width	64	 pixel	N YIY
+46	Width/String	64 pixels		Y NT
+51	Height	48	 pixel	N YIY
+52	Height/String	48 pixels		Y NT
+65	ColorSpace	RGB		Y YTY
+69	BitDepth	24	 bit	N YIY
+70	BitDepth/String	24 bits		Y NT

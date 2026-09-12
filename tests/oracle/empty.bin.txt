@@ -1,0 +1,4 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/empty.bin
+File size                                : 0.00 Byte
+

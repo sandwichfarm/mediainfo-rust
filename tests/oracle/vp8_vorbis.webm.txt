@@ -1,0 +1,44 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/vp8_vorbis.webm
+Format                                   : WebM
+Format version                           : Version 2
+File size                                : 10.3 KiB
+Duration                                 : 1 s 3 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 84.2 kb/s
+Writing application                      : Lavf63.1.101
+Writing library                          : Lavf63.1.101
+
+Video
+ID                                       : 1
+Format                                   : VP8
+Codec ID                                 : V_VP8
+Duration                                 : 1 s 0 ms
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate mode                          : Constant
+Frame rate                               : 25.000 FPS
+Compression mode                         : Lossy
+Writing library                          : Lavc63.1.101 libvpx
+Default                                  : No
+Forced                                   : No
+Color range                              : Limited
+
+Audio
+ID                                       : 2
+Format                                   : Vorbis
+Format settings, Floor                   : 1
+Codec ID                                 : A_VORBIS
+Duration                                 : 1 s 3 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 80.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Compression mode                         : Lossy
+Stream size                              : 9.79 KiB (95%)
+Writing application                      : Lavc63.1.101
+Writing library                          : libVorbis (Reducing Environment) (20200704 (Reducing Environment))
+Default                                  : No
+Forced                                   : No
+

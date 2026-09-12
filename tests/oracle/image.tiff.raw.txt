@@ -1,0 +1,54 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+23	ImageCount	1		N NIY
+41	Image_Format_List	PackBits		N NT
+42	Image_Format_WithHint_List	PackBits		N NT
+43	Image_Codec_List	PackBits		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.tiff		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	image.tiff		N NT
+52	FileName	image		N NT
+53	FileExtension	tiff		N NTY
+59	Format	TIFF		N YTY
+60	Format/String	TIFF		Y NT
+63	Format/Extensions	tiff tif		N NT
+64	Format_Commercial	TIFF		N NT
+72	InternetMediaType	image/tiff		N YT
+89	FileSize	4195	 byte	N YTY
+90	FileSize/String	4.10 KiB		Y NT
+91	FileSize/String1	4 KiB		N NT
+92	FileSize/String2	4.1 KiB		N NT
+93	FileSize/String3	4.10 KiB		N NT
+94	FileSize/String4	4.097 KiB		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:56		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:56		N NTY
+271	Encoded_Application/String	Lavc63.1.101		Y NT
+273	Encoded_Application_Name	Lavc63.1.101		N YTY
+== Image #0 (128 fields)
+0	Count	128		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Image		N NT
+4	StreamKind/String	Image		N NT
+5	StreamKindID	0		N NI
+19	Format	PackBits		N YTY
+20	Format/String	PackBits		Y NT
+23	Format_Commercial	PackBits		N NT
+27	Format_Settings_Endianness	Little		N YTY
+30	Format_Settings	Little		Y NT
+45	Width	64	 pixel	N YIY
+46	Width/String	64 pixels		Y NT
+51	Height	48	 pixel	N YIY
+52	Height/String	48 pixels		Y NT
+65	ColorSpace	YUV		Y YTY
+69	BitDepth	8	 bit	N YIY
+70	BitDepth/String	8 bits		Y NT
+71	Compression_Mode	Lossless		N YTY
+72	Compression_Mode/String	Lossless		Y NT
+124	Density_X	72		N NT
+125	Density_Y	72		N NT
+126	Density_Unit	dpi		N NT
+127	Density/String	72 dpi		Y NT

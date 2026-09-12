@@ -1,0 +1,22 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/wavpack.wv
+Format                                   : WavPack
+File size                                : 25.6 KiB
+Duration                                 : 42 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 4 990 kb/s
+ENCODER                                  : Lavf63.1.101
+
+Audio
+Format                                   : WavPack
+Format profile                           : 4.16
+Format settings                          : Lossless
+Duration                                 : 42 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 4 973 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression ratio                        : 0.154
+Stream size                              : 25.5 KiB (100%)
+

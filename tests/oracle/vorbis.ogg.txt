@@ -1,0 +1,22 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/vorbis.ogg
+Format                                   : Ogg
+File size                                : 5.48 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 44.9 kb/s
+Writing application                      : Lavc63.1.101 libvorbis
+
+Audio
+ID                                       : 788084501 (0x2EF93715)
+Format                                   : Vorbis
+Format settings, Floor                   : 1
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 80.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Compression mode                         : Lossy
+Stream size                              : 9.77 KiB
+Writing library                          : Lavf63.1.101
+

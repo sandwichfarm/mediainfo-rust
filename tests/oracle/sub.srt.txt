@@ -1,0 +1,9 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/sub.srt
+Format                                   : SubRip
+File size                                : 77.0 Bytes
+
+Text
+Format                                   : SubRip
+Compression mode                         : Lossless
+

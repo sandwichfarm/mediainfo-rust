@@ -1,0 +1,115 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+25	Video_Format_List	MPEG Video		N NT
+26	Video_Format_WithHint_List	MPEG Video		N NT
+27	Video_Codec_List	MPEG Video		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.m1v		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	raw.m1v		N NT
+52	FileName	raw		N NT
+53	FileExtension	m1v		N NTY
+59	Format	MPEG Video		N YTY
+60	Format/String	MPEG Video		Y NT
+63	Format/Extensions	mpgv mpv mp1v m1v mp2v m2v		N NT
+64	Format_Commercial	MPEG Video		N NT
+66	Format_Version	Version 1		Y YTY
+72	InternetMediaType	video/MPV		N YT
+89	FileSize	3597	 byte	N YTY
+90	FileSize/String	3.51 KiB		Y NT
+91	FileSize/String1	4 KiB		N NT
+92	FileSize/String2	3.5 KiB		N NT
+93	FileSize/String3	3.51 KiB		N NT
+94	FileSize/String4	3.513 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	28776	 bps	N YFY
+107	OverallBitRate/String	28.8 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+130	StreamSize	0	 byte	N YIY
+131	StreamSize/String	0.00 Byte (0%)		N NT
+132	StreamSize/String1	 Byte0		N NT
+133	StreamSize/String2	0.0 Byte		N NT
+134	StreamSize/String3	0.00 Byte		N NT
+135	StreamSize/String4	0.000 Byte		N NT
+136	StreamSize/String5	0.00 Byte (0%)		N NT
+137	StreamSize_Proportion	0.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+18	Format	MPEG Video		N YTY
+19	Format/String	MPEG Video		Y NT
+22	Format_Commercial	MPEG-1 Video		N NT
+24	Format_Version	Version 1		Y YTY
+42	Format_Settings_BVOP	No	Yes	N YTY
+43	Format_Settings_BVOP/String	No		Y NT
+48	Format_Settings_Matrix	Default		N YTY
+49	Format_Settings_Matrix/String	Default		Y NT
+62	InternetMediaType	video/MPV		N YT
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+130	BitRate_Mode	VBR		N YTY
+131	BitRate_Mode/String	Variable		Y NT
+132	BitRate	28776	 bps	N YFY
+133	BitRate/String	28.8 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Progressive		N YTY
+210	ScanType/String	Progressive		Y NT
+225	Compression_Mode	Lossy		N YTY
+226	Compression_Mode/String	Lossy		Y NT
+228	Bits-(Pixel*Frame)	0.375		Y NFN
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+236	Delay_Settings	drop_frame_flag=0 / closed_gop=1 / broken_link=0		N NT
+237	Delay_DropFrame	No		N NT
+238	Delay_Source	Stream		N NT
+239	Delay_Source/String	Raw stream		N NT
+257	TimeCode_FirstFrame	00:00:00:00		Y YCY
+264	StreamSize	3597	 byte	N YIY
+265	StreamSize/String	3.51 KiB (100%)		Y NT
+266	StreamSize/String1	4 KiB		N NT
+267	StreamSize/String2	3.5 KiB		N NT
+268	StreamSize/String3	3.51 KiB		N NT
+269	StreamSize/String4	3.513 KiB		N NT
+270	StreamSize/String5	3.51 KiB (100%)		N NT
+271	StreamSize_Proportion	1.00000		N NT
+340	BufferSize	6144		N YTY

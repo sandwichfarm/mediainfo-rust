@@ -1,0 +1,24 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/flac.flac
+Format                                   : FLAC
+Format/Info                              : Free Lossless Audio Codec
+File size                                : 24.7 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 202 kb/s
+Writing application                      : Lavf63.1.101
+
+Audio
+Format                                   : FLAC
+Format/Info                              : Free Lossless Audio Codec
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 136 kb/s
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression mode                         : Lossless
+Stream size                              : 16.6 KiB (67%)
+Writing library                          : Lavf63.1.101
+

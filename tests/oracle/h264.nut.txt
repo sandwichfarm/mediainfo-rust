@@ -1,0 +1,5 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/h264.nut
+Format                                   : Nut
+File size                                : 9.17 KiB
+

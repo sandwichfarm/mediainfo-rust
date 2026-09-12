@@ -1,0 +1,109 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	ALAC		N NT
+30	Audio_Format_WithHint_List	ALAC		N NT
+31	Audio_Codec_List	ALAC		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/alac.m4a		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	alac.m4a		N NT
+52	FileName	alac		N NT
+53	FileExtension	m4a		N NTY
+59	Format	MPEG-4		N YTY
+60	Format/String	MPEG-4		Y NT
+63	Format/Extensions	braw mov mp4 m4v m4a m4b m4p m4r 3ga 3gpa 3gpp 3gp 3gpp2 3g2 k3g jpm jpx mqv ismv isma ismt f4a f4b f4v		N NT
+64	Format_Commercial	MPEG-4		N NT
+67	Format_Profile	Apple audio with iTunes info		Y YTY
+72	InternetMediaType	audio/mp4		N YT
+73	CodecID	M4A 		N YTY
+74	CodecID/String	M4A  (M4A /isom/iso2)		Y NT
+77	CodecID/Url	http://www.apple.com/itunes/		N NT
+80	CodecID_Compatible	M4A /isom/iso2		N YTY
+89	FileSize	19785	 byte	N YTY
+90	FileSize/String	19.3 KiB		Y NT
+91	FileSize/String1	19 KiB		N NT
+92	FileSize/String2	19 KiB		N NT
+93	FileSize/String3	19.3 KiB		N NT
+94	FileSize/String4	19.32 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+101	Duration/String5	00:00:01.000		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	158280	 bps	N YFY
+107	OverallBitRate/String	158 kb/s		Y NT
+130	StreamSize	782	 byte	N YIY
+131	StreamSize/String	782 Bytes (4%)		N NT
+132	StreamSize/String1	782 Bytes		N NT
+133	StreamSize/String2	782 Bytes		N NT
+134	StreamSize/String3	782 Bytes		N NT
+135	StreamSize/String4	782.0 Bytes		N NT
+136	StreamSize/String5	782 Bytes (4%)		N NT
+137	StreamSize_Proportion	0.03952		N NT
+145	HeaderSize	36		N YIY
+146	DataSize	19011		N YIY
+147	FooterSize	738		N YIY
+148	IsStreamable	No		N YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:52		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:52		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	ALAC		N YTY
+19	Format/String	ALAC		Y NT
+22	Format_Commercial	ALAC		N YT
+48	CodecID	alac		Y YTY
+50	CodecID/Info	Apple Lossless Audio Codec		Y NT
+52	CodecID/Url	http://www.apple.com/quicktime/download/standalone.html		N NT
+70	Duration	1000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+76	Duration/String5	00:00:01.000		N NT
+84	Duration_LastFrame	-24	 ms	N YFY
+85	Duration_LastFrame/String	-24 ms		Y NT
+86	Duration_LastFrame/String1	-24 ms		N NT
+87	Duration_LastFrame/String2	-24 ms		N NT
+88	Duration_LastFrame/String3	-00:00:00.024		N NT
+112	BitRate_Mode	VBR		N YTY
+113	BitRate_Mode/String	Variable		Y NT
+114	BitRate	152024	 bps	N YFY
+115	BitRate/String	152 kb/s		Y NT
+118	BitRate_Nominal	768000	 bps	N YFY
+119	BitRate_Nominal/String	768 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+148	FrameCount	12		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+199	StreamSize	19003	 byte	N YIY
+200	StreamSize/String	18.6 KiB (96%)		Y NT
+201	StreamSize/String1	19 KiB		N NT
+202	StreamSize/String2	19 KiB		N NT
+203	StreamSize/String3	18.6 KiB		N NT
+204	StreamSize/String4	18.56 KiB		N NT
+205	StreamSize/String5	18.6 KiB (96%)		N NT
+206	StreamSize_Proportion	0.96048		N NTY
+271	Default	Yes	Yes	N YTY
+272	Default/String	Yes		Y NT
+275	AlternateGroup	1	Yes	N YTY
+276	AlternateGroup/String	1		Y NT

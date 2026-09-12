@@ -1,0 +1,24 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/wma.wma
+Format                                   : Windows Media
+File size                                : 6.78 KiB
+Duration                                 : 1 s 25 ms
+Overall bit rate                         : 54.2 kb/s
+Maximum Overall bit rate                 : 32.0 kb/s
+Encoded date                             : UTC 1970-01-01 00:00:00.000
+WM/EncodingSettings                      : Lavf63.1.101
+
+Audio
+ID                                       : 1
+Format                                   : WMA
+Format version                           : Version 2
+Codec ID                                 : 161
+Codec ID/Info                            : Windows Media Audio
+Description of the codec                 : Windows Media Audio V8
+Duration                                 : 1 s 25 ms
+Bit rate                                 : 32.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 4.00 KiB (59%)
+

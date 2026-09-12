@@ -1,0 +1,14 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_444.jpg
+Format                                   : JPEG
+File size                                : 2.49 KiB
+
+Image
+Format                                   : JPEG
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Bit depth                                : 8 bits
+Compression mode                         : Lossy
+Stream size                              : 2.49 KiB (100%)
+

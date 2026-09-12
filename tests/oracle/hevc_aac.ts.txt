@@ -1,0 +1,54 @@
+General
+ID                                       : 1 (0x1)
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/hevc_aac.ts
+Format                                   : MPEG-TS
+File size                                : 16.3 KiB
+Duration                                 : 960 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 121 kb/s
+
+Video
+ID                                       : 256 (0x100)
+Menu ID                                  : 1 (0x1)
+Format                                   : HEVC
+Format/Info                              : High Efficiency Video Coding
+Format profile                           : Main@L1@Main
+Codec ID                                 : 36
+Duration                                 : 1 s 0 ms
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Writing library                          : x265 4.3:[Linux][GCC 16.1.1][64 bit] 8bit+10bit+12bit
+Encoding settings                        : cpuid=1111039 / frame-threads=1 / no-wpp / no-pmode / no-pme / no-psnr / no-ssim / log-level=-1 / input-csp=1 / input-res=64x48 / interlace=0 / total-frames=0 / level-idc=0 / high-tier=1 / uhd-bd=0 / ref=1 / no-allow-non-conformance / repeat-headers / annexb / no-aud / no-eob / no-eos / no-hrd / info / hash=0 / temporal-layers=0 / open-gop / min-keyint=25 / keyint=250 / gop-lookahead=0 / bframes=3 / b-adapt=0 / b-pyramid / bframe-bias=0 / rc-lookahead=5 / lookahead-slices=0 / scenecut=0 / no-hist-scenecut / radl=0 / no-splice / no-intra-refresh / ctu=32 / min-cu-size=16 / no-rect / no-amp / max-tu-size=32 / tu-inter-depth=1 / tu-intra-depth=1 / limit-tu=0 / rdoq-level=0 / dynamic-rd=0.00 / no-ssim-rd / no-signhide / no-tskip / nr-intra=0 / nr-inter=0 / no-constrained-intra / strong-intra-smoothing / max-merge=2 / limit-refs=0 / no-limit-modes / me=0 / subme=0 / merange=57 / temporal-mvp / no-frame-dup / no-hme / no-weightp / no-weightb / no-analyze-src-pics / deblock=0:0 / no-sao / no-sao-non-deblock / rd=2 / selective-sao=0 / early-skip / rskip / fast-intra / no-tskip-fast / no-cu-lossless / no-b-intra / no-splitrd-skip / rdpenalty=0 / psy-rd=2.00 / psy-rdoq=0.00 / no-rd-refine / no-lossless / cbqpoffs=0 / crqpoffs=0 / rc=crf / crf=28.0 / qcomp=0.60 / qpstep=4 / stats-write=0 / stats-read=0 / ipratio=1.40 / pbratio=1.30 / aq-mode=1 / aq-strength=0.00 / cutree / zone-count=0 / no-strict-cbr / qg-size=32 / no-rc-grain / qpmax=69 / qpmin=0 / no-const-vbv / sar=1 / overscan=0 / videoformat=5 / range=0 / colorprim=2 / transfer=2 / colormatrix=2 / chromaloc=0 / display-window=0 / cll=0,0 / min-luma=0 / max-luma=255 / log2-max-poc-lsb=8 / vui-timing-info / vui-hrd-info / slices=1 / no-opt-qp-pps / no-opt-ref-list-length-pps / no-multi-pass-opt-rps / scenecut-bias=0.05 / no-opt-cu-delta-qp / no-aq-motion / no-hdr10 / no-hdr10-opt / no-dhdr10-opt / no-idr-recovery-sei / analysis-reuse-level=0 / analysis-save-reuse-level=0 / analysis-load-reuse-level=0 / scale-factor=0 / refine-intra=0 / refine-inter=0 / refine-mv=1 / refine-ctu-distortion=0 / no-limit-sao / ctu-info=0 / no-lowpass-dct / refine-analysis-type=0 / copy-pic=1 / max-ausize-factor=1.0 / no-dynamic-refine / no-single-sei / no-hevc-aq / no-svt / no-field / qp-adaptation-range=1.00 / scenecut-aware-qp=0conformance-window-offsets / right=0 / bottom=0 / decoder-max-rate=0 / no-vbv-live-multi-pass / no-mcstf / no-sbrc / no-frame-rc
+Color range                              : Limited
+
+Audio
+ID                                       : 257 (0x101)
+Menu ID                                  : 1 (0x1)
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Format version                           : Version 4
+Muxing mode                              : ADTS
+Codec ID                                 : 15-2
+Duration                                 : 725 ms
+Bit rate mode                            : Variable
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+Delay relative to video                  : -21 ms
+
+Menu
+ID                                       : 4096 (0x1000)
+Menu ID                                  : 1 (0x1)
+Duration                                 : 960 ms
+List                                     : 256 (0x100) (HEVC) / 257 (0x101) (AAC)
+Service name                             : Service01
+Service provider                         : FFmpeg
+Service type                             : digital television
+

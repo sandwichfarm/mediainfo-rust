@@ -1,0 +1,4 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.obu
+File size                                : 2.41 KiB
+

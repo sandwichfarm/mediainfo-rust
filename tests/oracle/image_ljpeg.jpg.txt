@@ -1,0 +1,15 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_ljpeg.jpg
+Format                                   : JPEG
+File size                                : 4.34 KiB
+
+Image
+Format                                   : JPEG
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Chroma subsampling                       : 4:4:4
+Bit depth                                : 9 bits
+Compression mode                         : Lossy
+Stream size                              : 4.34 KiB (100%)
+

@@ -1,0 +1,19 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/truehd.thd
+Format                                   : MLP FBA
+Format/Info                              : Meridian Lossless Packing FBA
+Commercial name                          : Dolby TrueHD
+File size                                : 33.3 KiB
+Overall bit rate mode                    : Variable
+
+Audio
+Format                                   : MLP FBA
+Format/Info                              : Meridian Lossless Packing FBA
+Commercial name                          : Dolby TrueHD
+Bit rate mode                            : Variable
+Maximum bit rate                         : 9 597 kb/s
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 1 200.000 FPS (40 SPF)
+

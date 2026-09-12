@@ -1,0 +1,8 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.webp
+Format                                   : WebP
+File size                                : 978 Bytes
+
+Image
+Format                                   : WebP
+

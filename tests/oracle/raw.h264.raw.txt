@@ -1,0 +1,98 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+25	Video_Format_List	AVC		N NT
+26	Video_Format_WithHint_List	AVC		N NT
+27	Video_Codec_List	AVC		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.h264		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	raw.h264		N NT
+52	FileName	raw		N NT
+53	FileExtension	h264		N NTY
+59	Format	AVC		N YTY
+60	Format/String	AVC		Y NT
+61	Format/Info	Advanced Video Codec		Y NT
+62	Format/Url	http://developers.videolan.org/x264.html		N NT
+63	Format/Extensions	avc h264 264		N NT
+64	Format_Commercial	AVC		N NT
+72	InternetMediaType	video/H264		N YT
+89	FileSize	4627	 byte	N YTY
+90	FileSize/String	4.52 KiB		Y NT
+91	FileSize/String1	5 KiB		N NT
+92	FileSize/String2	4.5 KiB		N NT
+93	FileSize/String3	4.52 KiB		N NT
+94	FileSize/String4	4.519 KiB		N NT
+95	Duration	500	 ms	N YFY
+96	Duration/String	500 ms		Y NT
+97	Duration/String1	500 ms		N NT
+98	Duration/String2	500 ms		N NT
+99	Duration/String3	00:00:00.500		N NT
+100	Duration/String4	00:00:00:25		N NT
+101	Duration/String5	00:00:00.500 (00:00:00:25)		N NT
+106	OverallBitRate	74032	 bps	N YFY
+107	OverallBitRate/String	74.0 kb/s		Y NT
+114	FrameRate	50.000	 fps	N YFY
+115	FrameRate/String	50.000 FPS		N NT
+118	FrameCount	25		N NIY
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+276	Encoded_Library	x264 - core 165 r3222 b35605a		N YTY
+277	Encoded_Library/String	x264 core 165 r3222 b35605a		Y NT
+279	Encoded_Library_Name	x264		N NTY
+280	Encoded_Library_Version	core 165 r3222 b35605a		N NTY
+282	Encoded_Library_Settings	cabac=0 / ref=1 / deblock=0:0:0 / analyse=0:0 / me=dia / subme=0 / psy=1 / psy_rd=1.00:0.00 / mixed_ref=0 / me_range=16 / chroma_me=1 / trellis=0 / 8x8dct=0 / cqm=0 / deadzone=21,11 / fast_pskip=1 / chroma_qp_offset=0 / threads=1 / lookahead_threads=1 / sliced_threads=0 / nr=0 / decimate=1 / interlaced=0 / bluray_compat=0 / constrained_intra=0 / bframes=0 / weightp=0 / keyint=250 / keyint_min=25 / scenecut=0 / intra_refresh=0 / rc=crf / mbtree=0 / crf=23.0 / qcomp=0.60 / qpmin=0 / qpmax=69 / qpstep=4 / ip_ratio=1.40 / aq=0		Y YTY
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+18	Format	AVC		N YTY
+19	Format/String	AVC		Y NT
+20	Format/Info	Advanced Video Codec		Y NT
+21	Format/Url	http://developers.videolan.org/x264.html		N NT
+22	Format_Commercial	AVC		N NT
+25	Format_Profile	Baseline@L1		Y YTY
+41	Format_Settings	1 Ref Frames		Y NT
+51	Format_Settings_CABAC	No	Yes	N YTY
+52	Format_Settings_CABAC/String	No		Y NT
+53	Format_Settings_RefFrames	1	 frame	N YIY
+54	Format_Settings_RefFrames/String	1 frame		Y NT
+62	InternetMediaType	video/H264		N YT
+88	Duration	500	 ms	N YFY
+89	Duration/String	500 ms		Y NT
+90	Duration/String1	500 ms		N NT
+91	Duration/String2	500 ms		N NT
+92	Duration/String3	00:00:00.500		N NT
+93	Duration/String4	00:00:00:25		N NT
+94	Duration/String5	00:00:00.500 (00:00:00:25)		N NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	VFR		N YTY
+180	FrameRate_Mode/String	Variable		Y NT
+183	FrameRate	50.000	 fps	N YFY
+184	FrameRate/String	50.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Progressive		N YTY
+210	ScanType/String	Progressive		Y NT
+312	Encoded_Library	x264 - core 165 r3222 b35605a		N YTY
+313	Encoded_Library/String	x264 core 165 r3222 b35605a		Y NT
+315	Encoded_Library_Name	x264		N NTY
+316	Encoded_Library_Version	core 165 r3222 b35605a		N NTY
+318	Encoded_Library_Settings	cabac=0 / ref=1 / deblock=0:0:0 / analyse=0:0 / me=dia / subme=0 / psy=1 / psy_rd=1.00:0.00 / mixed_ref=0 / me_range=16 / chroma_me=1 / trellis=0 / 8x8dct=0 / cqm=0 / deadzone=21,11 / fast_pskip=1 / chroma_qp_offset=0 / threads=1 / lookahead_threads=1 / sliced_threads=0 / nr=0 / decimate=1 / interlaced=0 / bluray_compat=0 / constrained_intra=0 / bframes=0 / weightp=0 / keyint=250 / keyint_min=25 / scenecut=0 / intra_refresh=0 / rc=crf / mbtree=0 / crf=23.0 / qcomp=0.60 / qpmin=0 / qpmax=69 / qpstep=4 / ip_ratio=1.40 / aq=0		Y YTY

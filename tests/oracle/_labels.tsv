@@ -1,0 +1,171 @@
+Audio	Alignment/String	Alignment
+Audio	AlternateGroup/String	Alternate group
+Audio	BitDepth/String	Bit depth
+Audio	BitRate/String	Bit rate
+Audio	BitRate_Maximum/String	Maximum bit rate
+Audio	BitRate_Mode/String	Bit rate mode
+Audio	BitRate_Nominal/String	Nominal bit rate
+Audio	Channel(s)/String	Channel(s)
+Audio	Channel(s)_Original/String	Channel(s)_Original
+Audio	ChannelLayout	Channel layout
+Audio	ChannelLayout_Original	ChannelLayout_Original
+Audio	CodecID	Codec ID
+Audio	CodecID/Hint	Codec ID/Hint
+Audio	CodecID/Info	Codec ID/Info
+Audio	CodecID_Description	Description of the codec
+Audio	Comment	Comment
+Audio	Compression_Mode/String	Compression mode
+Audio	Compression_Ratio	Compression ratio
+Audio	Default/String	Default
+Audio	Duration/String	Duration
+Audio	Duration_LastFrame/String	Duration_LastFrame
+Audio	Encoded_Application/String	Writing application
+Audio	Encoded_Library/String	Writing library
+Audio	Forced/String	Forced
+Audio	Format/Info	Format/Info
+Audio	Format/String	Format
+Audio	Format_Commercial_IfAny	Commercial name
+Audio	Format_Profile	Format profile
+Audio	Format_Settings	Format settings
+Audio	Format_Settings_Floor	Format settings, Floor
+Audio	Format_Settings_Wrapping	Format settings, wrapping mode
+Audio	Format_Version	Format version
+Audio	FrameRate/String	Frame rate
+Audio	ID/String	ID
+Audio	Interleave_Duration/String	Interleave, duration
+Audio	Interleave_Preload/String	Interleave, preload duration
+Audio	Language/String	Language
+Audio	Locked	Locked
+Audio	MenuID/String	Menu ID
+Audio	Menus	Menus
+Audio	MuxingMode	Muxing mode
+Audio	SamplingRate/String	Sampling rate
+Audio	ServiceKind/String	Service kind
+Audio	Source_Duration/String	Source duration
+Audio	Source_Duration_LastFrame/String	Source_Duration_LastFrame
+Audio	Source_StreamSize/String	Source stream size
+Audio	StreamSize/String	Stream size
+Audio	Video_Delay/String	Delay relative to video
+General	CodecID/String	Codec ID
+General	CompleteName	Complete name
+General	Duration/String	Duration
+General	ENCODER	ENCODER
+General	Encoded_Application/String	Writing application
+General	Encoded_Date	Encoded date
+General	Encoded_Library/String	Writing library
+General	Encoded_Library_Settings	Encoding settings
+General	ErrorDetectionType	ErrorDetectionType
+General	FileExtension_Invalid	FileExtension_Invalid
+General	FileSize/String	File size
+General	Format/Info	Format/Info
+General	Format/String	Format
+General	Format_Commercial_IfAny	Commercial name
+General	Format_Profile	Format profile
+General	Format_Settings	Format settings
+General	Format_Version	Format version
+General	ID/String	ID
+General	Movie	Movie name
+General	OverallBitRate/String	Overall bit rate
+General	OverallBitRate_Maximum/String	Maximum Overall bit rate
+General	OverallBitRate_Mode/String	Overall bit rate mode
+General	Performer	Performer
+General	Recorded_Date	Recorded date
+General	Track	Track name
+General	UniqueID/String	Unique ID
+General	WM/EncodingSettings	WM/EncodingSettings
+General	encoder	encoder
+Image	BitDepth/String	Bit depth
+Image	ChromaSubsampling	Chroma subsampling
+Image	ColorSpace	Color space
+Image	Compression_Mode/String	Compression mode
+Image	Density/String	Density
+Image	DisplayAspectRatio/String	Display aspect ratio
+Image	Format/Info	Format/Info
+Image	Format/String	Format
+Image	Format_Compression	Format_Compression
+Image	Format_Profile	Format profile
+Image	Format_Settings	Format settings
+Image	Height/String	Height
+Image	StreamSize/String	Stream size
+Image	Width/String	Width
+Menu	00:00:00.000	00:00:00.000
+Menu	00:00:00.500	00:00:00.500
+Menu	BitRate_Mode	Bit rate mode
+Menu	BitRate_Mode/String	Bit rate mode
+Menu	CodecID	Codec ID
+Menu	Duration/String	Duration
+Menu	ID/String	ID
+Menu	Language/String	Language
+Menu	List/String	List
+Menu	Menu For	Menu For
+Menu	MenuID/String	Menu ID
+Menu	ServiceName	Service name
+Menu	ServiceProvider	Service provider
+Menu	ServiceType	Service type
+Other	Format/String	Format
+Other	FrameRate/String	Frame rate
+Other	ID/String	ID
+Other	MuxingMode	Muxing mode
+Other	TimeCode_FirstFrame	Time code of first frame
+Other	TimeCode_Settings	Time code settings
+Other	TimeCode_Striped/String	Time code, striped
+Other	Type	Type
+Text	CodecID	Codec ID
+Text	CodecID/Info	Codec ID/Info
+Text	Compression_Mode/String	Compression mode
+Text	Default/String	Default
+Text	Duration/String	Duration
+Text	Encoded_Library/String	Writing library
+Text	Forced/String	Forced
+Text	Format/String	Format
+Text	ID/String	ID
+Text	Language/String	Language
+Video	BitDepth/String	Bit depth
+Video	BitRate/String	Bit rate
+Video	BitRate_Maximum/String	Maximum bit rate
+Video	BitRate_Mode/String	Bit rate mode
+Video	Bits-(Pixel*Frame)	Bits/(Pixel*Frame)
+Video	ChromaSubsampling/String	Chroma subsampling
+Video	CodecConfigurationBox	Codec configuration box
+Video	CodecID	Codec ID
+Video	CodecID/Hint	Codec ID/Hint
+Video	CodecID/Info	Codec ID/Info
+Video	CodecID_Description	Description of the codec
+Video	ColorSpace	Color space
+Video	Compression_Mode/String	Compression mode
+Video	Default/String	Default
+Video	DisplayAspectRatio/String	Display aspect ratio
+Video	Duration/String	Duration
+Video	Encoded_Library/String	Writing library
+Video	Encoded_Library_Settings	Encoding settings
+Video	Forced/String	Forced
+Video	Format/Info	Format/Info
+Video	Format/String	Format
+Video	Format_Profile	Format profile
+Video	Format_Settings	Format settings
+Video	Format_Settings_BVOP/String	Format settings, BVOP
+Video	Format_Settings_CABAC/String	Format settings, CABAC
+Video	Format_Settings_GMC/String	Format settings, GMC
+Video	Format_Settings_GOP	Format settings, GOP
+Video	Format_Settings_Matrix/String	Format settings, Matrix
+Video	Format_Settings_QPel/String	Format settings, QPel
+Video	Format_Settings_RefFrames/String	Format settings, Reference frames
+Video	Format_Settings_Wrapping	Format settings, wrapping mode
+Video	Format_Version	Format version
+Video	FrameRate/String	Frame rate
+Video	FrameRate_Maximum/String	Maximum frame rate
+Video	FrameRate_Minimum/String	Minimum frame rate
+Video	FrameRate_Mode/String	Frame rate mode
+Video	Height/String	Height
+Video	ID/String	ID
+Video	MenuID/String	Menu ID
+Video	Menus	Menus
+Video	ScanOrder/String	Scan order
+Video	ScanType/String	Scan type
+Video	Standard	Standard
+Video	StreamSize/String	Stream size
+Video	TimeCode_FirstFrame	Time code of first frame
+Video	TimeCode_Source	Time code source
+Video	Title	Title
+Video	Width/String	Width
+Video	colour_range	Color range

@@ -1,0 +1,21 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/speex.ogg
+Format                                   : Ogg
+File size                                : 3.87 KiB
+Duration                                 : 989 ms
+Overall bit rate mode                    : Constant
+Overall bit rate                         : 32.1 kb/s
+
+Audio
+ID                                       : 4011661777 (0xEF1D19D1)
+Format                                   : Speex
+Duration                                 : 989 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 29.6 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 32.0 kHz
+Compression mode                         : Lossy
+Stream size                              : 3.57 KiB (92%)
+Writing library                          : 1.2.1
+Comment                                  : Lavf63.1.101 / 
+

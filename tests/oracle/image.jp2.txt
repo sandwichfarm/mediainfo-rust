@@ -1,0 +1,16 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.jp2
+Format                                   : JPEG 2000
+Format profile                           : MPEG-4
+Codec ID                                 : jp2  (jp2 )
+File size                                : 2.97 KiB
+
+Image
+Format                                   : JPEG 2000
+Format profile                           : No restrictions
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Chroma subsampling                       : 4:4:4
+Bit depth                                : 8 bits
+

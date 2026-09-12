@@ -1,0 +1,4 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/random.bin
+File size                                : 4.00 KiB
+

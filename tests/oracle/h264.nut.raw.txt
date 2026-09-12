@@ -1,0 +1,30 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/h264.nut		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	h264.nut		N NT
+52	FileName	h264		N NT
+53	FileExtension	nut		N NTY
+59	Format	Nut		N YTY
+60	Format/String	Nut		Y NT
+64	Format_Commercial	Nut		N NT
+89	FileSize	9390	 byte	N YTY
+90	FileSize/String	9.17 KiB		Y NT
+91	FileSize/String1	9 KiB		N NT
+92	FileSize/String2	9.2 KiB		N NT
+93	FileSize/String3	9.17 KiB		N NT
+94	FileSize/String4	9.170 KiB		N NT
+130	StreamSize	9390	 byte	N YIY
+131	StreamSize/String	9.17 KiB (100%)		N NT
+132	StreamSize/String1	9 KiB		N NT
+133	StreamSize/String2	9.2 KiB		N NT
+134	StreamSize/String3	9.17 KiB		N NT
+135	StreamSize/String4	9.170 KiB		N NT
+136	StreamSize/String5	9.17 KiB (100%)		N NT
+137	StreamSize_Proportion	1.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY

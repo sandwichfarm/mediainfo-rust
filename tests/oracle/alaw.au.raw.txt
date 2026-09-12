@@ -1,0 +1,80 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	ADPCM		N NT
+30	Audio_Format_WithHint_List	ADPCM		N NT
+31	Audio_Codec_List	ADPCM		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/alaw.au		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	alaw.au		N NT
+52	FileName	alaw		N NT
+53	FileExtension	au		N NTY
+59	Format	AU		N YTY
+60	Format/String	AU		Y NT
+61	Format/Info	uLaw/AU Audio File		Y NT
+63	Format/Extensions	au		N NT
+64	Format_Commercial	AU		N NT
+72	InternetMediaType	audio/basic		N YT
+89	FileSize	48032	 byte	N YTY
+90	FileSize/String	46.9 KiB		Y NT
+91	FileSize/String1	47 KiB		N NT
+92	FileSize/String2	47 KiB		N NT
+93	FileSize/String3	46.9 KiB		N NT
+94	FileSize/String4	46.91 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+101	Duration/String5	00:00:01.000		N NT
+104	OverallBitRate_Mode	CBR		N YTY
+105	OverallBitRate_Mode/String	Constant		Y NT
+106	OverallBitRate	384256	 bps	N YFY
+107	OverallBitRate/String	384 kb/s		Y NT
+130	StreamSize	32	 byte	N YIY
+131	StreamSize/String	32.0 Bytes (0%)		N NT
+132	StreamSize/String1	32 Bytes		N NT
+133	StreamSize/String2	32 Bytes		N NT
+134	StreamSize/String3	32.0 Bytes		N NT
+135	StreamSize/String4	32.00 Bytes		N NT
+136	StreamSize/String5	32.0 Bytes (0%)		N NT
+137	StreamSize_Proportion	0.00067		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	ADPCM		N YTY
+19	Format/String	ADPCM		Y NT
+22	Format_Commercial	ADPCM		N YT
+48	CodecID	8-bit a-law		Y YTY
+70	Duration	1000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+76	Duration/String5	00:00:01.000		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	384000	 bps	N YFY
+115	BitRate/String	384 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+199	StreamSize	48000	 byte	N YIY
+200	StreamSize/String	46.9 KiB (100%)		Y NT
+201	StreamSize/String1	47 KiB		N NT
+202	StreamSize/String2	47 KiB		N NT
+203	StreamSize/String3	46.9 KiB		N NT
+204	StreamSize/String4	46.88 KiB		N NT
+205	StreamSize/String5	46.9 KiB (100%)		N NT
+206	StreamSize_Proportion	0.99933		N NTY

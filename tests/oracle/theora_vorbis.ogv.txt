@@ -1,0 +1,33 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/theora_vorbis.ogv
+Format                                   : Ogg
+File size                                : 10.9 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 89.0 kb/s
+Writing application                      : Lavc63.1.101 libtheora
+
+Video
+ID                                       : 2225026903 (0x849F3757)
+Format                                   : Theora
+Duration                                 : 1 s 0 ms
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Compression mode                         : Lossy
+Writing library                          : Lavf63.1.101
+
+Audio
+ID                                       : 469955146 (0x1C02F24A)
+Format                                   : Vorbis
+Format settings, Floor                   : 1
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 80.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Compression mode                         : Lossy
+Stream size                              : 9.77 KiB (90%)
+Writing library                          : Lavf63.1.101
+

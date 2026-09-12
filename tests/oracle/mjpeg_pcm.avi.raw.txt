@@ -1,0 +1,164 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	JPEG		N NT
+26	Video_Format_WithHint_List	JPEG		N NT
+27	Video_Codec_List	JPEG		N NT
+29	Audio_Format_List	PCM		N NT
+30	Audio_Format_WithHint_List	PCM		N NT
+31	Audio_Codec_List	PCM		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/mjpeg_pcm.avi		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	mjpeg_pcm.avi		N NT
+52	FileName	mjpeg_pcm		N NT
+53	FileExtension	avi		N NTY
+59	Format	AVI		N YTY
+60	Format/String	AVI		Y NT
+61	Format/Info	Audio Video Interleave		Y NT
+63	Format/Extensions	avi		N NT
+64	Format_Commercial	AVI		N NT
+72	InternetMediaType	video/vnd.avi		N YT
+81	Interleaved	Yes		N YTY
+89	FileSize	133428	 byte	N YTY
+90	FileSize/String	130 KiB		Y NT
+91	FileSize/String1	130 KiB		N NT
+92	FileSize/String2	130 KiB		N NT
+93	FileSize/String3	130 KiB		N NT
+94	FileSize/String4	130.3 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+106	OverallBitRate	1067424	 bps	N YFY
+107	OverallBitRate/String	1 067 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+130	StreamSize	11729	 byte	N YIY
+131	StreamSize/String	11.5 KiB (9%)		N NT
+132	StreamSize/String1	11 KiB		N NT
+133	StreamSize/String2	11 KiB		N NT
+134	StreamSize/String3	11.5 KiB		N NT
+135	StreamSize/String4	11.45 KiB		N NT
+136	StreamSize/String5	11.5 KiB (9%)		N NT
+137	StreamSize_Proportion	0.08791		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:53		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:53		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	0		N YTY
+11	ID/String	0		Y NT
+18	Format	JPEG		N YTY
+19	Format/String	JPEG		Y NT
+22	Format_Commercial	JPEG		N NT
+62	InternetMediaType	video/JPEG		N YT
+64	CodecID	MJPG		Y YTY
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+132	BitRate	205592	 bps	N YFY
+133	BitRate/String	206 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Progressive		N YTY
+210	ScanType/String	Progressive		Y NT
+225	Compression_Mode	Lossy		N YTY
+226	Compression_Mode/String	Lossy		Y NT
+228	Bits-(Pixel*Frame)	2.677		Y NFN
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+264	StreamSize	25699	 byte	N YIY
+265	StreamSize/String	25.1 KiB (19%)		Y NT
+266	StreamSize/String1	25 KiB		N NT
+267	StreamSize/String2	25 KiB		N NT
+268	StreamSize/String3	25.1 KiB		N NT
+269	StreamSize/String4	25.10 KiB		N NT
+270	StreamSize/String5	25.1 KiB (19%)		N NT
+271	StreamSize_Proportion	0.19261		N NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	1		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	PCM		N YTY
+19	Format/String	PCM		Y NT
+22	Format_Commercial	PCM		N YT
+28	Format_Settings	Little / Signed		Y NT
+38	Format_Settings_Endianness	Little		N YTY
+39	Format_Settings_Sign	Signed		N YTY
+48	CodecID	1		Y YTY
+52	CodecID/Url	http://www.microsoft.com/windows/		N NT
+70	Duration	1000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+76	Duration/String5	00:00:01.000		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	768000	 bps	N YFY
+115	BitRate/String	768 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+161	Delay	0	 ms	N NFY
+165	Delay/String3	00:00:00.000		N NT
+170	Delay_Source	Stream		N NTY
+171	Delay_Source/String	Raw stream		N NT
+182	Video_Delay	0	 ms	N NI
+186	Video_Delay/String3	00:00:00.000		N NT
+199	StreamSize	96000	 byte	N YIY
+200	StreamSize/String	93.8 KiB (72%)		Y NT
+201	StreamSize/String1	94 KiB		N NT
+202	StreamSize/String2	94 KiB		N NT
+203	StreamSize/String3	93.8 KiB		N NT
+204	StreamSize/String4	93.75 KiB		N NT
+205	StreamSize/String5	93.8 KiB (72%)		N NT
+206	StreamSize_Proportion	0.71949		N NTY
+238	Alignment	Aligned		N YTY
+239	Alignment/String	Aligned on interleaves		Y NT
+240	Interleave_VideoFrames	0.53		N YFY
+241	Interleave_Duration	21	 ms	N YFY
+242	Interleave_Duration/String	21  ms (0.53 video frame)		Y NT

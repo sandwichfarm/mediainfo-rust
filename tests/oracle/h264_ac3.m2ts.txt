@@ -1,0 +1,60 @@
+General
+ID                                       : 1 (0x1)
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/h264_ac3.m2ts
+Format                                   : BDAV
+Format/Info                              : Blu-ray Video
+File size                                : 24.0 KiB
+Duration                                 : 960 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 142 kb/s
+
+Video
+ID                                       : 4113 (0x1011)
+Menu ID                                  : 1 (0x1)
+Format                                   : AVC
+Format/Info                              : Advanced Video Codec
+Format profile                           : Baseline@L1
+Format settings                          : 1 Ref Frames
+Format settings, CABAC                   : No
+Format settings, Reference frames        : 1 frame
+Codec ID                                 : 27
+Duration                                 : 980 ms
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate mode                          : Variable
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Writing library                          : x264 core 165 r3222 b35605a
+Encoding settings                        : cabac=0 / ref=1 / deblock=0:0:0 / analyse=0:0 / me=dia / subme=0 / psy=1 / psy_rd=1.00:0.00 / mixed_ref=0 / me_range=16 / chroma_me=1 / trellis=0 / 8x8dct=0 / cqm=0 / deadzone=21,11 / fast_pskip=1 / chroma_qp_offset=0 / threads=1 / lookahead_threads=1 / sliced_threads=0 / nr=0 / decimate=1 / interlaced=0 / bluray_compat=0 / constrained_intra=0 / bframes=0 / weightp=0 / keyint=250 / keyint_min=25 / scenecut=0 / intra_refresh=0 / rc=crf / mbtree=0 / crf=23.0 / qcomp=0.60 / qpmin=0 / qpmax=69 / qpstep=4 / ip_ratio=1.40 / aq=0
+
+Audio
+ID                                       : 4352 (0x1100)
+Menu ID                                  : 1 (0x1)
+Format                                   : AC-3
+Format/Info                              : Audio Coding 3
+Commercial name                          : Dolby Digital
+Codec ID                                 : 129
+Duration                                 : 1 s 24 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 64.0 kb/s
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 31.250 FPS (1536 SPF)
+Compression mode                         : Lossy
+Delay relative to video                  : -5 ms
+Stream size                              : 8.00 KiB (33%)
+Service kind                             : Complete Main
+
+Menu
+ID                                       : 256 (0x100)
+Menu ID                                  : 1 (0x1)
+Duration                                 : 960 ms
+List                                     : 4113 (0x1011) (AVC) / 4352 (0x1100) (AC-3)
+Service name                             : Service01
+Service provider                         : FFmpeg
+Service type                             : digital television
+

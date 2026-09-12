@@ -1,0 +1,16 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.tiff
+Format                                   : TIFF
+File size                                : 4.10 KiB
+Writing application                      : Lavc63.1.101
+
+Image
+Format                                   : PackBits
+Format settings                          : Little
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Bit depth                                : 8 bits
+Compression mode                         : Lossless
+Density                                  : 72 dpi
+

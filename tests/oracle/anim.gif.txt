@@ -1,0 +1,15 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/anim.gif
+Format                                   : GIF
+Format/Info                              : Graphics Interchange Format
+File size                                : 2.90 KiB
+
+Image
+Format                                   : GIF
+Format/Info                              : Graphics Interchange Format
+Format profile                           : 89a
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Compression mode                         : Lossless
+

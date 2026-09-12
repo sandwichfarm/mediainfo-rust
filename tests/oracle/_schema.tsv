@@ -1,0 +1,1640 @@
+Audio	0	Count	283		N NI
+Audio	1	Status			N NI
+Audio	2	StreamCount	1		N NI
+Audio	3	StreamKind	Audio		N NT
+Audio	4	StreamKind/String	Audio		N NT
+Audio	5	StreamKindID	0		N NI
+Audio	6	StreamKindPos			N NI
+Audio	7	StreamOrder	1		N YIY
+Audio	8	FirstPacketOrder			N YIY
+Audio	9	Inform			N NT
+Audio	10	ID	3		N YTY
+Audio	11	ID/String	3		Y NT
+Audio	12	OriginalSourceMedium_ID			N YTY
+Audio	13	OriginalSourceMedium_ID/String			Y NT
+Audio	14	UniqueID			N YTY
+Audio	15	UniqueID/String			Y NT
+Audio	16	MenuID			N YTY
+Audio	17	MenuID/String			Y NT
+Audio	18	Format	PCM		N YTY
+Audio	19	Format/String	PCM		Y NT
+Audio	20	Format/Info			Y NT
+Audio	21	Format/Url			N NT
+Audio	22	Format_Commercial	PCM		N YT
+Audio	23	Format_Commercial_IfAny			Y YTY
+Audio	24	Format_Version			Y YTY
+Audio	25	Format_Profile			Y YTY
+Audio	26	Format_Level			Y YTY
+Audio	27	Format_Compression			Y YTY
+Audio	28	Format_Settings	Little		Y NT
+Audio	29	Format_Settings_SBR		Yes	N YTY
+Audio	30	Format_Settings_SBR/String			N NT
+Audio	31	Format_Settings_PS		Yes	N YTY
+Audio	32	Format_Settings_PS/String			N NT
+Audio	33	Format_Settings_Mode			N YTY
+Audio	34	Format_Settings_ModeExtension			N YTY
+Audio	35	Format_Settings_Emphasis			N YTY
+Audio	36	Format_Settings_Floor			Y YTY
+Audio	37	Format_Settings_Firm			N YTY
+Audio	38	Format_Settings_Endianness	Little		N YTY
+Audio	39	Format_Settings_Sign			N YTY
+Audio	40	Format_Settings_Law			Y YTY
+Audio	41	Format_Settings_ITU			N YTY
+Audio	42	Format_Settings_Wrapping	Frame (AES)		Y YTY
+Audio	43	Format_AdditionalFeatures			N YTY
+Audio	44	Matrix_Format			Y YTY
+Audio	45	InternetMediaType			N YT
+Audio	46	MuxingMode			Y YTY
+Audio	47	MuxingMode_MoreInfo			Y NT
+Audio	48	CodecID	0D01030102060300		Y YTY
+Audio	49	CodecID/String			Y NT
+Audio	50	CodecID/Info			Y NT
+Audio	51	CodecID/Hint			Y NT
+Audio	52	CodecID/Url			N NT
+Audio	53	CodecID_Description			Y YT
+Audio	54	Codec			N NT
+Audio	55	Codec/String			N NT
+Audio	56	Codec/Family			N NT
+Audio	57	Codec/Info			N NT
+Audio	58	Codec/Url			N NT
+Audio	59	Codec/CC			N NT
+Audio	60	Codec_Description			N NT
+Audio	61	Codec_Profile			N NT
+Audio	62	Codec_Settings			N NT
+Audio	63	Codec_Settings_Automatic			N NT
+Audio	64	Codec_Settings_Floor			N NT
+Audio	65	Codec_Settings_Firm			N NT
+Audio	66	Codec_Settings_Endianness			N NT
+Audio	67	Codec_Settings_Sign			N NT
+Audio	68	Codec_Settings_Law			N NT
+Audio	69	Codec_Settings_ITU			N NT
+Audio	70	Duration	1000	 ms	N YFY
+Audio	71	Duration/String	1 s 0 ms		Y NT
+Audio	72	Duration/String1	1 s 0 ms		N NT
+Audio	73	Duration/String2	1 s 0 ms		N NT
+Audio	74	Duration/String3	00:00:01.000		N NT
+Audio	75	Duration/String4	00:00:01:00		N NT
+Audio	76	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+Audio	77	Duration_FirstFrame		 ms	N YFY
+Audio	78	Duration_FirstFrame/String			Y NT
+Audio	79	Duration_FirstFrame/String1			N NT
+Audio	80	Duration_FirstFrame/String2			N NT
+Audio	81	Duration_FirstFrame/String3			N NT
+Audio	82	Duration_FirstFrame/String4			N NT
+Audio	83	Duration_FirstFrame/String5			N NT
+Audio	84	Duration_LastFrame		 ms	N YFY
+Audio	85	Duration_LastFrame/String			Y NT
+Audio	86	Duration_LastFrame/String1			N NT
+Audio	87	Duration_LastFrame/String2			N NT
+Audio	88	Duration_LastFrame/String3			N NT
+Audio	89	Duration_LastFrame/String4			N NT
+Audio	90	Duration_LastFrame/String5			N NT
+Audio	91	Source_Duration		 ms	N YFY
+Audio	92	Source_Duration/String			Y NT
+Audio	93	Source_Duration/String1			N NT
+Audio	94	Source_Duration/String2			N NT
+Audio	95	Source_Duration/String3			N NT
+Audio	96	Source_Duration/String4			N NT
+Audio	97	Source_Duration/String5			N NT
+Audio	98	Source_Duration_FirstFrame		 ms	N YFY
+Audio	99	Source_Duration_FirstFrame/String			Y NT
+Audio	100	Source_Duration_FirstFrame/String1			N NT
+Audio	101	Source_Duration_FirstFrame/String2			N NT
+Audio	102	Source_Duration_FirstFrame/String3			N NT
+Audio	103	Source_Duration_FirstFrame/String4			N NT
+Audio	104	Source_Duration_FirstFrame/String5			N NT
+Audio	105	Source_Duration_LastFrame		 ms	N YFY
+Audio	106	Source_Duration_LastFrame/String			Y NT
+Audio	107	Source_Duration_LastFrame/String1			N NT
+Audio	108	Source_Duration_LastFrame/String2			N NT
+Audio	109	Source_Duration_LastFrame/String3			N NT
+Audio	110	Source_Duration_LastFrame/String4			N NT
+Audio	111	Source_Duration_LastFrame/String5			N NT
+Audio	112	BitRate_Mode	CBR		N YTY
+Audio	113	BitRate_Mode/String	Constant		Y NT
+Audio	114	BitRate	768000	 bps	N YFY
+Audio	115	BitRate/String	768 kb/s		Y NT
+Audio	116	BitRate_Minimum		 bps	N YFY
+Audio	117	BitRate_Minimum/String			Y NT
+Audio	118	BitRate_Nominal		 bps	N YFY
+Audio	119	BitRate_Nominal/String			Y NT
+Audio	120	BitRate_Maximum		 bps	N YFY
+Audio	121	BitRate_Maximum/String			Y NT
+Audio	122	BitRate_Encoded		 bps	N YFY
+Audio	123	BitRate_Encoded/String			N NT
+Audio	124	Channel(s)	1	 channel	N YIY
+Audio	125	Channel(s)/String	1 channel		Y NT
+Audio	126	Channel(s)_Original		 channel	N YIY
+Audio	127	Channel(s)_Original/String			Y NT
+Audio	128	Matrix_Channel(s)		 channel	N YIY
+Audio	129	Matrix_Channel(s)/String			Y NT
+Audio	130	ChannelPositions			N YTY
+Audio	131	ChannelPositions_Original			N YTY
+Audio	132	ChannelPositions/String2			N NT
+Audio	133	ChannelPositions_Original/String2			N NT
+Audio	134	Matrix_ChannelPositions			Y YTY
+Audio	135	Matrix_ChannelPositions/String2			N NT
+Audio	136	ChannelLayout			Y YTY
+Audio	137	ChannelLayout_Original			Y YTY
+Audio	138	ChannelLayoutID			N YT
+Audio	139	SamplesPerFrame	1920		N YFY
+Audio	140	SamplingRate	48000	 Hz	N YFY
+Audio	141	SamplingRate/String	48.0 kHz		Y NT
+Audio	142	SamplingCount	48000		N NIY
+Audio	143	Source_SamplingCount			N NIY
+Audio	144	FrameRate	25.000	 fps	N YFY
+Audio	145	FrameRate/String	25.000 FPS (1920 SPF)		Y NT
+Audio	146	FrameRate_Num			N NFN
+Audio	147	FrameRate_Den			N NFN
+Audio	148	FrameCount	25		N NIY
+Audio	149	Source_FrameCount			N NIY
+Audio	150	Resolution		 bit	N NI
+Audio	151	Resolution/String			N NT
+Audio	152	BitDepth	16	 bit	N YIY
+Audio	153	BitDepth/String	16 bits		Y NT
+Audio	154	BitDepth_Detected		 bit	N YIY
+Audio	155	BitDepth_Detected/String			Y NT
+Audio	156	BitDepth_Stored		 bit	N YIY
+Audio	157	BitDepth_Stored/String			Y NT
+Audio	158	Compression_Mode			N YTY
+Audio	159	Compression_Mode/String			Y NT
+Audio	160	Compression_Ratio			Y YF
+Audio	161	Delay	0	 ms	N NFY
+Audio	162	Delay/String			N NT
+Audio	163	Delay/String1			N NT
+Audio	164	Delay/String2			N NT
+Audio	165	Delay/String3	00:00:00.000		N NT
+Audio	166	Delay/String4			N NT
+Audio	167	Delay/String5			N NT
+Audio	168	Delay_Settings			N NTY
+Audio	169	Delay_DropFrame	No		N NTY
+Audio	170	Delay_Source	Container		N NTY
+Audio	171	Delay_Source/String	Container		N NT
+Audio	172	Delay_Original		 ms	N NIY
+Audio	173	Delay_Original/String			N NT
+Audio	174	Delay_Original/String1			N NT
+Audio	175	Delay_Original/String2			N NT
+Audio	176	Delay_Original/String3			N NT
+Audio	177	Delay_Original/String4			N NT
+Audio	178	Delay_Original/String5			N NT
+Audio	179	Delay_Original_Settings			N NT
+Audio	180	Delay_Original_DropFrame			N NTY
+Audio	181	Delay_Original_Source			N NTY
+Audio	182	Video_Delay	0	 ms	N NI
+Audio	183	Video_Delay/String			Y NT
+Audio	184	Video_Delay/String1			N NT
+Audio	185	Video_Delay/String2			N NT
+Audio	186	Video_Delay/String3	00:00:00.000		N NT
+Audio	187	Video_Delay/String4			N NT
+Audio	188	Video_Delay/String5			N NT
+Audio	189	Video0_Delay		 ms	N NI
+Audio	190	Video0_Delay/String			N NT
+Audio	191	Video0_Delay/String1			N NT
+Audio	192	Video0_Delay/String2			N NT
+Audio	193	Video0_Delay/String3			N NT
+Audio	194	Video0_Delay/String4			N NT
+Audio	195	Video0_Delay/String5			N NT
+Audio	196	ReplayGain_Gain		 dB	N YTY
+Audio	197	ReplayGain_Gain/String			Y YT
+Audio	198	ReplayGain_Peak			Y YTY
+Audio	199	StreamSize	96000	 byte	N YIY
+Audio	200	StreamSize/String	93.8 KiB (70%)		Y NT
+Audio	201	StreamSize/String1	94 KiB		N NT
+Audio	202	StreamSize/String2	94 KiB		N NT
+Audio	203	StreamSize/String3	93.8 KiB		N NT
+Audio	204	StreamSize/String4	93.75 KiB		N NT
+Audio	205	StreamSize/String5	93.8 KiB (70%)		N NT
+Audio	206	StreamSize_Proportion	0.69674		N NTY
+Audio	207	StreamSize_Demuxed		 byte	N YIN
+Audio	208	StreamSize_Demuxed/String			N NT
+Audio	209	StreamSize_Demuxed/String1			N NT
+Audio	210	StreamSize_Demuxed/String2			N NT
+Audio	211	StreamSize_Demuxed/String3			N NT
+Audio	212	StreamSize_Demuxed/String4			N NT
+Audio	213	StreamSize_Demuxed/String5			N NT
+Audio	214	Source_StreamSize		 byte	N YIY
+Audio	215	Source_StreamSize/String			Y NT
+Audio	216	Source_StreamSize/String1			N NT
+Audio	217	Source_StreamSize/String2			N NT
+Audio	218	Source_StreamSize/String3			N NT
+Audio	219	Source_StreamSize/String4			N NT
+Audio	220	Source_StreamSize/String5			N NT
+Audio	221	Source_StreamSize_Proportion			N NTY
+Audio	222	StreamSize_Encoded		 byte	N YIY
+Audio	223	StreamSize_Encoded/String			N NT
+Audio	224	StreamSize_Encoded/String1			N NT
+Audio	225	StreamSize_Encoded/String2			N NT
+Audio	226	StreamSize_Encoded/String3			N NT
+Audio	227	StreamSize_Encoded/String4			N NT
+Audio	228	StreamSize_Encoded/String5			N NT
+Audio	229	StreamSize_Encoded_Proportion			N NT
+Audio	230	Source_StreamSize_Encoded		 byte	N YIY
+Audio	231	Source_StreamSize_Encoded/String			N NT
+Audio	232	Source_StreamSize_Encoded/String1			N NT
+Audio	233	Source_StreamSize_Encoded/String2			N NT
+Audio	234	Source_StreamSize_Encoded/String3			N NT
+Audio	235	Source_StreamSize_Encoded/String4			N NT
+Audio	236	Source_StreamSize_Encoded/String5			N NT
+Audio	237	Source_StreamSize_Encoded_Proportion			N NT
+Audio	238	Alignment			N YTY
+Audio	239	Alignment/String			Y NT
+Audio	240	Interleave_VideoFrames			N YFY
+Audio	241	Interleave_Duration		 ms	N YFY
+Audio	242	Interleave_Duration/String			Y NT
+Audio	243	Interleave_Preload		 ms	N YFY
+Audio	244	Interleave_Preload/String			Y NT
+Audio	245	Title			Y YTY
+Audio	246	Encoded_Application			N YTY
+Audio	247	Encoded_Application/String			Y NT
+Audio	248	Encoded_Application_CompanyName			N YTY
+Audio	249	Encoded_Application_Name			N YTY
+Audio	250	Encoded_Application_Version			N YTY
+Audio	251	Encoded_Application_Url			N YT
+Audio	252	Encoded_Library			N YTY
+Audio	253	Encoded_Library/String			Y NT
+Audio	254	Encoded_Library_CompanyName			N YTY
+Audio	255	Encoded_Library_Name			N NTY
+Audio	256	Encoded_Library_Version			N NTY
+Audio	257	Encoded_Library_Date			N NTY
+Audio	258	Encoded_Library_Settings			Y YTY
+Audio	259	Encoded_OperatingSystem			N YTY
+Audio	260	Language			N YTY
+Audio	261	Language/String			Y NT
+Audio	262	Language/String1			N NT
+Audio	263	Language/String2			N NT
+Audio	264	Language/String3			N NT
+Audio	265	Language/String4			N NT
+Audio	266	Language_More			Y YTY
+Audio	267	ServiceKind			N YTY
+Audio	268	ServiceKind/String			Y NT
+Audio	269	Disabled		Yes	N YTY
+Audio	270	Disabled/String			Y NT
+Audio	271	Default		Yes	N YTY
+Audio	272	Default/String			Y NT
+Audio	273	Forced		Yes	N YTY
+Audio	274	Forced/String			Y NT
+Audio	275	AlternateGroup		Yes	N YTY
+Audio	276	AlternateGroup/String			Y NT
+Audio	277	Encoded_Date			Y YTY
+Audio	278	Tagged_Date			Y YTY
+Audio	279	Encryption			Y YTY
+Audio	280	Delay_SDTI	0		N NT
+Audio	281	Locked	Yes		Y NT
+Audio	282	BlockAlignment	2		N NT
+General	0	Count	331		N NI
+General	1	Status			N NI
+General	2	StreamCount	1		N NI
+General	3	StreamKind	General		N NT
+General	4	StreamKind/String	General		N NT
+General	5	StreamKindID	0		N NI
+General	6	StreamKindPos			N NI
+General	7	StreamOrder			N YIY
+General	8	FirstPacketOrder			N YI
+General	9	Inform			N NT
+General	10	ID			N YTY
+General	11	ID/String			Y NT
+General	12	OriginalSourceMedium_ID			N YTY
+General	13	OriginalSourceMedium_ID/String			Y NT
+General	14	UniqueID			N YTY
+General	15	UniqueID/String			Y NT
+General	16	MenuID			N YTY
+General	17	MenuID/String			Y NT
+General	18	GeneralCount			N NIY
+General	19	VideoCount	1		N NIY
+General	20	AudioCount	1		N NIY
+General	21	TextCount			N NIY
+General	22	OtherCount	3		N NIY
+General	23	ImageCount			N NIY
+General	24	MenuCount			N NIY
+General	25	Video_Format_List	MPEG Video		N NT
+General	26	Video_Format_WithHint_List	MPEG Video		N NT
+General	27	Video_Codec_List	MPEG Video		N NT
+General	28	Video_Language_List			N NT
+General	29	Audio_Format_List	PCM		N NT
+General	30	Audio_Format_WithHint_List	PCM		N NT
+General	31	Audio_Codec_List	PCM		N NT
+General	32	Audio_Language_List			N NT
+General	33	Text_Format_List			N NT
+General	34	Text_Format_WithHint_List			N NT
+General	35	Text_Codec_List			N NT
+General	36	Text_Language_List			N NT
+General	37	Other_Format_List	MXF TC / MXF TC / SMPTE TC		N NT
+General	38	Other_Format_WithHint_List	MXF TC / MXF TC / SMPTE TC		N NT
+General	39	Other_Codec_List	MXF TC / MXF TC / SMPTE TC		N NT
+General	40	Other_Language_List			N NT
+General	41	Image_Format_List			N NT
+General	42	Image_Format_WithHint_List			N NT
+General	43	Image_Codec_List			N NT
+General	44	Image_Language_List			N NT
+General	45	Menu_Format_List			N NT
+General	46	Menu_Format_WithHint_List			N NT
+General	47	Menu_Codec_List			N NT
+General	48	Menu_Language_List			N NT
+General	49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/mpeg2_pcm.mxf		Y YT
+General	50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+General	51	FileNameExtension	mpeg2_pcm.mxf		N NT
+General	52	FileName	mpeg2_pcm		N NT
+General	53	FileExtension	mxf		N NTY
+General	54	CompleteName_Last			Y YTY
+General	55	FolderName_Last			N NT
+General	56	FileNameExtension_Last			N NT
+General	57	FileName_Last			N NT
+General	58	FileExtension_Last			N NT
+General	59	Format	MXF		N YTY
+General	60	Format/String	MXF		Y NT
+General	61	Format/Info			Y NT
+General	62	Format/Url			N NT
+General	63	Format/Extensions	mxf		N NT
+General	64	Format_Commercial	MXF		N NT
+General	65	Format_Commercial_IfAny			Y YTY
+General	66	Format_Version	1.3		Y YTY
+General	67	Format_Profile	OP-1a		Y YTY
+General	68	Format_Level			Y YTY
+General	69	Format_Compression			Y YTY
+General	70	Format_Settings	Closed / Complete		Y YTY
+General	71	Format_AdditionalFeatures			N YTY
+General	72	InternetMediaType	application/mxf		N YT
+General	73	CodecID			N YTY
+General	74	CodecID/String			Y NT
+General	75	CodecID/Info			Y NT
+General	76	CodecID/Hint			Y NT
+General	77	CodecID/Url			N NT
+General	78	CodecID_Description			Y YTY
+General	79	CodecID_Version			N YTY
+General	80	CodecID_Compatible			N YTY
+General	81	Interleaved			N YTY
+General	82	Codec			N NT
+General	83	Codec/String			N NT
+General	84	Codec/Info			N NT
+General	85	Codec/Url			N NT
+General	86	Codec/Extensions			N NT
+General	87	Codec_Settings			N NT
+General	88	Codec_Settings_Automatic			N NT
+General	89	FileSize	137785	 byte	N YTY
+General	90	FileSize/String	135 KiB		Y NT
+General	91	FileSize/String1	135 KiB		N NT
+General	92	FileSize/String2	135 KiB		N NT
+General	93	FileSize/String3	135 KiB		N NT
+General	94	FileSize/String4	134.6 KiB		N NT
+General	95	Duration	1000	 ms	N YFY
+General	96	Duration/String	1 s 0 ms		Y NT
+General	97	Duration/String1	1 s 0 ms		N NT
+General	98	Duration/String2	1 s 0 ms		N NT
+General	99	Duration/String3	00:00:01.000		N NT
+General	100	Duration/String4	00:00:01:00		N NT
+General	101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+General	102	Duration_Start			Y YTY
+General	103	Duration_End			Y YTY
+General	104	OverallBitRate_Mode	VBR		N YTY
+General	105	OverallBitRate_Mode/String	Variable		Y NT
+General	106	OverallBitRate	1102280	 bps	N YFY
+General	107	OverallBitRate/String	1 102 kb/s		Y NT
+General	108	OverallBitRate_Minimum		 bps	N YFY
+General	109	OverallBitRate_Minimum/String			Y NT
+General	110	OverallBitRate_Nominal		 bps	N YFY
+General	111	OverallBitRate_Nominal/String			Y NT
+General	112	OverallBitRate_Maximum		 bps	N YFY
+General	113	OverallBitRate_Maximum/String			Y NT
+General	114	FrameRate	25.000	 fps	N YFY
+General	115	FrameRate/String	25.000 FPS		N NT
+General	116	FrameRate_Num			N NFN
+General	117	FrameRate_Den			N NFN
+General	118	FrameCount	25		N NIY
+General	119	Delay		 ms	N YI
+General	120	Delay/String			N NT
+General	121	Delay/String1			N NT
+General	122	Delay/String2			N NT
+General	123	Delay/String3			N NT
+General	124	Delay/String4			N NT
+General	125	Delay/String5			N NT
+General	126	Delay_Settings			N NTY
+General	127	Delay_DropFrame			N NTY
+General	128	Delay_Source			N NTY
+General	129	Delay_Source/String			N NT
+General	130	StreamSize	16785	 byte	N YIY
+General	131	StreamSize/String	16.4 KiB (12%)		N NT
+General	132	StreamSize/String1	16 KiB		N NT
+General	133	StreamSize/String2	16 KiB		N NT
+General	134	StreamSize/String3	16.4 KiB		N NT
+General	135	StreamSize/String4	16.39 KiB		N NT
+General	136	StreamSize/String5	16.4 KiB (12%)		N NT
+General	137	StreamSize_Proportion	0.12182		N NT
+General	138	StreamSize_Demuxed		 byte	N YIN
+General	139	StreamSize_Demuxed/String			N NT
+General	140	StreamSize_Demuxed/String1			N NT
+General	141	StreamSize_Demuxed/String2			N NT
+General	142	StreamSize_Demuxed/String3			N NT
+General	143	StreamSize_Demuxed/String4			N NT
+General	144	StreamSize_Demuxed/String5			N NT
+General	145	HeaderSize			N YIY
+General	146	DataSize			N YIY
+General	147	FooterSize	1593		N YIY
+General	148	IsStreamable			N YTY
+General	149	Album_ReplayGain_Gain		 dB	N YTY
+General	150	Album_ReplayGain_Gain/String			Y YT
+General	151	Album_ReplayGain_Peak			Y YTY
+General	152	Encryption			Y YT
+General	153	Encryption_Format			N YTY
+General	154	Encryption_Length			N YTY
+General	155	Encryption_Method			N YTY
+General	156	Encryption_Mode			N YTY
+General	157	Encryption_Padding			N YTY
+General	158	Encryption_InitializationVector			N YTY
+General	159	UniversalAdID/String			Y NT
+General	160	UniversalAdID_Registry			N YTY
+General	161	UniversalAdID_Value			N YTY
+General	162	Title			N NTY
+General	163	Title_More			N NTY
+General	164	Title/Url			N NT
+General	165	Domain			Y YTY
+General	166	Collection			Y YTY
+General	167	Season			Y YTY
+General	168	Season_Position			Y YIY
+General	169	Season_Position_Total			Y YIY
+General	170	Movie			Y YTY
+General	171	Movie_More			Y YTY
+General	172	Movie/Country			Y YTY
+General	173	Movie/Url			Y YT
+General	174	Album			Y YTY
+General	175	Album_More			Y YTY
+General	176	Album/Sort			Y YTY
+General	177	Album/Performer			Y YTY
+General	178	Album/Performer/Sort			Y YTY
+General	179	Album/Performer/Url			Y YT
+General	180	Comic			Y YTY
+General	181	Comic_More			Y YTY
+General	182	Comic/Position_Total			Y YIY
+General	183	Part			Y YTY
+General	184	Part/Position			Y YIY
+General	185	Part/Position_Total			Y YIY
+General	186	Track			Y YTY
+General	187	Track_More			Y YTY
+General	188	Track/Url			Y YT
+General	189	Track/Sort			Y YTY
+General	190	Track/Position			Y YIY
+General	191	Track/Position_Total			Y YIY
+General	192	PackageName			Y YTY
+General	193	Grouping			Y YTY
+General	194	Chapter			Y YTY
+General	195	SubTrack			Y YTY
+General	196	Original/Album			Y YTY
+General	197	Original/Movie			Y YTY
+General	198	Original/Part			Y YTY
+General	199	Original/Track			Y YTY
+General	200	Compilation		Yes	N YTY
+General	201	Compilation/String			Y NT
+General	202	Performer			Y YTY
+General	203	Performer/Sort			Y YTY
+General	204	Performer/Url			Y YT
+General	205	Original/Performer			Y YTY
+General	206	Accompaniment			Y YTY
+General	207	Composer			Y YTY
+General	208	Composer/Nationality			Y YTY
+General	209	Composer/Sort			Y YTY
+General	210	Arranger			Y YTY
+General	211	Lyricist			Y YTY
+General	212	Original/Lyricist			Y YTY
+General	213	Conductor			Y YTY
+General	214	Director			Y YTY
+General	215	CoDirector			Y YTY
+General	216	AssistantDirector			Y YTY
+General	217	DirectorOfPhotography			Y YTY
+General	218	SoundEngineer			Y YTY
+General	219	ArtDirector			Y YTY
+General	220	ProductionDesigner			Y YTY
+General	221	Choreographer			Y YTY
+General	222	CostumeDesigner			Y YTY
+General	223	Actor			Y YTY
+General	224	Actor_Character			Y YTY
+General	225	WrittenBy			Y YTY
+General	226	ScreenplayBy			Y YTY
+General	227	EditedBy			Y YTY
+General	228	CommissionedBy			Y YTY
+General	229	Producer			Y YTY
+General	230	CoProducer			Y YTY
+General	231	ExecutiveProducer			Y YTY
+General	232	MusicBy			Y YTY
+General	233	DistributedBy			Y YTY
+General	234	OriginalSourceForm/DistributedBy			Y YTY
+General	235	MasteredBy			Y YTY
+General	236	EncodedBy			Y YTY
+General	237	RemixedBy			Y YTY
+General	238	ProductionStudio			Y YTY
+General	239	ThanksTo			Y YTY
+General	240	Publisher			Y YTY
+General	241	Publisher/URL			Y YTY
+General	242	Label			Y YTY
+General	243	Genre			Y YTY
+General	244	PodcastCategory			Y YTY
+General	245	Mood			Y YTY
+General	246	ContentType			Y YTY
+General	247	Subject			Y YTY
+General	248	Description			Y YTY
+General	249	Keywords			Y YTY
+General	250	Summary			Y YTY
+General	251	Synopsis			Y YTY
+General	252	Period			Y YTY
+General	253	LawRating			Y YTY
+General	254	LawRating_Reason			Y YTY
+General	255	ICRA			Y YTY
+General	256	Released_Date			Y YTY
+General	257	Original/Released_Date			Y YTY
+General	258	Recorded_Date			Y YTY
+General	259	Encoded_Date	0-00-00 00:00:00.000		Y YTY
+General	260	Tagged_Date			Y YTY
+General	261	Written_Date			Y YTY
+General	262	Mastered_Date			Y YTY
+General	263	File_Created_Date			N NTY
+General	264	File_Created_Date_Local			N NTY
+General	265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+General	266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY
+General	267	Recorded_Location			Y YTY
+General	268	Written_Location			Y YTY
+General	269	Archival_Location			Y YTY
+General	270	Encoded_Application			N YTY
+General	271	Encoded_Application/String	FFmpeg OP1a Muxer 63.1.101.0.0		Y NT
+General	272	Encoded_Application_CompanyName	FFmpeg		N YTY
+General	273	Encoded_Application_Name	OP1a Muxer		N YTY
+General	274	Encoded_Application_Version	63.1.101.0.0		N YTY
+General	275	Encoded_Application_Url			N YTY
+General	276	Encoded_Library			N YTY
+General	277	Encoded_Library/String	Lavf (linux) 63.1.101.0.0		Y NT
+General	278	Encoded_Library_CompanyName			N YTY
+General	279	Encoded_Library_Name	Lavf (linux)		N NTY
+General	280	Encoded_Library_Version	63.1.101.0.0		N NTY
+General	281	Encoded_Library_Date			N NTY
+General	282	Encoded_Library_Settings			Y YTY
+General	283	Encoded_OperatingSystem			N YTY
+General	284	Cropped			Y YTY
+General	285	Dimensions			Y YTY
+General	286	DotsPerInch			Y YTY
+General	287	Lightness			Y YTY
+General	288	OriginalSourceMedium			Y YTY
+General	289	OriginalSourceForm			Y YTY
+General	290	OriginalSourceForm/NumColors			Y YTY
+General	291	OriginalSourceForm/Name			Y YTY
+General	292	OriginalSourceForm/Cropped			Y YTY
+General	293	OriginalSourceForm/Sharpness			Y YTY
+General	294	Tagged_Application			Y YTY
+General	295	BPM			Y YTY
+General	296	ISRC			Y YTY
+General	297	ISBN			Y YTY
+General	298	BarCode			Y YTY
+General	299	LCCN			Y YTY
+General	300	CatalogNumber			Y YTY
+General	301	LabelCode			Y YTY
+General	302	Owner			Y YTY
+General	303	Copyright			Y YTY
+General	304	Copyright/Url			Y YTY
+General	305	Producer_Copyright			Y YTY
+General	306	TermsOfUse			Y YTY
+General	307	ServiceName			Y YTY
+General	308	ServiceChannel			Y YTY
+General	309	Service/Url			Y YTY
+General	310	ServiceProvider			Y YTY
+General	311	ServiceProvider/Url			Y YTN
+General	312	ServiceType			Y YTY
+General	313	NetworkName			Y YTY
+General	314	OriginalNetworkName			Y YTY
+General	315	Country			Y YTY
+General	316	TimeZone			Y YTY
+General	317	Cover			Y YTY
+General	318	Cover_Description			Y YTY
+General	319	Cover_Type			Y YTY
+General	320	Cover_Mime			Y YTY
+General	321	Cover_Data			N YTY
+General	322	Lyrics			Y YTY
+General	323	Comment			Y YTY
+General	324	Rating			Y YTY
+General	325	Added_Date			Y YTY
+General	326	Played_First_Date			Y YTY
+General	327	Played_Last_Date			Y YTY
+General	328	Played_Count			Y YIY
+General	329	EPG_Positions_Begin			N YIY
+General	330	EPG_Positions_End			N YIY
+General	331	ErrorDetectionType	Per level 1		Y NT
+Image	0	Count	124		N NI
+Image	1	Status			N NI
+Image	2	StreamCount	1		N NI
+Image	3	StreamKind	Image		N NT
+Image	4	StreamKind/String	Image		N NT
+Image	5	StreamKindID	0		N NI
+Image	6	StreamKindPos			N NI
+Image	7	StreamOrder			N YIY
+Image	8	FirstPacketOrder			N YIY
+Image	9	Inform			N NT
+Image	10	ID			N YTY
+Image	11	ID/String			Y NT
+Image	12	OriginalSourceMedium_ID			N YTY
+Image	13	OriginalSourceMedium_ID/String			Y NT
+Image	14	UniqueID			N YTY
+Image	15	UniqueID/String			Y NT
+Image	16	MenuID			N YTY
+Image	17	MenuID/String			Y NT
+Image	18	Title			Y YTY
+Image	19	Format	PNG		N YTY
+Image	20	Format/String	PNG		Y NT
+Image	21	Format/Info	Portable Network Graphic		Y NT
+Image	22	Format/Url			N NT
+Image	23	Format_Commercial	PNG		N NT
+Image	24	Format_Commercial_IfAny			Y YTY
+Image	25	Format_Version			Y NTY
+Image	26	Format_Profile			Y NTY
+Image	27	Format_Settings_Endianness			N YTY
+Image	28	Format_Settings_Packing			N YTY
+Image	29	Format_Compression	LZ77		Y YTY
+Image	30	Format_Settings			Y NT
+Image	31	Format_Settings_Wrapping			Y YTY
+Image	32	Format_AdditionalFeatures			N YTY
+Image	33	InternetMediaType	image/png		N YT
+Image	34	CodecID			Y YTY
+Image	35	CodecID/String			Y NT
+Image	36	CodecID/Info			Y NT
+Image	37	CodecID/Hint			Y NT
+Image	38	CodecID/Url			N NT
+Image	39	CodecID_Description			Y YT
+Image	40	Codec			N NT
+Image	41	Codec/String			N NT
+Image	42	Codec/Family			N NT
+Image	43	Codec/Info			N NT
+Image	44	Codec/Url			N NT
+Image	45	Width	64	 pixel	N YIY
+Image	46	Width/String	64 pixels		Y NT
+Image	47	Width_Offset		 pixel	N YIY
+Image	48	Width_Offset/String			N NT
+Image	49	Width_Original		 pixel	N YIY
+Image	50	Width_Original/String			Y NT
+Image	51	Height	48	 pixel	N YIY
+Image	52	Height/String	48 pixels		Y NT
+Image	53	Height_Offset		 pixel	N YIY
+Image	54	Height_Offset/String			N NT
+Image	55	Height_Original		 pixel	N YIY
+Image	56	Height_Original/String			Y NT
+Image	57	PixelAspectRatio			N YFY
+Image	58	PixelAspectRatio/String			N NT
+Image	59	PixelAspectRatio_Original			N YFY
+Image	60	PixelAspectRatio_Original/String			N NT
+Image	61	DisplayAspectRatio			N YFY
+Image	62	DisplayAspectRatio/String			Y NT
+Image	63	DisplayAspectRatio_Original			N YFY
+Image	64	DisplayAspectRatio_Original/String			Y NT
+Image	65	ColorSpace			Y YTY
+Image	66	ChromaSubsampling			Y YTY
+Image	67	Resolution		 bit	N NI
+Image	68	Resolution/String			N NT
+Image	69	BitDepth	24	 bit	N YIY
+Image	70	BitDepth/String	24 bits		Y NT
+Image	71	Compression_Mode	Lossless		N YTY
+Image	72	Compression_Mode/String	Lossless		Y NT
+Image	73	Compression_Ratio			Y YF
+Image	74	StreamSize	992	 byte	N YIY
+Image	75	StreamSize/String	992 Bytes (100%)		Y NT
+Image	76	StreamSize/String1	992 Bytes		N NT
+Image	77	StreamSize/String2	992 Bytes		N NT
+Image	78	StreamSize/String3	992 Bytes		N NT
+Image	79	StreamSize/String4	992.0 Bytes		N NT
+Image	80	StreamSize/String5	992 Bytes (100%)		N NT
+Image	81	StreamSize_Proportion	1.00000		N NT
+Image	82	StreamSize_Demuxed		 byte	N YIN
+Image	83	StreamSize_Demuxed/String			N NT
+Image	84	StreamSize_Demuxed/String1			N NT
+Image	85	StreamSize_Demuxed/String2			N NT
+Image	86	StreamSize_Demuxed/String3			N NT
+Image	87	StreamSize_Demuxed/String4			N NT
+Image	88	StreamSize_Demuxed/String5			N NT
+Image	89	Encoded_Library			N YTY
+Image	90	Encoded_Library/String			Y NT
+Image	91	Encoded_Library_Name			N NTY
+Image	92	Encoded_Library_Version			N NTY
+Image	93	Encoded_Library_Date			N NTY
+Image	94	Encoded_Library_Settings			Y YTY
+Image	95	Language			N YTY
+Image	96	Language/String			Y NT
+Image	97	Language/String1			N NT
+Image	98	Language/String2			N NT
+Image	99	Language/String3			N NT
+Image	100	Language/String4			N NT
+Image	101	Language_More			Y YTY
+Image	102	ServiceKind			N YTY
+Image	103	ServiceKind/String			Y NT
+Image	104	Disabled		Yes	N YTY
+Image	105	Disabled/String			Y NT
+Image	106	Default		Yes	N YTY
+Image	107	Default/String			Y NT
+Image	108	Forced		Yes	N YTY
+Image	109	Forced/String			Y NT
+Image	110	AlternateGroup		Yes	N YTY
+Image	111	AlternateGroup/String			Y NT
+Image	112	Summary			N NTY
+Image	113	Encoded_Date			Y YTY
+Image	114	Tagged_Date			Y YTY
+Image	115	Encryption			Y YTY
+Image	116	colour_description_present			N YTY
+Image	117	colour_primaries			Y YTY
+Image	118	transfer_characteristics			Y YTY
+Image	119	matrix_coefficients			Y YTY
+Image	120	colour_description_present_Original			N YTY
+Image	121	colour_primaries_Original			Y YTY
+Image	122	transfer_characteristics_Original			Y YTY
+Image	123	matrix_coefficients_Original			Y YTY
+Menu	0	Count	96		N NI
+Menu	1	Status			N NI
+Menu	2	StreamCount	1		N NI
+Menu	3	StreamKind	Menu		N NT
+Menu	4	StreamKind/String	Menu		N NT
+Menu	5	StreamKindID	0		N NI
+Menu	6	StreamKindPos			N NI
+Menu	7	StreamOrder			N YIY
+Menu	8	FirstPacketOrder			N YIY
+Menu	9	Inform			N NT
+Menu	10	ID			N YTY
+Menu	11	ID/String			Y NT
+Menu	12	OriginalSourceMedium_ID			N YTY
+Menu	13	OriginalSourceMedium_ID/String			Y NT
+Menu	14	UniqueID			N YTY
+Menu	15	UniqueID/String			Y NT
+Menu	16	MenuID			N YTY
+Menu	17	MenuID/String			Y NT
+Menu	18	Format			N YTY
+Menu	19	Format/String			N NT
+Menu	20	Format/Info			N NT
+Menu	21	Format/Url			N NT
+Menu	22	Format_Commercial			N NT
+Menu	23	Format_Commercial_IfAny			Y YTY
+Menu	24	Format_Version			Y NTY
+Menu	25	Format_Profile			Y NTY
+Menu	26	Format_Compression			Y NTY
+Menu	27	Format_Settings			Y NTY
+Menu	28	Format_AdditionalFeatures			N YTY
+Menu	29	CodecID			Y YTY
+Menu	30	CodecID/String			Y NT
+Menu	31	CodecID/Info			Y NT
+Menu	32	CodecID/Hint			Y NT
+Menu	33	CodecID/Url			N NT
+Menu	34	CodecID_Description			Y YT
+Menu	35	Codec			N YT
+Menu	36	Codec/String			N NT
+Menu	37	Codec/Info			N NT
+Menu	38	Codec/Url			N NT
+Menu	39	Duration		 ms	N YFY
+Menu	40	Duration/String			Y NT
+Menu	41	Duration/String1			N NT
+Menu	42	Duration/String2			N NT
+Menu	43	Duration/String3			N NT
+Menu	44	Duration/String4			N NT
+Menu	45	Duration/String5			N NT
+Menu	46	Duration_Start			Y YTY
+Menu	47	Duration_End			Y YTY
+Menu	48	Delay		 ms	N NFY
+Menu	49	Delay/String			N NT
+Menu	50	Delay/String1			N NT
+Menu	51	Delay/String2			N NT
+Menu	52	Delay/String3			N NT
+Menu	53	Delay/String4			N NT
+Menu	54	Delay/String5			N NT
+Menu	55	Delay_Settings			N NT
+Menu	56	Delay_DropFrame			N NTY
+Menu	57	Delay_Source			N NTY
+Menu	58	List_StreamKind			N YTY
+Menu	59	List_StreamPos			N YTY
+Menu	60	List			N YT
+Menu	61	List/String			Y NT
+Menu	62	Title			Y YTY
+Menu	63	Language			N YTY
+Menu	64	Language/String			Y NT
+Menu	65	Language/String1			N NT
+Menu	66	Language/String2			N NT
+Menu	67	Language/String3			N NT
+Menu	68	Language/String4			N NT
+Menu	69	Language_More			Y YT
+Menu	70	ServiceKind			N YTY
+Menu	71	ServiceKind/String			Y NT
+Menu	72	ServiceName			Y YTY
+Menu	73	ServiceChannel			Y YTY
+Menu	74	Service/Url			Y YT
+Menu	75	ServiceProvider			Y YTY
+Menu	76	ServiceProvider/Url			Y YTN
+Menu	77	ServiceType			Y YTY
+Menu	78	NetworkName			Y YTY
+Menu	79	Original/NetworkName			Y YTY
+Menu	80	Countries			Y YTY
+Menu	81	TimeZones			Y YTY
+Menu	82	LawRating			Y YTY
+Menu	83	LawRating_Reason			Y YTY
+Menu	84	Disabled		Yes	N YTY
+Menu	85	Disabled/String			Y NT
+Menu	86	Default		Yes	N YTY
+Menu	87	Default/String			Y NT
+Menu	88	Forced		Yes	N YTY
+Menu	89	Forced/String			Y NT
+Menu	90	AlternateGroup		Yes	N YTY
+Menu	91	AlternateGroup/String			Y NT
+Menu	92	Chapters_Pos_Begin	94		N NI
+Menu	93	Chapters_Pos_End	96		N NI
+Menu	94	00:00:00.000	:Intro		Y NT
+Menu	95	00:00:00.500	:Outro		Y NT
+Other	0	Count	188		N NI
+Other	1	Status			N NI
+Other	2	StreamCount	3		N NI
+Other	3	StreamKind	Other		N NT
+Other	4	StreamKind/String	Other		N NT
+Other	5	StreamKindID	0		N NI
+Other	6	StreamKindPos	1		N NI
+Other	7	StreamOrder			N YIY
+Other	8	FirstPacketOrder			N YIY
+Other	9	Inform			N NT
+Other	10	ID	1-Material		N YTY
+Other	11	ID/String	1-Material		Y NT
+Other	12	OriginalSourceMedium_ID			N YTY
+Other	13	OriginalSourceMedium_ID/String			Y NT
+Other	14	UniqueID			N YTY
+Other	15	UniqueID/String			Y NT
+Other	16	MenuID			N YTY
+Other	17	MenuID/String			Y NT
+Other	18	Type	Time code		Y YTY
+Other	19	Format	MXF TC		N YTY
+Other	20	Format/String	MXF TC		Y NT
+Other	21	Format/Info			N NT
+Other	22	Format/Url			N NT
+Other	23	Format_Commercial	MXF TC		N NT
+Other	24	Format_Commercial_IfAny			Y YTY
+Other	25	Format_Version			Y NTY
+Other	26	Format_Profile			Y NTY
+Other	27	Format_Compression			Y NTY
+Other	28	Format_Settings			Y NTY
+Other	29	Format_AdditionalFeatures			N YTY
+Other	30	MuxingMode			Y YTY
+Other	31	CodecID			Y YTY
+Other	32	CodecID/String			Y NT
+Other	33	CodecID/Info			Y NT
+Other	34	CodecID/Hint			Y NT
+Other	35	CodecID/Url			N NT
+Other	36	CodecID_Description			Y YT
+Other	37	Duration		 ms	N YFY
+Other	38	Duration/String			Y NT
+Other	39	Duration/String1			N NT
+Other	40	Duration/String2			N NT
+Other	41	Duration/String3			N NT
+Other	42	Duration/String4			N NT
+Other	43	Duration/String5			N NT
+Other	44	Duration_Start			Y YTY
+Other	45	Duration_End			Y YTY
+Other	46	Source_Duration		 ms	N YFY
+Other	47	Source_Duration/String			Y NT
+Other	48	Source_Duration/String1			N NT
+Other	49	Source_Duration/String2			N NT
+Other	50	Source_Duration/String3			N NT
+Other	51	Source_Duration/String4			N NT
+Other	52	Source_Duration/String5			N NT
+Other	53	Source_Duration_FirstFrame		 ms	N YFY
+Other	54	Source_Duration_FirstFrame/String			Y NT
+Other	55	Source_Duration_FirstFrame/String1			N NT
+Other	56	Source_Duration_FirstFrame/String2			N NT
+Other	57	Source_Duration_FirstFrame/String3			N NT
+Other	58	Source_Duration_FirstFrame/String4			N NT
+Other	59	Source_Duration_FirstFrame/String5			N NT
+Other	60	Source_Duration_LastFrame		 ms	N YFY
+Other	61	Source_Duration_LastFrame/String			Y NT
+Other	62	Source_Duration_LastFrame/String1			N NT
+Other	63	Source_Duration_LastFrame/String2			N NT
+Other	64	Source_Duration_LastFrame/String3			N NT
+Other	65	Source_Duration_LastFrame/String4			N NT
+Other	66	Source_Duration_LastFrame/String5			N NT
+Other	67	BitRate_Mode			N YTY
+Other	68	BitRate_Mode/String			Y NT
+Other	69	BitRate		 bps	N YFY
+Other	70	BitRate/String			Y NT
+Other	71	BitRate_Minimum		 bps	N YFY
+Other	72	BitRate_Minimum/String			Y NT
+Other	73	BitRate_Nominal		 bps	N YFY
+Other	74	BitRate_Nominal/String			Y NT
+Other	75	BitRate_Maximum		 bps	N YFY
+Other	76	BitRate_Maximum/String			Y NT
+Other	77	BitRate_Encoded		 bps	N YFY
+Other	78	BitRate_Encoded/String			N NT
+Other	79	FrameRate	25.000	 fps	N YFY
+Other	80	FrameRate/String	25.000 FPS		Y NT
+Other	81	FrameRate_Num			N NFN
+Other	82	FrameRate_Den			N NFN
+Other	83	FrameCount			N NIY
+Other	84	Source_FrameCount			N NI
+Other	85	Delay		 ms	N NFY
+Other	86	Delay/String			N NT
+Other	87	Delay/String1			N NT
+Other	88	Delay/String2			N NT
+Other	89	Delay/String3			N NT
+Other	90	Delay/String4			N NT
+Other	91	Delay/String5			N NT
+Other	92	Delay_Settings			N NT
+Other	93	Delay_DropFrame			N NT
+Other	94	Delay_Source			N NT
+Other	95	Delay_Source/String			N NT
+Other	96	Delay_Original		 ms	N NIY
+Other	97	Delay_Original/String			N NT
+Other	98	Delay_Original/String1			N NT
+Other	99	Delay_Original/String2			N NT
+Other	100	Delay_Original/String3			N NT
+Other	101	Delay_Original/String4			N NT
+Other	102	Delay_Original/String5			N NT
+Other	103	Delay_Original_Settings			N NT
+Other	104	Delay_Original_DropFrame			N NT
+Other	105	Delay_Original_Source			N NT
+Other	106	Video_Delay		 ms	N NI
+Other	107	Video_Delay/String			Y NT
+Other	108	Video_Delay/String1			N NT
+Other	109	Video_Delay/String2			N NT
+Other	110	Video_Delay/String3			N NT
+Other	111	Video_Delay/String4			N NT
+Other	112	Video_Delay/String5			N NT
+Other	113	Video0_Delay		 ms	N NI
+Other	114	Video0_Delay/String			N NT
+Other	115	Video0_Delay/String1			N NT
+Other	116	Video0_Delay/String2			N NT
+Other	117	Video0_Delay/String3			N NT
+Other	118	Video0_Delay/String4			N NT
+Other	119	Video0_Delay/String5			N NT
+Other	120	TimeStamp_FirstFrame		 ms	N YFY
+Other	121	TimeStamp_FirstFrame/String			Y NT
+Other	122	TimeStamp_FirstFrame/String1			N NT
+Other	123	TimeStamp_FirstFrame/String2			N NT
+Other	124	TimeStamp_FirstFrame/String3			N NT
+Other	125	TimeStamp_FirstFrame/String4			N NT
+Other	126	TimeStamp_FirstFrame/String5			N NT
+Other	127	TimeCode_FirstFrame	00:00:00:00		Y YCY
+Other	128	TimeCode_Settings	Material Package		Y YTY
+Other	129	TimeCode_Striped	Yes	Yes	N YTY
+Other	130	TimeCode_Striped/String	Yes		Y NT
+Other	131	StreamSize		 byte	N YIY
+Other	132	StreamSize/String			Y NT
+Other	133	StreamSize/String1			N NT
+Other	134	StreamSize/String2			N NT
+Other	135	StreamSize/String3			N NT
+Other	136	StreamSize/String4			N NT
+Other	137	StreamSize/String5			N NT
+Other	138	StreamSize_Proportion			N NT
+Other	139	StreamSize_Demuxed		 byte	N YIN
+Other	140	StreamSize_Demuxed/String			N NT
+Other	141	StreamSize_Demuxed/String1			N NT
+Other	142	StreamSize_Demuxed/String2			N NT
+Other	143	StreamSize_Demuxed/String3			N NT
+Other	144	StreamSize_Demuxed/String4			N NT
+Other	145	StreamSize_Demuxed/String5			N NT
+Other	146	Source_StreamSize		 byte	N YIY
+Other	147	Source_StreamSize/String			Y NT
+Other	148	Source_StreamSize/String1			N NT
+Other	149	Source_StreamSize/String2			N NT
+Other	150	Source_StreamSize/String3			N NT
+Other	151	Source_StreamSize/String4			N NT
+Other	152	Source_StreamSize/String5			N NT
+Other	153	Source_StreamSize_Proportion			N NT
+Other	154	StreamSize_Encoded		 byte	N YIY
+Other	155	StreamSize_Encoded/String			N NT
+Other	156	StreamSize_Encoded/String1			N NT
+Other	157	StreamSize_Encoded/String2			N NT
+Other	158	StreamSize_Encoded/String3			N NT
+Other	159	StreamSize_Encoded/String4			N NT
+Other	160	StreamSize_Encoded/String5			N NT
+Other	161	StreamSize_Encoded_Proportion			N NT
+Other	162	Source_StreamSize_Encoded		 byte	N YIY
+Other	163	Source_StreamSize_Encoded/String			N NT
+Other	164	Source_StreamSize_Encoded/String1			N NT
+Other	165	Source_StreamSize_Encoded/String2			N NT
+Other	166	Source_StreamSize_Encoded/String3			N NT
+Other	167	Source_StreamSize_Encoded/String4			N NT
+Other	168	Source_StreamSize_Encoded/String5			N NT
+Other	169	Source_StreamSize_Encoded_Proportion			N NT
+Other	170	Title			Y YTY
+Other	171	Language			N YTY
+Other	172	Language/String			Y NT
+Other	173	Language/String1			N NT
+Other	174	Language/String2			N NT
+Other	175	Language/String3			N NT
+Other	176	Language/String4			N NT
+Other	177	Language_More			Y YTY
+Other	178	ServiceKind			N YTY
+Other	179	ServiceKind/String			Y NT
+Other	180	Disabled		Yes	N YTY
+Other	181	Disabled/String			Y NT
+Other	182	Default		Yes	N YTY
+Other	183	Default/String			Y NT
+Other	184	Forced		Yes	N YTY
+Other	185	Forced/String			Y NT
+Other	186	AlternateGroup		Yes	N YTY
+Other	187	AlternateGroup/String			Y NT
+Text	0	Count	238		N NI
+Text	1	Status			N NI
+Text	2	StreamCount	1		N NI
+Text	3	StreamKind	Text		N NT
+Text	4	StreamKind/String	Text		N NT
+Text	5	StreamKindID	0		N NI
+Text	6	StreamKindPos			N NI
+Text	7	StreamOrder	2		N YIY
+Text	8	FirstPacketOrder			N YI
+Text	9	Inform			N NT
+Text	10	ID	3		N YTY
+Text	11	ID/String	3		Y NT
+Text	12	OriginalSourceMedium_ID			N YTY
+Text	13	OriginalSourceMedium_ID/String			Y NT
+Text	14	UniqueID	7821820491909505967		N YTY
+Text	15	UniqueID/String			Y NT
+Text	16	MenuID			N YTY
+Text	17	MenuID/String			Y NT
+Text	18	Format	UTF-8		N YTY
+Text	19	Format/String	UTF-8		Y NT
+Text	20	Format/Info			Y NT
+Text	21	Format/Url			N NT
+Text	22	Format_Commercial	UTF-8		N NT
+Text	23	Format_Commercial_IfAny			Y YTY
+Text	24	Format_Version			Y NTY
+Text	25	Format_Profile			Y NTY
+Text	26	Format_Compression			Y NTY
+Text	27	Format_Settings			Y NTY
+Text	28	Format_Settings_Wrapping			Y YTY
+Text	29	Format_AdditionalFeatures			N YTY
+Text	30	InternetMediaType			N YT
+Text	31	MuxingMode			Y YTY
+Text	32	MuxingMode_MoreInfo			Y NTY
+Text	33	CodecID	S_TEXT/UTF8		Y YTY
+Text	34	CodecID/String			Y NT
+Text	35	CodecID/Info	UTF-8 Plain Text		Y NT
+Text	36	CodecID/Hint			Y NT
+Text	37	CodecID/Url			N NT
+Text	38	CodecID_Description			Y YT
+Text	39	Codec			N YT
+Text	40	Codec/String			N NT
+Text	41	Codec/Info			N NT
+Text	42	Codec/Url			N NT
+Text	43	Codec/CC			N NT
+Text	44	Duration	1000.000000	 ms	N YFY
+Text	45	Duration/String	1 s 0 ms		Y NT
+Text	46	Duration/String1	1 s 0 ms		N NT
+Text	47	Duration/String2	1 s 0 ms		N NT
+Text	48	Duration/String3	00:00:01.000		N NT
+Text	49	Duration/String4			N NT
+Text	50	Duration/String5	00:00:01.000		N NT
+Text	51	Duration_FirstFrame		 ms	N YFY
+Text	52	Duration_FirstFrame/String			Y NT
+Text	53	Duration_FirstFrame/String1			N NT
+Text	54	Duration_FirstFrame/String2			N NT
+Text	55	Duration_FirstFrame/String3			N NT
+Text	56	Duration_FirstFrame/String4			N NT
+Text	57	Duration_FirstFrame/String5			N NT
+Text	58	Duration_LastFrame		 ms	N YFY
+Text	59	Duration_LastFrame/String			Y NT
+Text	60	Duration_LastFrame/String1			N NT
+Text	61	Duration_LastFrame/String2			N NT
+Text	62	Duration_LastFrame/String3			N NT
+Text	63	Duration_LastFrame/String4			N NT
+Text	64	Duration_LastFrame/String5			N NT
+Text	65	Source_Duration		 ms	N YFY
+Text	66	Source_Duration/String			Y NT
+Text	67	Source_Duration/String1			N NT
+Text	68	Source_Duration/String2			N NT
+Text	69	Source_Duration/String3			N NT
+Text	70	Source_Duration/String4			N NT
+Text	71	Source_Duration/String5			N NT
+Text	72	Source_Duration_FirstFrame		 ms	N YFY
+Text	73	Source_Duration_FirstFrame/String			Y NT
+Text	74	Source_Duration_FirstFrame/String1			N NT
+Text	75	Source_Duration_FirstFrame/String2			N NT
+Text	76	Source_Duration_FirstFrame/String3			N NT
+Text	77	Source_Duration_FirstFrame/String4			N NT
+Text	78	Source_Duration_FirstFrame/String5			N NT
+Text	79	Source_Duration_LastFrame		 ms	N YFY
+Text	80	Source_Duration_LastFrame/String			Y NT
+Text	81	Source_Duration_LastFrame/String1			N NT
+Text	82	Source_Duration_LastFrame/String2			N NT
+Text	83	Source_Duration_LastFrame/String3			N NT
+Text	84	Source_Duration_LastFrame/String4			N NT
+Text	85	Source_Duration_LastFrame/String5			N NT
+Text	86	BitRate_Mode			N YTY
+Text	87	BitRate_Mode/String			Y NT
+Text	88	BitRate		 bps	N YFY
+Text	89	BitRate/String			Y NT
+Text	90	BitRate_Minimum		 bps	N YFY
+Text	91	BitRate_Minimum/String			Y NT
+Text	92	BitRate_Nominal		 bps	N YFY
+Text	93	BitRate_Nominal/String			Y NT
+Text	94	BitRate_Maximum		 bps	N YFY
+Text	95	BitRate_Maximum/String			Y NT
+Text	96	BitRate_Encoded		 bps	N YFY
+Text	97	BitRate_Encoded/String			N NT
+Text	98	Width		 character	N YIY
+Text	99	Width/String			Y NT
+Text	100	Height		 character	N YIY
+Text	101	Height/String			Y NT
+Text	102	FrameRate_Mode			N YTY
+Text	103	FrameRate_Mode/String			N NT
+Text	104	FrameRate		 fps	N YFY
+Text	105	FrameRate/String			N NT
+Text	106	FrameRate_Num			N NFN
+Text	107	FrameRate_Den			N NFN
+Text	108	FrameRate_Minimum		 fps	N YFY
+Text	109	FrameRate_Minimum/String			N NT
+Text	110	FrameRate_Nominal		 fps	N YFY
+Text	111	FrameRate_Nominal/String			N NT
+Text	112	FrameRate_Maximum		 fps	N YFY
+Text	113	FrameRate_Maximum/String			N NT
+Text	114	FrameRate_Original		 fps	N YFY
+Text	115	FrameRate_Original/String			N NT
+Text	116	FrameCount			N NIY
+Text	117	ElementCount			Y NIY
+Text	118	Source_FrameCount			N NIY
+Text	119	ColorSpace			Y YTY
+Text	120	ChromaSubsampling			Y YTY
+Text	121	Resolution		 bit	N NI
+Text	122	Resolution/String			N NT
+Text	123	BitDepth		 bit	N YIY
+Text	124	BitDepth/String			Y NT
+Text	125	Compression_Mode			N YTY
+Text	126	Compression_Mode/String			Y NT
+Text	127	Compression_Ratio			Y YF
+Text	128	Delay		 ms	N NFY
+Text	129	Delay/String			N NT
+Text	130	Delay/String1			N NT
+Text	131	Delay/String2			N NT
+Text	132	Delay/String3			N NT
+Text	133	Delay/String4			N NT
+Text	134	Delay/String5			N NT
+Text	135	Delay_Settings			N NT
+Text	136	Delay_DropFrame			N NTY
+Text	137	Delay_Source			N NTY
+Text	138	Delay_Source/String			N NT
+Text	139	Delay_Original		 ms	N NIY
+Text	140	Delay_Original/String			N NT
+Text	141	Delay_Original/String1			N NT
+Text	142	Delay_Original/String2			N NT
+Text	143	Delay_Original/String3			N NT
+Text	144	Delay_Original/String4			N NT
+Text	145	Delay_Original/String5			N NT
+Text	146	Delay_Original_Settings			N NT
+Text	147	Delay_Original_DropFrame			N NT
+Text	148	Delay_Original_Source			N NTY
+Text	149	Video_Delay		 ms	N NI
+Text	150	Video_Delay/String			Y NT
+Text	151	Video_Delay/String1			N NT
+Text	152	Video_Delay/String2			N NT
+Text	153	Video_Delay/String3			N NT
+Text	154	Video_Delay/String4			N NT
+Text	155	Video_Delay/String5			N NT
+Text	156	Video0_Delay		 ms	N NI
+Text	157	Video0_Delay/String			N NT
+Text	158	Video0_Delay/String1			N NT
+Text	159	Video0_Delay/String2			N NT
+Text	160	Video0_Delay/String3			N NT
+Text	161	Video0_Delay/String4			N NT
+Text	162	Video0_Delay/String5			N NT
+Text	163	StreamSize		 byte	N YIY
+Text	164	StreamSize/String			Y NT
+Text	165	StreamSize/String1			N NT
+Text	166	StreamSize/String2			N NT
+Text	167	StreamSize/String3			N NT
+Text	168	StreamSize/String4			N NT
+Text	169	StreamSize/String5			N NT
+Text	170	StreamSize_Proportion			N NT
+Text	171	StreamSize_Demuxed		 byte	N YIN
+Text	172	StreamSize_Demuxed/String			N NT
+Text	173	StreamSize_Demuxed/String1			N NT
+Text	174	StreamSize_Demuxed/String2			N NT
+Text	175	StreamSize_Demuxed/String3			N NT
+Text	176	StreamSize_Demuxed/String4			N NT
+Text	177	StreamSize_Demuxed/String5			N NT
+Text	178	Source_StreamSize		 byte	N YIY
+Text	179	Source_StreamSize/String			Y NT
+Text	180	Source_StreamSize/String1			N NT
+Text	181	Source_StreamSize/String2			N NT
+Text	182	Source_StreamSize/String3			N NT
+Text	183	Source_StreamSize/String4			N NT
+Text	184	Source_StreamSize/String5			N NT
+Text	185	Source_StreamSize_Proportion			N NT
+Text	186	StreamSize_Encoded		 byte	N YIY
+Text	187	StreamSize_Encoded/String			N NT
+Text	188	StreamSize_Encoded/String1			N NT
+Text	189	StreamSize_Encoded/String2			N NT
+Text	190	StreamSize_Encoded/String3			N NT
+Text	191	StreamSize_Encoded/String4			N NT
+Text	192	StreamSize_Encoded/String5			N NT
+Text	193	StreamSize_Encoded_Proportion			N NT
+Text	194	Source_StreamSize_Encoded		 byte	N YI
+Text	195	Source_StreamSize_Encoded/String			N NT
+Text	196	Source_StreamSize_Encoded/String1			N NT
+Text	197	Source_StreamSize_Encoded/String2			N NT
+Text	198	Source_StreamSize_Encoded/String3			N NT
+Text	199	Source_StreamSize_Encoded/String4			N NT
+Text	200	Source_StreamSize_Encoded/String5			N NT
+Text	201	Source_StreamSize_Encoded_Proportion			N NT
+Text	202	Title			Y YTY
+Text	203	Encoded_Application			N YT
+Text	204	Encoded_Application/String			Y NT
+Text	205	Encoded_Application_CompanyName			N YTY
+Text	206	Encoded_Application_Name			N YTY
+Text	207	Encoded_Application_Version			N YTY
+Text	208	Encoded_Application_Url			N YTY
+Text	209	Encoded_Library	Lavc63.1.101 srt		N YT
+Text	210	Encoded_Library/String	Lavc63.1.101 srt		Y NT
+Text	211	Encoded_Library_CompanyName			N YTY
+Text	212	Encoded_Library_Name			N NTY
+Text	213	Encoded_Library_Version			N NTY
+Text	214	Encoded_Library_Date			N NTY
+Text	215	Encoded_Library_Settings			Y YTY
+Text	216	Encoded_OperatingSystem			N YTY
+Text	217	Language	ja		N YTY
+Text	218	Language/String	Japanese		Y NT
+Text	219	Language/String1	Japanese		N NT
+Text	220	Language/String2	ja		N NT
+Text	221	Language/String3	jpn		N NT
+Text	222	Language/String4	ja		N NT
+Text	223	Language_More			Y YTY
+Text	224	ServiceKind			N YTY
+Text	225	ServiceKind/String			Y NT
+Text	226	Disabled		Yes	N YTY
+Text	227	Disabled/String			Y NT
+Text	228	Default	Yes	Yes	N YTY
+Text	229	Default/String	Yes		Y NT
+Text	230	Forced	Yes	Yes	N YTY
+Text	231	Forced/String	Yes		Y NT
+Text	232	AlternateGroup		Yes	N YTY
+Text	233	AlternateGroup/String			Y NT
+Text	234	Summary			N NTY
+Text	235	Encoded_Date			Y YTY
+Text	236	Tagged_Date			Y YTY
+Text	237	Encryption			Y YTY
+Video	0	Count	379		N NI
+Video	1	Status			N NI
+Video	2	StreamCount	1		N NI
+Video	3	StreamKind	Video		N NT
+Video	4	StreamKind/String	Video		N NT
+Video	5	StreamKindID	0		N NI
+Video	6	StreamKindPos			N NI
+Video	7	StreamOrder	0		N YIY
+Video	8	FirstPacketOrder			N YIY
+Video	9	Inform			N NT
+Video	10	ID	2		N YTY
+Video	11	ID/String	2		Y NT
+Video	12	OriginalSourceMedium_ID			N YTY
+Video	13	OriginalSourceMedium_ID/String			Y NT
+Video	14	UniqueID			N YTY
+Video	15	UniqueID/String			Y NT
+Video	16	MenuID			N YTY
+Video	17	MenuID/String			Y NT
+Video	18	Format	MPEG Video		N YTY
+Video	19	Format/String	MPEG Video		Y NT
+Video	20	Format/Info			Y NT
+Video	21	Format/Url			N NT
+Video	22	Format_Commercial	MPEG-2 Video		N NT
+Video	23	Format_Commercial_IfAny			Y YTY
+Video	24	Format_Version	Version 2		Y YTY
+Video	25	Format_Profile	Main@Main		Y YTY
+Video	26	Format_Level			Y YTY
+Video	27	Format_Tier			Y YTY
+Video	28	Format_Compression			Y YTY
+Video	29	Format_AdditionalFeatures			N YTY
+Video	30	MultiView_BaseProfile			Y YTY
+Video	31	MultiView_Count			Y YTY
+Video	32	MultiView_Layout			Y YTY
+Video	33	HDR_Format			N YTY
+Video	34	HDR_Format/String			Y NT
+Video	35	HDR_Format_Commercial			N NT
+Video	36	HDR_Format_Version			N YTY
+Video	37	HDR_Format_Profile			N YTY
+Video	38	HDR_Format_Level			N YTY
+Video	39	HDR_Format_Settings			N YTY
+Video	40	HDR_Format_Compatibility			N YTY
+Video	41	Format_Settings			Y NT
+Video	42	Format_Settings_BVOP	No	Yes	N YTY
+Video	43	Format_Settings_BVOP/String	No		Y NT
+Video	44	Format_Settings_QPel		Yes	N YTY
+Video	45	Format_Settings_QPel/String			Y NT
+Video	46	Format_Settings_GMC		 warppoint	N YIY
+Video	47	Format_Settings_GMC/String			Y NT
+Video	48	Format_Settings_Matrix	Default		N YTY
+Video	49	Format_Settings_Matrix/String	Default		Y NT
+Video	50	Format_Settings_Matrix_Data			N NTY
+Video	51	Format_Settings_CABAC		Yes	N YTY
+Video	52	Format_Settings_CABAC/String			Y NT
+Video	53	Format_Settings_RefFrames		 frame	N YIY
+Video	54	Format_Settings_RefFrames/String			Y NT
+Video	55	Format_Settings_Pulldown			Y YTY
+Video	56	Format_Settings_Endianness			N YTY
+Video	57	Format_Settings_Packing			N YTY
+Video	58	Format_Settings_FrameMode			Y YTY
+Video	59	Format_Settings_GOP			Y YTY
+Video	60	Format_Settings_PictureStructure			Y YTY
+Video	61	Format_Settings_Wrapping	Frame		Y YTY
+Video	62	InternetMediaType	video/MPV		N YT
+Video	63	MuxingMode			Y YTY
+Video	64	CodecID	0D01030102046001-0401020201011100		Y YTY
+Video	65	CodecID/String			Y NT
+Video	66	CodecID/Info			Y NT
+Video	67	CodecID/Hint			Y NT
+Video	68	CodecID/Url			N NT
+Video	69	CodecID_Description			Y YT
+Video	70	Codec			N NT
+Video	71	Codec/String			N NT
+Video	72	Codec/Family			N NT
+Video	73	Codec/Info			N NT
+Video	74	Codec/Url			N NT
+Video	75	Codec/CC			N NT
+Video	76	Codec_Profile			N NT
+Video	77	Codec_Description			N NT
+Video	78	Codec_Settings			N NT
+Video	79	Codec_Settings_PacketBitStream			N NT
+Video	80	Codec_Settings_BVOP			N NT
+Video	81	Codec_Settings_QPel			N NT
+Video	82	Codec_Settings_GMC		 warppoint	N NT
+Video	83	Codec_Settings_GMC/String			N NT
+Video	84	Codec_Settings_Matrix			N NT
+Video	85	Codec_Settings_Matrix_Data			N NT
+Video	86	Codec_Settings_CABAC			N NT
+Video	87	Codec_Settings_RefFrames			N NT
+Video	88	Duration	1000	 ms	N YFY
+Video	89	Duration/String	1 s 0 ms		Y NT
+Video	90	Duration/String1	1 s 0 ms		N NT
+Video	91	Duration/String2	1 s 0 ms		N NT
+Video	92	Duration/String3	00:00:01.000		N NT
+Video	93	Duration/String4	00:00:01:00		N NT
+Video	94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+Video	95	Duration_FirstFrame		 ms	N YFY
+Video	96	Duration_FirstFrame/String			Y NT
+Video	97	Duration_FirstFrame/String1			N NT
+Video	98	Duration_FirstFrame/String2			N NT
+Video	99	Duration_FirstFrame/String3			N NT
+Video	100	Duration_FirstFrame/String4			N NT
+Video	101	Duration_FirstFrame/String5			N NT
+Video	102	Duration_LastFrame		 ms	N YFY
+Video	103	Duration_LastFrame/String			Y NT
+Video	104	Duration_LastFrame/String1			N NT
+Video	105	Duration_LastFrame/String2			N NT
+Video	106	Duration_LastFrame/String3			N NT
+Video	107	Duration_LastFrame/String4			N NT
+Video	108	Duration_LastFrame/String5			N NT
+Video	109	Source_Duration		 ms	N YFY
+Video	110	Source_Duration/String			Y NT
+Video	111	Source_Duration/String1			N NT
+Video	112	Source_Duration/String2			N NT
+Video	113	Source_Duration/String3			N NT
+Video	114	Source_Duration/String4			N NT
+Video	115	Source_Duration/String5			N NT
+Video	116	Source_Duration_FirstFrame		 ms	N YFY
+Video	117	Source_Duration_FirstFrame/String			Y NT
+Video	118	Source_Duration_FirstFrame/String1			N NT
+Video	119	Source_Duration_FirstFrame/String2			N NT
+Video	120	Source_Duration_FirstFrame/String3			N NT
+Video	121	Source_Duration_FirstFrame/String4			N NT
+Video	122	Source_Duration_FirstFrame/String5			N NT
+Video	123	Source_Duration_LastFrame		 ms	N YFY
+Video	124	Source_Duration_LastFrame/String			Y NT
+Video	125	Source_Duration_LastFrame/String1			N NT
+Video	126	Source_Duration_LastFrame/String2			N NT
+Video	127	Source_Duration_LastFrame/String3			N NT
+Video	128	Source_Duration_LastFrame/String4			N NT
+Video	129	Source_Duration_LastFrame/String5			N NT
+Video	130	BitRate_Mode	VBR		N YTY
+Video	131	BitRate_Mode/String	Variable		Y NT
+Video	132	BitRate	200000	 bps	N YFY
+Video	133	BitRate/String	200 kb/s		Y NT
+Video	134	BitRate_Minimum		 bps	N YFY
+Video	135	BitRate_Minimum/String			Y NT
+Video	136	BitRate_Nominal		 bps	N YFY
+Video	137	BitRate_Nominal/String			Y NT
+Video	138	BitRate_Maximum		 bps	N YFY
+Video	139	BitRate_Maximum/String			Y NT
+Video	140	BitRate_Encoded		 bps	N YFY
+Video	141	BitRate_Encoded/String			N NT
+Video	142	Width	64	 pixel	N YIY
+Video	143	Width/String	64 pixels		Y NT
+Video	144	Width_Offset		 pixel	N YIY
+Video	145	Width_Offset/String			N NT
+Video	146	Width_Original		 pixel	N YIY
+Video	147	Width_Original/String			Y NT
+Video	148	Width_CleanAperture		 pixel	N YIY
+Video	149	Width_CleanAperture/String			Y NT
+Video	150	Height	48	 pixel	N YIY
+Video	151	Height/String	48 pixels		Y NT
+Video	152	Height_Offset		 pixel	N YIY
+Video	153	Height_Offset/String			N NT
+Video	154	Height_Original		 pixel	N YIY
+Video	155	Height_Original/String			Y NT
+Video	156	Height_CleanAperture		 pixel	N YI
+Video	157	Height_CleanAperture/String			Y NT
+Video	158	Stored_Width			N YIY
+Video	159	Stored_Height			N YIY
+Video	160	Sampled_Width	64		N YIY
+Video	161	Sampled_Height	48		N YIY
+Video	162	PixelAspectRatio	1.000		N YFY
+Video	163	PixelAspectRatio/String			N NT
+Video	164	PixelAspectRatio_Original			N YFY
+Video	165	PixelAspectRatio_Original/String			N NT
+Video	166	PixelAspectRatio_CleanAperture			N YF
+Video	167	PixelAspectRatio_CleanAperture/String			N NT
+Video	168	DisplayAspectRatio	1.333		N YFY
+Video	169	DisplayAspectRatio/String	4:3		Y NT
+Video	170	DisplayAspectRatio_Original			N YFY
+Video	171	DisplayAspectRatio_Original/String			Y NT
+Video	172	DisplayAspectRatio_CleanAperture			N YF
+Video	173	DisplayAspectRatio_CleanAperture/String			Y NT
+Video	174	ActiveFormatDescription			N YNY
+Video	175	ActiveFormatDescription/String			Y NT
+Video	176	ActiveFormatDescription_MuxingMode			N YT
+Video	177	Rotation			N YTY
+Video	178	Rotation/String			Y NT
+Video	179	FrameRate_Mode			N YTY
+Video	180	FrameRate_Mode/String			Y NT
+Video	181	FrameRate_Mode_Original			N YTY
+Video	182	FrameRate_Mode_Original/String			Y NT
+Video	183	FrameRate	25.000	 fps	N YFY
+Video	184	FrameRate/String	25.000 FPS		Y NT
+Video	185	FrameRate_Num			N NFN
+Video	186	FrameRate_Den			N NFN
+Video	187	FrameRate_Minimum		 fps	N YFY
+Video	188	FrameRate_Minimum/String			Y NT
+Video	189	FrameRate_Nominal		 fps	N YFY
+Video	190	FrameRate_Nominal/String			Y NT
+Video	191	FrameRate_Maximum		 fps	N YFY
+Video	192	FrameRate_Maximum/String			Y NT
+Video	193	FrameRate_Original		 fps	N YFY
+Video	194	FrameRate_Original/String			Y NT
+Video	195	FrameRate_Original_Num			N NFN
+Video	196	FrameRate_Original_Den			N NFN
+Video	197	FrameCount	25		N NIY
+Video	198	Source_FrameCount			N NI
+Video	199	Standard			Y NTY
+Video	200	Resolution		 bit	N NI
+Video	201	Resolution/String			N NT
+Video	202	Colorimetry			N NT
+Video	203	ColorSpace	YUV		Y YTY
+Video	204	ChromaSubsampling	4:2:0		N YTY
+Video	205	ChromaSubsampling/String	4:2:0		Y NT
+Video	206	ChromaSubsampling_Position			N YTY
+Video	207	BitDepth	8	 bit	N YIY
+Video	208	BitDepth/String	8 bits		Y NT
+Video	209	ScanType	Progressive		N YTY
+Video	210	ScanType/String	Progressive		Y NT
+Video	211	ScanType_Original			N YTY
+Video	212	ScanType_Original/String			Y NT
+Video	213	ScanType_StoreMethod			N YT
+Video	214	ScanType_StoreMethod_FieldsPerBlock			N YT
+Video	215	ScanType_StoreMethod/String			Y NT
+Video	216	ScanOrder			N YTY
+Video	217	ScanOrder/String			Y NT
+Video	218	ScanOrder_Stored			N YTY
+Video	219	ScanOrder_Stored/String			Y NT
+Video	220	ScanOrder_StoredDisplayedInverted			N NT
+Video	221	ScanOrder_Original			N YTY
+Video	222	ScanOrder_Original/String			Y NT
+Video	223	Interlacement			N NT
+Video	224	Interlacement/String			N NT
+Video	225	Compression_Mode	Lossy		N YTY
+Video	226	Compression_Mode/String	Lossy		Y NT
+Video	227	Compression_Ratio			Y YFY
+Video	228	Bits-(Pixel*Frame)	2.604		Y NFN
+Video	229	Delay	0	 ms	N NFY
+Video	230	Delay/String			N NT
+Video	231	Delay/String1			N NT
+Video	232	Delay/String2			N NT
+Video	233	Delay/String3	00:00:00.000		N NT
+Video	234	Delay/String4			N NT
+Video	235	Delay/String5			N NT
+Video	236	Delay_Settings			N NT
+Video	237	Delay_DropFrame	No		N NT
+Video	238	Delay_Source	Container		N NT
+Video	239	Delay_Source/String	Container		N NT
+Video	240	Delay_Original	0	 ms	N NIY
+Video	241	Delay_Original/String			N NT
+Video	242	Delay_Original/String1			N NT
+Video	243	Delay_Original/String2			N NT
+Video	244	Delay_Original/String3	00:00:00.000		N NT
+Video	245	Delay_Original/String4			N NT
+Video	246	Delay_Original/String5			N NT
+Video	247	Delay_Original_Settings	drop_frame_flag=0 / closed_gop=1 / broken_link=0		N NT
+Video	248	Delay_Original_DropFrame	No		N NT
+Video	249	Delay_Original_Source	Stream		N NT
+Video	250	TimeStamp_FirstFrame		 ms	N YFY
+Video	251	TimeStamp_FirstFrame/String			Y NT
+Video	252	TimeStamp_FirstFrame/String1			N NT
+Video	253	TimeStamp_FirstFrame/String2			N NT
+Video	254	TimeStamp_FirstFrame/String3			N NT
+Video	255	TimeStamp_FirstFrame/String4			N NT
+Video	256	TimeStamp_FirstFrame/String5			N NT
+Video	257	TimeCode_FirstFrame	00:00:00:00		Y YCY
+Video	258	TimeCode_Settings			Y YTY
+Video	259	TimeCode_Source	Group of pictures header		Y YTY
+Video	260	Gop_OpenClosed		 	N YTY
+Video	261	Gop_OpenClosed/String			Y NT
+Video	262	Gop_OpenClosed_FirstFrame		 	N YTY
+Video	263	Gop_OpenClosed_FirstFrame/String			Y NT
+Video	264	StreamSize	25000	 byte	N YIY
+Video	265	StreamSize/String	24.4 KiB (18%)		Y NT
+Video	266	StreamSize/String1	24 KiB		N NT
+Video	267	StreamSize/String2	24 KiB		N NT
+Video	268	StreamSize/String3	24.4 KiB		N NT
+Video	269	StreamSize/String4	24.41 KiB		N NT
+Video	270	StreamSize/String5	24.4 KiB (18%)		N NT
+Video	271	StreamSize_Proportion	0.18144		N NT
+Video	272	StreamSize_Demuxed		 byte	N YIN
+Video	273	StreamSize_Demuxed/String			N NT
+Video	274	StreamSize_Demuxed/String1			N NT
+Video	275	StreamSize_Demuxed/String2			N NT
+Video	276	StreamSize_Demuxed/String3			N NT
+Video	277	StreamSize_Demuxed/String4			N NT
+Video	278	StreamSize_Demuxed/String5			N NT
+Video	279	Source_StreamSize		 byte	N YIY
+Video	280	Source_StreamSize/String			Y NT
+Video	281	Source_StreamSize/String1			N NT
+Video	282	Source_StreamSize/String2			N NT
+Video	283	Source_StreamSize/String3			N NT
+Video	284	Source_StreamSize/String4			N NT
+Video	285	Source_StreamSize/String5			N NT
+Video	286	Source_StreamSize_Proportion			N NT
+Video	287	StreamSize_Encoded		 byte	N YIY
+Video	288	StreamSize_Encoded/String			N NT
+Video	289	StreamSize_Encoded/String1			N NT
+Video	290	StreamSize_Encoded/String2			N NT
+Video	291	StreamSize_Encoded/String3			N NT
+Video	292	StreamSize_Encoded/String4			N NT
+Video	293	StreamSize_Encoded/String5			N NT
+Video	294	StreamSize_Encoded_Proportion			N NT
+Video	295	Source_StreamSize_Encoded		 byte	N YIY
+Video	296	Source_StreamSize_Encoded/String			N NT
+Video	297	Source_StreamSize_Encoded/String1			N NT
+Video	298	Source_StreamSize_Encoded/String2			N NT
+Video	299	Source_StreamSize_Encoded/String3			N NT
+Video	300	Source_StreamSize_Encoded/String4			N NT
+Video	301	Source_StreamSize_Encoded/String5			N NT
+Video	302	Source_StreamSize_Encoded_Proportion			N NT
+Video	303	Alignment			Y NTY
+Video	304	Alignment/String			N YT
+Video	305	Title			Y YTY
+Video	306	Encoded_Application			N YTY
+Video	307	Encoded_Application/String			Y NTY
+Video	308	Encoded_Application_CompanyName			N YTY
+Video	309	Encoded_Application_Name			N YTY
+Video	310	Encoded_Application_Version			N YTY
+Video	311	Encoded_Application_Url			N YTY
+Video	312	Encoded_Library			N YTY
+Video	313	Encoded_Library/String			Y NT
+Video	314	Encoded_Library_CompanyName			N YTY
+Video	315	Encoded_Library_Name			N NTY
+Video	316	Encoded_Library_Version			N NTY
+Video	317	Encoded_Library_Date			N NTY
+Video	318	Encoded_Library_Settings			Y YTY
+Video	319	Encoded_OperatingSystem			N YTY
+Video	320	Language			N YTY
+Video	321	Language/String			Y NT
+Video	322	Language/String1			N NT
+Video	323	Language/String2			N NT
+Video	324	Language/String3			N NT
+Video	325	Language/String4			N NT
+Video	326	Language_More			Y YTY
+Video	327	ServiceKind			N YTY
+Video	328	ServiceKind/String			Y NT
+Video	329	Disabled		Yes	N YTY
+Video	330	Disabled/String			Y NT
+Video	331	Default		Yes	N YTY
+Video	332	Default/String			Y NT
+Video	333	Forced		Yes	N YTY
+Video	334	Forced/String			Y NT
+Video	335	AlternateGroup		Yes	N YTY
+Video	336	AlternateGroup/String			Y NT
+Video	337	Encoded_Date			Y YTY
+Video	338	Tagged_Date			Y YTY
+Video	339	Encryption			Y YTY
+Video	340	BufferSize	6144		N YTY
+Video	341	colour_description_present			N YTY
+Video	342	colour_description_present_Source			N YTY
+Video	343	colour_description_present_Original			N YTY
+Video	344	colour_description_present_Original_Source			N YTY
+Video	345	colour_range	Limited		Y YTY
+Video	346	colour_range_Source	Container		N YTY
+Video	347	colour_range_Original			Y YTY
+Video	348	colour_range_Original_Source			N YTY
+Video	349	colour_primaries			Y YTY
+Video	350	colour_primaries_Source			N YTY
+Video	351	colour_primaries_Original			Y YTY
+Video	352	colour_primaries_Original_Source			N YTY
+Video	353	transfer_characteristics			Y YTY
+Video	354	transfer_characteristics_Source			N YTY
+Video	355	transfer_characteristics_Original			Y YTY
+Video	356	transfer_characteristics_Original_Source			N YTY
+Video	357	matrix_coefficients			Y YTY
+Video	358	matrix_coefficients_Source			N YTY
+Video	359	matrix_coefficients_Original			Y YTY
+Video	360	matrix_coefficients_Original_Source			N YTY
+Video	361	MasteringDisplay_ColorPrimaries			Y YTY
+Video	362	MasteringDisplay_ColorPrimaries_Source			N YTY
+Video	363	MasteringDisplay_ColorPrimaries_Original			Y YTY
+Video	364	MasteringDisplay_ColorPrimaries_Original_Source			N YTY
+Video	365	MasteringDisplay_Luminance			Y YTY
+Video	366	MasteringDisplay_Luminance_Source			N YTY
+Video	367	MasteringDisplay_Luminance_Original			Y YTY
+Video	368	MasteringDisplay_Luminance_Original_Source			N YTY
+Video	369	MaxCLL			Y YTY
+Video	370	MaxCLL_Source			N YTY
+Video	371	MaxCLL_Original			Y YTY
+Video	372	MaxCLL_Original_Source			N YTY
+Video	373	MaxFALL			Y YTY
+Video	374	MaxFALL_Source			N YTY
+Video	375	MaxFALL_Original			Y YTY
+Video	376	MaxFALL_Original_Source			N YTY
+Video	377	Delay_SDTI	0		N NT
+Video	378	intra_dc_precision	8		N NT

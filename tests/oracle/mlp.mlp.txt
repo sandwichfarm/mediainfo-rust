@@ -1,0 +1,19 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/mlp.mlp
+Format                                   : MLP
+Format/Info                              : Meridian Lossless Packing
+Commercial name                          : MLP Lossless
+File size                                : 33.3 KiB
+Overall bit rate mode                    : Variable
+
+Audio
+Format                                   : MLP
+Format/Info                              : Meridian Lossless Packing
+Commercial name                          : MLP Lossless
+Bit rate mode                            : Variable
+Maximum bit rate                         : 9 597 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 1 200.000 FPS (40 SPF)
+Bit depth                                : 16 bits
+

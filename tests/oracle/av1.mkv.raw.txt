@@ -1,0 +1,126 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+14	UniqueID	262904156020135568876326849701200244654		N YTY
+15	UniqueID/String	262904156020135568876326849701200244654 (0xC5C97FA812107F90D8BB485A132BAFAE)		Y NT
+19	VideoCount	1		N NIY
+25	Video_Format_List	AV1		N NT
+26	Video_Format_WithHint_List	AV1		N NT
+27	Video_Codec_List	AV1		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/av1.mkv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	av1.mkv		N NT
+52	FileName	av1		N NT
+53	FileExtension	mkv		N NTY
+59	Format	Matroska		N YTY
+60	Format/String	Matroska		Y NT
+62	Format/Url	https://matroska.org/downloads/windows.html		N NT
+63	Format/Extensions	mkv mk3d mka mks		N NT
+64	Format_Commercial	Matroska		N NT
+66	Format_Version	Version 4		Y YTY
+89	FileSize	3640	 byte	N YTY
+90	FileSize/String	3.55 KiB		Y NT
+91	FileSize/String1	4 KiB		N NT
+92	FileSize/String2	3.6 KiB		N NT
+93	FileSize/String3	3.55 KiB		N NT
+94	FileSize/String4	3.555 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+106	OverallBitRate	29120	 bps	N YFY
+107	OverallBitRate/String	29.1 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+130	StreamSize	72	 byte	N YIY
+131	StreamSize/String	72.0 Bytes (2%)		N NT
+132	StreamSize/String1	72 Bytes		N NT
+133	StreamSize/String2	72 Bytes		N NT
+134	StreamSize/String3	72.0 Bytes		N NT
+135	StreamSize/String4	72.00 Bytes		N NT
+136	StreamSize/String5	72.0 Bytes (2%)		N NT
+137	StreamSize_Proportion	0.01978		N NT
+148	IsStreamable	Yes		N YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:52		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:52		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+276	Encoded_Library	Lavf63.1.101		N YTY
+277	Encoded_Library/String	Lavf63.1.101		Y NT
+331	ErrorDetectionType	Per level 1		Y NT
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+14	UniqueID	17198293178899428783		N YTY
+18	Format	AV1		N YTY
+19	Format/String	AV1		Y NT
+20	Format/Info	AOMedia Video 1		Y NT
+21	Format/Url	http://aomedia.org/		N NT
+22	Format_Commercial	AV1		N NT
+25	Format_Profile	Main@L2.0		Y YTY
+64	CodecID	V_AV1		Y YTY
+68	CodecID/Url	http://aomedia.org/		N NT
+88	Duration	1000.000000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+132	BitRate	28541	 bps	N YFY
+133	BitRate/String	28.5 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	CFR		N YTY
+180	FrameRate_Mode/String	Constant		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+228	Bits-(Pixel*Frame)	0.372		Y NFN
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+238	Delay_Source	Container		N NT
+239	Delay_Source/String	Container		N NT
+264	StreamSize	3568	 byte	N YIY
+265	StreamSize/String	3.48 KiB (98%)		Y NT
+266	StreamSize/String1	3 KiB		N NT
+267	StreamSize/String2	3.5 KiB		N NT
+268	StreamSize/String3	3.48 KiB		N NT
+269	StreamSize/String4	3.484 KiB		N NT
+270	StreamSize/String5	3.48 KiB (98%)		N NT
+271	StreamSize_Proportion	0.98022		N NT
+312	Encoded_Library	Lavc63.1.101 libaom-av1		N YTY
+313	Encoded_Library/String	Lavc63.1.101 libaom-av1		Y NT
+331	Default	No	Yes	N YTY
+332	Default/String	No		Y NT
+333	Forced	No	Yes	N YTY
+334	Forced/String	No		Y NT
+341	colour_description_present	Yes		N YTY
+342	colour_description_present_Source	Container		N YTY
+345	colour_range	Limited		Y YTY
+346	colour_range_Source	Container / Stream		N YTY

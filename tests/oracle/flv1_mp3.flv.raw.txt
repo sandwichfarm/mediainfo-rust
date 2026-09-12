@@ -1,0 +1,144 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	Sorenson Spark		N NT
+26	Video_Format_WithHint_List	Sorenson Spark		N NT
+27	Video_Codec_List	Sorenson Spark		N NT
+29	Audio_Format_List	MPEG Audio		N NT
+30	Audio_Format_WithHint_List	MPEG Audio (MP3)		N NT
+31	Audio_Codec_List	MPEG Audio		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/flv1_mp3.flv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	flv1_mp3.flv		N NT
+52	FileName	flv1_mp3		N NT
+53	FileExtension	flv		N NTY
+59	Format	Flash Video		N YTY
+60	Format/String	Flash Video		Y NT
+62	Format/Url	http://www.macromedia.com/go/getflashplayer		N NT
+63	Format/Extensions	flv		N NT
+64	Format_Commercial	Flash Video		N NT
+72	InternetMediaType	video/x-flv		N YT
+89	FileSize	8669	 byte	N YTY
+90	FileSize/String	8.47 KiB		Y NT
+91	FileSize/String1	8 KiB		N NT
+92	FileSize/String2	8.5 KiB		N NT
+93	FileSize/String3	8.47 KiB		N NT
+94	FileSize/String4	8.466 KiB		N NT
+95	Duration	1045	 ms	N YFY
+96	Duration/String	1 s 45 ms		Y NT
+97	Duration/String1	1 s 45 ms		N NT
+98	Duration/String2	1 s 45 ms		N NT
+99	Duration/String3	00:00:01.045		N NT
+100	Duration/String4	00:00:01:01		N NT
+101	Duration/String5	00:00:01.045 (00:00:01:01)		N NT
+106	OverallBitRate	66366	 bps	N YFY
+107	OverallBitRate/String	66.4 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	26		N NIY
+265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+18	Format	Sorenson Spark		N YTY
+19	Format/String	Sorenson Spark		Y NT
+22	Format_Commercial	Sorenson Spark		N NT
+64	CodecID	2		Y YTY
+88	Duration	1025	 ms	N YFY
+89	Duration/String	1 s 25 ms		Y NT
+90	Duration/String1	1 s 25 ms		N NT
+91	Duration/String2	1 s 25 ms		N NT
+92	Duration/String3	00:00:01.025		N NT
+93	Duration/String4	00:00:01:01		N NT
+94	Duration/String5	00:00:01.025 (00:00:01:01)		N NT
+132	BitRate	195312	 bps	N YFY
+133	BitRate/String	195 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	CFR		N YTY
+180	FrameRate_Mode/String	Constant		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	26		N NIY
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+228	Bits-(Pixel*Frame)	2.543		Y NFN
+229	Delay	25	 ms	N NFY
+230	Delay/String	25 ms		N NT
+231	Delay/String1	25 ms		N NT
+232	Delay/String2	25 ms		N NT
+233	Delay/String3	00:00:00.025		N NT
+238	Delay_Source	Container		N NT
+239	Delay_Source/String	Container		N NT
+264	StreamSize	25024	 byte	N YIY
+265	StreamSize/String	24.4 KiB		Y NT
+266	StreamSize/String1	24 KiB		N NT
+267	StreamSize/String2	24 KiB		N NT
+268	StreamSize/String3	24.4 KiB		N NT
+269	StreamSize/String4	24.44 KiB		N NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	MPEG Audio		N YTY
+19	Format/String	MPEG Audio		Y NT
+22	Format_Commercial	MPEG Audio		N YT
+24	Format_Version	Version 1		Y YTY
+25	Format_Profile	Layer 3		Y YTY
+45	InternetMediaType	audio/mpeg		N YT
+48	CodecID	2		Y YTY
+51	CodecID/Hint	MP3		Y NT
+70	Duration	1045	 ms	N YFY
+71	Duration/String	1 s 45 ms		Y NT
+72	Duration/String1	1 s 45 ms		N NT
+73	Duration/String2	1 s 45 ms		N NT
+74	Duration/String3	00:00:01.045		N NT
+76	Duration/String5	00:00:01.045		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	32000	 bps	N YFY
+115	BitRate/String	32.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	44100	 Hz	N YFY
+141	SamplingRate/String	44.1 kHz		Y NT
+142	SamplingCount	46084		N NIY
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+161	Delay	0	 ms	N NFY
+165	Delay/String3	00:00:00.000		N NT
+170	Delay_Source	Container		N NTY
+171	Delay_Source/String	Container		N NT
+182	Video_Delay	-25	 ms	N NI
+183	Video_Delay/String	-25 ms		Y NT
+184	Video_Delay/String1	-25 ms		N NT
+185	Video_Delay/String2	-25 ms		N NT
+186	Video_Delay/String3	-00:00:00.025		N NT
+199	StreamSize	4180	 byte	N YIY
+200	StreamSize/String	4.08 KiB (48%)		Y NT
+201	StreamSize/String1	4 KiB		N NT
+202	StreamSize/String2	4.1 KiB		N NT
+203	StreamSize/String3	4.08 KiB		N NT
+204	StreamSize/String4	4.082 KiB		N NT
+205	StreamSize/String5	4.08 KiB (48%)		N NT
+206	StreamSize_Proportion	0.48218		N NTY
+252	Encoded_Library	LAME4.0		N YTY
+253	Encoded_Library/String	LAME4.0		Y NT

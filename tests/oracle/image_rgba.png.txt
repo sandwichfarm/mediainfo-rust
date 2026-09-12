@@ -1,0 +1,16 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_rgba.png
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+File size                                : 1.06 KiB
+
+Image
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+Format_Compression                       : LZ77
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Bit depth                                : 32 bits
+Compression mode                         : Lossless
+Stream size                              : 1.06 KiB (100%)
+

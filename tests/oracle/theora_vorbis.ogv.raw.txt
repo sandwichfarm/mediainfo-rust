@@ -1,0 +1,125 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	Theora		N NT
+26	Video_Format_WithHint_List	Theora		N NT
+27	Video_Codec_List	Theora		N NT
+29	Audio_Format_List	Vorbis		N NT
+30	Audio_Format_WithHint_List	Vorbis		N NT
+31	Audio_Codec_List	Vorbis		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/theora_vorbis.ogv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	theora_vorbis.ogv		N NT
+52	FileName	theora_vorbis		N NT
+53	FileExtension	ogv		N NTY
+59	Format	Ogg		N YTY
+60	Format/String	Ogg		Y NT
+62	Format/Url	https://en.wikipedia.org/wiki/Ogg		N NT
+63	Format/Extensions	oga ogg ogm ogv ogx opus spx		N NT
+64	Format_Commercial	Ogg		N NT
+72	InternetMediaType	video/ogg		N YT
+89	FileSize	11131	 byte	N YTY
+90	FileSize/String	10.9 KiB		Y NT
+91	FileSize/String1	11 KiB		N NT
+92	FileSize/String2	11 KiB		N NT
+93	FileSize/String3	10.9 KiB		N NT
+94	FileSize/String4	10.87 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	89048	 bps	N YFY
+107	OverallBitRate/String	89.0 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+265	File_Modified_Date	UTC 2026-09-12 01:12:53		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:53		N NTY
+270	Encoded_Application	Lavc63.1.101 libtheora		N YTY
+271	Encoded_Application/String	Lavc63.1.101 libtheora		Y NT
+== Video #0 (379 fields)
+0	Count	379		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+10	ID	2225026903		N YTY
+11	ID/String	2225026903 (0x849F3757)		Y NT
+18	Format	Theora		N YTY
+19	Format/String	Theora		Y NT
+21	Format/Url	http://www.theora.org/		N NT
+22	Format_Commercial	Theora		N NT
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+225	Compression_Mode	Lossy		N YTY
+226	Compression_Mode/String	Lossy		Y NT
+312	Encoded_Library	Lavf63.1.101		N YTY
+313	Encoded_Library/String	Lavf63.1.101		Y NT
+377	FrameCount_Source	General_Duration		N NTN
+378	Duration_Source	General_Duration		N NTN
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+10	ID	469955146		N YTY
+11	ID/String	469955146 (0x1C02F24A)		Y NT
+18	Format	Vorbis		N YTY
+19	Format/String	Vorbis		Y NT
+21	Format/Url	http://www.vorbis.com/		N NT
+22	Format_Commercial	Vorbis		N YT
+36	Format_Settings_Floor	1		Y YTY
+45	InternetMediaType	audio/vorbis		N YT
+70	Duration	1000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+76	Duration/String5	00:00:01.000		N NT
+112	BitRate_Mode	VBR		N YTY
+113	BitRate_Mode/String	Variable		Y NT
+114	BitRate	80000	 bps	N YFY
+115	BitRate/String	80.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+199	StreamSize	10000	 byte	N YIY
+200	StreamSize/String	9.77 KiB (90%)		Y NT
+201	StreamSize/String1	10 KiB		N NT
+202	StreamSize/String2	9.8 KiB		N NT
+203	StreamSize/String3	9.77 KiB		N NT
+204	StreamSize/String4	9.766 KiB		N NT
+205	StreamSize/String5	9.77 KiB (90%)		N NT
+206	StreamSize_Proportion	0.89839		N NTY
+252	Encoded_Library	Lavf63.1.101		N YTY
+253	Encoded_Library/String	Lavf63.1.101		Y NT

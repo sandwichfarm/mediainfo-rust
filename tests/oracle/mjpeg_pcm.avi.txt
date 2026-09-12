@@ -1,0 +1,42 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/mjpeg_pcm.avi
+Format                                   : AVI
+Format/Info                              : Audio Video Interleave
+File size                                : 130 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate                         : 1 067 kb/s
+Writing application                      : Lavf63.1.101
+
+Video
+ID                                       : 0
+Format                                   : JPEG
+Codec ID                                 : MJPG
+Duration                                 : 1 s 0 ms
+Bit rate                                 : 206 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Compression mode                         : Lossy
+Bits/(Pixel*Frame)                       : 2.677
+Stream size                              : 25.1 KiB (19%)
+
+Audio
+ID                                       : 1
+Format                                   : PCM
+Format settings                          : Little / Signed
+Codec ID                                 : 1
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 768 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 93.8 KiB (72%)
+Alignment                                : Aligned on interleaves
+Interleave, duration                     : 21  ms (0.53 video frame)
+

@@ -1,0 +1,22 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/flac.oga
+Format                                   : Ogg
+Format/Info                              : Free Lossless Audio Codec
+File size                                : 16.8 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 138 kb/s
+
+Audio
+ID                                       : 2856070252 (0xAA3C2C6C)
+Format                                   : FLAC
+Format/Info                              : Free Lossless Audio Codec
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression mode                         : Lossless
+Writing library                          : Lavf63.1.101
+

@@ -1,0 +1,112 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+25	Video_Format_List	DV		N NT
+26	Video_Format_WithHint_List	DV		N NT
+27	Video_Codec_List	DV		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/dv.dv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	dv.dv		N NT
+52	FileName	dv		N NT
+53	FileExtension	dv		N NTY
+59	Format	DV		N YTY
+60	Format/String	DV		Y NT
+63	Format/Extensions	dv dif		N NT
+64	Format_Commercial	DV		N NT
+72	InternetMediaType	video/DV		N YT
+89	FileSize	720000	 byte	N YTY
+90	FileSize/String	703 KiB		Y NT
+91	FileSize/String1	703 KiB		N NT
+92	FileSize/String2	703 KiB		N NT
+93	FileSize/String3	703 KiB		N NT
+94	FileSize/String4	703.1 KiB		N NT
+95	Duration	200	 ms	N YFY
+96	Duration/String	200 ms		Y NT
+97	Duration/String1	200 ms		N NT
+98	Duration/String2	200 ms		N NT
+99	Duration/String3	00:00:00.200		N NT
+100	Duration/String4	00:00:00:05		N NT
+101	Duration/String5	00:00:00.200 (00:00:00:05)		N NT
+104	OverallBitRate_Mode	CBR		N YTY
+105	OverallBitRate_Mode/String	Constant		Y NT
+106	OverallBitRate	28800000	 bps	N YFY
+107	OverallBitRate/String	28.8 Mb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	5		N NIY
+130	StreamSize	108960	 byte	N YIY
+131	StreamSize/String	106 KiB (15%)		N NT
+132	StreamSize/String1	106 KiB		N NT
+133	StreamSize/String2	106 KiB		N NT
+134	StreamSize/String3	106 KiB		N NT
+135	StreamSize/String4	106.4 KiB		N NT
+136	StreamSize/String5	106 KiB (15%)		N NT
+137	StreamSize_Proportion	0.15133		N NT
+258	Recorded_Date	1970-01-01 00:00:00.000		Y YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+18	Format	DV		N YTY
+19	Format/String	DV		Y NT
+22	Format_Commercial	DV		N NT
+62	InternetMediaType	video/DV		N YT
+88	Duration	200	 ms	N YFY
+89	Duration/String	200 ms		Y NT
+90	Duration/String1	200 ms		N NT
+91	Duration/String2	200 ms		N NT
+92	Duration/String3	00:00:00.200		N NT
+93	Duration/String4	00:00:00:05		N NT
+94	Duration/String5	00:00:00.200 (00:00:00:05)		N NT
+130	BitRate_Mode	CBR		N YTY
+131	BitRate_Mode/String	Constant		Y NT
+132	BitRate	24441600	 bps	N YFY
+133	BitRate/String	24.4 Mb/s		Y NT
+142	Width	720	 pixel	N YIY
+143	Width/String	720 pixels		Y NT
+150	Height	576	 pixel	N YIY
+151	Height/String	576 pixels		Y NT
+162	PixelAspectRatio	1.067		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	CFR		N YTY
+180	FrameRate_Mode/String	Constant		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	5		N NIY
+199	Standard	PAL		Y NTY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Interlaced		N YTY
+210	ScanType/String	Interlaced		Y NT
+216	ScanOrder	BFF		N YTY
+217	ScanOrder/String	Bottom Field First		Y NT
+225	Compression_Mode	Lossy		N YTY
+226	Compression_Mode/String	Lossy		Y NT
+228	Bits-(Pixel*Frame)	2.357		Y NFN
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+237	Delay_DropFrame	No		N NT
+238	Delay_Source	Stream		N NT
+239	Delay_Source/String	Raw stream		N NT
+257	TimeCode_FirstFrame	00:00:00:00		Y YCY
+259	TimeCode_Source	Subcode time code		Y YTY
+264	StreamSize	611040	 byte	N YIY
+265	StreamSize/String	597 KiB (85%)		Y NT
+266	StreamSize/String1	597 KiB		N NT
+267	StreamSize/String2	597 KiB		N NT
+268	StreamSize/String3	597 KiB		N NT
+269	StreamSize/String4	596.7 KiB		N NT
+270	StreamSize/String5	597 KiB (85%)		N NT
+271	StreamSize_Proportion	0.84867		N NT

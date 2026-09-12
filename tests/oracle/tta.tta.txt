@@ -1,0 +1,20 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/tta.tta
+Format                                   : TTA
+File size                                : 15.5 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 127 kb/s
+ENCODER                                  : Lavf63.1.101
+
+Audio
+Format                                   : TTA
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 126 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression ratio                        : 6.091
+Stream size                              : 15.4 KiB (99%)
+

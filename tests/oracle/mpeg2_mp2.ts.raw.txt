@@ -1,0 +1,217 @@
+== General #0 (333 fields)
+0	Count	333		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+10	ID	1		N YTY
+11	ID/String	1 (0x1)		Y NT
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+24	MenuCount	1		N NIY
+25	Video_Format_List	MPEG Video		N NT
+26	Video_Format_WithHint_List	MPEG Video		N NT
+27	Video_Codec_List	MPEG Video		N NT
+29	Audio_Format_List	MPEG Audio		N NT
+30	Audio_Format_WithHint_List	MPEG Audio		N NT
+31	Audio_Codec_List	MPEG Audio		N NT
+45	Menu_Format_List	MPEG Video / MPEG Audio		N NT
+46	Menu_Format_WithHint_List	MPEG Video / MPEG Audio		N NT
+47	Menu_Codec_List	MPEG Video / MPEG Audio		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/mpeg2_mp2.ts		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	mpeg2_mp2.ts		N NT
+52	FileName	mpeg2_mp2		N NT
+53	FileExtension	ts		N NTY
+59	Format	MPEG-TS		N YTY
+60	Format/String	MPEG-TS		Y NT
+63	Format/Extensions	ts m2t m2s m4t m4s tmf ts tp trp ty		N NT
+64	Format_Commercial	MPEG-TS		N NT
+72	InternetMediaType	video/MP2T		N YT
+89	FileSize	19552	 byte	N YTY
+90	FileSize/String	19.1 KiB		Y NT
+91	FileSize/String1	19 KiB		N NT
+92	FileSize/String2	19 KiB		N NT
+93	FileSize/String3	19.1 KiB		N NT
+94	FileSize/String4	19.09 KiB		N NT
+95	Duration	960.000000	 ms	N YFY
+96	Duration/String	960 ms		Y NT
+97	Duration/String1	960 ms		N NT
+98	Duration/String2	960 ms		N NT
+99	Duration/String3	00:00:00.960		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:00.960 (00:00:01:00)		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	130033	 bps	N YFY
+107	OverallBitRate/String	130 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY
+331	OverallBitRate_Precision_Min	129957		N NT
+332	OverallBitRate_Precision_Max	130109		N NT
+== Video #0 (378 fields)
+0	Count	378		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0-0		N YIY
+10	ID	256		N YTY
+11	ID/String	256 (0x100)		Y NT
+16	MenuID	1		N YTY
+17	MenuID/String	1 (0x1)		Y NT
+18	Format	MPEG Video		N YTY
+19	Format/String	MPEG Video		Y NT
+22	Format_Commercial	MPEG-2 Video		N NT
+24	Format_Version	Version 2		Y YTY
+25	Format_Profile	Main@Main		Y YTY
+42	Format_Settings_BVOP	No	Yes	N YTY
+43	Format_Settings_BVOP/String	No		Y NT
+48	Format_Settings_Matrix	Default		N YTY
+49	Format_Settings_Matrix/String	Default		Y NT
+62	InternetMediaType	video/MPV		N YT
+64	CodecID	2		Y YTY
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+130	BitRate_Mode	VBR		N YTY
+131	BitRate_Mode/String	Variable		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Progressive		N YTY
+210	ScanType/String	Progressive		Y NT
+225	Compression_Mode	Lossy		N YTY
+226	Compression_Mode/String	Lossy		Y NT
+229	Delay	1440.000000	 ms	N NFY
+230	Delay/String	1 s 440 ms		N NT
+231	Delay/String1	1 s 440 ms		N NT
+232	Delay/String2	1 s 440 ms		N NT
+233	Delay/String3	00:00:01.440		N NT
+237	Delay_DropFrame	No		N NT
+238	Delay_Source	Container		N NT
+239	Delay_Source/String	Container		N NT
+240	Delay_Original	0	 ms	N NIY
+244	Delay_Original/String3	00:00:00.000		N NT
+247	Delay_Original_Settings	drop_frame_flag=0 / closed_gop=1 / broken_link=0		N NT
+248	Delay_Original_DropFrame	No		N NT
+249	Delay_Original_Source	Stream		N NT
+257	TimeCode_FirstFrame	00:00:00:00		Y YCY
+259	TimeCode_Source	Group of pictures header		Y YTY
+340	BufferSize	6144		N YTY
+377	intra_dc_precision	8		N NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0-1		N YIY
+10	ID	257		N YTY
+11	ID/String	257 (0x101)		Y NT
+16	MenuID	1		N YTY
+17	MenuID/String	1 (0x1)		Y NT
+18	Format	MPEG Audio		N YTY
+19	Format/String	MPEG Audio		Y NT
+22	Format_Commercial	MPEG Audio		N YT
+24	Format_Version	Version 1		Y YTY
+25	Format_Profile	Layer 2		Y YTY
+45	InternetMediaType	audio/mpeg		N YT
+48	CodecID	3		Y YTY
+70	Duration	1008	 ms	N YFY
+71	Duration/String	1 s 8 ms		Y NT
+72	Duration/String1	1 s 8 ms		N NT
+73	Duration/String2	1 s 8 ms		N NT
+74	Duration/String3	00:00:01.008		N NT
+75	Duration/String4	00:00:01:00		N NT
+76	Duration/String5	00:00:01.008 (00:00:01:00)		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	64000	 bps	N YFY
+115	BitRate/String	64.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+139	SamplesPerFrame	1152		N YFY
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48384		N NIY
+144	FrameRate	41.667	 fps	N YFY
+145	FrameRate/String	41.667 FPS (1152 SPF)		Y NT
+148	FrameCount	42		N NIY
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+161	Delay	1429.977778	 ms	N NFY
+162	Delay/String	1 s 430 ms		N NT
+163	Delay/String1	1 s 430 ms		N NT
+164	Delay/String2	1 s 430 ms		N NT
+165	Delay/String3	00:00:01.430		N NT
+170	Delay_Source	Container		N NTY
+171	Delay_Source/String	Container		N NT
+182	Video_Delay	-10	 ms	N NI
+183	Video_Delay/String	-10 ms		Y NT
+184	Video_Delay/String1	-10 ms		N NT
+185	Video_Delay/String2	-10 ms		N NT
+186	Video_Delay/String3	-00:00:00.010		N NT
+199	StreamSize	8064	 byte	N YIY
+200	StreamSize/String	7.88 KiB (41%)		Y NT
+201	StreamSize/String1	8 KiB		N NT
+202	StreamSize/String2	7.9 KiB		N NT
+203	StreamSize/String3	7.88 KiB		N NT
+204	StreamSize/String4	7.875 KiB		N NT
+205	StreamSize/String5	7.88 KiB (41%)		N NT
+206	StreamSize_Proportion	0.41244		N NTY
+== Menu #0 (96 fields)
+0	Count	96		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Menu		N NT
+4	StreamKind/String	Menu		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	4096		N YTY
+11	ID/String	4096 (0x1000)		Y NT
+16	MenuID	1		N YTY
+17	MenuID/String	1 (0x1)		Y NT
+18	Format	MPEG Video / MPEG Audio		N YTY
+19	Format/String	MPEG Video / MPEG Audio		N NT
+22	Format_Commercial	MPEG Video / MPEG Audio		N NT
+39	Duration	960.000000	 ms	N YFY
+40	Duration/String	960 ms		Y NT
+41	Duration/String1	960 ms		N NT
+42	Duration/String2	960 ms		N NT
+43	Duration/String3	00:00:00.960		N NT
+45	Duration/String5	00:00:00.960		N NT
+48	Delay	700.000000	 ms	N NFY
+49	Delay/String	700 ms		N NT
+50	Delay/String1	700 ms		N NT
+51	Delay/String2	700 ms		N NT
+52	Delay/String3	00:00:00.700		N NT
+58	List_StreamKind	1 / 2		N YTY
+59	List_StreamPos	0 / 0		N YTY
+60	List	256 / 257		N YT
+61	List/String	256 (0x100) (MPEG Video) / 257 (0x101) (MPEG Audio)		Y NT
+72	ServiceName	Service01		Y YTY
+75	ServiceProvider	FFmpeg		Y YTY
+77	ServiceType	digital television		Y YTY
+94	pointer_field	0		N NT
+95	section_length	23		N NT

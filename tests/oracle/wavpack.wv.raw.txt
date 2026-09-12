@@ -1,0 +1,85 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	WavPack		N NT
+30	Audio_Format_WithHint_List	WavPack		N NT
+31	Audio_Codec_List	WavPack		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/wavpack.wv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	wavpack.wv		N NT
+52	FileName	wavpack		N NT
+53	FileExtension	wv		N NTY
+59	Format	WavPack		N YTY
+60	Format/String	WavPack		Y NT
+62	Format/Url	http://www.wavpack.com		N NT
+63	Format/Extensions	wv wvc		N NT
+64	Format_Commercial	WavPack		N NT
+89	FileSize	26200	 byte	N YTY
+90	FileSize/String	25.6 KiB		Y NT
+91	FileSize/String1	26 KiB		N NT
+92	FileSize/String2	26 KiB		N NT
+93	FileSize/String3	25.6 KiB		N NT
+94	FileSize/String4	25.59 KiB		N NT
+95	Duration	42	 ms	N YFY
+96	Duration/String	42 ms		Y NT
+97	Duration/String1	42 ms		N NT
+98	Duration/String2	42 ms		N NT
+99	Duration/String3	00:00:00.042		N NT
+101	Duration/String5	00:00:00.042		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	4990476	 bps	N YFY
+107	OverallBitRate/String	4 990 kb/s		Y NT
+130	StreamSize	92	 byte	N YIY
+131	StreamSize/String	92.0 Bytes (0%)		N NT
+132	StreamSize/String1	92 Bytes		N NT
+133	StreamSize/String2	92 Bytes		N NT
+134	StreamSize/String3	92.0 Bytes		N NT
+135	StreamSize/String4	92.00 Bytes		N NT
+136	StreamSize/String5	92.0 Bytes (0%)		N NT
+137	StreamSize_Proportion	0.00351		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+331	ENCODER	Lavf63.1.101		Y NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	WavPack		N YTY
+19	Format/String	WavPack		Y NT
+21	Format/Url	http://www.wavpack.com		N NT
+22	Format_Commercial	WavPack		N YT
+25	Format_Profile	4.16		Y YTY
+28	Format_Settings	Lossless		Y NT
+70	Duration	42	 ms	N YFY
+71	Duration/String	42 ms		Y NT
+72	Duration/String1	42 ms		N NT
+73	Duration/String2	42 ms		N NT
+74	Duration/String3	00:00:00.042		N NT
+76	Duration/String5	00:00:00.042		N NT
+112	BitRate_Mode	VBR		N YTY
+113	BitRate_Mode/String	Variable		Y NT
+114	BitRate	4972952	 bps	N YFY
+115	BitRate/String	4 973 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	2016		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+160	Compression_Ratio	0.154		Y YF
+199	StreamSize	26108	 byte	N YIY
+200	StreamSize/String	25.5 KiB (100%)		Y NT
+201	StreamSize/String1	25 KiB		N NT
+202	StreamSize/String2	25 KiB		N NT
+203	StreamSize/String3	25.5 KiB		N NT
+204	StreamSize/String4	25.50 KiB		N NT
+205	StreamSize/String5	25.5 KiB (100%)		N NT
+206	StreamSize_Proportion	0.99649		N NTY

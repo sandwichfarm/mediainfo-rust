@@ -1,0 +1,27 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.obu		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	raw.obu		N NT
+52	FileName	raw		N NT
+53	FileExtension	obu		N NTY
+89	FileSize	2471	 byte	N YTY
+90	FileSize/String	2.41 KiB		Y NT
+91	FileSize/String1	2 KiB		N NT
+92	FileSize/String2	2.4 KiB		N NT
+93	FileSize/String3	2.41 KiB		N NT
+94	FileSize/String4	2.413 KiB		N NT
+130	StreamSize	2471	 byte	N YIY
+131	StreamSize/String	2.41 KiB (100%)		N NT
+132	StreamSize/String1	2 KiB		N NT
+133	StreamSize/String2	2.4 KiB		N NT
+134	StreamSize/String3	2.41 KiB		N NT
+135	StreamSize/String4	2.413 KiB		N NT
+136	StreamSize/String5	2.41 KiB (100%)		N NT
+137	StreamSize_Proportion	1.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY

@@ -1,0 +1,20 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/aac.aac
+Format                                   : ADTS
+Format/Info                              : Audio Data Transport Stream
+File size                                : 4.34 KiB
+Overall bit rate mode                    : Variable
+
+Audio
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Format version                           : Version 4
+Codec ID                                 : 2
+Bit rate mode                            : Variable
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+Stream size                              : 4.34 KiB (100%)
+

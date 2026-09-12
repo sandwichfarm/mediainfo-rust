@@ -1,0 +1,22 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.m4v
+Format                                   : MPEG-4 Visual
+File size                                : 3.07 KiB
+
+Video
+Format                                   : MPEG-4 Visual
+Format profile                           : Simple@L1
+Format settings, BVOP                    : No
+Format settings, QPel                    : No
+Format settings, GMC                     : No warppoints
+Format settings, Matrix                  : Default (H.263)
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Compression mode                         : Lossy
+Writing library                          : Lavc63.1.101
+

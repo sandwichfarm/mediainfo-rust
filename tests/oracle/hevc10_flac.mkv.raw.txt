@@ -1,0 +1,166 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+14	UniqueID	273698210528869819626741401621850166056		N YTY
+15	UniqueID/String	273698210528869819626741401621850166056 (0xCDE85BA1D7C210E8CFC7D3EDE3AF1328)		Y NT
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	HEVC		N NT
+26	Video_Format_WithHint_List	HEVC		N NT
+27	Video_Codec_List	HEVC		N NT
+29	Audio_Format_List	FLAC		N NT
+30	Audio_Format_WithHint_List	FLAC		N NT
+31	Audio_Codec_List	FLAC		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/hevc10_flac.mkv		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	hevc10_flac.mkv		N NT
+52	FileName	hevc10_flac		N NT
+53	FileExtension	mkv		N NTY
+59	Format	Matroska		N YTY
+60	Format/String	Matroska		Y NT
+62	Format/Url	https://matroska.org/downloads/windows.html		N NT
+63	Format/Extensions	mkv mk3d mka mks		N NT
+64	Format_Commercial	Matroska		N NT
+66	Format_Version	Version 4		Y YTY
+89	FileSize	22078	 byte	N YTY
+90	FileSize/String	21.6 KiB		Y NT
+91	FileSize/String1	22 KiB		N NT
+92	FileSize/String2	22 KiB		N NT
+93	FileSize/String3	21.6 KiB		N NT
+94	FileSize/String4	21.56 KiB		N NT
+95	Duration	1000	 ms	N YFY
+96	Duration/String	1 s 0 ms		Y NT
+97	Duration/String1	1 s 0 ms		N NT
+98	Duration/String2	1 s 0 ms		N NT
+99	Duration/String3	00:00:01.000		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+104	OverallBitRate_Mode	VBR		N YTY
+105	OverallBitRate_Mode/String	Variable		Y NT
+106	OverallBitRate	176624	 bps	N YFY
+107	OverallBitRate/String	177 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+148	IsStreamable	Yes		N YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:52		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:52		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+276	Encoded_Library	Lavf63.1.101		N YTY
+277	Encoded_Library/String	Lavf63.1.101		Y NT
+331	ErrorDetectionType	Per level 1		Y NT
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+14	UniqueID	1625379003352195936		N YTY
+18	Format	HEVC		N YTY
+19	Format/String	HEVC		Y NT
+20	Format/Info	High Efficiency Video Coding		Y NT
+21	Format/Url	http://www.itu.int		N NT
+22	Format_Commercial	HEVC		N NT
+25	Format_Profile	Main 10@L1@Main		Y YTY
+62	InternetMediaType	video/H265		N YT
+64	CodecID	V_MPEGH/ISO/HEVC		Y YTY
+88	Duration	1000.000000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	CFR		N YTY
+180	FrameRate_Mode/String	Constant		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	10	 bit	N YIY
+208	BitDepth/String	10 bits		Y NT
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+238	Delay_Source	Container		N NT
+239	Delay_Source/String	Container		N NT
+312	Encoded_Library	x265 - 4.3:[Linux][GCC 16.1.1][64 bit] 10bit		N YTY
+313	Encoded_Library/String	x265 4.3:[Linux][GCC 16.1.1][64 bit] 10bit		Y NT
+315	Encoded_Library_Name	x265		N NTY
+316	Encoded_Library_Version	4.3:[Linux][GCC 16.1.1][64 bit] 10bit		N NTY
+318	Encoded_Library_Settings	cpuid=1111039 / frame-threads=1 / no-wpp / no-pmode / no-pme / no-psnr / no-ssim / log-level=-1 / input-csp=1 / input-res=64x48 / interlace=0 / total-frames=0 / level-idc=0 / high-tier=1 / uhd-bd=0 / ref=1 / no-allow-non-conformance / no-repeat-headers / annexb / no-aud / no-eob / no-eos / no-hrd / info / hash=0 / temporal-layers=0 / open-gop / min-keyint=25 / keyint=250 / gop-lookahead=0 / bframes=3 / b-adapt=0 / b-pyramid / bframe-bias=0 / rc-lookahead=5 / lookahead-slices=0 / scenecut=0 / no-hist-scenecut / radl=0 / no-splice / no-intra-refresh / ctu=32 / min-cu-size=16 / no-rect / no-amp / max-tu-size=32 / tu-inter-depth=1 / tu-intra-depth=1 / limit-tu=0 / rdoq-level=0 / dynamic-rd=0.00 / no-ssim-rd / no-signhide / no-tskip / nr-intra=0 / nr-inter=0 / no-constrained-intra / strong-intra-smoothing / max-merge=2 / limit-refs=0 / no-limit-modes / me=0 / subme=0 / merange=57 / temporal-mvp / no-frame-dup / no-hme / no-weightp / no-weightb / no-analyze-src-pics / deblock=0:0 / no-sao / no-sao-non-deblock / rd=2 / selective-sao=0 / early-skip / rskip / fast-intra / no-tskip-fast / no-cu-lossless / no-b-intra / no-splitrd-skip / rdpenalty=0 / psy-rd=2.00 / psy-rdoq=0.00 / no-rd-refine / no-lossless / cbqpoffs=0 / crqpoffs=0 / rc=crf / crf=28.0 / qcomp=0.60 / qpstep=4 / stats-write=0 / stats-read=0 / ipratio=1.40 / pbratio=1.30 / aq-mode=1 / aq-strength=0.00 / cutree / zone-count=0 / no-strict-cbr / qg-size=32 / no-rc-grain / qpmax=69 / qpmin=0 / no-const-vbv / sar=1 / overscan=0 / videoformat=5 / range=0 / colorprim=2 / transfer=2 / colormatrix=2 / chromaloc=0 / display-window=0 / cll=0,0 / min-luma=0 / max-luma=1023 / log2-max-poc-lsb=8 / vui-timing-info / vui-hrd-info / slices=1 / no-opt-qp-pps / no-opt-ref-list-length-pps / no-multi-pass-opt-rps / scenecut-bias=0.05 / no-opt-cu-delta-qp / no-aq-motion / no-hdr10 / no-hdr10-opt / no-dhdr10-opt / no-idr-recovery-sei / analysis-reuse-level=0 / analysis-save-reuse-level=0 / analysis-load-reuse-level=0 / scale-factor=0 / refine-intra=0 / refine-inter=0 / refine-mv=1 / refine-ctu-distortion=0 / no-limit-sao / ctu-info=0 / no-lowpass-dct / refine-analysis-type=0 / copy-pic=1 / max-ausize-factor=1.0 / no-dynamic-refine / no-single-sei / no-hevc-aq / no-svt / no-field / qp-adaptation-range=1.00 / scenecut-aware-qp=0conformance-window-offsets / right=0 / bottom=0 / decoder-max-rate=0 / no-vbv-live-multi-pass / no-mcstf / no-sbrc / no-frame-rc		Y YTY
+331	Default	No	Yes	N YTY
+332	Default/String	No		Y NT
+333	Forced	No	Yes	N YTY
+334	Forced/String	No		Y NT
+341	colour_description_present	Yes		N YTY
+342	colour_description_present_Source	Container		N YTY
+345	colour_range	Limited		Y YTY
+346	colour_range_Source	Container / Stream		N YTY
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	1		N YIY
+10	ID	2		N YTY
+11	ID/String	2		Y NT
+14	UniqueID	10990915899140888266		N YTY
+18	Format	FLAC		N YTY
+19	Format/String	FLAC		Y NT
+20	Format/Info	Free Lossless Audio Codec		Y NT
+21	Format/Url	https://xiph.org/flac/		N NT
+22	Format_Commercial	FLAC		N YT
+45	InternetMediaType	audio/x-flac		N YT
+48	CodecID	A_FLAC		Y YTY
+52	CodecID/Url	https://xiph.org/flac		N NT
+70	Duration	1000.000000	 ms	N YFY
+71	Duration/String	1 s 0 ms		Y NT
+72	Duration/String1	1 s 0 ms		N NT
+73	Duration/String2	1 s 0 ms		N NT
+74	Duration/String3	00:00:01.000		N NT
+76	Duration/String5	00:00:01.000		N NT
+112	BitRate_Mode	VBR		N YTY
+113	BitRate_Mode/String	Variable		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+130	ChannelPositions	Front: C		N YTY
+132	ChannelPositions/String2	1/0/0		N NT
+136	ChannelLayout	C		Y YTY
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	48000		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+158	Compression_Mode	Lossless		N YTY
+159	Compression_Mode/String	Lossless		Y NT
+161	Delay	0	 ms	N NFY
+165	Delay/String3	00:00:00.000		N NT
+170	Delay_Source	Container		N NTY
+171	Delay_Source/String	Container		N NT
+182	Video_Delay	0	 ms	N NI
+186	Video_Delay/String3	00:00:00.000		N NT
+252	Encoded_Library	Lavc63.1.101 flac		N YTY
+253	Encoded_Library/String	Lavc63.1.101 flac		Y NT
+271	Default	No	Yes	N YTY
+272	Default/String	No		Y NT
+273	Forced	No	Yes	N YTY
+274	Forced/String	No		Y NT

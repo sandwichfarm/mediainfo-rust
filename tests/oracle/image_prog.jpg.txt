@@ -1,0 +1,15 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_prog.jpg
+Format                                   : JPEG
+File size                                : 1.32 KiB
+
+Image
+Format                                   : JPEG
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Compression mode                         : Lossy
+Stream size                              : 1.32 KiB (100%)
+

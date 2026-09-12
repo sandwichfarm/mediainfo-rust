@@ -1,0 +1,4 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.yuv
+File size                                : 112 KiB
+

@@ -1,0 +1,65 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+23	ImageCount	1		N NIY
+41	Image_Format_List	PNG		N NT
+42	Image_Format_WithHint_List	PNG		N NT
+43	Image_Codec_List	PNG		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/image_gray.png		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	image_gray.png		N NT
+52	FileName	image_gray		N NT
+53	FileExtension	png		N NTY
+59	Format	PNG		N YTY
+60	Format/String	PNG		Y NT
+61	Format/Info	Portable Network Graphic		Y NT
+63	Format/Extensions	png pns		N NT
+64	Format_Commercial	PNG		N NT
+72	InternetMediaType	image/png		N YT
+89	FileSize	378	 byte	N YTY
+90	FileSize/String	378 Bytes		Y NT
+91	FileSize/String1	378 Bytes		N NT
+92	FileSize/String2	378 Bytes		N NT
+93	FileSize/String3	378 Bytes		N NT
+94	FileSize/String4	378.0 Bytes		N NT
+130	StreamSize	0	 byte	N YIY
+131	StreamSize/String	0.00 Byte (0%)		N NT
+132	StreamSize/String1	 Byte0		N NT
+133	StreamSize/String2	0.0 Byte		N NT
+134	StreamSize/String3	0.00 Byte		N NT
+135	StreamSize/String4	0.000 Byte		N NT
+136	StreamSize/String5	0.00 Byte (0%)		N NT
+137	StreamSize_Proportion	0.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:56		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:56		N NTY
+== Image #0 (124 fields)
+0	Count	124		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Image		N NT
+4	StreamKind/String	Image		N NT
+5	StreamKindID	0		N NI
+19	Format	PNG		N YTY
+20	Format/String	PNG		Y NT
+21	Format/Info	Portable Network Graphic		Y NT
+23	Format_Commercial	PNG		N NT
+29	Format_Compression	LZ77		Y YTY
+33	InternetMediaType	image/png		N YT
+45	Width	64	 pixel	N YIY
+46	Width/String	64 pixels		Y NT
+51	Height	48	 pixel	N YIY
+52	Height/String	48 pixels		Y NT
+69	BitDepth	8	 bit	N YIY
+70	BitDepth/String	8 bits		Y NT
+71	Compression_Mode	Lossless		N YTY
+72	Compression_Mode/String	Lossless		Y NT
+74	StreamSize	378	 byte	N YIY
+75	StreamSize/String	378 Bytes (100%)		Y NT
+76	StreamSize/String1	378 Bytes		N NT
+77	StreamSize/String2	378 Bytes		N NT
+78	StreamSize/String3	378 Bytes		N NT
+79	StreamSize/String4	378.0 Bytes		N NT
+80	StreamSize/String5	378 Bytes (100%)		N NT
+81	StreamSize_Proportion	1.00000		N NT

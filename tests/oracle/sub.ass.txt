@@ -1,0 +1,11 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/sub.ass
+Format                                   : ASS
+Format/Info                              : Advanced SubStation Alpha
+File size                                : 620 Bytes
+FileExtension_Invalid                    : ssa
+
+Text
+Format                                   : ASS
+Compression mode                         : Lossless
+

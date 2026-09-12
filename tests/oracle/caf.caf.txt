@@ -1,0 +1,20 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/caf.caf
+Format                                   : CAF
+Format/Info                              : Core Audio Format
+Format version                           : Version 1
+File size                                : 93.9 KiB
+Duration                                 : 681 ms
+Overall bit rate                         : 1 129 kb/s
+encoder                                  : Lavf63.1.101
+
+Audio
+Format                                   : PCM
+Codec ID                                 : lpcm
+Duration                                 : 681 ms
+Bit rate                                 : 768 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 63.9 KiB (68%)
+

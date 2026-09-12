@@ -1,0 +1,27 @@
+General
+Unique ID                                : 121506229468036924674453585678324865655 (0x5B693FA2B0BB867DB99FE495B28A1A77)
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/aac.mka
+Format                                   : Matroska
+Format version                           : Version 4
+File size                                : 4.85 KiB
+Duration                                 : 1 s 21 ms
+Overall bit rate                         : 38.9 kb/s
+Writing application                      : Lavf63.1.101
+Writing library                          : Lavf63.1.101
+ErrorDetectionType                       : Per level 1
+
+Audio
+ID                                       : 1
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Codec ID                                 : A_AAC-2
+Duration                                 : 1 s 21 ms
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+Writing library                          : Lavc63.1.101 aac
+Default                                  : No
+Forced                                   : No
+

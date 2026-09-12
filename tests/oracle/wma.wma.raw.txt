@@ -1,0 +1,92 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	WMA		N NT
+30	Audio_Format_WithHint_List	WMA		N NT
+31	Audio_Codec_List	WMA		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/wma.wma		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	wma.wma		N NT
+52	FileName	wma		N NT
+53	FileExtension	wma		N NTY
+59	Format	Windows Media		N YTY
+60	Format/String	Windows Media		Y NT
+63	Format/Extensions	asf dvr-ms wma wmv		N NT
+64	Format_Commercial	Windows Media		N NT
+72	InternetMediaType	audio/x-ms-wma		N YT
+89	FileSize	6942	 byte	N YTY
+90	FileSize/String	6.78 KiB		Y NT
+91	FileSize/String1	7 KiB		N NT
+92	FileSize/String2	6.8 KiB		N NT
+93	FileSize/String3	6.78 KiB		N NT
+94	FileSize/String4	6.779 KiB		N NT
+95	Duration	1025	 ms	N YFY
+96	Duration/String	1 s 25 ms		Y NT
+97	Duration/String1	1 s 25 ms		N NT
+98	Duration/String2	1 s 25 ms		N NT
+99	Duration/String3	00:00:01.025		N NT
+101	Duration/String5	00:00:01.025		N NT
+106	OverallBitRate	54181	 bps	N YFY
+107	OverallBitRate/String	54.2 kb/s		Y NT
+112	OverallBitRate_Maximum	32000	 bps	N YFY
+113	OverallBitRate_Maximum/String	32.0 kb/s		Y NT
+130	StreamSize	2842	 byte	N YIY
+131	StreamSize/String	2.78 KiB (41%)		N NT
+132	StreamSize/String1	3 KiB		N NT
+133	StreamSize/String2	2.8 KiB		N NT
+134	StreamSize/String3	2.78 KiB		N NT
+135	StreamSize/String4	2.775 KiB		N NT
+136	StreamSize/String5	2.78 KiB (41%)		N NT
+137	StreamSize_Proportion	0.40939		N NT
+145	HeaderSize	492		N YIY
+146	DataSize	6450		N YIY
+259	Encoded_Date	UTC 1970-01-01 00:00:00.000		Y YTY
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+331	WM/EncodingSettings	Lavf63.1.101		Y NT
+== Audio #0 (282 fields)
+0	Count	282		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	WMA		N YTY
+19	Format/String	WMA		Y NT
+22	Format_Commercial	WMA		N YT
+24	Format_Version	Version 2		Y YTY
+48	CodecID	161		Y YTY
+50	CodecID/Info	Windows Media Audio		Y NT
+52	CodecID/Url	http://www.microsoft.com/windows/windowsmedia/format/codecdownload.aspx		N NT
+53	CodecID_Description	Windows Media Audio V8		Y YT
+70	Duration	1025	 ms	N YFY
+71	Duration/String	1 s 25 ms		Y NT
+72	Duration/String1	1 s 25 ms		N NT
+73	Duration/String2	1 s 25 ms		N NT
+74	Duration/String3	00:00:01.025		N NT
+76	Duration/String5	00:00:01.025		N NT
+114	BitRate	32000	 bps	N YFY
+115	BitRate/String	32.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	49200		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+199	StreamSize	4100	 byte	N YIY
+200	StreamSize/String	4.00 KiB (59%)		Y NT
+201	StreamSize/String1	4 KiB		N NT
+202	StreamSize/String2	4.0 KiB		N NT
+203	StreamSize/String3	4.00 KiB		N NT
+204	StreamSize/String4	4.004 KiB		N NT
+205	StreamSize/String5	4.00 KiB (59%)		N NT
+206	StreamSize_Proportion	0.59061		N NTY
+280	SamplingCount_Source	General_Duration		N NTN
+281	Duration_Source	General_Duration		N NTN

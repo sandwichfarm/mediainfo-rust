@@ -1,0 +1,81 @@
+== General #0 (332 fields)
+0	Count	332		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	PCM		N NT
+30	Audio_Format_WithHint_List	PCM		N NT
+31	Audio_Codec_List	PCM		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/caf.caf		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	caf.caf		N NT
+52	FileName	caf		N NT
+53	FileExtension	caf		N NTY
+59	Format	CAF		N YTY
+60	Format/String	CAF		Y NT
+61	Format/Info	Core Audio Format		Y NT
+62	Format/Url	https://developer.apple.com/library/content/documentation/MusicAudio/Reference/CAFSpec/CAF_overview/CAF_overview.html		N NT
+63	Format/Extensions	caf		N NT
+64	Format_Commercial	CAF		N NT
+66	Format_Version	Version 1		Y YTY
+72	InternetMediaType	audio/x-caf		N YT
+89	FileSize	96129	 byte	N YTY
+90	FileSize/String	93.9 KiB		Y NT
+91	FileSize/String1	94 KiB		N NT
+92	FileSize/String2	94 KiB		N NT
+93	FileSize/String3	93.9 KiB		N NT
+94	FileSize/String4	93.88 KiB		N NT
+95	Duration	681	 ms	N YFY
+96	Duration/String	681 ms		Y NT
+97	Duration/String1	681 ms		N NT
+98	Duration/String2	681 ms		N NT
+99	Duration/String3	00:00:00.681		N NT
+101	Duration/String5	00:00:00.681		N NT
+106	OverallBitRate	1129269	 bps	N YFY
+107	OverallBitRate/String	1 129 kb/s		Y NT
+130	StreamSize	30718	 byte	N YIY
+131	StreamSize/String	30.0 KiB (32%)		N NT
+132	StreamSize/String1	30 KiB		N NT
+133	StreamSize/String2	30 KiB		N NT
+134	StreamSize/String3	30.0 KiB		N NT
+135	StreamSize/String4	30.00 KiB		N NT
+136	StreamSize/String5	30.0 KiB (32%)		N NT
+137	StreamSize_Proportion	0.31955		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+331	encoder	Lavf63.1.101		Y NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	PCM		N YTY
+19	Format/String	PCM		Y NT
+22	Format_Commercial	PCM		N YT
+48	CodecID	lpcm		Y YTY
+70	Duration	681	 ms	N YFY
+71	Duration/String	681 ms		Y NT
+72	Duration/String1	681 ms		N NT
+73	Duration/String2	681 ms		N NT
+74	Duration/String3	00:00:00.681		N NT
+76	Duration/String5	00:00:00.681		N NT
+114	BitRate	768000.000	 bps	N YFY
+115	BitRate/String	768 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000.000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	32688		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+199	StreamSize	65411	 byte	N YIY
+200	StreamSize/String	63.9 KiB (68%)		Y NT
+201	StreamSize/String1	64 KiB		N NT
+202	StreamSize/String2	64 KiB		N NT
+203	StreamSize/String3	63.9 KiB		N NT
+204	StreamSize/String4	63.88 KiB		N NT
+205	StreamSize/String5	63.9 KiB (68%)		N NT
+206	StreamSize_Proportion	0.68045		N NTY

@@ -1,0 +1,4 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/text.txt
+File size                                : 15.0 Bytes
+

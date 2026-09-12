@@ -1,0 +1,22 @@
+General
+Unique ID                                : 70928874514869861604749699460875432415 (0x355C67827F6AE2C2444EDB588AD831DF)
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/srt.mks
+Format                                   : Matroska
+Format version                           : Version 4
+File size                                : 590 Bytes
+Duration                                 : 1 s 0 ms
+Overall bit rate                         : 4 720 b/s
+Writing application                      : Lavf63.1.101
+Writing library                          : Lavf63.1.101
+ErrorDetectionType                       : Per level 1
+
+Text
+ID                                       : 1
+Format                                   : UTF-8
+Codec ID                                 : S_TEXT/UTF8
+Codec ID/Info                            : UTF-8 Plain Text
+Duration                                 : 1 s 0 ms
+Writing library                          : Lavc63.1.101 srt
+Default                                  : No
+Forced                                   : No
+

@@ -1,0 +1,28 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/alac.m4a
+Format                                   : MPEG-4
+Format profile                           : Apple audio with iTunes info
+Codec ID                                 : M4A  (M4A /isom/iso2)
+File size                                : 19.3 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 158 kb/s
+Writing application                      : Lavf63.1.101
+
+Audio
+ID                                       : 1
+Format                                   : ALAC
+Codec ID                                 : alac
+Codec ID/Info                            : Apple Lossless Audio Codec
+Duration                                 : 1 s 0 ms
+Duration_LastFrame                       : -24 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 152 kb/s
+Nominal bit rate                         : 768 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 18.6 KiB (96%)
+Default                                  : Yes
+Alternate group                          : 1
+

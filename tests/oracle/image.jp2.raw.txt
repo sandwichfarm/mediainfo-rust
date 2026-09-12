@@ -1,0 +1,53 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+23	ImageCount	1		N NIY
+41	Image_Format_List	JPEG 2000		N NT
+42	Image_Format_WithHint_List	JPEG 2000		N NT
+43	Image_Codec_List	JPEG 2000		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.jp2		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	image.jp2		N NT
+52	FileName	image		N NT
+53	FileExtension	jp2		N NTY
+59	Format	JPEG 2000		N YTY
+60	Format/String	JPEG 2000		Y NT
+62	Format/Url	http://www.morgan-multimedia.com/JPEG 2000/		N NT
+63	Format/Extensions	jp2		N NT
+64	Format_Commercial	JPEG 2000		N NT
+67	Format_Profile	MPEG-4		Y YTY
+72	InternetMediaType	image/jp2		N YT
+73	CodecID	jp2 		N YTY
+74	CodecID/String	jp2  (jp2 )		Y NT
+80	CodecID_Compatible	jp2 		N YTY
+89	FileSize	3045	 byte	N YTY
+90	FileSize/String	2.97 KiB		Y NT
+91	FileSize/String1	3 KiB		N NT
+92	FileSize/String2	3.0 KiB		N NT
+93	FileSize/String3	2.97 KiB		N NT
+94	FileSize/String4	2.974 KiB		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:56		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:56		N NTY
+== Image #0 (124 fields)
+0	Count	124		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Image		N NT
+4	StreamKind/String	Image		N NT
+5	StreamKindID	0		N NI
+19	Format	JPEG 2000		N YTY
+20	Format/String	JPEG 2000		Y NT
+22	Format/Url	http://www.morgan-multimedia.com/JPEG 2000/		N NT
+23	Format_Commercial	JPEG 2000		N NT
+26	Format_Profile	No restrictions		Y NTY
+33	InternetMediaType	image/jp2		N YT
+45	Width	64	 pixel	N YIY
+46	Width/String	64 pixels		Y NT
+51	Height	48	 pixel	N YIY
+52	Height/String	48 pixels		Y NT
+65	ColorSpace	YUV		Y YTY
+66	ChromaSubsampling	4:4:4		Y YTY
+69	BitDepth	8	 bit	N YIY
+70	BitDepth/String	8 bits		Y NT

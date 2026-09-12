@@ -1,0 +1,199 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	AVC		N NT
+26	Video_Format_WithHint_List	AVC		N NT
+27	Video_Codec_List	AVC		N NT
+29	Audio_Format_List	AC-3		N NT
+30	Audio_Format_WithHint_List	AC-3		N NT
+31	Audio_Codec_List	AC-3		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/h264_ac3.avi		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	h264_ac3.avi		N NT
+52	FileName	h264_ac3		N NT
+53	FileExtension	avi		N NTY
+59	Format	AVI		N YTY
+60	Format/String	AVI		Y NT
+61	Format/Info	Audio Video Interleave		Y NT
+63	Format/Extensions	avi		N NT
+64	Format_Commercial	AVI		N NT
+72	InternetMediaType	video/vnd.avi		N YT
+81	Interleaved	Yes		N YTY
+89	FileSize	24190	 byte	N YTY
+90	FileSize/String	23.6 KiB		Y NT
+91	FileSize/String1	24 KiB		N NT
+92	FileSize/String2	24 KiB		N NT
+93	FileSize/String3	23.6 KiB		N NT
+94	FileSize/String4	23.62 KiB		N NT
+95	Duration	1024	 ms	N YFY
+96	Duration/String	1 s 24 ms		Y NT
+97	Duration/String1	1 s 24 ms		N NT
+98	Duration/String2	1 s 24 ms		N NT
+99	Duration/String3	00:00:01.024		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.024 (00:00:01:00)		N NT
+106	OverallBitRate	188984	 bps	N YFY
+107	OverallBitRate/String	189 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+130	StreamSize	11371	 byte	N YIY
+131	StreamSize/String	11.1 KiB (47%)		N NT
+132	StreamSize/String1	11 KiB		N NT
+133	StreamSize/String2	11 KiB		N NT
+134	StreamSize/String3	11.1 KiB		N NT
+135	StreamSize/String4	11.10 KiB		N NT
+136	StreamSize/String5	11.1 KiB (47%)		N NT
+137	StreamSize_Proportion	0.47007		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:53		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:53		N NTY
+270	Encoded_Application	Lavf63.1.101		N YTY
+271	Encoded_Application/String	Lavf63.1.101		Y NT
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	0		N YIY
+10	ID	0		N YTY
+11	ID/String	0		Y NT
+18	Format	AVC		N YTY
+19	Format/String	AVC		Y NT
+20	Format/Info	Advanced Video Codec		Y NT
+21	Format/Url	http://developers.videolan.org/x264.html		N NT
+22	Format_Commercial	AVC		N NT
+25	Format_Profile	Baseline@L1		Y YTY
+41	Format_Settings	1 Ref Frames		Y NT
+51	Format_Settings_CABAC	No	Yes	N YTY
+52	Format_Settings_CABAC/String	No		Y NT
+53	Format_Settings_RefFrames	1	 frame	N YIY
+54	Format_Settings_RefFrames/String	1 frame		Y NT
+62	InternetMediaType	video/H264		N YT
+64	CodecID	H264		Y YTY
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+132	BitRate	37016	 bps	N YFY
+133	BitRate/String	37.0 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+160	Sampled_Width	64		N YIY
+161	Sampled_Height	48		N YIY
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+179	FrameRate_Mode	VFR		N YTY
+180	FrameRate_Mode/String	Variable		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+203	ColorSpace	YUV		Y YTY
+204	ChromaSubsampling	4:2:0		N YTY
+205	ChromaSubsampling/String	4:2:0		Y NT
+207	BitDepth	8	 bit	N YIY
+208	BitDepth/String	8 bits		Y NT
+209	ScanType	Progressive		N YTY
+210	ScanType/String	Progressive		Y NT
+228	Bits-(Pixel*Frame)	0.482		Y NFN
+229	Delay	0	 ms	N NFY
+233	Delay/String3	00:00:00.000		N NT
+264	StreamSize	4627	 byte	N YIY
+265	StreamSize/String	4.52 KiB (19%)		Y NT
+266	StreamSize/String1	5 KiB		N NT
+267	StreamSize/String2	4.5 KiB		N NT
+268	StreamSize/String3	4.52 KiB		N NT
+269	StreamSize/String4	4.519 KiB		N NT
+270	StreamSize/String5	4.52 KiB (19%)		N NT
+271	StreamSize_Proportion	0.19128		N NT
+312	Encoded_Library	x264 - core 165 r3222 b35605a		N YTY
+313	Encoded_Library/String	x264 core 165 r3222 b35605a		Y NT
+315	Encoded_Library_Name	x264		N NTY
+316	Encoded_Library_Version	core 165 r3222 b35605a		N NTY
+318	Encoded_Library_Settings	cabac=0 / ref=1 / deblock=0:0:0 / analyse=0:0 / me=dia / subme=0 / psy=1 / psy_rd=1.00:0.00 / mixed_ref=0 / me_range=16 / chroma_me=1 / trellis=0 / 8x8dct=0 / cqm=0 / deadzone=21,11 / fast_pskip=1 / chroma_qp_offset=0 / threads=1 / lookahead_threads=1 / sliced_threads=0 / nr=0 / decimate=1 / interlaced=0 / bluray_compat=0 / constrained_intra=0 / bframes=0 / weightp=0 / keyint=250 / keyint_min=25 / scenecut=0 / intra_refresh=0 / rc=crf / mbtree=0 / crf=23.0 / qcomp=0.60 / qpmin=0 / qpmax=69 / qpstep=4 / ip_ratio=1.40 / aq=0		Y YTY
+== Audio #0 (292 fields)
+0	Count	292		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+7	StreamOrder	1		N YIY
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	AC-3		N YTY
+19	Format/String	AC-3		Y NT
+20	Format/Info	Audio Coding 3		Y NT
+21	Format/Url	https://en.wikipedia.org/wiki/AC3		N NT
+22	Format_Commercial	Dolby Digital		N YT
+23	Format_Commercial_IfAny	Dolby Digital		Y YTY
+38	Format_Settings_Endianness	Big		N YTY
+48	CodecID	2000		Y YTY
+70	Duration	1024	 ms	N YFY
+71	Duration/String	1 s 24 ms		Y NT
+72	Duration/String1	1 s 24 ms		N NT
+73	Duration/String2	1 s 24 ms		N NT
+74	Duration/String3	00:00:01.024		N NT
+76	Duration/String5	00:00:01.024		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	64000	 bps	N YFY
+115	BitRate/String	64.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+130	ChannelPositions	Front: C		N YTY
+132	ChannelPositions/String2	1/0/0		N NT
+136	ChannelLayout	C		Y YTY
+139	SamplesPerFrame	1536		N YFY
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	49152		N NIY
+144	FrameRate	31.250	 fps	N YFY
+145	FrameRate/String	31.250 FPS (1536 SPF)		Y NT
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+161	Delay	0	 ms	N NFY
+165	Delay/String3	00:00:00.000		N NT
+170	Delay_Source	Stream		N NTY
+171	Delay_Source/String	Raw stream		N NT
+182	Video_Delay	0	 ms	N NI
+186	Video_Delay/String3	00:00:00.000		N NT
+199	StreamSize	8192	 byte	N YIY
+200	StreamSize/String	8.00 KiB (34%)		Y NT
+201	StreamSize/String1	8 KiB		N NT
+202	StreamSize/String2	8.0 KiB		N NT
+203	StreamSize/String3	8.00 KiB		N NT
+204	StreamSize/String4	8.000 KiB		N NT
+205	StreamSize/String5	8.00 KiB (34%)		N NT
+206	StreamSize_Proportion	0.33865		N NTY
+238	Alignment	Aligned		N YTY
+239	Alignment/String	Aligned on interleaves		Y NT
+240	Interleave_VideoFrames	0.78		N YFY
+241	Interleave_Duration	31	 ms	N YFY
+242	Interleave_Duration/String	31  ms (0.78 video frame)		Y NT
+267	ServiceKind	CM		N YTY
+268	ServiceKind/String	Complete Main		Y NT
+280	bsid	8		N NT
+281	dialnorm	-31		N NT
+282	dialnorm/String	-31 dB		N NTN
+283	acmod	1		N NT
+284	lfeon	0		N NT
+285	dialnorm_Average	-31		N NT
+286	dialnorm_Average/String	-31 dB		N NTN
+287	dialnorm_Minimum	-31		N NT
+288	dialnorm_Minimum/String	-31 dB		N NTN
+289	dialnorm_Maximum	-31		N NTN
+290	dialnorm_Maximum/String	-31 dB		N NTN
+291	dialnorm_Count	32		N NTN

@@ -1,0 +1,17 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/aac.latm
+Format                                   : LATM
+File size                                : 4.26 KiB
+Overall bit rate mode                    : Variable
+
+Audio
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Codec ID                                 : 2
+Bit rate mode                            : Variable
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+

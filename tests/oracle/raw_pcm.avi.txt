@@ -1,0 +1,40 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw_pcm.avi
+Format                                   : AVI
+Format/Info                              : Audio Video Interleave
+File size                                : 218 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate                         : 1 783 kb/s
+Writing application                      : Lavf63.1.101
+
+Video
+ID                                       : 0
+Format                                   : YUV
+Codec ID                                 : I420
+Codec ID/Info                            : 8 bit Y plane followed by 8 bit 2x2 subsampled U and V planes.
+Duration                                 : 1 s 0 ms
+Bit rate                                 : 922 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Scan type                                : Progressive
+Compression mode                         : Lossless
+Bits/(Pixel*Frame)                       : 12.000
+Stream size                              : 112 KiB (52%)
+
+Audio
+ID                                       : 1
+Format                                   : PCM
+Format settings                          : Little / Signed
+Codec ID                                 : 1
+Duration                                 : 1 s 0 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 768 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 93.8 KiB (43%)
+Alignment                                : Aligned on interleaves
+Interleave, duration                     : 21  ms (0.53 video frame)
+

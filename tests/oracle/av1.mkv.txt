@@ -1,0 +1,35 @@
+General
+Unique ID                                : 262904156020135568876326849701200244654 (0xC5C97FA812107F90D8BB485A132BAFAE)
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/av1.mkv
+Format                                   : Matroska
+Format version                           : Version 4
+File size                                : 3.55 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate                         : 29.1 kb/s
+Writing application                      : Lavf63.1.101
+Writing library                          : Lavf63.1.101
+ErrorDetectionType                       : Per level 1
+
+Video
+ID                                       : 1
+Format                                   : AV1
+Format/Info                              : AOMedia Video 1
+Format profile                           : Main@L2.0
+Codec ID                                 : V_AV1
+Duration                                 : 1 s 0 ms
+Bit rate                                 : 28.5 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate mode                          : Constant
+Frame rate                               : 25.000 FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Bits/(Pixel*Frame)                       : 0.372
+Stream size                              : 3.48 KiB (98%)
+Writing library                          : Lavc63.1.101 libaom-av1
+Default                                  : No
+Forced                                   : No
+Color range                              : Limited
+

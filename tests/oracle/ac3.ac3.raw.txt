@@ -1,0 +1,108 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	AC-3		N NT
+30	Audio_Format_WithHint_List	AC-3		N NT
+31	Audio_Codec_List	AC-3		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/ac3.ac3		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	ac3.ac3		N NT
+52	FileName	ac3		N NT
+53	FileExtension	ac3		N NTY
+59	Format	AC-3		N YTY
+60	Format/String	AC-3		Y NT
+61	Format/Info	Audio Coding 3		Y NT
+62	Format/Url	https://en.wikipedia.org/wiki/AC3		N NT
+63	Format/Extensions	ac3		N NT
+64	Format_Commercial	Dolby Digital		N NT
+65	Format_Commercial_IfAny	Dolby Digital		Y YTY
+89	FileSize	8192	 byte	N YTY
+90	FileSize/String	8.00 KiB		Y NT
+91	FileSize/String1	8 KiB		N NT
+92	FileSize/String2	8.0 KiB		N NT
+93	FileSize/String3	8.00 KiB		N NT
+94	FileSize/String4	8.000 KiB		N NT
+95	Duration	1024	 ms	N YFY
+96	Duration/String	1 s 24 ms		Y NT
+97	Duration/String1	1 s 24 ms		N NT
+98	Duration/String2	1 s 24 ms		N NT
+99	Duration/String3	00:00:01.024		N NT
+101	Duration/String5	00:00:01.024		N NT
+104	OverallBitRate_Mode	CBR		N YTY
+105	OverallBitRate_Mode/String	Constant		Y NT
+106	OverallBitRate	64000	 bps	N YFY
+107	OverallBitRate/String	64.0 kb/s		Y NT
+130	StreamSize	0	 byte	N YIY
+131	StreamSize/String	0.00 Byte (0%)		N NT
+132	StreamSize/String1	 Byte0		N NT
+133	StreamSize/String2	0.0 Byte		N NT
+134	StreamSize/String3	0.00 Byte		N NT
+135	StreamSize/String4	0.000 Byte		N NT
+136	StreamSize/String5	0.00 Byte (0%)		N NT
+137	StreamSize_Proportion	0.00000		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:53		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:53		N NTY
+== Audio #0 (292 fields)
+0	Count	292		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	AC-3		N YTY
+19	Format/String	AC-3		Y NT
+20	Format/Info	Audio Coding 3		Y NT
+21	Format/Url	https://en.wikipedia.org/wiki/AC3		N NT
+22	Format_Commercial	Dolby Digital		N YT
+23	Format_Commercial_IfAny	Dolby Digital		Y YTY
+38	Format_Settings_Endianness	Big		N YTY
+70	Duration	1024	 ms	N YFY
+71	Duration/String	1 s 24 ms		Y NT
+72	Duration/String1	1 s 24 ms		N NT
+73	Duration/String2	1 s 24 ms		N NT
+74	Duration/String3	00:00:01.024		N NT
+75	Duration/String4	00:00:01:01		N NT
+76	Duration/String5	00:00:01.024 (00:00:01:01)		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	64000	 bps	N YFY
+115	BitRate/String	64.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+130	ChannelPositions	Front: C		N YTY
+132	ChannelPositions/String2	1/0/0		N NT
+136	ChannelLayout	C		Y YTY
+139	SamplesPerFrame	1536		N YFY
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	49152		N NIY
+144	FrameRate	31.250	 fps	N YFY
+145	FrameRate/String	31.250 FPS (1536 SPF)		Y NT
+148	FrameCount	32		N NIY
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+199	StreamSize	8192	 byte	N YIY
+200	StreamSize/String	8.00 KiB (100%)		Y NT
+201	StreamSize/String1	8 KiB		N NT
+202	StreamSize/String2	8.0 KiB		N NT
+203	StreamSize/String3	8.00 KiB		N NT
+204	StreamSize/String4	8.000 KiB		N NT
+205	StreamSize/String5	8.00 KiB (100%)		N NT
+206	StreamSize_Proportion	1.00000		N NTY
+267	ServiceKind	CM		N YTY
+268	ServiceKind/String	Complete Main		Y NT
+280	bsid	8		N NT
+281	dialnorm	-31		N NT
+282	dialnorm/String	-31 dB		N NTN
+283	acmod	1		N NT
+284	lfeon	0		N NT
+285	dialnorm_Average	-31		N NT
+286	dialnorm_Average/String	-31 dB		N NTN
+287	dialnorm_Minimum	-31		N NT
+288	dialnorm_Minimum/String	-31 dB		N NTN
+289	dialnorm_Maximum	-31		N NTN
+290	dialnorm_Maximum/String	-31 dB		N NTN
+291	dialnorm_Count	32		N NTN

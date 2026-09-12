@@ -1,0 +1,40 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/wmv2_wma.wmv
+Format                                   : Windows Media
+File size                                : 10.3 KiB
+Duration                                 : 1 s 43 ms
+Overall bit rate                         : 80.5 kb/s
+Maximum Overall bit rate                 : 232 kb/s
+Encoded date                             : UTC 1970-01-01 00:00:00.000
+WM/EncodingSettings                      : Lavf63.1.101
+
+Video
+ID                                       : 1
+Format                                   : WMV2
+Codec ID                                 : WMV2
+Codec ID/Info                            : Windows Media Video 8
+Description of the codec                 : wmv2
+Duration                                 : 1 s 40 ms
+Bit rate                                 : 36.5 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Bit depth                                : 8 bits
+Bits/(Pixel*Frame)                       : 0.475
+Stream size                              : 4.63 KiB (45%)
+
+Audio
+ID                                       : 2
+Format                                   : WMA
+Format version                           : Version 2
+Codec ID                                 : 161
+Codec ID/Info                            : Windows Media Audio
+Description of the codec                 : Windows Media Audio V8
+Duration                                 : 1 s 43 ms
+Bit rate                                 : 32.0 kb/s
+Channel(s)                               : 1 channel
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 4.07 KiB (40%)
+

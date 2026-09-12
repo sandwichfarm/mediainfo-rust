@@ -1,0 +1,12 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/image.bmp
+Format                                   : Bitmap
+File size                                : 9.05 KiB
+
+Image
+Format                                   : RGB
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : RGB
+Bit depth                                : 24 bits
+

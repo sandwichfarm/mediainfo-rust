@@ -1,0 +1,86 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+20	AudioCount	1		N NIY
+29	Audio_Format_List	AMR		N NT
+30	Audio_Format_WithHint_List	AMR		N NT
+31	Audio_Codec_List	AMR		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/amr.amr		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	amr.amr		N NT
+52	FileName	amr		N NT
+53	FileExtension	amr		N NTY
+59	Format	AMR		N YTY
+60	Format/String	AMR		Y NT
+61	Format/Info	Adaptive Multi-Rate		Y NT
+62	Format/Url	http://www.apple.com/quicktime/download/standalone.html		N NT
+63	Format/Extensions	amr		N NT
+64	Format_Commercial	AMR		N NT
+72	InternetMediaType	audio/AMR		N YT
+89	FileSize	1638	 byte	N YTY
+90	FileSize/String	1.60 KiB		Y NT
+91	FileSize/String1	2 KiB		N NT
+92	FileSize/String2	1.6 KiB		N NT
+93	FileSize/String3	1.60 KiB		N NT
+94	FileSize/String4	1.600 KiB		N NT
+95	Duration	1020	 ms	N YFY
+96	Duration/String	1 s 20 ms		Y NT
+97	Duration/String1	1 s 20 ms		N NT
+98	Duration/String2	1 s 20 ms		N NT
+99	Duration/String3	00:00:01.020		N NT
+101	Duration/String5	00:00:01.020		N NT
+104	OverallBitRate_Mode	CBR		N YTY
+105	OverallBitRate_Mode/String	Constant		Y NT
+106	OverallBitRate	12800	 bps	N YFY
+107	OverallBitRate/String	12.8 kb/s		Y NT
+130	StreamSize	6	 byte	N YIY
+131	StreamSize/String	6.00 Bytes (0%)		N NT
+132	StreamSize/String1	6 Bytes		N NT
+133	StreamSize/String2	6.0 Bytes		N NT
+134	StreamSize/String3	6.00 Bytes		N NT
+135	StreamSize/String4	6.000 Bytes		N NT
+136	StreamSize/String5	6.00 Bytes (0%)		N NT
+137	StreamSize_Proportion	0.00366		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:54		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:54		N NTY
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+18	Format	AMR		N YTY
+19	Format/String	AMR		Y NT
+20	Format/Info	Adaptive Multi-Rate		Y NT
+21	Format/Url	http://www.apple.com/quicktime/download/standalone.html		N NT
+22	Format_Commercial	AMR		N YT
+25	Format_Profile	Narrow band		Y YTY
+45	InternetMediaType	audio/AMR		N YT
+70	Duration	1020.000	 ms	N YFY
+71	Duration/String	1 s 20 ms		Y NT
+72	Duration/String1	1 s 20 ms		N NT
+73	Duration/String2	1 s 20 ms		N NT
+74	Duration/String3	00:00:01.020		N NT
+76	Duration/String5	00:00:01.020		N NT
+112	BitRate_Mode	CBR		N YTY
+113	BitRate_Mode/String	Constant		Y NT
+114	BitRate	12800	 bps	N YFY
+115	BitRate/String	12.8 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	8000	 Hz	N YFY
+141	SamplingRate/String	8 000 Hz		Y NT
+142	SamplingCount	8160		N NIY
+152	BitDepth	13	 bit	N YIY
+153	BitDepth/String	13 bits		Y NT
+199	StreamSize	1632	 byte	N YIY
+200	StreamSize/String	1.59 KiB (100%)		Y NT
+201	StreamSize/String1	2 KiB		N NT
+202	StreamSize/String2	1.6 KiB		N NT
+203	StreamSize/String3	1.59 KiB		N NT
+204	StreamSize/String4	1.594 KiB		N NT
+205	StreamSize/String5	1.59 KiB (100%)		N NT
+206	StreamSize_Proportion	0.99634		N NTY

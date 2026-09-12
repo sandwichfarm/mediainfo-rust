@@ -1,0 +1,16 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/raw.mjpeg
+Format                                   : JPEG
+File size                                : 25.1 KiB
+FileExtension_Invalid                    : h3d jpeg jpg jpe jps mpo
+
+Image
+Format                                   : JPEG
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Compression mode                         : Lossy
+Stream size                              : 25.1 KiB (100%)
+

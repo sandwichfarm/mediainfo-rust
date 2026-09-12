@@ -1,0 +1,19 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/vp9.ivf
+Format                                   : IVF
+File size                                : 4.20 KiB
+Duration                                 : 1 s 0 ms
+Overall bit rate                         : 34.4 kb/s
+
+Video
+Format                                   : VP90
+Codec ID                                 : VP90
+Duration                                 : 1 s 0 ms
+Bit rate                                 : 31.8 kb/s
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate                               : 25.000 FPS
+Bits/(Pixel*Frame)                       : 0.413
+Stream size                              : 3.88 KiB (92%)
+

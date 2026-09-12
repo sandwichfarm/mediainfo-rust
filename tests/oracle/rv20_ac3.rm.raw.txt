@@ -1,0 +1,135 @@
+== General #0 (331 fields)
+0	Count	331		N NI
+2	StreamCount	1		N NI
+3	StreamKind	General		N NT
+4	StreamKind/String	General		N NT
+5	StreamKindID	0		N NI
+19	VideoCount	1		N NIY
+20	AudioCount	1		N NIY
+25	Video_Format_List	RealVideo 2		N NT
+26	Video_Format_WithHint_List	RealVideo 2		N NT
+27	Video_Codec_List	RealVideo 2		N NT
+29	Audio_Format_List	AC-3		N NT
+30	Audio_Format_WithHint_List	AC-3		N NT
+31	Audio_Codec_List	AC-3		N NT
+49	CompleteName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures/rv20_ac3.rm		Y YT
+50	FolderName	/home/sandwich/Develop/mediainfo-rust/tests/fixtures		N NT
+51	FileNameExtension	rv20_ac3.rm		N NT
+52	FileName	rv20_ac3		N NT
+53	FileExtension	rm		N NTY
+59	Format	RealMedia		N YTY
+60	Format/String	RealMedia		Y NT
+63	Format/Extensions	rm rmvb ra		N NT
+64	Format_Commercial	RealMedia		N NT
+72	InternetMediaType	application/vnd.rn-realmedia		N YT
+89	FileSize	16961	 byte	N YTY
+90	FileSize/String	16.6 KiB		Y NT
+91	FileSize/String1	17 KiB		N NT
+92	FileSize/String2	17 KiB		N NT
+93	FileSize/String3	16.6 KiB		N NT
+94	FileSize/String4	16.56 KiB		N NT
+95	Duration	1024	 ms	N YFY
+96	Duration/String	1 s 24 ms		Y NT
+97	Duration/String1	1 s 24 ms		N NT
+98	Duration/String2	1 s 24 ms		N NT
+99	Duration/String3	00:00:01.024		N NT
+100	Duration/String4	00:00:01:00		N NT
+101	Duration/String5	00:00:01.024 (00:00:01:00)		N NT
+106	OverallBitRate	114000	 bps	N YFY
+107	OverallBitRate/String	114 kb/s		Y NT
+114	FrameRate	25.000	 fps	N YFY
+115	FrameRate/String	25.000 FPS		N NT
+118	FrameCount	25		N NIY
+130	StreamSize	2519	 byte	N YIY
+131	StreamSize/String	2.46 KiB (15%)		N NT
+132	StreamSize/String1	2 KiB		N NT
+133	StreamSize/String2	2.5 KiB		N NT
+134	StreamSize/String3	2.46 KiB		N NT
+135	StreamSize/String4	2.460 KiB		N NT
+136	StreamSize/String5	2.46 KiB (15%)		N NT
+137	StreamSize_Proportion	0.14852		N NT
+265	File_Modified_Date	UTC 2026-09-12 01:12:55		N NTY
+266	File_Modified_Date_Local	2026-09-12 03:12:55		N NTY
+== Video #0 (377 fields)
+0	Count	377		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Video		N NT
+4	StreamKind/String	Video		N NT
+5	StreamKindID	0		N NI
+10	ID	0		N YTY
+11	ID/String	0		Y NT
+18	Format	RealVideo 2		N YTY
+19	Format/String	RealVideo 2		Y NT
+22	Format_Commercial	RealVideo 2		N NT
+64	CodecID	RV20		Y YTY
+66	CodecID/Info	Based on H.263, Real Player 6		Y NT
+68	CodecID/Url	http://www.real.com		N NT
+88	Duration	1000	 ms	N YFY
+89	Duration/String	1 s 0 ms		Y NT
+90	Duration/String1	1 s 0 ms		N NT
+91	Duration/String2	1 s 0 ms		N NT
+92	Duration/String3	00:00:01.000		N NT
+93	Duration/String4	00:00:01:00		N NT
+94	Duration/String5	00:00:01.000 (00:00:01:00)		N NT
+132	BitRate	50000	 bps	N YFY
+133	BitRate/String	50.0 kb/s		Y NT
+142	Width	64	 pixel	N YIY
+143	Width/String	64 pixels		Y NT
+150	Height	48	 pixel	N YIY
+151	Height/String	48 pixels		Y NT
+162	PixelAspectRatio	1.000		N YFY
+168	DisplayAspectRatio	1.333		N YFY
+169	DisplayAspectRatio/String	4:3		Y NT
+183	FrameRate	25.000	 fps	N YFY
+184	FrameRate/String	25.000 FPS		Y NT
+197	FrameCount	25		N NIY
+228	Bits-(Pixel*Frame)	0.651		Y NFN
+264	StreamSize	6250	 byte	N YIY
+265	StreamSize/String	6.10 KiB (37%)		Y NT
+266	StreamSize/String1	6 KiB		N NT
+267	StreamSize/String2	6.1 KiB		N NT
+268	StreamSize/String3	6.10 KiB		N NT
+269	StreamSize/String4	6.104 KiB		N NT
+270	StreamSize/String5	6.10 KiB (37%)		N NT
+271	StreamSize_Proportion	0.36849		N NT
+== Audio #0 (280 fields)
+0	Count	280		N NI
+2	StreamCount	1		N NI
+3	StreamKind	Audio		N NT
+4	StreamKind/String	Audio		N NT
+5	StreamKindID	0		N NI
+10	ID	1		N YTY
+11	ID/String	1		Y NT
+18	Format	AC-3		N YTY
+19	Format/String	AC-3		Y NT
+20	Format/Info	Audio Coding 3		Y NT
+21	Format/Url	https://en.wikipedia.org/wiki/AC3		N NT
+22	Format_Commercial	AC-3		N YT
+48	CodecID	dnet		Y YTY
+50	CodecID/Info	Real Player 3		Y NT
+52	CodecID/Url	http://www.real.com		N NT
+70	Duration	1024	 ms	N YFY
+71	Duration/String	1 s 24 ms		Y NT
+72	Duration/String1	1 s 24 ms		N NT
+73	Duration/String2	1 s 24 ms		N NT
+74	Duration/String3	00:00:01.024		N NT
+76	Duration/String5	00:00:01.024		N NT
+114	BitRate	64000	 bps	N YFY
+115	BitRate/String	64.0 kb/s		Y NT
+124	Channel(s)	1	 channel	N YIY
+125	Channel(s)/String	1 channel		Y NT
+140	SamplingRate	48000	 Hz	N YFY
+141	SamplingRate/String	48.0 kHz		Y NT
+142	SamplingCount	49152		N NIY
+152	BitDepth	16	 bit	N YIY
+153	BitDepth/String	16 bits		Y NT
+158	Compression_Mode	Lossy		N YTY
+159	Compression_Mode/String	Lossy		Y NT
+199	StreamSize	8192	 byte	N YIY
+200	StreamSize/String	8.00 KiB (48%)		Y NT
+201	StreamSize/String1	8 KiB		N NT
+202	StreamSize/String2	8.0 KiB		N NT
+203	StreamSize/String3	8.00 KiB		N NT
+204	StreamSize/String4	8.000 KiB		N NT
+205	StreamSize/String5	8.00 KiB (48%)		N NT
+206	StreamSize_Proportion	0.48299		N NTY

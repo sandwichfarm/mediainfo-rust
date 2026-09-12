@@ -1,0 +1,39 @@
+General
+Complete name                            : /home/sandwich/Develop/mediainfo-rust/tests/fixtures/vp9_opus.webm
+Format                                   : WebM
+Format version                           : Version 4
+File size                                : 9.81 KiB
+Duration                                 : 1 s 8 ms
+Overall bit rate                         : 79.7 kb/s
+Writing application                      : Lavf63.1.101
+Writing library                          : Lavf63.1.101
+
+Video
+ID                                       : 1
+Format                                   : VP9
+Codec ID                                 : V_VP9
+Duration                                 : 1 s 0 ms
+Width                                    : 64 pixels
+Height                                   : 48 pixels
+Display aspect ratio                     : 4:3
+Frame rate mode                          : Constant
+Frame rate                               : 25.000 FPS
+Writing library                          : Lavc63.1.101 libvpx-vp9
+Default                                  : No
+Forced                                   : No
+Color range                              : Limited
+
+Audio
+ID                                       : 2
+Format                                   : Opus
+Codec ID                                 : A_OPUS
+Duration                                 : 1 s 8 ms
+Channel(s)                               : 1 channel
+Channel layout                           : C
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Compression mode                         : Lossy
+Writing library                          : Lavc63.1.101 libopus
+Default                                  : No
+Forced                                   : No
+
