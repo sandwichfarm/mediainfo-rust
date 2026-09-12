@@ -1,0 +1,159 @@
+Audio	CodecID	00000001-0000-0010-8000-00AA00389B71	CodecID/Url=http://www.microsoft.com/windows/	Format=PCM
+Audio	CodecID	00000003-0000-0010-8000-00AA00389B71	CodecID/Hint=IEEE 	CodecID/Url=http://www.microsoft.com/windows/	Format=PCM
+Audio	CodecID	0D01030102060300	Format=PCM
+Audio	CodecID	1	CodecID/Url=http://www.microsoft.com/windows/	Format=PCM
+Audio	CodecID	10-2	Format=AAC
+Audio	CodecID	129	Format=AC-3
+Audio	CodecID	15-2	Format=AAC
+Audio	CodecID	161	CodecID/Info=Windows Media Audio	CodecID/Url=http://www.microsoft.com/windows/windowsmedia/format/codecdownload.aspx	CodecID_Description=Windows Media Audio V8	Format=WMA
+Audio	CodecID	2	CodecID/Hint=MP3	Format=AAC
+Audio	CodecID	2000	Format=AC-3
+Audio	CodecID	3	Format=MPEG Audio
+Audio	CodecID	55	CodecID/Hint=MP3	CodecID/Url=http://www.iis.fraunhofer.de/amm/index.html	Format=MPEG Audio
+Audio	CodecID	8-bit a-law	Format=ADPCM
+Audio	CodecID	A_AAC-2	Format=AAC
+Audio	CodecID	A_AC3	Format=AC-3
+Audio	CodecID	A_FLAC	CodecID/Url=https://xiph.org/flac	Format=FLAC
+Audio	CodecID	A_MPEG/L3	CodecID/Hint=MP3	CodecID/Url=http://www.iis.fraunhofer.de/amm/index.html	Format=MPEG Audio
+Audio	CodecID	A_OPUS	CodecID/Url=http://opus-codec.org	Format=Opus
+Audio	CodecID	A_VORBIS	CodecID/Url=http://www.vorbis.com	Format=Vorbis
+Audio	CodecID	alac	CodecID/Info=Apple Lossless Audio Codec	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=ALAC
+Audio	CodecID	dnet	CodecID/Info=Real Player 3	CodecID/Url=http://www.real.com	Format=AC-3
+Audio	CodecID	lpcm	Format=PCM
+Audio	CodecID	mp4a-40-2	Format=AAC
+Audio	CodecID	sowt	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=PCM
+Audio	Format	AAC	Format/Info=Advanced Audio Codec Low Complexity	Format/String=AAC LC	Format_Commercial=AAC
+Audio	Format	AC-3	Format/Info=Audio Coding 3	Format/String=AC-3	Format/Url=https://en.wikipedia.org/wiki/AC3	Format_Commercial=Dolby Digital
+Audio	Format	ADPCM	Format/String=ADPCM	Format_Commercial=ADPCM
+Audio	Format	ALAC	Format/String=ALAC	Format_Commercial=ALAC
+Audio	Format	AMR	Format/Info=Adaptive Multi-Rate	Format/String=AMR	Format/Url=http://www.apple.com/quicktime/download/standalone.html	Format_Commercial=AMR	InternetMediaType=audio/AMR
+Audio	Format	DTS	Format/Info=Digital Theater Systems	Format/String=DTS	Format/Url=https://en.wikipedia.org/wiki/DTS_(sound_system)	Format_Commercial=DTS
+Audio	Format	E-AC-3	Format/Info=Enhanced AC-3	Format/String=E-AC-3	Format/Url=https://en.wikipedia.org/wiki/Dolby_Digital_Plus	Format_Commercial=Dolby Digital Plus	InternetMediaType=audio/eac3
+Audio	Format	FLAC	Format/Info=Free Lossless Audio Codec	Format/String=FLAC	Format/Url=https://xiph.org/flac/	Format_Commercial=FLAC	InternetMediaType=audio/x-flac
+Audio	Format	MLP	Format/Info=Meridian Lossless Packing	Format/String=MLP	Format_Commercial=MLP Lossless
+Audio	Format	MLP FBA	Format/Info=Meridian Lossless Packing FBA	Format/String=MLP FBA	Format_Commercial=Dolby TrueHD
+Audio	Format	MPEG Audio	Format/String=MPEG Audio	Format_Commercial=MPEG Audio	InternetMediaType=audio/mpeg
+Audio	Format	Opus	Format/String=Opus	Format/Url=http://opus-codec.org/	Format_Commercial=Opus	InternetMediaType=audio/opus
+Audio	Format	PCM	Format/String=PCM	Format_Commercial=PCM
+Audio	Format	Speex	Format/String=Speex	Format/Url=http://www.speex.org/	Format_Commercial=Speex	InternetMediaType=audio/speex
+Audio	Format	TTA	Format/String=TTA	Format_Commercial=TTA
+Audio	Format	Vorbis	Format/String=Vorbis	Format/Url=http://www.vorbis.com/	Format_Commercial=Vorbis	InternetMediaType=audio/vorbis
+Audio	Format	WMA	Format/String=WMA	Format_Commercial=WMA
+Audio	Format	WavPack	Format/String=WavPack	Format/Url=http://www.wavpack.com	Format_Commercial=WavPack
+General	CodecID	3gp4	CodecID/String=3gp4 (3gp4/isom/iso2)	CodecID/Url=http://www.3gpp.org/	Format=MPEG-4
+General	CodecID	M4A 	CodecID/String=M4A  (M4A /isom/iso2)	CodecID/Url=http://www.apple.com/itunes/	Format=MPEG-4
+General	CodecID	M4V 	CodecID/String=M4V  (M4V /isom/iso2/avc1)	Format=MPEG-4
+General	CodecID	isom	CodecID/String=isom (isom/iso2/mp41)	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=MPEG-4
+General	CodecID	jp2 	CodecID/String=jp2  (jp2 )	Format=JPEG 2000
+General	CodecID	mp42	CodecID/String=mp42 (mp42/iso2/avc1/mp41)	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=MPEG-4
+General	CodecID	qt  	CodecID/String=qt   0000.02 (qt  )	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=MPEG-4
+General	Format	AC-3	Format/Extensions=ac3	Format/Info=Audio Coding 3	Format/String=AC-3	Format/Url=https://en.wikipedia.org/wiki/AC3	Format_Commercial=Dolby Digital
+General	Format	ADTS	Format/Extensions=aac aacp adts	Format/Info=Audio Data Transport Stream	Format/String=ADTS	Format_Commercial=ADTS
+General	Format	AIFF	Format/Extensions=aiff aifc aif	Format/Info=Apple/SGI	Format/String=AIFF	Format_Commercial=AIFF	InternetMediaType=audio/x-aiff
+General	Format	AMR	Format/Extensions=amr	Format/Info=Adaptive Multi-Rate	Format/String=AMR	Format/Url=http://www.apple.com/quicktime/download/standalone.html	Format_Commercial=AMR	InternetMediaType=audio/AMR
+General	Format	ASS	Format/Extensions=ssa	Format/Info=Advanced SubStation Alpha	Format/String=ASS	Format/Url=http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow	Format_Commercial=ASS
+General	Format	AU	Format/Extensions=au	Format/Info=uLaw/AU Audio File	Format/String=AU	Format_Commercial=AU	InternetMediaType=audio/basic
+General	Format	AVC	Format/Extensions=avc h264 264	Format/Info=Advanced Video Codec	Format/String=AVC	Format/Url=http://developers.videolan.org/x264.html	Format_Commercial=AVC	InternetMediaType=video/H264
+General	Format	AVI	Format/Extensions=avi	Format/Info=Audio Video Interleave	Format/String=AVI	Format_Commercial=AVI	InternetMediaType=video/vnd.avi
+General	Format	BDAV	Format/Extensions=m2ts mts ssif	Format/Info=Blu-ray Video	Format/String=BDAV	Format_Commercial=BDAV
+General	Format	Bitmap	Format/Extensions=bmp bms	Format/String=Bitmap	Format_Commercial=Bitmap	InternetMediaType=image/bmp
+General	Format	CAF	Format/Extensions=caf	Format/Info=Core Audio Format	Format/String=CAF	Format/Url=https://developer.apple.com/library/content/documentation/MusicAudio/Reference/CAFSpec/CAF_overview/CAF_overview.html	Format_Commercial=CAF	InternetMediaType=audio/x-caf
+General	Format	DTS	Format/Extensions=dts dtshd	Format/Info=Digital Theater Systems	Format/String=DTS	Format/Url=https://en.wikipedia.org/wiki/DTS_(sound_system)	Format_Commercial=DTS
+General	Format	DV	Format/Extensions=dv dif	Format/String=DV	Format_Commercial=DV	InternetMediaType=video/DV
+General	Format	E-AC-3	Format/Extensions=dd+ ec3 eac3	Format/Info=Enhanced AC-3	Format/String=E-AC-3	Format/Url=https://en.wikipedia.org/wiki/Dolby_Digital_Plus	Format_Commercial=Dolby Digital Plus	InternetMediaType=audio/eac3
+General	Format	FLAC	Format/Extensions=fla flac	Format/Info=Free Lossless Audio Codec	Format/String=FLAC	Format/Url=https://xiph.org/flac/	Format_Commercial=FLAC	InternetMediaType=audio/x-flac
+General	Format	Flash Video	Format/Extensions=flv	Format/String=Flash Video	Format/Url=http://www.macromedia.com/go/getflashplayer	Format_Commercial=Flash Video	InternetMediaType=video/x-flv
+General	Format	GIF	Format/Extensions=gif gis	Format/Info=Graphics Interchange Format	Format/String=GIF	Format_Commercial=GIF	InternetMediaType=image/gif
+General	Format	HEVC	Format/Extensions=hevc h265 265	Format/Info=High Efficiency Video Coding	Format/String=HEVC	Format/Url=http://www.itu.int	Format_Commercial=HEVC	InternetMediaType=video/H265
+General	Format	IVF	Format/Extensions=ivf	Format/String=IVF	Format_Commercial=IVF
+General	Format	JPEG	Format/Extensions=h3d jpeg jpg jpe jps mpo	Format/String=JPEG	Format_Commercial=JPEG	InternetMediaType=image/jpeg
+General	Format	JPEG 2000	Format/Extensions=jp2	Format/String=JPEG 2000	Format/Url=http://www.morgan-multimedia.com/JPEG 2000/	Format_Commercial=JPEG 2000	InternetMediaType=image/jp2
+General	Format	LATM	Format/String=LATM	Format_Commercial=LATM
+General	Format	MLP	Format/Info=Meridian Lossless Packing	Format/String=MLP	Format_Commercial=MLP Lossless
+General	Format	MLP FBA	Format/Info=Meridian Lossless Packing FBA	Format/String=MLP FBA	Format_Commercial=Dolby TrueHD
+General	Format	MPEG Audio	Format/Extensions=m1a mpa mpa1 mp1 m2a mpa2 mp2 mp3	Format/String=MPEG Audio	Format_Commercial=MPEG Audio	InternetMediaType=audio/mpeg
+General	Format	MPEG Video	Format/Extensions=mpgv mpv mp1v m1v mp2v m2v	Format/String=MPEG Video	Format_Commercial=MPEG Video	InternetMediaType=video/MPV
+General	Format	MPEG-4	Format/Extensions=braw mov mp4 m4v m4a m4b m4p m4r 3ga 3gpa 3gpp 3gp 3gpp2 3g2 k3g jpm jpx mqv ismv isma ismt f4a f4b f4v	Format/String=MPEG-4	Format_Commercial=MPEG-4	InternetMediaType=video/mp4
+General	Format	MPEG-4 Visual	Format/Extensions=m4v mp4v	Format/String=MPEG-4 Visual	Format_Commercial=MPEG-4 Visual	InternetMediaType=video/MP4V-ES
+General	Format	MPEG-PS	Format/Extensions=mpeg mpg m2p vob vro pss evo	Format/String=MPEG-PS	Format_Commercial=MPEG-PS	InternetMediaType=video/MP2P
+General	Format	MPEG-TS	Format/Extensions=ts m2t m2s m4t m4s tmf ts tp trp ty	Format/String=MPEG-TS	Format_Commercial=MPEG-TS	InternetMediaType=video/MP2T
+General	Format	MXF	Format/Extensions=mxf	Format/String=MXF	Format_Commercial=MXF	InternetMediaType=application/mxf
+General	Format	Matroska	Format/Extensions=mkv mk3d mka mks	Format/String=Matroska	Format/Url=https://matroska.org/downloads/windows.html	Format_Commercial=Matroska
+General	Format	Nut	Format/String=Nut	Format_Commercial=Nut
+General	Format	Ogg	Format/Extensions=oga ogg ogm ogv ogx opus spx	Format/Info=Free Lossless Audio Codec	Format/String=Ogg	Format/Url=https://en.wikipedia.org/wiki/Ogg	Format_Commercial=Ogg	InternetMediaType=video/ogg
+General	Format	PNG	Format/Extensions=png pns	Format/Info=Portable Network Graphic	Format/String=PNG	Format_Commercial=PNG	InternetMediaType=image/png
+General	Format	RealMedia	Format/Extensions=rm rmvb ra	Format/String=RealMedia	Format_Commercial=RealMedia	InternetMediaType=application/vnd.rn-realmedia
+General	Format	SubRip	Format/Extensions=srt	Format/String=SubRip	Format/Url=http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow	Format_Commercial=SubRip
+General	Format	TIFF	Format/Extensions=tiff tif	Format/String=TIFF	Format_Commercial=TIFF	InternetMediaType=image/tiff
+General	Format	TTA	Format/String=TTA	Format_Commercial=TTA
+General	Format	VC-3	Format/String=VC-3	Format_Commercial=VC-3
+General	Format	WavPack	Format/Extensions=wv wvc	Format/String=WavPack	Format/Url=http://www.wavpack.com	Format_Commercial=WavPack
+General	Format	Wave	Format/Extensions=act at9 wav	Format/String=Wave	Format_Commercial=Wave	InternetMediaType=audio/vnd.wave
+General	Format	WebM	Format/Extensions=webm	Format/String=WebM	Format/Url=http://www.webmproject.org/	Format_Commercial=WebM	InternetMediaType=video/webm
+General	Format	WebP	Format/String=WebP	Format_Commercial=WebP
+General	Format	WebVTT	Format/Extensions=vtt	Format/String=WebVTT	Format_Commercial=WebVTT
+General	Format	Windows Media	Format/Extensions=asf dvr-ms wma wmv	Format/String=Windows Media	Format_Commercial=Windows Media	InternetMediaType=video/x-ms-wmv
+Image	Format	GIF	Format/Info=Graphics Interchange Format	Format/String=GIF	Format_Commercial=GIF	InternetMediaType=image/gif
+Image	Format	JPEG	Format/String=JPEG	Format_Commercial=JPEG	InternetMediaType=image/jpeg
+Image	Format	JPEG 2000	Format/String=JPEG 2000	Format/Url=http://www.morgan-multimedia.com/JPEG 2000/	Format_Commercial=JPEG 2000	InternetMediaType=image/jp2
+Image	Format	PNG	Format/Info=Portable Network Graphic	Format/String=PNG	Format_Commercial=PNG	InternetMediaType=image/png
+Image	Format	PackBits	Format/String=PackBits	Format_Commercial=PackBits
+Image	Format	RGB	Format/String=RGB	Format_Commercial=RGB
+Image	Format	WebP	Format/String=WebP	Format_Commercial=WebP
+Menu	CodecID	text	Format=Timed Text
+Menu	Format	AVC / AAC	Format/String=AVC / AAC	Format_Commercial=AVC / AAC
+Menu	Format	AVC / AC-3	Format/String=AVC / AC-3	Format_Commercial=AVC / AC-3
+Menu	Format	DVD-Video	Format/String=DVD-Video	Format_Commercial=DVD-Video
+Menu	Format	HEVC / AAC	Format/String=HEVC / AAC	Format_Commercial=HEVC / AAC
+Menu	Format	MPEG Video / MPEG Audio	Format/String=MPEG Video / MPEG Audio	Format_Commercial=MPEG Video / MPEG Audio
+Menu	Format	Timed Text	Format/String=Timed Text	Format_Commercial=Timed Text
+Other	Format	MXF TC	Format/String=MXF TC	Format_Commercial=MXF TC
+Other	Format	SMPTE TC	Format/String=SMPTE TC	Format_Commercial=SMPTE TC
+Text	CodecID	S_TEXT/UTF8	CodecID/Info=UTF-8 Plain Text	Format=UTF-8
+Text	Format	ASS	Format/String=ASS	Format/Url=http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow	Format_Commercial=ASS
+Text	Format	SubRip	Format/String=SubRip	Format/Url=http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow	Format_Commercial=SubRip
+Text	Format	UTF-8	Format/String=UTF-8	Format_Commercial=UTF-8
+Text	Format	WebVTT	Format/String=WebVTT	Format_Commercial=WebVTT
+Video	CodecID	0D01030102046001-0401020201011100	Format=MPEG Video
+Video	CodecID	2	Format=MPEG Video
+Video	CodecID	27	Format=AVC
+Video	CodecID	36	Format=HEVC
+Video	CodecID	7	Format=AVC
+Video	CodecID	FMP4	CodecID/Url=http://ffdshow-tryout.sourceforge.net/	Format=MPEG-4 Visual
+Video	CodecID	H264	Format=AVC
+Video	CodecID	I420	CodecID/Info=8 bit Y plane followed by 8 bit 2x2 subsampled U and V planes.	Format=YUV
+Video	CodecID	MJPG	Format=JPEG
+Video	CodecID	MP43	CodecID/Hint=Microsoft	CodecID/Info=Microsoft MPEG-4 v3 (pre-standard)	CodecID_Description=msmpeg4v3	Format=MPEG-4 Visual
+Video	CodecID	RV20	CodecID/Info=Based on H.263, Real Player 6	CodecID/Url=http://www.real.com	Format=RealVideo 2
+Video	CodecID	VP90	Format=VP90
+Video	CodecID	V_AV1	CodecID/Url=http://aomedia.org/	Format=AV1
+Video	CodecID	V_MPEG2	CodecID/Info=MPEG 1 or 2 Video	CodecID/Url=http://ffdshow-tryout.sourceforge.net/	Format=MPEG Video
+Video	CodecID	V_MPEG4/ISO/ASP	CodecID/Info=Advanced Simple Profile	CodecID/Url=http://www.xvid.org/Downloads.15.0.html	Format=MPEG-4 Visual
+Video	CodecID	V_MPEG4/ISO/AVC	CodecID/Url=http://ffdshow-tryout.sourceforge.net/	Format=AVC
+Video	CodecID	V_MPEGH/ISO/HEVC	Format=HEVC
+Video	CodecID	V_VP8	CodecID/Url=http://www.webmproject.org/	Format=VP8
+Video	CodecID	V_VP9	CodecID/Url=http://www.webmproject.org/	Format=VP9
+Video	CodecID	WMV2	CodecID/Info=Windows Media Video 8	CodecID/Url=http://www.microsoft.com/windows/windowsmedia/format/codecdownload.aspx	CodecID_Description=wmv2	Format=WMV2
+Video	CodecID	avc1	CodecID/Info=Advanced Video Coding	Format=AVC
+Video	CodecID	hvc1	CodecID/Info=High Efficiency Video Coding	CodecID/Url=http://www.itu.int/	Format=HEVC
+Video	CodecID	mp4v-20	Format=MPEG-4 Visual
+Video	CodecID	s263	CodecID/Url=http://www.apple.com/quicktime/download/standalone.html	Format=H.263
+Video	CodecID	xvid	Format=xvid
+Video	Format	AV1	Format/Info=AOMedia Video 1	Format/String=AV1	Format/Url=http://aomedia.org/	Format_Commercial=AV1
+Video	Format	AVC	Format/Info=Advanced Video Codec	Format/String=AVC	Format/Url=http://developers.videolan.org/x264.html	Format_Commercial=AVC	InternetMediaType=video/H264
+Video	Format	DV	Format/String=DV	Format_Commercial=DV	InternetMediaType=video/DV
+Video	Format	H.263	Format/String=H.263	Format_Commercial=H.263	InternetMediaType=video/H263
+Video	Format	HEVC	Format/Info=High Efficiency Video Coding	Format/String=HEVC	Format/Url=http://www.itu.int	Format_Commercial=HEVC	InternetMediaType=video/H265
+Video	Format	JPEG	Format/String=JPEG	Format_Commercial=JPEG	InternetMediaType=video/JPEG
+Video	Format	MPEG Video	Format/String=MPEG Video	Format_Commercial=MPEG-2 Video	InternetMediaType=video/MPV
+Video	Format	MPEG-4 Visual	Format/String=MPEG-4 Visual	Format_Commercial=MPEG-4 Visual	InternetMediaType=video/MP4V-ES
+Video	Format	RealVideo 2	Format/String=RealVideo 2	Format_Commercial=RealVideo 2
+Video	Format	Sorenson Spark	Format/String=Sorenson Spark	Format_Commercial=Sorenson Spark
+Video	Format	Theora	Format/String=Theora	Format/Url=http://www.theora.org/	Format_Commercial=Theora
+Video	Format	VC-3	Format/String=VC-3	Format_Commercial=VC-3
+Video	Format	VP8	Format/String=VP8	Format/Url=http://www.webmproject.org/	Format_Commercial=VP8
+Video	Format	VP9	Format/String=VP9	Format_Commercial=VP9
+Video	Format	VP90	Format/String=VP90	Format_Commercial=VP90
+Video	Format	WMV2	Format/String=WMV2	Format_Commercial=WMV2
+Video	Format	YUV	Format/String=YUV	Format_Commercial=YUV
+Video	Format	xvid	Format/String=xvid	Format_Commercial=xvid
