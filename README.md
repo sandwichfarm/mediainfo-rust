@@ -32,6 +32,28 @@ cargo test                 # unit, CLI and reference-comparison tests
 
 There are no dependencies outside the Rust standard library.
 
+## Docker
+
+A multi-arch (amd64/arm64) image is published to GitHub Container Registry on every release; it is a
+single static binary on `scratch` (about 2.5 MB), so there is nothing else inside it.
+
+```
+docker pull ghcr.io/sandwichfarm/mediainfo:latest        # or :0.1.0, :0.1
+docker run --rm -v "$PWD:/data:ro" ghcr.io/sandwichfarm/mediainfo movie.mkv
+docker run --rm -v "$PWD:/data:ro" ghcr.io/sandwichfarm/mediainfo --Output=JSON movie.mkv > movie.json
+```
+
+The working directory inside the container is `/data`, so mount the directory holding your files
+there (read-only is enough) and pass paths relative to it. All command line options work as usual;
+running the image without arguments prints the help. A convenient shell alias:
+
+```
+alias mediainfo='docker run --rm -v "$PWD:/data:ro" ghcr.io/sandwichfarm/mediainfo'
+```
+
+To build the image yourself: `docker build -t mediainfo .` (the `Dockerfile` cross-compiles for the
+requested platform with `docker buildx build --platform linux/arm64 …`).
+
 ## Command line
 
 ```
