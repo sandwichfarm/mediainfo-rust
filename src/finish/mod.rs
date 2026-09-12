@@ -615,7 +615,8 @@ fn finish_general(doc: &mut Doc) {
         }
         let name = kind.name();
         lists.push((format!("{name}Count"), streams.len().to_string()));
-        let formats: Vec<String> = streams.iter().map(|s| s.get("Format/String").to_string()).filter(|f| !f.is_empty()).collect();
+        // Lists keep one entry per stream (empty when unknown) as long as any stream has a value.
+        let formats: Vec<String> = streams.iter().map(|s| s.get("Format/String").to_string()).collect();
         let with_hint: Vec<String> = streams
             .iter()
             .map(|s| {
@@ -623,15 +624,14 @@ fn finish_general(doc: &mut Doc) {
                 let hint = s.get("CodecID/Hint").to_string();
                 if hint.is_empty() || f.is_empty() { f } else { format!("{f} ({hint})") }
             })
-            .filter(|f| !f.is_empty())
             .collect();
-        let langs: Vec<String> = streams.iter().map(|s| s.get("Language/String").to_string()).filter(|f| !f.is_empty()).collect();
-        if !formats.is_empty() {
+        let langs: Vec<String> = streams.iter().map(|s| s.get("Language/String").to_string()).collect();
+        if formats.iter().any(|f| !f.is_empty()) {
             lists.push((format!("{name}_Format_List"), formats.join(" / ")));
             lists.push((format!("{name}_Format_WithHint_List"), with_hint.join(" / ")));
             lists.push((format!("{name}_Codec_List"), formats.join(" / ")));
         }
-        if !langs.is_empty() {
+        if langs.iter().any(|l| !l.is_empty()) {
             lists.push((format!("{name}_Language_List"), langs.join(" / ")));
         }
     }

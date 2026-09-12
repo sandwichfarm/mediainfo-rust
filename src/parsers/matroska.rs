@@ -1107,8 +1107,9 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 s.set_if_empty("BitDepth", t.bit_depth.to_string());
             }
         }
-        // (Constant-rate streams get BitRate × Duration below, once the duration is known.)
-        let mut stream_bytes = if report_sizes && t.bytes > 0 { Some(t.bytes) } else { None };
+        // Audio with a known bit rate gets BitRate × Duration once the duration is known; video
+        // only gets a size when the whole file was read (residual cluster bytes).
+        let mut stream_bytes = if report_sizes && t.bytes > 0 && kind != StreamKind::Text { Some(t.bytes) } else { None };
         let tag_duration = ctx.tags.iter().filter(|(_, uid, _)| *uid == t.uid && t.uid != 0).flat_map(|(_, _, tags)| tags.iter()).find(|(k, _)| k.eq_ignore_ascii_case("DURATION")).and_then(|(_, v)| parse_hms(v));
         // Timing from blocks
         if let (Some(first), Some(last)) = (t.first_ts, t.last_ts) {
@@ -1137,19 +1138,19 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
         }
         // Flags, names, languages
-        if let Some(bytes) = stream_bytes.take() {
-            match (s.get_f64("BitRate"), s.get_f64("Duration")) {
-                (Some(br), Some(d)) if kind == StreamKind::Audio && br > 0.0 && d > 0.0 => {
-                    let computed = (br * d / 8000.0).round() as u64;
-                    s.set("StreamSize", computed.to_string());
-                    sizes_sum += computed;
-                }
-                _ => {
-                    // Placeholder: the remaining cluster bytes are shared out below.
-                    s.set("StreamSize", bytes.to_string());
-                    residual_streams.push((kind, doc.count(kind), bytes));
-                }
+        match (kind, s.get_f64("BitRate"), s.get_f64("Duration")) {
+            (StreamKind::Audio, Some(br), Some(d)) if br > 0.0 && d > 0.0 => {
+                let computed = (br * d / 8000.0).round() as u64;
+                s.set("StreamSize", computed.to_string());
+                sizes_sum += computed;
+                stream_bytes = None;
             }
+            _ => {}
+        }
+        if let Some(bytes) = stream_bytes.take() {
+            // Placeholder: the remaining cluster bytes are shared out below.
+            s.set("StreamSize", bytes.to_string());
+            residual_streams.push((kind, doc.count(kind), bytes));
         }
         if !t.name.is_empty() {
             s.set("Title", &t.name);
@@ -1179,7 +1180,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
         }
         if ctx.cluster_bytes > 0 {
-            doc.general().set_int("StreamSize", overhead as i128);
+            doc.general().set_int("StreamSize", if residual_streams.is_empty() { file_size.saturating_sub(sizes_sum) } else { overhead } as i128);
         }
     }
 

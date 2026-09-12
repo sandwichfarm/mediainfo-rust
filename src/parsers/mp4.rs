@@ -1182,7 +1182,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                     }
                     let frames = if (media_ms_rounded - pres_ms.round()).abs() >= 1.0 { (pres_ms / 1000.0 * fps).round() as u64 } else { sample_count };
                     s.set("FrameCount", frames.to_string());
-                    if (media_ms_rounded - pres_ms.round()).abs() >= 1.0 {
+                    if (media_ms_rounded - pres_ms.round()).abs() >= 1.0 && !ctx.has_moof {
                         s.set("Source_FrameCount", sample_count.to_string());
                     }
                 }
