@@ -91,3 +91,10 @@ formats). Bug reports with a small sample file are welcome.
 ## License
 
 BSD-2-Clause.
+
+## Releasing
+
+Tag the commit as `vX.Y.Z` (matching `Cargo.toml`) and push the tag: the `Release` workflow verifies
+the version, runs the tests, publishes the crate to crates.io (`CARGO_REGISTRY_TOKEN` repository
+secret) and attaches prebuilt `mediainfo` binaries for Linux (glibc/musl, x86-64/arm64), macOS and
+Windows to a GitHub release. CI runs the tests and the reference comparison on every push.
