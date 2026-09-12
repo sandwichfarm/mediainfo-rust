@@ -62,7 +62,7 @@ static GENERAL: &[(&str, FormatInfo)] = &[
     ("MLP FBA", fi!("Meridian Lossless Packing FBA", "", "thd", "Dolby TrueHD", "")),
     ("FLAC", fi!("Free Lossless Audio Codec", "https://xiph.org/flac/", "fla flac", "FLAC", "audio/x-flac")),
     ("WavPack", fi!("", "http://www.wavpack.com", "wv wvc", "WavPack", "")),
-    ("TTA", fi!("", "", "tta", "TTA", "")),
+    ("TTA", fi!("", "", "", "TTA", "")),
     ("Monkey's Audio", fi!("", "http://www.monkeysaudio.com", "ape mac", "Monkey's Audio", "")),
     ("AMR", fi!("Adaptive Multi-Rate", "http://www.apple.com/quicktime/download/standalone.html", "amr", "AMR", "audio/AMR")),
     ("SubRip", fi!("", "http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow", "srt", "SubRip", "")),
@@ -125,23 +125,34 @@ static STREAM: &[(&str, FormatInfo)] = &[
     ("AMR", fi!("Adaptive Multi-Rate", "http://www.apple.com/quicktime/download/standalone.html", "", "AMR", "audio/AMR")),
     ("Cook", fi!("", "", "", "Cook", "")),
     ("UTF-8", fi!("", "", "", "UTF-8", "")),
-    ("ASS", fi!("Advanced SubStation Alpha", "", "", "ASS", "")),
-    ("SSA", fi!("SubStation Alpha", "", "", "SSA", "")),
+    ("ASS", fi!("", "http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow", "", "ASS", "")),
+    ("SSA", fi!("", "http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow", "", "SSA", "")),
     ("WebVTT", fi!("", "", "", "WebVTT", "")),
     ("VobSub", fi!("", "", "", "VobSub", "")),
     ("PGS", fi!("", "", "", "PGS", "")),
     ("Timed Text", fi!("", "", "", "Timed Text", "")),
     ("RLE", fi!("Run-length encoding", "", "", "RLE", "")),
-    ("SubRip", fi!("", "", "", "SubRip", "")),
+    ("SubRip", fi!("", "http://ffdshow.sourceforge.net/tikiwiki/tiki-index.php?page=Getting+ffdshow", "", "SubRip", "")),
     ("Timecode", fi!("", "", "", "Timecode", "")),
+];
+
+/// Image streams: MIME types differ from the video flavour.
+static IMAGE: &[(&str, FormatInfo)] = &[
+    ("JPEG", fi!("", "", "", "JPEG", "image/jpeg")),
+    ("PNG", fi!("Portable Network Graphic", "", "", "PNG", "image/png")),
+    ("GIF", fi!("Graphics Interchange Format", "", "", "GIF", "image/gif")),
+    ("Bitmap", fi!("", "", "", "Bitmap", "image/bmp")),
+    ("TIFF", fi!("", "", "", "TIFF", "image/tiff")),
+    ("WebP", fi!("", "", "", "WebP", "image/webp")),
+    ("JPEG 2000", fi!("", "http://www.morgan-multimedia.com/JPEG 2000/", "", "JPEG 2000", "image/jp2")),
 ];
 
 pub fn format_info(kind: StreamKind, format: &str) -> Option<FormatInfo> {
     let find = |t: &[(&str, FormatInfo)]| t.iter().find(|(n, _)| *n == format).map(|(_, i)| *i);
-    if kind == StreamKind::General {
-        find(GENERAL).or_else(|| find(STREAM))
-    } else {
-        find(STREAM).or_else(|| find(GENERAL))
+    match kind {
+        StreamKind::General => find(GENERAL).or_else(|| find(STREAM)),
+        StreamKind::Image => find(IMAGE).or_else(|| find(STREAM)).or_else(|| find(GENERAL)),
+        _ => find(STREAM).or_else(|| find(GENERAL)),
     }
 }
 

@@ -4,3 +4,4 @@ pub mod gif;
 pub mod bmp;
 pub mod tiff;
 pub mod jp2;
+pub mod webp;

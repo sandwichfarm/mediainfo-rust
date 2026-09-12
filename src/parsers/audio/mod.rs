@@ -76,7 +76,16 @@ pub fn layout_from_mask(mask: u32) -> (String, String) {
             None => groups.push((group, vec![name])),
         }
     }
-    let mut pos: Vec<String> = groups.iter().map(|(g, v)| format!("{g}: {}", v.join(" "))).collect();
+    // Within a group the reference lists left, centre, right.
+    let canon = ["L", "C", "R", "Lc", "Rc"];
+    let mut pos: Vec<String> = groups
+        .iter()
+        .map(|(g, v)| {
+            let mut v = v.clone();
+            v.sort_by_key(|n| canon.iter().position(|c| c == n).unwrap_or(9));
+            format!("{g}: {}", v.join(" "))
+        })
+        .collect();
     if mask & 0x8 != 0 {
         pos.push("LFE".to_string());
     }

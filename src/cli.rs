@@ -1,7 +1,7 @@
 //! Command line front end, argument-compatible with the reference `mediainfo` tool for the common
 //! options.
 
-use crate::{MediaInfo, Output};
+use crate::MediaInfo;
 use std::path::{Path, PathBuf};
 
 const HELP: &str = "Usage: mediainfo [-Options...] FileName1 [Filename2...]
@@ -95,7 +95,8 @@ pub fn run(args: Vec<String>) -> i32 {
         }
         mi.open(f);
         let mut report = mi.inform();
-        if multi && matches!(mi.options.output, Output::Text) && i + 1 < expanded.len() && mi.options.template.is_none() {
+        let _ = (multi, i);
+        if !report.ends_with('\n') {
             report.push('\n');
         }
         all.push_str(&report);

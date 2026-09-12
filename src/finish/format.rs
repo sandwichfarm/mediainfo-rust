@@ -49,7 +49,7 @@ pub fn size_strings(bytes: u64) -> [String; 5] {
         v /= 1024.0;
         u += 1;
     }
-    let unit = if u == 0 { if bytes == 1 { "Byte" } else { "Bytes" } } else { units[u] };
+    let unit = if u == 0 { if bytes <= 1 { "Byte" } else { "Bytes" } } else { units[u] };
     let s1 = format!("{} {unit}", v.round() as u64);
     let s2 = format!("{} {unit}", sig_digits(v, 2));
     let s3 = format!("{} {unit}", sig_digits(v, 3));
@@ -127,6 +127,9 @@ pub fn frames_string(n: u64) -> String {
 
 /// `FrameRate/String`: 3 decimals with thousands separator, optional samples-per-frame suffix.
 pub fn frame_rate_string(fps: f64, spf: Option<u64>) -> String {
+    if !fps.is_finite() {
+        return String::new();
+    }
     let s = format!("{fps:.3}");
     let (i, d) = s.split_once('.').unwrap();
     let base = format!("{}.{} FPS", thousands(i.parse().unwrap_or(0)), d);
@@ -154,7 +157,7 @@ pub fn aspect_ratio_string(ratio: f64) -> String {
         (2.4, "2.40:1"),
     ];
     for (v, name) in named {
-        if (ratio - v).abs() < 0.0015 {
+        if (ratio - v).abs() < 0.011 {
             return name.to_string();
         }
     }
@@ -192,6 +195,7 @@ mod tests {
         assert_eq!(size_strings(1638)[0], "1.60 KiB");
         assert_eq!(size_strings(1638)[1], "2 KiB");
         assert_eq!(size_strings(1_152_114)[0], "1.10 MiB");
+        assert_eq!(size_strings(0), ["0.00 Byte", "0 Byte", "0.0 Byte", "0.00 Byte", "0.000 Byte"]);
     }
 
     #[test]
@@ -227,6 +231,7 @@ mod tests {
         assert_eq!(aspect_ratio_string(1.333), "4:3");
         assert_eq!(aspect_ratio_string(1.778), "16:9");
         assert_eq!(aspect_ratio_string(2.0), "2.000:1");
+        assert_eq!(aspect_ratio_string(1.768), "16:9");
         assert_eq!(proportion(4596.0, 10690.0), "0.42993");
     }
 }

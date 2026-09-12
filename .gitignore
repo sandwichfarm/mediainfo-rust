@@ -1,1 +1,4 @@
 target/
+.claude/
+tools/oracle/target/
+tools/oracle/Cargo.lock

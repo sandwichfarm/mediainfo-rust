@@ -22,6 +22,8 @@ pub fn render(doc: &Doc, complete: bool, raw_names: bool) -> String {
             render_stream(&mut out, s, complete, raw_names);
         }
     }
+    // The reference report ends with an empty line.
+    out.push('\n');
     out
 }
 
