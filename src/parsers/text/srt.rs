@@ -51,7 +51,7 @@ pub fn parse_time(s: &str) -> Option<u64> {
 /// `start --> end` (any extra cue settings after the end time are ignored).
 pub fn parse_timing(line: &str) -> Option<(u64, u64)> {
     let (a, b) = line.split_once("-->")?;
-    let end = b.trim().split_whitespace().next()?;
+    let end = b.split_whitespace().next()?;
     let (s, e) = (parse_time(a)?, parse_time(end)?);
     (e >= s).then_some((s, e))
 }

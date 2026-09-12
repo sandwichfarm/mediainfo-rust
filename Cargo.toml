@@ -5,7 +5,12 @@ edition = "2021"
 description = "Cleanroom pure-Rust reimplementation of MediaInfo (library + CLI, no GUI)"
 license = "BSD-2-Clause"
 repository = "https://github.com/sandwichfarm/mediainfo-rust"
+readme = "README.md"
+keywords = ["mediainfo", "media", "metadata", "video", "audio"]
+categories = ["multimedia", "multimedia::video", "multimedia::audio", "command-line-utilities", "parser-implementations"]
 rust-version = "1.80"
+# Keep the crate small: the reference corpus, oracle dumps and helper tool stay in git only.
+exclude = ["tests/fixtures/*", "tests/oracle/*", "tools/*", "docs/*", ".github/*", ".claude/*"]
 
 [lib]
 name = "mediainfo"

@@ -178,7 +178,7 @@ pub fn parse_header(d: &[u8]) -> Option<Header> {
         let seek_table_bytes = le32(d, 16)?;
         let wav_header_bytes = le32(d, 20)?;
         let o = descriptor_bytes as usize;
-        if o < 52 || o > 4096 {
+        if !(52..=4096).contains(&o) {
             return None;
         }
         h.compression_level = le16(d, o)?;

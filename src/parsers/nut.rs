@@ -152,7 +152,7 @@ fn parse_info(b: &[u8], ctx: &mut Ctx) {
         };
         // value: signed v (type) — negative encodes the kind
         let Some(raw) = read_v(b, &mut p) else { return };
-        let ty = if raw & 1 == 1 { -(((raw + 1) / 2) as i64) } else { (raw / 2) as i64 };
+        let ty = if raw & 1 == 1 { -(raw.div_ceil(2) as i64) } else { (raw / 2) as i64 };
         let value = match ty {
             -1 => read_vb(b, &mut p).map(|v| String::from_utf8_lossy(v).to_string()),
             -2 => read_v(b, &mut p).map(|v| v.to_string()),

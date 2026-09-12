@@ -295,7 +295,7 @@ mod tests {
         assert_eq!(a.get("StreamSize"), "400");
         assert_eq!(a.get("Duration"), "2.268");
 
-        let file = form(b"AIFC", &[chunk(b"COMM", &comm(1, 10, 32, RATE_48000, Some((b"fl32", "32-bit floating point")))), chunk(b"SSND", &vec![0u8; 48])]);
+        let file = form(b"AIFC", &[chunk(b"COMM", &comm(1, 10, 32, RATE_48000, Some((b"fl32", "32-bit floating point")))), chunk(b"SSND", &[0u8; 48])]);
         let mut r = Reader::from_bytes(file);
         let mut doc = Doc::new();
         assert!(parse(&mut r, &mut doc));

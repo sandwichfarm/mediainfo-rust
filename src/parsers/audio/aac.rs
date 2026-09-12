@@ -556,6 +556,59 @@ pub fn parse_latm(r: &mut Reader, doc: &mut Doc) -> bool {
     true
 }
 
+// ---------------------------------------------------------------------------- container helpers
+
+/// Fill a stream from an ADTS frame (or a PES payload starting with one), as used by MPEG-TS/PS.
+/// Returns the audio object type through `CodecID`-style "15-2" handling in the caller.
+pub fn apply_adts_frame(s: &mut Stream, data: &[u8]) -> bool {
+    let start = id3v2_len(data);
+    let Some(h) = data.get(start..).and_then(parse_adts_header) else { return false };
+    let Some(rate) = sampling_rate(h.sampling_index) else { return false };
+    let aot = h.profile + 1;
+    apply_profile(s, aot, false, false);
+    s.set_if_empty("Format_Version", if h.mpeg2 { "Version 2" } else { "Version 4" });
+    s.set_if_empty("SamplingRate", rate.to_string());
+    if !s.has("Channel(s)") {
+        apply_channels(s, channels_for_config(h.channel_config).unwrap_or(0));
+    }
+    s.set_if_empty("SamplesPerFrame", (1024 * (h.raw_blocks as u32 + 1)).to_string());
+    s.set_if_empty("MuxingMode", "ADTS");
+    s.set_if_empty("Compression_Mode", "Lossy");
+    if h.buffer_fullness == 0x7FF {
+        s.set_if_empty("BitRate_Mode", "VBR");
+    }
+    true
+}
+
+/// Fill a stream from a LOAS/LATM AudioSyncStream frame (MPEG-TS stream type 0x11).
+pub fn apply_latm_frame(s: &mut Stream, data: &[u8]) -> bool {
+    let mut pos = 0usize;
+    let mut tries = 0;
+    while let Some(len) = data.get(pos..).and_then(loas_len) {
+        let payload = data.get(pos + 3..(pos + 3 + len).min(data.len())).unwrap_or(&[]);
+        if let Some(&b) = payload.first() {
+            if b & 0x80 == 0 {
+                let mut br = BitReader::new(payload);
+                br.skip(1);
+                if let Some((a, fullness)) = parse_stream_mux_config(&mut br) {
+                    apply_config(s, &a);
+                    s.set_if_empty("MuxingMode", "LATM");
+                    if fullness == Some(0xFF) {
+                        s.set_if_empty("BitRate_Mode", "VBR");
+                    }
+                    return true;
+                }
+            }
+        }
+        pos += 3 + len;
+        tries += 1;
+        if tries > 64 {
+            break;
+        }
+    }
+    false
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -688,57 +741,4 @@ mod tests {
         assert_eq!(loas_len(&[0x56, 0xC0, 0x93]), None);
         assert!(parse_stream_mux_config(&mut BitReader::new(&[0x20])).is_none());
     }
-}
-
-// ---------------------------------------------------------------------------- container helpers
-
-/// Fill a stream from an ADTS frame (or a PES payload starting with one), as used by MPEG-TS/PS.
-/// Returns the audio object type through `CodecID`-style "15-2" handling in the caller.
-pub fn apply_adts_frame(s: &mut Stream, data: &[u8]) -> bool {
-    let start = id3v2_len(data);
-    let Some(h) = data.get(start..).and_then(parse_adts_header) else { return false };
-    let Some(rate) = sampling_rate(h.sampling_index) else { return false };
-    let aot = h.profile + 1;
-    apply_profile(s, aot, false, false);
-    s.set_if_empty("Format_Version", if h.mpeg2 { "Version 2" } else { "Version 4" });
-    s.set_if_empty("SamplingRate", rate.to_string());
-    if !s.has("Channel(s)") {
-        apply_channels(s, channels_for_config(h.channel_config).unwrap_or(0));
-    }
-    s.set_if_empty("SamplesPerFrame", (1024 * (h.raw_blocks as u32 + 1)).to_string());
-    s.set_if_empty("MuxingMode", "ADTS");
-    s.set_if_empty("Compression_Mode", "Lossy");
-    if h.buffer_fullness == 0x7FF {
-        s.set_if_empty("BitRate_Mode", "VBR");
-    }
-    true
-}
-
-/// Fill a stream from a LOAS/LATM AudioSyncStream frame (MPEG-TS stream type 0x11).
-pub fn apply_latm_frame(s: &mut Stream, data: &[u8]) -> bool {
-    let mut pos = 0usize;
-    let mut tries = 0;
-    while let Some(len) = data.get(pos..).and_then(loas_len) {
-        let payload = data.get(pos + 3..(pos + 3 + len).min(data.len())).unwrap_or(&[]);
-        if let Some(&b) = payload.first() {
-            if b & 0x80 == 0 {
-                let mut br = BitReader::new(payload);
-                br.skip(1);
-                if let Some((a, fullness)) = parse_stream_mux_config(&mut br) {
-                    apply_config(s, &a);
-                    s.set_if_empty("MuxingMode", "LATM");
-                    if fullness == Some(0xFF) {
-                        s.set_if_empty("BitRate_Mode", "VBR");
-                    }
-                    return true;
-                }
-            }
-        }
-        pos += 3 + len;
-        tries += 1;
-        if tries > 64 {
-            break;
-        }
-    }
-    false
 }

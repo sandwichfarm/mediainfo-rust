@@ -87,7 +87,7 @@ fn main() {
         }
         total_ok += ok;
         total_fields += n;
-        println!("{name}: {ok}/{n} fields match{}", if lines.is_empty() { "" } else { "" });
+        println!("{name}: {ok}/{n} fields match");
         if verbose || !filter.is_empty() {
             for l in lines {
                 println!("{l}");

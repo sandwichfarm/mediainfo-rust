@@ -263,7 +263,8 @@ fn finish_common(s: &mut Stream) {
             s.derive(&format!("{base}/String"), frame_rate_string(f, None));
         }
     }
-    for base in ["FrameRate_Mode"] {
+    {
+        let base = "FrameRate_Mode";
         let v = s.get(base).to_string();
         if !v.is_empty() {
             let t = match v.as_str() {
@@ -719,7 +720,7 @@ pub fn set_frame_rate_fraction(s: &mut Stream, fps: f64) {
         if (fps - v).abs() < 0.0005 {
             s.set("FrameRate_Num", num.to_string());
             s.set("FrameRate_Den", "1001");
-            s.set("FrameRate/String", format!("{} ({num}/1001) FPS", format!("{v:.3}")));
+            s.set("FrameRate/String", format!("{v:.3} ({num}/1001) FPS"));
             return;
         }
     }

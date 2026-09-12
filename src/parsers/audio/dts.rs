@@ -410,7 +410,7 @@ mod tests {
         assert_eq!(parse_hd_header(&d), Some((9, 100)));
         let mut sub = d.clone();
         sub.extend_from_slice(&SYNC_XLL);
-        assert_eq!(hd_components(&sub).0, true);
+        assert!(hd_components(&sub).0);
         let mut s = Stream::new(StreamKind::Audio);
         assert!(apply_frame(&mut s, &sub));
         assert_eq!(s.get("Format_Profile"), "MA");

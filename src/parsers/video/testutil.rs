@@ -7,6 +7,12 @@ pub struct BitWriter {
     bits: usize,
 }
 
+impl Default for BitWriter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl BitWriter {
     pub fn new() -> Self {
         Self { bytes: Vec::new(), bits: 0 }

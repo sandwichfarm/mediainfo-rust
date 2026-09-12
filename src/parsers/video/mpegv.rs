@@ -289,7 +289,7 @@ pub fn apply(s: &mut Stream, h: &Headers, in_container: bool) -> bool {
             s.set("Format_Profile", p);
         }
     }
-    s.set_bool("Format_Settings_BVOP", h.picture_types.iter().any(|t| *t == 3));
+    s.set_bool("Format_Settings_BVOP", h.picture_types.contains(&3));
     s.set("Format_Settings_Matrix", if seq.custom_intra_matrix || seq.custom_non_intra_matrix { "Custom" } else { "Default" });
     // The reference reports the GOP structure only for streams with B pictures (raw.m2v, an
     // I/P-only stream with two full GOPs, shows none).

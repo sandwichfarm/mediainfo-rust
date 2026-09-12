@@ -78,7 +78,7 @@ impl<'a> BitReader<'a> {
     /// Unsigned Exp-Golomb (ue(v)).
     pub fn ue(&mut self) -> Option<u32> {
         let mut zeros = 0;
-        while self.bit()? == false {
+        while !(self.bit()?) {
             zeros += 1;
             if zeros > 32 {
                 return None;

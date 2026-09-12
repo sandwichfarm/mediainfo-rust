@@ -669,7 +669,7 @@ fn handle_block(r: &mut Reader, size: u64, cluster_tc: u64, duration: Option<u64
     if t.first_ts.is_none() {
         t.first_ts = Some(ts);
     }
-    if t.last_ts.is_none_or(|l| ts >= l) {
+    if t.last_ts.map_or(true, |l| ts >= l) {
         t.last_ts = Some(ts);
         t.last_duration = duration.map(|d| d as f64 * scale);
     }

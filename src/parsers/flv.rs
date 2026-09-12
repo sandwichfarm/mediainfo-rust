@@ -167,7 +167,7 @@ fn handle_tag(kind: u8, ts: u32, body: &[u8], ctx: &mut Ctx, collect: bool) {
             }
             let mut payload = &body[1..];
             let mut is_frame = true;
-            if (kind == 9 && codec == 7) || (kind == 9 && codec == 12) || (kind == 8 && codec == 10) {
+            if (kind == 9 && (codec == 7 || codec == 12)) || (kind == 8 && codec == 10) {
                 let Some(&pkt) = payload.first() else { return };
                 payload = if kind == 9 { payload.get(4..).unwrap_or(&[]) } else { &payload[1..] };
                 if pkt == 0 {
@@ -318,7 +318,7 @@ fn audio_format(codec: u8) -> &'static str {
         0 | 3 => "PCM",
         1 => "ADPCM",
         2 | 14 => "MPEG Audio",
-        4 | 5 | 6 => "Nellymoser",
+        4..=6 => "Nellymoser",
         7 | 8 => "PCM",
         10 => "AAC",
         11 => "Speex",

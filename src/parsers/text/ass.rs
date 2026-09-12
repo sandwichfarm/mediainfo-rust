@@ -45,7 +45,7 @@ pub fn parse_time(s: &str) -> Option<u64> {
 
 /// Whether the text starts (after blank lines and `;` comments) with `[Script Info]`.
 pub fn starts_with_script_info(text: &str) -> bool {
-    text.lines().map(str::trim).filter(|l| !l.is_empty() && !l.starts_with(';')).next().is_some_and(|l| l.eq_ignore_ascii_case("[script info]"))
+    text.lines().map(str::trim).find(|l| !l.is_empty() && !l.starts_with(';')).is_some_and(|l| l.eq_ignore_ascii_case("[script info]"))
 }
 
 pub fn parse_script(text: &str) -> Option<Script> {

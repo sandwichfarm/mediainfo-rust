@@ -99,7 +99,7 @@ pub fn ber(b: &[u8], p: usize) -> Option<(u64, usize)> {
 }
 
 fn is_partition(key: &[u8]) -> bool {
-    key.len() >= 16 && key[..13] == PARTITION_PREFIX && matches!(key[13], 2 | 3 | 4)
+    key.len() >= 16 && key[..13] == PARTITION_PREFIX && matches!(key[13], 2..=4)
 }
 
 /// Offset of the first partition pack within the run-in.
@@ -329,7 +329,7 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
     let meta_start = start as u64 + 16 + ll as u64 + plen;
     // HeaderByteCount is counted differently by writers (some exclude the leading fill), so the walk
     // simply stops at the next partition pack; the count only bounds the read.
-    let meta_end = len.min(meta_start + ctx.partition.header_bytes.max(64 * 1024).min(METADATA_CAP) + 64 * 1024);
+    let meta_end = len.min(meta_start + ctx.partition.header_bytes.clamp(64 * 1024, METADATA_CAP) + 64 * 1024);
     let reached = walk(r, meta_start, meta_end, &mut ctx, true);
     // Footer partition: size, and metadata when the header carried none
     if ctx.partition.footer > 0 && ctx.partition.footer + 16 <= len {
@@ -693,7 +693,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx) {
         for t in tracks.iter().filter(|t| t.kind == 4) {
             source_tc_tracks.push(t.clone());
         }
-        let essence_tracks: Vec<&TrackInfo> = tracks.iter().filter(|t| matches!(t.kind, 1 | 2 | 3)).collect();
+        let essence_tracks: Vec<&TrackInfo> = tracks.iter().filter(|t| matches!(t.kind, 1..=3)).collect();
         for t in essence_tracks.iter() {
             let desc = descriptors.iter().find(|d| d.u32(T_LINKED_TRACK) == Some(t.track_id)).or_else(|| if descriptors.len() == 1 && essence_tracks.len() == 1 { descriptors.first() } else { None }).or_else(|| descriptors.iter().find(|d| (t.kind == 1 && PICTURE_DESCRIPTORS.contains(&d.id)) || (t.kind == 2 && SOUND_DESCRIPTORS.contains(&d.id))));
             let kind = match t.kind {

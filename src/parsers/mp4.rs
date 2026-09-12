@@ -823,7 +823,10 @@ fn parse_moof(r: &mut Reader, moof_pos: u64, start: u64, end: u64, ctx: &mut Ctx
                     }
                     let ddur = default_dur.unwrap_or(t.default_sample_duration);
                     let dsize = default_size.unwrap_or(t.default_sample_size);
-                    let base = if default_base_is_moof || base_offset.is_none() { moof_pos } else { base_offset.unwrap() };
+                    let base = match base_offset {
+                        Some(b) if !default_base_is_moof => b,
+                        _ => moof_pos,
+                    };
                     let first_off = (base as i64 + data_offset.unwrap_or(0) as i64).max(0) as u64;
                     let mut first = true;
                     for _ in 0..count.min(1 << 20) {
@@ -1672,7 +1675,7 @@ fn apply_audio_codec(s: &mut Stream, t: &Track, codec: &str, _ctx: &Ctx) {
                     s.set("CodecID", format!("mp4a-{oti:02X}"));
                     ac3::apply_frame(s, first);
                 }
-                0xA9 | 0xAA | 0xAB | 0xAC => {
+                0xA9..=0xAC => {
                     s.set("Format", "DTS");
                     s.set("CodecID", format!("mp4a-{oti:02X}"));
                     dts::apply_frame(s, first);

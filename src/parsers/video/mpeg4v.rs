@@ -329,7 +329,7 @@ pub fn apply(s: &mut Stream, h: &Headers) -> bool {
     if let Some(p) = h.profile_level.map(profile_level_name).filter(|p| !p.is_empty()) {
         s.set_if_empty("Format_Profile", p);
     }
-    s.set_bool("Format_Settings_BVOP", h.vop_types.iter().any(|t| *t == 2));
+    s.set_bool("Format_Settings_BVOP", h.vop_types.contains(&2));
     s.set_bool("Format_Settings_QPel", vol.quarter_sample);
     s.set("Format_Settings_GMC", if vol.sprite_enable == 2 { vol.sprite_warping_points } else { 0 }.to_string());
     s.set(
@@ -396,7 +396,7 @@ pub fn apply_headers(s: &mut Stream, d: &[u8]) -> bool {
 pub fn apply_frame_user_data(s: &mut Stream, d: &[u8]) {
     let h = scan(d, 4096);
     apply_user_data(s, &h.user_data);
-    if h.vop_types.iter().any(|t| *t == 2) {
+    if h.vop_types.contains(&2) {
         s.set("Format_Settings_BVOP", "Yes");
     }
 }

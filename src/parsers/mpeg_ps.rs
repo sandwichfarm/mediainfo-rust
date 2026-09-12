@@ -245,7 +245,7 @@ fn handle_pes(data: &[u8], ctx: &mut Ctx, collect: bool) {
         // sub_stream_id, number of frames, first access unit pointer
         let skip = if (0x20..=0x3F).contains(&sub) { 1 } else { 4 };
         (Some(sub), payload.get(skip..).unwrap_or(&[]))
-    } else if matches!(id, 0xC0..=0xDF | 0xE0..=0xEF) {
+    } else if matches!(id, 0xC0..=0xEF) {
         (None, payload)
     } else {
         return;
@@ -380,7 +380,7 @@ pub fn video_format(data: &[u8]) -> &'static str {
                 0xB3 | 0xB8 | 0x00 => seen_mpeg = true,
                 0xB5 if seen_mpeg => {}
                 0xB0 | 0xB5 | 0xB6 => return "MPEG-4 Visual",
-                0x0F | 0x0E | 0x0D => return "VC-1",
+                0x0D..=0x0F => return "VC-1",
                 0x40 | 0x42 | 0x44 | 0x26 | 0x28 if four => return "HEVC",
                 0x67 | 0x68 | 0x09 | 0x65 | 0x61 | 0x41 if four => return "AVC",
                 _ => {}

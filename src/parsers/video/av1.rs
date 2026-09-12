@@ -428,11 +428,10 @@ mod tests {
         b.b(1, 8);
         b.b(1, 8);
         b.b(0, 1); // color_range
-        if profile == 2 {
-            if high_bitdepth {
+        if profile == 2
+            && high_bitdepth {
                 // 10-bit professional: 4:2:2 implied
             }
-        }
         if profile == 0 {
             b.b(0, 2); // chroma_sample_position
         }

@@ -1065,6 +1065,6 @@ mod tests {
         let mut r = Reader::from_bytes(f);
         let mut doc = Doc::new();
         assert!(parse(&mut r, &mut doc));
-        assert!(parse(&mut Reader::from_bytes(HEADER.to_vec()), &mut Doc::new()) == false);
+        assert!(!parse(&mut Reader::from_bytes(HEADER.to_vec()), &mut Doc::new()));
     }
 }

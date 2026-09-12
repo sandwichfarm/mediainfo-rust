@@ -78,7 +78,7 @@ mod tests {
         if family != 0 {
             v.push(channels);
             v.push(0);
-            v.extend((0..channels).map(|i| i));
+            v.extend(0..channels);
         }
         v
     }

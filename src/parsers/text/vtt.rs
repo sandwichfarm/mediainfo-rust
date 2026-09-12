@@ -50,7 +50,7 @@ pub fn scan(text: &str) -> Option<Stats> {
     let mut st = Stats::default();
     for line in text.lines().take(MAX_LINES) {
         let Some((a, b)) = line.split_once("-->") else { continue };
-        let end = b.trim().split_whitespace().next().unwrap_or("");
+        let end = b.split_whitespace().next().unwrap_or("");
         let (Some(s), Some(e)) = (parse_time(a), parse_time(end)) else { continue };
         st.cues += 1;
         st.first_ms = Some(st.first_ms.map_or(s, |v| v.min(s)));
