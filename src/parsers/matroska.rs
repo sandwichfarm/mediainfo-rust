@@ -1030,18 +1030,6 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
         }
         apply_codec(&mut s, t, ctx, kind);
-        let has_encoder_tag = ctx.tags.iter().any(|(_, uid, tags)| *uid == t.uid && t.uid != 0 && tags.iter().any(|(k, _)| k.eq_ignore_ascii_case("ENCODER")));
-        if codec_id == "V_MPEG4/ISO/AVC" && has_encoder_tag {
-            // The reference shows x264's library string without the separator when a tag also names an encoder.
-            let lib = s.get("Encoded_Library").to_string();
-            if let Some((n, v)) = lib.split_once(" - ") {
-                if n == "x264" {
-                    s.set("Encoded_Library", format!("{n} {v}"));
-                    s.set("Encoded_Library_Name", n);
-                    s.set("Encoded_Library_Version", v);
-                }
-            }
-        }
         // Container-level properties
         if kind == StreamKind::Video {
             if t.pixel_width > 0 && t.pixel_height > 0 {

@@ -29,6 +29,10 @@ fn config_bytes(d: &[u8]) -> Option<&[u8]> {
             b = &b[12..];
         }
     }
+    // Box payload form: version/flags (4 bytes) then the 24-byte cookie.
+    if b.len() >= 28 && b[..4] == [0, 0, 0, 0] {
+        b = &b[4..];
+    }
     if b.len() < 24 {
         return None;
     }

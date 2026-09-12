@@ -1160,6 +1160,17 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
             StreamKind::Audio => {
                 apply_audio_codec(&mut s, t, &codec, ctx);
+                if sample_count > 0 && !ctx.has_moof {
+                    if (media_ms_rounded - pres_ms.round()).abs() >= 1.0 {
+                        let (n, _) = samples_within(t, pres_ms, 0.0);
+                        s.set("FrameCount", n.to_string());
+                        s.set("Source_FrameCount", sample_count.to_string());
+                    } else {
+                        s.set("FrameCount", sample_count.to_string());
+                    }
+                } else if ctx.has_moof && t.frag_samples > 0 {
+                    s.set("FrameCount", t.frag_samples.to_string());
+                }
                 if !s.has("Channel(s)") && t.channels > 0 {
                     s.set("Channel(s)", t.channels.to_string());
                 }
@@ -1357,22 +1368,29 @@ fn last_frame_diff(t: &Track) -> Option<f64> {
 
 /// Sum of sample sizes whose start time lies within [start_ms, start_ms + window_ms).
 fn bytes_within(t: &Track, window_ms: f64, start_ms: f64) -> u64 {
+    samples_within(t, window_ms, start_ms).1
+}
+
+/// (count, bytes) of the samples whose start time lies within [start_ms, start_ms + window_ms).
+fn samples_within(t: &Track, window_ms: f64, start_ms: f64) -> (u64, u64) {
     let ts = t.timescale.max(1) as f64;
     let mut acc = 0u64;
     let mut idx = 0usize;
     let mut total = 0u64;
+    let mut count = 0u64;
     let end = start_ms + window_ms;
     for (c, d) in &t.stts {
         for _ in 0..*c {
             let tm = acc as f64 / ts * 1000.0;
             if tm >= start_ms - 0.001 && tm < end - 0.001 {
                 total += if !t.stsz.is_empty() { t.stsz.get(idx).copied().unwrap_or(0) as u64 } else { t.stsz_default as u64 };
+                count += 1;
             }
             acc += *d as u64;
             idx += 1;
         }
     }
-    total
+    (count, total)
 }
 
 fn apply_colr(s: &mut Stream, p: u16, t: u16, m: u16, full: bool) {
