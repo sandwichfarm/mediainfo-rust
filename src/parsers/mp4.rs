@@ -94,6 +94,8 @@ struct Track {
     frag_samples: u64,
     frag_bytes: u64,
     frag_duration: u64,
+    frag_min_dur: u32,
+    frag_max_dur: u32,
     default_sample_duration: u32,
     default_sample_size: u32,
     frag_first_sample: Option<(u64, u32)>,
@@ -105,6 +107,8 @@ struct Track {
     tmcd_flags: u32,
     tmcd_first: Option<u32>,
     chapter_data: Vec<(u64, Vec<u8>)>,
+    creation: u64,
+    modification: u64,
 }
 
 #[derive(Debug, Default, Clone)]
@@ -313,6 +317,13 @@ fn parse_trak(r: &mut Reader, start: u64, end: u64, t: &mut Track, ctx: &mut Ctx
                 t.enabled = flags & 1 != 0;
                 t.in_movie = flags & 2 != 0;
                 let o = if v == 1 { 20 } else { 12 };
+                if v == 1 {
+                    t.creation = be64(&d, 4).unwrap_or(0);
+                    t.modification = be64(&d, 12).unwrap_or(0);
+                } else {
+                    t.creation = be32(&d, 4).unwrap_or(0) as u64;
+                    t.modification = be32(&d, 8).unwrap_or(0) as u64;
+                }
                 t.id = be32(&d, o).unwrap_or(0);
                 let o2 = if v == 1 { 44 } else { 32 };
                 t.layer = be16(&d, o2).unwrap_or(0) as i16;
@@ -839,6 +850,10 @@ fn parse_moof(r: &mut Reader, moof_pos: u64, start: u64, end: u64, ctx: &mut Ctx
                         t.frag_samples += 1;
                         t.frag_bytes += size as u64;
                         t.frag_duration += dur as u64;
+                        if dur > 0 {
+                            t.frag_min_dur = if t.frag_min_dur == 0 { dur } else { t.frag_min_dur.min(dur) };
+                            t.frag_max_dur = t.frag_max_dur.max(dur);
+                        }
                     }
                 }
                 _ => {}
@@ -1011,7 +1026,13 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         order += 1;
         s.set_int("ID", t.id as i128);
         let track_ts = t.timescale.max(1) as f64;
-        let media_ms = t.media_duration as f64 / track_ts * 1000.0;
+        let mdhd_ms = t.media_duration as f64 / track_ts * 1000.0;
+        // The sample table is the authority on the media duration; mdhd may disagree slightly.
+        let stts_sum: u64 = t.stts.iter().map(|(c, d)| *c as u64 * *d as u64).sum();
+        let media_ms = if stts_sum > 0 && !ctx.has_moof { stts_sum as f64 / track_ts * 1000.0 } else { mdhd_ms };
+        if stts_sum > 0 && (mdhd_ms.round() - media_ms.round()).abs() >= 1.0 {
+            s.set_extra("mdhd_Duration", t.media_duration.to_string(), "", OPT_SHOWN);
+        }
         // Edit list → presentation duration & delays
         let mut pres_ms = media_ms;
         let mut source_delay_ms: Option<f64> = None;
@@ -1080,6 +1101,12 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         if !t.language.is_empty() {
             s.set("Language", &t.language);
         }
+        if t.creation > 2_082_844_800 {
+            s.set("Encoded_Date", format!("UTC {}", crate::finish::format_datetime(t.creation as i64 - 2_082_844_800)));
+        }
+        if t.modification > 2_082_844_800 {
+            s.set("Tagged_Date", format!("UTC {}", crate::finish::format_datetime(t.modification as i64 - 2_082_844_800)));
+        }
         if !t.name.is_empty() {
             s.set("Title", &t.name);
         }
@@ -1125,10 +1152,31 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 // Frame rate from stts
                 let stream_mode = s.get("FrameRate_Mode").to_string();
                 if sample_count > 0 && pres_ms > 0.0 {
-                    let cfr = t.stts.len() <= 1 || t.stts.iter().all(|(_, d)| *d == t.stts[0].1) || (t.stts.len() == 2 && t.stts[1].0 == 1);
-                    let fps = if cfr && !t.stts.is_empty() && t.stts[0].1 > 0 { track_ts / t.stts[0].1 as f64 } else if ctx.has_moof && t.default_sample_duration > 0 { track_ts / t.default_sample_duration as f64 } else { sample_count as f64 / (media_ms / 1000.0) };
-                    s.set("FrameRate", format!("{fps:.3}"));
-                    s.set("FrameRate_Mode", if cfr || (ctx.has_moof && t.default_sample_duration > 0) { "CFR" } else { "VFR" });
+                    let (cfr, fps, min_max) = if ctx.has_moof && t.frag_duration > 0 {
+                        let cfr = t.frag_min_dur == t.frag_max_dur;
+                        let fps = sample_count as f64 / (t.frag_duration as f64 / track_ts);
+                        (cfr, fps, Some((track_ts / t.frag_max_dur.max(1) as f64, track_ts / t.frag_min_dur.max(1) as f64)))
+                    } else {
+                        let cfr = t.stts.len() <= 1 || t.stts.iter().all(|(_, d)| *d == t.stts[0].1) || (t.stts.len() == 2 && t.stts[1].0 == 1);
+                        let fps = if cfr && !t.stts.is_empty() && t.stts[0].1 > 0 { track_ts / t.stts[0].1 as f64 } else if pres_ms > 0.0 { sample_count as f64 / (pres_ms / 1000.0) } else { 0.0 };
+                        let mut durs: Vec<u32> = t.stts.iter().filter(|(c, d)| *c > 0 && *d > 0).map(|(_, d)| *d).collect();
+                        durs.sort();
+                        let mm = if durs.len() > 1 { Some((track_ts / *durs.last().unwrap() as f64, track_ts / durs[0] as f64)) } else { None };
+                        (cfr, fps, mm)
+                    };
+                    if fps.is_finite() && fps > 0.0 {
+                        s.set("FrameRate", format!("{fps:.3}"));
+                        if cfr {
+                            crate::finish::set_frame_rate_fraction(&mut s, fps);
+                        }
+                    }
+                    s.set("FrameRate_Mode", if cfr { "CFR" } else { "VFR" });
+                    if let (false, Some((min, max))) = (cfr, min_max) {
+                        if min.is_finite() && max.is_finite() && min < max {
+                            s.set("FrameRate_Minimum", format!("{min:.3}"));
+                            s.set("FrameRate_Maximum", format!("{max:.3}"));
+                        }
+                    }
                     if !stream_mode.is_empty() && stream_mode != s.get("FrameRate_Mode") {
                         s.set("FrameRate_Mode_Original", stream_mode);
                     }
@@ -1256,7 +1304,6 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 let begin = s.schema_len();
                 s.set_int("Chapters_Pos_Begin", begin as i128);
                 s.set_int("Chapters_Pos_End", (begin + chapters.len()) as i128);
-                s.set_extra("BitRate_Mode", "CBR", "", OPT_SHOWN);
                 if !users.is_empty() {
                     s.set_extra("Menu For", users.join(","), "", OPT_SHOWN);
                 }
@@ -1264,7 +1311,6 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                     let name = crate::finish::format::duration_strings(ms, None)[3].clone();
                     s.push_extra(&name, title, OPT_SHOWN);
                 }
-                s.set_extra("BitRate_Mode/String", "Constant", "", OPT_SHOWN);
             }
             _ => {}
         }
@@ -1357,9 +1403,9 @@ fn presentation_ms(t: &Track, movie_ts: f64) -> f64 {
 /// Difference between the last sample duration and the nominal one (ms), when the last one is shorter.
 fn last_frame_diff(t: &Track) -> Option<f64> {
     let ts = t.timescale.max(1) as f64;
-    let (_, last) = *t.stts.last()?;
+    let (last_count, last) = *t.stts.last()?;
     let (_, first) = *t.stts.first()?;
-    if t.stts.len() > 1 && last < first {
+    if t.stts.len() == 2 && last_count == 1 && last < first {
         Some((last as f64 - first as f64) / ts * 1000.0)
     } else {
         None
