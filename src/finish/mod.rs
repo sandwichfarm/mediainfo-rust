@@ -151,9 +151,15 @@ fn finish_common(s: &mut Stream) {
                 s.set_if_empty("Format/Extensions", fi.extensions);
             }
         }
+        if format == "MPEG Video" {
+            if let Some(v) = s.get("Format_Version").strip_prefix("Version ") {
+                let v = v.to_string();
+                s.set("Format_Commercial", format!("MPEG-{v} Video"));
+            }
+        }
         s.set_if_empty("Format_Commercial", &format);
         let com = s.get("Format_Commercial").to_string();
-        if com != format && !com.is_empty() && !s.has("Format_Commercial_IfAny") {
+        if com != format && !com.is_empty() && !s.has("Format_Commercial_IfAny") && format != "MPEG Video" {
             s.set("Format_Commercial_IfAny", com);
         }
     }
@@ -280,7 +286,7 @@ fn finish_common(s: &mut Stream) {
         let v = s.get(base).to_string();
         if !v.is_empty() {
             let text = match base {
-                "Format_Settings_GMC" => format!("{v} warppoints"),
+                "Format_Settings_GMC" => if v == "0" { "No warppoints".to_string() } else { format!("{v} warppoints") },
                 "Alignment" => match v.as_str() {
                     "Aligned" => "Aligned on interleaves".to_string(),
                     "Split" => "Split across interleaves".to_string(),
@@ -397,8 +403,10 @@ fn finish_video(s: &mut Stream) {
     let w = s.get_f64("Width");
     let h = s.get_f64("Height");
     if let (Some(w), Some(h)) = (w, h) {
-        s.set_if_empty("Sampled_Width", format!("{}", w as u64));
-        s.set_if_empty("Sampled_Height", format!("{}", h as u64));
+        if matches!(s.get("Format"), "AVC" | "HEVC" | "MPEG Video" | "MPEG-4 Visual" | "AV1" | "H.263" | "JPEG") && !s.has("CodecID_Description") {
+            s.set_if_empty("Sampled_Width", format!("{}", w as u64));
+            s.set_if_empty("Sampled_Height", format!("{}", h as u64));
+        }
         let par = s.get_f64("PixelAspectRatio");
         let dar = s.get_f64("DisplayAspectRatio");
         match (par, dar) {

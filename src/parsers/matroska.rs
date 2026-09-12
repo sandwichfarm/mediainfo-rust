@@ -254,6 +254,7 @@ struct Ctx {
     first_cluster_pos: Option<u64>,
     seeks: Vec<(u32, u64)>,
     fully_scanned: bool,
+    cluster_bytes: u64,
 }
 
 const MAX_CLUSTER_SCAN_BYTES: u64 = 24 * 1024 * 1024;
@@ -302,6 +303,7 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
                 if scanned < MAX_CLUSTER_SCAN_BYTES {
                     parse_cluster(r, elem_end, size_known, &mut ctx);
                     scanned += size + hlen;
+                    ctx.cluster_bytes += size + hlen;
                 } else {
                     scanned_all = false;
                     // Skip ahead: leave the remaining clusters, we will sample the tail below.
@@ -674,7 +676,7 @@ fn handle_block(r: &mut Reader, size: u64, cluster_tc: u64, duration: Option<u64
     if t.timestamps.len() < 64 {
         t.timestamps.push(ts);
     }
-    if t.frames_for_codec.len() < if t.kind == 2 { 32 } else { 4 } {
+    if t.frames_for_codec.len() < if t.kind == 2 { 64 } else { 4 } {
         let want = first_frame_len.min(512 * 1024);
         let data_pos = start + header_len + first_frame_off as u64;
         let mut data = r.read_vec_at(data_pos, want);
@@ -1003,6 +1005,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
     });
     let report_sizes = ctx.fully_scanned && (vfr_video || !ctx.tracks.iter().any(|t| fast(&t.codec_id)));
     let mut sizes_sum = 0u64;
+    let mut residual_streams: Vec<(StreamKind, usize, u64)> = Vec::new();
 
     let mut order = 0usize;
     for t in &ctx.tracks {
@@ -1047,17 +1050,13 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                     s.set("DisplayAspectRatio", format!("{dar:.3}"));
                 }
             }
-            match t.interlaced {
-                Some(1) => {
-                    s.set("ScanType", "Interlaced");
-                    match t.field_order {
-                        Some(1) | Some(9) => s.set("ScanOrder", "TFF"),
-                        Some(6) | Some(14) => s.set("ScanOrder", "BFF"),
-                        _ => {}
-                    }
+            if t.interlaced == Some(1) {
+                s.set("ScanType", "Interlaced");
+                match t.field_order {
+                    Some(1) | Some(9) => s.set("ScanOrder", "TFF"),
+                    Some(6) | Some(14) => s.set("ScanOrder", "BFF"),
+                    _ => {}
                 }
-                Some(2) => s.set("ScanType", "Progressive"),
-                _ => {}
             }
             let stream_mode = s.get("FrameRate_Mode").to_string();
             let (measured, regular) = measure_frame_rate(&t.timestamps);
@@ -1129,7 +1128,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 let precise = t.last_duration.is_some() || t.default_duration.is_some();
                 s.set("Duration", if precise { format!("{dur:.6}") } else { format!("{}", dur.round() as i64) });
             }
-            if kind != StreamKind::Text && !matches!(s.get("Format"), "VP8" | "VP9" | "AV1") {
+            if kind != StreamKind::Text && s.get("Format") != "VP9" {
                 s.set("Delay", format!("{}", first.round() as i64));
                 s.set("Delay_Source", "Container");
             }
@@ -1139,12 +1138,18 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         }
         // Flags, names, languages
         if let Some(bytes) = stream_bytes.take() {
-            let computed = match (s.get_f64("BitRate"), s.get_f64("Duration")) {
-                (Some(br), Some(d)) if kind == StreamKind::Audio && br > 0.0 && d > 0.0 => (br * d / 8000.0).round() as u64,
-                _ => bytes,
-            };
-            s.set("StreamSize", computed.to_string());
-            sizes_sum += computed;
+            match (s.get_f64("BitRate"), s.get_f64("Duration")) {
+                (Some(br), Some(d)) if kind == StreamKind::Audio && br > 0.0 && d > 0.0 => {
+                    let computed = (br * d / 8000.0).round() as u64;
+                    s.set("StreamSize", computed.to_string());
+                    sizes_sum += computed;
+                }
+                _ => {
+                    // Placeholder: the remaining cluster bytes are shared out below.
+                    s.set("StreamSize", bytes.to_string());
+                    residual_streams.push((kind, doc.count(kind), bytes));
+                }
+            }
         }
         if !t.name.is_empty() {
             s.set("Title", &t.name);
@@ -1161,8 +1166,21 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         doc.streams[kind as usize].push(s);
     }
 
-    if report_sizes && sizes_sum > 0 && sizes_sum <= file_size {
-        doc.general().set_int("StreamSize", (file_size - sizes_sum) as i128);
+    if report_sizes {
+        // The reference charges every cluster byte to the streams: constant-rate audio gets
+        // BitRate × Duration, the rest is shared out over the other streams by their payload.
+        let overhead = file_size.saturating_sub(ctx.cluster_bytes);
+        let residual = ctx.cluster_bytes.saturating_sub(sizes_sum);
+        let payload: u64 = residual_streams.iter().map(|(_, _, b)| *b).sum();
+        for (kind, idx, bytes) in &residual_streams {
+            let share = if payload > 0 { (residual as f64 * *bytes as f64 / payload as f64).round() as u64 } else { 0 };
+            if let Some(s) = doc.stream_mut(*kind, *idx) {
+                s.set("StreamSize", share.to_string());
+            }
+        }
+        if ctx.cluster_bytes > 0 {
+            doc.general().set_int("StreamSize", overhead as i128);
+        }
     }
 
     // Audio delay relative to the first video stream

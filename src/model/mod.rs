@@ -146,6 +146,11 @@ impl Stream {
     /// Set (or replace) a dynamic field with explicit measure and options.
     pub fn set_extra(&mut self, name: &str, value: impl Into<String>, measure: &str, options: &str) {
         let text = value.into();
+        // Schema names always live in their slot so `get` sees them and the report shows one line.
+        if let Some(i) = self.kind.index_of(name) {
+            self.values[i] = if text.is_empty() { None } else { Some(text) };
+            return;
+        }
         if let Some(f) = self.extra.iter_mut().find(|f| f.name == name) {
             f.text = text;
             f.measure = measure.to_string();
