@@ -9,3 +9,5 @@ pub fn nals_annexb(_d: &[u8]) -> Vec<(u8, &[u8])> { Vec::new() }
 pub fn apply_sei_from_nals(_s: &mut Stream, _n: &[(u8, &[u8])]) {}
 pub fn probe(_p: &Probe) -> u8 { 0 }
 pub fn parse(_r: &mut Reader, _d: &mut Doc) -> bool { false }
+/// Fill a video stream from an Annex B byte stream (VPS/SPS/PPS). // stub, implemented elsewhere
+pub fn apply_annexb(_s: &mut Stream, _d: &[u8]) -> bool { false }
