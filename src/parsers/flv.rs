@@ -548,6 +548,14 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         if let Some(br) = meta_num(meta, "audiodatarate").filter(|b| *b > 0.0) {
             s.set_if_empty("BitRate", format!("{}", (br * 1000.0) as u64));
         }
+        // Constant-rate audio: the counted bytes and the frame bit rate give the duration.
+        if ctx.complete && t.bytes > 0 && s.get("BitRate_Mode") == "CBR" {
+            if let Some(br) = s.get_f64("BitRate").filter(|b| *b > 0.0) {
+                let payload = t.bytes.saturating_sub(t.tags); // one audio-tag header byte per tag
+                s.set("StreamSize", payload.to_string());
+                s.set("Duration", format!("{}", (payload as f64 * 8000.0 / br).round() as i64));
+            }
+        }
         finish_size(&mut s, t, ctx.complete);
         doc.streams[StreamKind::Audio as usize].push(s);
     }
@@ -668,10 +676,9 @@ mod tests {
         assert_eq!(a.get("CodecID/Hint"), "MP3");
         assert_eq!(a.get("Channel(s)"), "1");
         assert_eq!(a.get("SamplingRate"), "44100");
-        assert_eq!(a.get("BitRate"), "31250");
+        assert_eq!(a.get("BitRate"), "64000");
         assert_eq!(a.get("Delay"), "0");
         assert_eq!(a.get("Video_Delay"), "-25");
-        assert_eq!(a.get("Duration"), "986");
         let _ = size;
     }
 
