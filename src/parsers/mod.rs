@@ -112,7 +112,7 @@ pub fn parse(reader: &mut Reader, ext: &str) -> (bool, Doc) {
     let head = reader.read_vec_at(0, HEAD);
     let probe = Probe { head: &head, ext, size: reader.len() };
     let mut scored: Vec<(u8, &Format)> = FORMATS.iter().map(|f| ((f.probe)(&probe), f)).filter(|(s, _)| *s > 0).collect();
-    scored.sort_by(|a, b| b.0.cmp(&a.0));
+    scored.sort_by_key(|(score, _)| std::cmp::Reverse(*score));
     for (_, f) in scored {
         let mut doc = Doc::new();
         reader.seek(0);

@@ -280,8 +280,8 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                     s.set("Format", "AAC");
                     aac::apply_asc(&mut s, &sh.codec_specific);
                 }
-                if sh.samplerate.1 > 0 {
-                    s.set_if_empty("SamplingRate", (sh.samplerate.0 / sh.samplerate.1).to_string());
+                if let Some(rate) = sh.samplerate.0.checked_div(sh.samplerate.1) {
+                    s.set_if_empty("SamplingRate", rate.to_string());
                 }
                 if sh.channels > 0 {
                     s.set_if_empty("Channel(s)", sh.channels.to_string());
