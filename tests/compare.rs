@@ -23,6 +23,7 @@ const ALLOWED: &[(&str, &str, &str, &str)] = &[
     ("wavpack.wv", "Audio", "Duration", "reference truncates to 2 blocks; we report the header total"),
     ("wavpack.wv", "General", "OverallBitRate", "follows Duration"),
     ("wavpack.wv", "Audio", "BitRate", "follows Duration"),
+    ("chapters.mp4", "Menu", "BitRate_Mode", "reference emits a stray CBR on chapter tracks written by ffmpeg"),
 ];
 
 fn parse_raw(text: &str) -> Vec<(String, BTreeMap<String, String>)> {

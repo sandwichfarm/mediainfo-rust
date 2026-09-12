@@ -1031,7 +1031,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         let stts_sum: u64 = t.stts.iter().map(|(c, d)| *c as u64 * *d as u64).sum();
         let media_ms = if stts_sum > 0 && !ctx.has_moof { stts_sum as f64 / track_ts * 1000.0 } else { mdhd_ms };
         if stts_sum > 0 && (mdhd_ms.round() - media_ms.round()).abs() >= 1.0 {
-            s.set_extra("mdhd_Duration", t.media_duration.to_string(), "", OPT_SHOWN);
+            s.set_extra("mdhd_Duration", format!("{}", mdhd_ms.round() as i64), "", OPT_SHOWN);
         }
         // Edit list → presentation duration & delays
         let mut pres_ms = media_ms;
@@ -1158,7 +1158,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                         (cfr, fps, Some((track_ts / t.frag_max_dur.max(1) as f64, track_ts / t.frag_min_dur.max(1) as f64)))
                     } else {
                         let cfr = t.stts.len() <= 1 || t.stts.iter().all(|(_, d)| *d == t.stts[0].1) || (t.stts.len() == 2 && t.stts[1].0 == 1);
-                        let fps = if cfr && !t.stts.is_empty() && t.stts[0].1 > 0 { track_ts / t.stts[0].1 as f64 } else if pres_ms > 0.0 { sample_count as f64 / (pres_ms / 1000.0) } else { 0.0 };
+                        let fps = if cfr && !t.stts.is_empty() && t.stts[0].1 > 0 { track_ts / t.stts[0].1 as f64 } else if media_ms > 0.0 { sample_count as f64 / (media_ms / 1000.0) } else { 0.0 };
                         let mut durs: Vec<u32> = t.stts.iter().filter(|(c, d)| *c > 0 && *d > 0).map(|(_, d)| *d).collect();
                         durs.sort();
                         let mm = if durs.len() > 1 { Some((track_ts / *durs.last().unwrap() as f64, track_ts / durs[0] as f64)) } else { None };
