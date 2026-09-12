@@ -197,7 +197,7 @@ fn finish_common(s: &mut Stream) {
     }
     if s.has("Delay_Source") {
         let v = s.get("Delay_Source").to_string();
-        s.derive("Delay_Source/String", v);
+        s.derive("Delay_Source/String", if v == "Stream" { "Raw stream".to_string() } else { v });
     }
     // Bit rates
     for base in ["BitRate", "BitRate_Minimum", "BitRate_Nominal", "BitRate_Maximum", "BitRate_Encoded", "OverallBitRate", "OverallBitRate_Minimum", "OverallBitRate_Nominal", "OverallBitRate_Maximum"] {
@@ -232,14 +232,14 @@ fn finish_common(s: &mut Stream) {
     for base in ["StreamSize", "Source_StreamSize", "StreamSize_Encoded", "Source_StreamSize_Encoded", "StreamSize_Demuxed"] {
         if let Some(b) = s.get_u64(base) {
             let z = size_strings(b);
-            let pct = s.get_f64("__FileSize").or(file_size).filter(|f| *f > 0.0).map(|f| format!(" ({}%)", ((b as f64) / f * 100.0).round() as u64)).unwrap_or_default();
+            let pct = s.get_f64("__FileSize").or(file_size).filter(|f| *f >= b as f64).map(|f| format!(" ({}%)", ((b as f64) / f * 100.0).round() as u64)).unwrap_or_default();
             s.derive(&format!("{base}/String"), format!("{}{pct}", z[0]));
             s.derive(&format!("{base}/String1"), &z[1]);
             s.derive(&format!("{base}/String2"), &z[2]);
             s.derive(&format!("{base}/String3"), &z[3]);
             s.derive(&format!("{base}/String4"), &z[4]);
             s.derive(&format!("{base}/String5"), format!("{}{pct}", z[0]));
-            if let Some(f) = s.get_f64("__FileSize").or(file_size).filter(|f| *f > 0.0) {
+            if let Some(f) = s.get_f64("__FileSize").or(file_size).filter(|f| *f >= b as f64) {
                 if base != "StreamSize_Demuxed" {
                     s.derive(&format!("{base}_Proportion"), proportion(b as f64, f));
                 }
@@ -284,7 +284,11 @@ fn finish_common(s: &mut Stream) {
                     "Split" => "Split across interleaves".to_string(),
                     _ => v.clone(),
                 },
-                "Interleave_Duration" | "Interleave_Preload" => duration_strings(v.parse().unwrap_or(0.0), None)[0].clone(),
+                "Interleave_Duration" => {
+                    let frames = s.get("Interleave_VideoFrames").to_string();
+                    if frames.is_empty() { format!("{v}  ms") } else { format!("{v}  ms ({frames} video frame)") }
+                }
+                "Interleave_Preload" => format!("{v}  ms"),
                 "ReplayGain_Gain" | "Album_ReplayGain_Gain" => format!("{v} dB"),
                 "ScanOrder" | "ScanOrder_Original" => match v.as_str() {
                     "TFF" => "Top Field First".to_string(),
@@ -576,7 +580,7 @@ fn finish_general(doc: &mut Doc) {
         for kind in StreamKind::ALL.iter().skip(1) {
             for s in doc.streams[*kind as usize].iter_mut() {
                 for base in ["StreamSize", "Source_StreamSize", "StreamSize_Encoded", "Source_StreamSize_Encoded"] {
-                    if let Some(b) = s.get_u64(base) {
+                    if let Some(b) = s.get_u64(base).filter(|b| (*b as f64) <= fs) {
                         let z = size_strings(b);
                         let pct = format!(" ({}%)", ((b as f64) / fs * 100.0).round() as u64);
                         if s.get(&format!("{base}/String")) == z[0] {

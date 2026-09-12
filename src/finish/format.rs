@@ -50,7 +50,7 @@ pub fn size_strings(bytes: u64) -> [String; 5] {
         u += 1;
     }
     let unit = if u == 0 { if bytes <= 1 { "Byte" } else { "Bytes" } } else { units[u] };
-    let s1 = format!("{} {unit}", v.round() as u64);
+    let s1 = format!("{} {unit}", v.round_ties_even() as u64);
     let s2 = format!("{} {unit}", sig_digits(v, 2));
     let s3 = format!("{} {unit}", sig_digits(v, 3));
     let s4 = format!("{} {unit}", sig_digits(v, 4));
@@ -195,6 +195,7 @@ mod tests {
         assert_eq!(size_strings(1638)[0], "1.60 KiB");
         assert_eq!(size_strings(1638)[1], "2 KiB");
         assert_eq!(size_strings(1_152_114)[0], "1.10 MiB");
+        assert_eq!(size_strings(115_200)[1], "112 KiB");
         assert_eq!(size_strings(0), ["0.00 Byte", "0 Byte", "0.0 Byte", "0.00 Byte", "0.000 Byte"]);
     }
 
