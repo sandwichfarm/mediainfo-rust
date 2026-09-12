@@ -94,8 +94,11 @@ pub fn run(args: Vec<String>) -> i32 {
             continue;
         }
         mi.open(f);
-        let report = mi.inform();
+        let mut report = mi.inform();
         let _ = (multi, i);
+        if !report.ends_with('\n') {
+            report.push('\n');
+        }
         all.push_str(&report);
         mi.close();
     }
