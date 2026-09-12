@@ -248,8 +248,9 @@ pub fn parse(r: &mut Reader, doc: &mut Doc) -> bool {
             break;
         }
     }
-    if (data.len() as u64) == size && units > 0 {
-        s.set("FrameCount", units.to_string());
+    // The reference stops counting access units after 1024 (and reports no duration).
+    if units > 0 {
+        s.set("FrameCount", units.min(1024).to_string());
     }
     let g = doc.general();
     g.set("Format", if m.truehd { "MLP FBA" } else { "MLP" });
