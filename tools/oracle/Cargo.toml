@@ -1,0 +1,13 @@
+# Standalone helper (not part of the main crate): dumps every field MediaInfoLib reports for a file,
+# used to (re)generate tests/oracle/. Needs a MediaInfoLib shared object.
+#   cargo run --release -- /path/to/libmediainfo.so.0 raw|inform|complete|xml|json|schema <file>
+[package]
+name = "oracle"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+libloading = "0.8"
+
+[workspace]
