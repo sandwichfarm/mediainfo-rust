@@ -787,7 +787,7 @@ pub fn apply_annexb(s: &mut Stream, data: &[u8]) -> bool {
     let nals = nals_annexb(data);
     let Some((_, sps_nal)) = nals.iter().find(|(t, _)| *t == 33) else { return false };
     let Some(sps) = parse_sps(sps_nal) else { return false };
-    apply(s, &sps, true);
+    apply(s, &sps, false);
     apply_sei_from_nals(s, &nals);
     true
 }

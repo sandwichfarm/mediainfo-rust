@@ -725,6 +725,13 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
                 let bih = ts.get(11..).unwrap_or(&[]);
                 if bih.len() >= 40 {
                     fourcc::apply_bitmapinfoheader(&mut s, bih);
+                    // Compressed video in ASF: 8-bit components, lossy.
+                    if !s.has("BitDepth") && !matches!(s.get("Format"), "RGB" | "YUV") {
+                        s.set("BitDepth", "8");
+                        if s.get("Format") == "MPEG-4 Visual" {
+                            s.set_if_empty("Compression_Mode", "Lossy");
+                        }
+                    }
                     codec_key = bih[16..20].to_vec();
                     let cc = String::from_utf8_lossy(&bih[16..20]).to_string();
                     if !s.has("CodecID") && cc.chars().all(|c| c.is_ascii_graphic()) {

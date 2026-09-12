@@ -354,7 +354,7 @@ fn flush_pes(p: &mut Pid, collect: bool) {
         if p.first_pts.is_none() {
             p.first_pts = Some(pts);
         }
-        p.last_pts = Some(pts);
+        p.last_pts = Some(p.last_pts.map_or(pts, |l| l.max(pts)));
     }
     p.bytes += p.cur_total.saturating_sub(h.payload_offset) as u64;
     p.pes_count += 1;

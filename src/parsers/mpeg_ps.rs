@@ -266,7 +266,7 @@ fn handle_pes(data: &[u8], ctx: &mut Ctx, collect: bool) {
         if s.first_pts.is_none() {
             s.first_pts = Some(pts);
         }
-        s.last_pts = Some(pts);
+        s.last_pts = Some(s.last_pts.map_or(pts, |l| l.max(pts)));
     }
     if collect && s.data.len() < CODEC_BYTES {
         let take = payload.len().min(CODEC_BYTES - s.data.len());
@@ -538,6 +538,9 @@ pub fn apply_timing(s: &mut Stream, first: Option<u64>, last: Option<u64>, tick:
             if cbr && complete && bytes > 0 {
                 // Duration follows from StreamSize / BitRate (frame-exact for CBR audio).
                 s.set_int("StreamSize", bytes as i128);
+                if let Some(br) = s.get_f64("BitRate").filter(|b| *b > 0.0) {
+                    s.set("Duration", format!("{}", (bytes as f64 * 8000.0 / br).round() as i64));
+                }
             } else {
                 let dur = span + if cbr { tick } else { 0.0 };
                 if dur > 0.0 {
@@ -563,13 +566,21 @@ pub fn apply_timing(s: &mut Stream, first: Option<u64>, last: Option<u64>, tick:
     }
 }
 
-/// Audio `Video_Delay` relative to the first video stream.
+/// Audio `Video_Delay` relative to the first video stream, and audio frame counts from the
+/// duration and the codec frame rate (PES-based containers report both).
 pub fn apply_video_delay(doc: &mut Doc) {
     let video_delay = doc.streams[StreamKind::Video as usize].first().and_then(|v| v.get_f64("Delay"));
-    if let Some(vd) = video_delay {
-        for a in doc.streams[StreamKind::Audio as usize].iter_mut() {
-            if let Some(d) = a.get_f64("Delay") {
-                a.set("Video_Delay", format!("{}", (d - vd).round() as i64));
+    for a in doc.streams[StreamKind::Audio as usize].iter_mut() {
+        if let (Some(vd), Some(d)) = (video_delay, a.get_f64("Delay")) {
+            a.set("Video_Delay", format!("{}", (d - vd).round() as i64));
+        }
+        if !a.has("FrameCount") {
+            let fps = a.get_f64("FrameRate").or_else(|| match (a.get_f64("SamplingRate"), a.get_f64("SamplesPerFrame")) {
+                (Some(sr), Some(spf)) if spf > 0.0 => Some(sr / spf),
+                _ => None,
+            });
+            if let (Some(d), Some(f)) = (a.get_f64("Duration"), fps) {
+                a.set("FrameCount", format!("{}", (d / 1000.0 * f).round() as i64));
             }
         }
     }

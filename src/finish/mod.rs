@@ -435,7 +435,8 @@ fn finish_video(s: &mut Stream) {
     // Frame count from duration × rate
     if !s.has("FrameCount") {
         if let (Some(d), Some(f)) = (s.get_f64("Duration"), s.get_f64("FrameRate")) {
-            s.set_int("FrameCount", (d / 1000.0 * f).round() as i128);
+            // Rounded half to even, as the reference's printf-style rounding does.
+            s.set_int("FrameCount", (d / 1000.0 * f).round_ties_even() as i128);
         }
     }
     if !s.has("Duration") {
@@ -487,6 +488,15 @@ fn finish_text(s: &mut Stream) {
 // ---------------------------------------------------------------------------- audio
 
 fn finish_audio(s: &mut Stream) {
+    if !s.has("Duration") {
+        if let (Some(sz), Some(br)) = (s.get_f64("StreamSize"), s.get_f64("BitRate")) {
+            if br > 0.0 {
+                let ms = (sz * 8.0 / br * 1000.0).round();
+                s.set("Duration", format!("{}", ms as i64));
+                set_strings(s, "Duration", &duration_strings(ms, None), true);
+            }
+        }
+    }
     if let Some(c) = s.get_u64("Channel(s)") {
         s.set_if_empty("Channel(s)/String", channels_string(c));
     }
@@ -537,15 +547,6 @@ fn finish_audio(s: &mut Stream) {
                 let br = (sz * 8.0 * 1000.0 / d).round();
                 s.set("BitRate", format!("{}", br as u64));
                 s.set("BitRate/String", bitrate_string(br));
-            }
-        }
-    }
-    if !s.has("Duration") {
-        if let (Some(sz), Some(br)) = (s.get_f64("StreamSize"), s.get_f64("BitRate")) {
-            if br > 0.0 {
-                let ms = (sz * 8.0 / br * 1000.0).round();
-                s.set("Duration", format!("{}", ms as i64));
-                set_strings(s, "Duration", &duration_strings(ms, None), true);
             }
         }
     }

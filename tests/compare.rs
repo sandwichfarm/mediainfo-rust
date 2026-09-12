@@ -32,6 +32,12 @@ const ALLOWED: &[(&str, &str, &str, &str)] = &[
     ("caf.caf", "Audio", "Duration", "reference stops at its 64 KiB probe window; the header says 1 s"),
     ("raw.h265", "General", "OverallBitRate", "off by one bit/s from rounding"),
     ("truehd.thd", "Audio", "ChannelPositions", "reference prints a stereo layout for a mono assignment"),
+    ("dvd.mpg", "Video", "BitRate", "reference derives it from an internal byte count that is not the payload"),
+    ("mpeg1.mpg", "Video", "BitRate", "reference derives it from an internal byte count that is not the payload"),
+    ("mpeg2_ac3.vob", "Video", "BitRate", "reference derives it from an internal byte count that is not the payload"),
+    ("msmpeg4.asf", "Video", "BitRate", "no bitrate object in the file; the reference's value is not derivable"),
+    ("wmv2_wma.wmv", "Video", "BitRate", "no bitrate object in the file; the reference's value is not derivable"),
+    ("h264_aac.flv", "Video", "BitRate", "videodatarate is 0 in the file; the reference's value is not derivable"),
 ];
 
 fn parse_raw(text: &str) -> Vec<(String, BTreeMap<String, String>)> {

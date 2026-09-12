@@ -708,7 +708,9 @@ pub fn apply_adts_frame(s: &mut Stream, data: &[u8]) -> bool {
     s.set_if_empty("SamplesPerFrame", (1024 * (h.raw_blocks as u32 + 1)).to_string());
     s.set_if_empty("MuxingMode", "ADTS");
     s.set_if_empty("Compression_Mode", "Lossy");
-    s.set_extra("__aot", aot.to_string(), "", "N NT");
+    if h.buffer_fullness == 0x7FF {
+        s.set_if_empty("BitRate_Mode", "VBR");
+    }
     true
 }
 
@@ -722,10 +724,12 @@ pub fn apply_latm_frame(s: &mut Stream, data: &[u8]) -> bool {
             if b & 0x80 == 0 {
                 let mut br = BitReader::new(payload);
                 br.skip(1);
-                if let Some((a, _)) = parse_stream_mux_config(&mut br) {
+                if let Some((a, fullness)) = parse_stream_mux_config(&mut br) {
                     apply_config(s, &a);
                     s.set_if_empty("MuxingMode", "LATM");
-                    s.set_extra("__aot", a.aot.to_string(), "", "N NT");
+                    if fullness == Some(0xFF) {
+                        s.set_if_empty("BitRate_Mode", "VBR");
+                    }
                     return true;
                 }
             }

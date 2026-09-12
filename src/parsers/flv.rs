@@ -416,6 +416,7 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
             }
             2 => {
                 h263::apply_frame(&mut s, &t.data);
+                s.set_if_empty("BitDepth", "8");
             }
             _ => {}
         }
@@ -547,6 +548,11 @@ fn emit(doc: &mut Doc, ctx: &Ctx, file_size: u64) {
         }
         if let Some(br) = meta_num(meta, "audiodatarate").filter(|b| *b > 0.0) {
             s.set_if_empty("BitRate", format!("{}", (br * 1000.0) as u64));
+        }
+        // The reference shows the LAME tag without its padding in FLV.
+        let lib = s.get("Encoded_Library").to_string();
+        if lib.starts_with("LAME") && lib.ends_with('U') {
+            s.set("Encoded_Library", lib.trim_end_matches('U'));
         }
         // Constant-rate audio: the counted bytes and the frame bit rate give the duration.
         if ctx.complete && t.bytes > 0 && s.get("BitRate_Mode") == "CBR" {
