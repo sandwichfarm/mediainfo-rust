@@ -60,6 +60,7 @@ pub struct Format {
 pub static FORMATS: &[Format] = &[
     Format { name: "Matroska", probe: matroska::probe, parse: matroska::parse },
     Format { name: "MPEG-4", probe: mp4::probe, parse: mp4::parse },
+    Format { name: "WebP", probe: image::webp::probe, parse: image::webp::parse },
     Format { name: "RIFF", probe: riff::probe, parse: riff::parse },
     Format { name: "AIFF", probe: aiff::probe, parse: aiff::parse },
     Format { name: "AU", probe: au::probe, parse: au::parse },

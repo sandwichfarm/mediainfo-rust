@@ -18,6 +18,19 @@ pub struct FileInfo {
     pub modified: Option<SystemTime>,
 }
 
+/// Derived fields only ever land in schema slots — never as new dynamic fields.
+trait Derived {
+    fn derive(&mut self, name: &str, value: impl Into<String>);
+}
+
+impl Derived for Stream {
+    fn derive(&mut self, name: &str, value: impl Into<String>) {
+        if self.kind.index_of(name).is_some() {
+            self.set_if_empty(name, value);
+        }
+    }
+}
+
 pub fn finish(doc: &mut Doc, file: &FileInfo) {
     fill_file_info(doc.general(), file);
 
@@ -130,10 +143,10 @@ fn finish_common(s: &mut Stream) {
             s.set("Format/String", if add.is_empty() { format.clone() } else { format!("{format} {add}") });
         }
         if let Some(fi) = tables::format_info(kind, &format) {
-            s.set_if_empty("Format/Info", fi.info);
-            s.set_if_empty("Format/Url", fi.url);
-            s.set_if_empty("Format_Commercial", fi.commercial);
-            s.set_if_empty("InternetMediaType", fi.mime);
+            s.derive("Format/Info", fi.info);
+            s.derive("Format/Url", fi.url);
+            s.derive("Format_Commercial", fi.commercial);
+            s.derive("InternetMediaType", fi.mime);
             if kind == StreamKind::General {
                 s.set_if_empty("Format/Extensions", fi.extensions);
             }
@@ -148,10 +161,10 @@ fn finish_common(s: &mut Stream) {
     let codec_id = s.get("CodecID").to_string();
     if !codec_id.is_empty() {
         if let Some(ci) = tables::codec_id_info(&codec_id) {
-            s.set_if_empty("CodecID/Info", ci.info);
-            s.set_if_empty("CodecID/Hint", ci.hint);
-            s.set_if_empty("CodecID/Url", ci.url);
-            s.set_if_empty("CodecID_Description", ci.description);
+            s.derive("CodecID/Info", ci.info);
+            s.derive("CodecID/Hint", ci.hint);
+            s.derive("CodecID/Url", ci.url);
+            s.derive("CodecID_Description", ci.description);
         }
     }
     // Identifiers
@@ -175,15 +188,16 @@ fn finish_common(s: &mut Stream) {
         if let Some(ms) = s.get_f64(base) {
             let d = duration_strings(ms, None);
             if ms != 0.0 {
-                s.set_if_empty(&format!("{base}/String"), &d[0]);
-                s.set_if_empty(&format!("{base}/String1"), &d[1]);
-                s.set_if_empty(&format!("{base}/String2"), &d[2]);
+                s.derive(&format!("{base}/String"), &d[0]);
+                s.derive(&format!("{base}/String1"), &d[1]);
+                s.derive(&format!("{base}/String2"), &d[2]);
             }
-            s.set_if_empty(&format!("{base}/String3"), &d[3]);
+            s.derive(&format!("{base}/String3"), &d[3]);
         }
     }
     if s.has("Delay_Source") {
-        s.set_if_empty("Delay_Source/String", s.get("Delay_Source").to_string());
+        let v = s.get("Delay_Source").to_string();
+        s.derive("Delay_Source/String", v);
     }
     // Bit rates
     for base in ["BitRate", "BitRate_Minimum", "BitRate_Nominal", "BitRate_Maximum", "BitRate_Encoded", "OverallBitRate", "OverallBitRate_Minimum", "OverallBitRate_Nominal", "OverallBitRate_Maximum"] {
@@ -204,7 +218,7 @@ fn finish_common(s: &mut Stream) {
                 "VBR" => "Variable",
                 other => other,
             };
-            s.set_if_empty(&format!("{base}/String"), t);
+            s.derive(&format!("{base}/String"), t);
         }
     }
     // Sizes
@@ -219,15 +233,15 @@ fn finish_common(s: &mut Stream) {
         if let Some(b) = s.get_u64(base) {
             let z = size_strings(b);
             let pct = s.get_f64("__FileSize").or(file_size).filter(|f| *f > 0.0).map(|f| format!(" ({}%)", ((b as f64) / f * 100.0).round() as u64)).unwrap_or_default();
-            s.set_if_empty(&format!("{base}/String"), format!("{}{pct}", z[0]));
-            s.set_if_empty(&format!("{base}/String1"), &z[1]);
-            s.set_if_empty(&format!("{base}/String2"), &z[2]);
-            s.set_if_empty(&format!("{base}/String3"), &z[3]);
-            s.set_if_empty(&format!("{base}/String4"), &z[4]);
-            s.set_if_empty(&format!("{base}/String5"), format!("{}{pct}", z[0]));
+            s.derive(&format!("{base}/String"), format!("{}{pct}", z[0]));
+            s.derive(&format!("{base}/String1"), &z[1]);
+            s.derive(&format!("{base}/String2"), &z[2]);
+            s.derive(&format!("{base}/String3"), &z[3]);
+            s.derive(&format!("{base}/String4"), &z[4]);
+            s.derive(&format!("{base}/String5"), format!("{}{pct}", z[0]));
             if let Some(f) = s.get_f64("__FileSize").or(file_size).filter(|f| *f > 0.0) {
                 if base != "StreamSize_Demuxed" {
-                    s.set_if_empty(&format!("{base}_Proportion"), proportion(b as f64, f));
+                    s.derive(&format!("{base}_Proportion"), proportion(b as f64, f));
                 }
             }
         }
@@ -238,7 +252,7 @@ fn finish_common(s: &mut Stream) {
             if kind == StreamKind::Audio && base == "FrameRate" {
                 continue; // handled with SPF in finish_audio
             }
-            s.set_if_empty(&format!("{base}/String"), frame_rate_string(f, None));
+            s.derive(&format!("{base}/String"), frame_rate_string(f, None));
         }
     }
     for base in ["FrameRate_Mode"] {
@@ -249,7 +263,7 @@ fn finish_common(s: &mut Stream) {
                 "VFR" => "Variable",
                 o => o,
             };
-            s.set_if_empty(&format!("{base}/String"), t);
+            s.derive(&format!("{base}/String"), t);
         }
     }
     // Language / flags
@@ -286,11 +300,11 @@ fn finish_common(s: &mut Stream) {
                 },
                 _ => v.clone(),
             };
-            s.set_if_empty(&format!("{base}/String"), text);
+            s.derive(&format!("{base}/String"), text);
         }
     }
     if let Some(n) = s.get_u64("Format_Settings_RefFrames") {
-        s.set_if_empty("Format_Settings_RefFrames/String", frames_string(n));
+        s.derive("Format_Settings_RefFrames/String", frames_string(n));
     }
     // Writing library "Name - Version" → String/Name/Version
     for base in ["Encoded_Library", "Encoded_Application"] {
@@ -310,32 +324,39 @@ fn finish_common(s: &mut Stream) {
             if !date.is_empty() {
                 str.push_str(&format!(" ({date})"));
             }
-            s.set_if_empty(&format!("{base}/String"), str);
+            s.derive(&format!("{base}/String"), str);
         } else if let Some((n, ver)) = v.split_once(" - ") {
-            s.set_if_empty(&format!("{base}_Name"), n);
-            s.set_if_empty(&format!("{base}_Version"), ver);
-            s.set_if_empty(&format!("{base}/String"), format!("{n} {ver}"));
+            s.derive(&format!("{base}_Name"), n);
+            s.derive(&format!("{base}_Version"), ver);
+            s.derive(&format!("{base}/String"), format!("{n} {ver}"));
         } else {
-            s.set_if_empty(&format!("{base}/String"), &v);
+            s.derive(&format!("{base}/String"), &v);
         }
     }
     if let Some(v) = s.get_u64("Width") {
-        s.set_if_empty("Width/String", pixels_string(v));
+        s.derive("Width/String", pixels_string(v));
     }
     if let Some(v) = s.get_u64("Height") {
-        s.set_if_empty("Height/String", pixels_string(v));
+        s.derive("Height/String", pixels_string(v));
     }
     for base in ["Width_Original", "Height_Original", "Width_CleanAperture", "Height_CleanAperture", "Width_Offset", "Height_Offset"] {
         if let Some(v) = s.get_u64(base) {
-            s.set_if_empty(&format!("{base}/String"), pixels_string(v));
+            s.derive(&format!("{base}/String"), pixels_string(v));
         }
     }
     if let Some(v) = s.get_u64("BitDepth") {
-        s.set_if_empty("BitDepth/String", bits_string(v));
+        s.derive("BitDepth/String", bits_string(v));
     }
     for base in ["BitDepth_Detected", "BitDepth_Stored"] {
         if let Some(v) = s.get_u64(base) {
-            s.set_if_empty(&format!("{base}/String"), bits_string(v));
+            s.derive(&format!("{base}/String"), bits_string(v));
+        }
+    }
+    for base in ["Encoded_Application", "Encoded_Library"] {
+        if !s.has(base) && s.has(&format!("{base}_Name")) {
+            let name = s.get(&format!("{base}_Name")).to_string();
+            let version = s.get(&format!("{base}_Version")).to_string();
+            s.derive(&format!("{base}/String"), if version.is_empty() { name } else { format!("{name} {version}") });
         }
     }
     if s.has("Title") && kind == StreamKind::General {
@@ -347,7 +368,7 @@ fn finish_common(s: &mut Stream) {
     for base in ["HDR_Format", "Codec", "Format_Settings_Matrix", "StreamSize_Demuxed"] {
         let v = s.get(base).to_string();
         if !v.is_empty() {
-            s.set_if_empty(&format!("{base}/String"), v);
+            s.derive(&format!("{base}/String"), v);
         }
     }
 }
@@ -363,7 +384,7 @@ fn set_strings(s: &mut Stream, base: &str, v: &[String], with_5: bool) {
             continue;
         }
         if !val.is_empty() {
-            s.set_if_empty(&format!("{base}{}", names[i]), val);
+            s.derive(&format!("{base}{}", names[i]), val);
         }
     }
 }
@@ -398,10 +419,8 @@ fn finish_video(s: &mut Stream) {
             _ => {}
         }
     }
-    for base in ["DisplayAspectRatio", "DisplayAspectRatio_Original", "DisplayAspectRatio_CleanAperture"] {
-        if let Some(d) = s.get_f64(base) {
-            s.set_if_empty(&format!("{base}/String"), aspect_ratio_string(d));
-        }
+    if let Some(d) = s.get_f64("DisplayAspectRatio") {
+        s.derive("DisplayAspectRatio/String", aspect_ratio_string(d));
     }
     // Frame count from duration × rate
     if !s.has("FrameCount") {
@@ -470,7 +489,7 @@ fn finish_audio(s: &mut Stream) {
     for base in ["ChannelPositions", "ChannelPositions_Original", "Matrix_ChannelPositions"] {
         let v = s.get(base).to_string();
         if !v.is_empty() {
-            s.set_if_empty(&format!("{base}/String2"), channel_positions_string2(&v));
+            s.derive(&format!("{base}/String2"), channel_positions_string2(&v));
         }
     }
     if let Some(sr) = s.get_f64("SamplingRate") {
@@ -574,7 +593,7 @@ fn finish_general(doc: &mut Doc) {
                             s.set(&format!("{base}/String5"), format!("{}{pct}", z[0]));
                         }
                         if fs > 0.0 {
-                            s.set_if_empty(&format!("{base}_Proportion"), proportion(b as f64, fs));
+                            s.derive(&format!("{base}_Proportion"), proportion(b as f64, fs));
                         }
                     }
                 }
@@ -632,7 +651,7 @@ fn finish_general(doc: &mut Doc) {
     // Elementary stream: the single stream's encoder info also describes the file.
     let elementary: Option<Vec<(String, String)>> = {
         let streams: Vec<&Stream> = doc.iter().filter(|s| s.kind != StreamKind::General).collect();
-        if streams.len() == 1 && streams[0].get("Format") == doc.general_ref().get("Format") {
+        if streams.len() == 1 && streams[0].get("Format") == doc.general_ref().get("Format") && streams[0].get("Format") != "FLAC" {
             Some(["Encoded_Library", "Encoded_Library_Settings", "Encoded_Library_Name", "Encoded_Library_Version", "Encoded_Library/String"].iter().map(|k| (k.to_string(), streams[0].get(k).to_string())).filter(|(_, v)| !v.is_empty()).collect())
         } else {
             None
@@ -679,6 +698,11 @@ fn finish_general(doc: &mut Doc) {
         }
     }
     finish_common(g);
+    let ext = g.get("FileExtension").to_ascii_lowercase();
+    let exts = g.get("Format/Extensions").to_string();
+    if !ext.is_empty() && !exts.is_empty() && !exts.split(' ').any(|e| e == ext) {
+        g.set_extra("FileExtension_Invalid", exts, "", "Y NT");
+    }
 }
 
 /// For NTSC-style rates (24000/1001, 30000/1001, 60000/1001 …) set `FrameRate_Num`/`FrameRate_Den`
