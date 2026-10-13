@@ -20,18 +20,19 @@ pub struct Reader {
     pos: u64,
     win_pos: u64,
     win: Vec<u8>,
+    error: Option<std::io::Error>,
 }
 
 impl Reader {
     pub fn open(path: &Path) -> std::io::Result<Self> {
         let f = File::open(path)?;
         let len = f.metadata()?.len();
-        Ok(Self { src: Source::File(f), len, pos: 0, win_pos: 0, win: Vec::new() })
+        Ok(Self { src: Source::File(f), len, pos: 0, win_pos: 0, win: Vec::new(), error: None })
     }
 
     pub fn from_bytes(data: Vec<u8>) -> Self {
         let len = data.len() as u64;
-        Self { src: Source::Memory(data), len, pos: 0, win_pos: 0, win: Vec::new() }
+        Self { src: Source::Memory(data), len, pos: 0, win_pos: 0, win: Vec::new(), error: None }
     }
 
     pub fn len(&self) -> u64 {
@@ -48,6 +49,12 @@ impl Reader {
     }
     pub fn at_end(&self) -> bool {
         self.pos >= self.len
+    }
+
+    /// Take the first file I/O error encountered by a read or seek. A file ending before its
+    /// recorded length is reported as `UnexpectedEof`; normal bounded reads at EOF are not errors.
+    pub fn take_error(&mut self) -> Option<std::io::Error> {
+        self.error.take()
     }
     pub fn seek(&mut self, pos: u64) {
         self.pos = pos.min(self.len);
@@ -68,13 +75,24 @@ impl Reader {
                 self.win.clear();
                 self.win.resize(want, 0);
                 let mut got = 0;
-                if f.seek(SeekFrom::Start(pos)).is_ok() {
-                    while got < want {
-                        match f.read(&mut self.win[got..]) {
-                            Ok(0) | Err(_) => break,
-                            Ok(n) => got += n,
+                match f.seek(SeekFrom::Start(pos)) {
+                    Ok(_) => {
+                        while got < want {
+                            match f.read(&mut self.win[got..]) {
+                                Ok(0) => {
+                                    self.error.get_or_insert_with(|| std::io::Error::new(std::io::ErrorKind::UnexpectedEof, "media file ended before its recorded length"));
+                                    break;
+                                }
+                                Ok(n) => got += n,
+                                Err(error) if error.kind() == std::io::ErrorKind::Interrupted => continue,
+                                Err(error) => {
+                                    self.error.get_or_insert(error);
+                                    break;
+                                }
+                            }
                         }
                     }
+                    Err(error) => { self.error.get_or_insert(error); }
                 }
                 self.win.truncate(got);
             }
@@ -120,7 +138,13 @@ impl Reader {
         if self.remaining() < n as u64 {
             return None;
         }
-        Some(self.read(n))
+        let bytes = self.peek(n);
+        if bytes.len() != n {
+            return None;
+        }
+        let bytes = bytes.to_vec();
+        self.pos += n as u64;
+        Some(bytes)
     }
 
     pub fn read_u8(&mut self) -> Option<u8> {
@@ -221,6 +245,7 @@ pub fn clean_text(s: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::io::Write;
 
     #[test]
     fn reads_are_bounded() {
@@ -236,6 +261,35 @@ mod tests {
         assert!(r.at_end());
         assert_eq!(r.read_at(1000, 4), &[]);
         assert_eq!(r.read_at(250, 100), &[250, 251, 252, 253, 254, 255]);
+        assert!(r.take_error().is_none());
+    }
+
+    #[test]
+    fn exact_reads_reject_short_source_without_advancing() {
+        struct TempFile(std::path::PathBuf);
+        impl Drop for TempFile {
+            fn drop(&mut self) {
+                let _ = std::fs::remove_file(&self.0);
+            }
+        }
+        let nonce = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos();
+        let temp = TempFile(std::env::temp_dir().join(format!("mediainfo-short-read-{}-{nonce}", std::process::id())));
+        let mut file = std::fs::OpenOptions::new().create_new(true).write(true).open(&temp.0).unwrap();
+        file.write_all(&[0; 8]).unwrap();
+        let mut r = Reader::open(&temp.0).unwrap();
+        // Shrink the file after the reader has recorded its length, before filling its cache.
+        file.set_len(1).unwrap();
+        assert_eq!(r.len(), 8);
+        assert_eq!(r.read_exact(8), None);
+        assert_eq!(r.pos(), 0);
+        assert_eq!(r.read_u16be(), None);
+        assert_eq!(r.read_u32be(), None);
+        assert_eq!(r.read_u64be(), None);
+        assert_eq!(r.read_fourcc(), None);
+        assert_eq!(r.pos(), 0);
+        assert_eq!(r.take_error().unwrap().kind(), std::io::ErrorKind::UnexpectedEof);
+        assert!(r.take_error().is_none());
+        assert_eq!(r.read_u8(), Some(0));
     }
 
     #[test]

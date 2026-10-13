@@ -24,12 +24,29 @@ mediainfo -R /media                          # recursive
 ```
 
 ```rust
-let mut mi = mediainfo::MediaInfo::new();
-if mi.open("movie.mkv") {
-    let width = mi.get(StreamKind::Video, 0, "Width", InfoKind::Text);
-    println!("{}", mi.inform());
+use mediainfo::{InfoKind, MediaInfo, StreamKind};
+
+let mut mi = MediaInfo::new();
+match mi.try_open("movie.mkv") {
+    Ok(true) => {
+        let width = mi.get(StreamKind::Video, 0, "Width", InfoKind::Text);
+        println!("Width: {width}\n{}", mi.inform());
+    }
+    Ok(false) => eprintln!("Unrecognised media format"),
+    Err(error) => eprintln!("Unable to analyse media: {error}"),
 }
 ```
+
+`try_open` and `try_open_bytes` return `Result<bool, OpenError>`. `Ok(true)` means the format was
+recognised, rather than guaranteeing complete validation; `Ok(false)` leaves general file information
+available for unrecognised input. `OpenError::Io` retains the original file I/O error, and
+`OpenError::ParserPanic` contains the message from an unexpected unwinding panic during detection,
+parsing or metadata processing. An error clears previous results and leaves the handle closed and
+reusable, preserving runtime options.
+
+The existing `open` and `open_bytes` methods remain available and return `false` on errors.
+Panic containment requires unwinding: process aborts, including `panic = "abort"`, cannot be caught.
+The application's panic hook still runs; the library does not modify it.
 
 `get`/`get_i`/`count_get`/`option`/`inform` behave like the `MediaInfo_*` C API.
 

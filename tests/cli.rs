@@ -116,3 +116,68 @@ fn api_get_and_count() {
     mi.close();
     assert_eq!(mi.count_get(StreamKind::Video, None), 0);
 }
+
+#[test]
+fn api_try_open_file_and_bytes() {
+    use mediainfo::{InfoKind, MediaInfo, StreamKind};
+    let path = fixture("h264_aac_srt.mkv");
+    let mut mi = MediaInfo::new();
+    assert!(mi.try_open(&path).unwrap());
+    assert!(mi.is_open());
+    assert_eq!(mi.get(StreamKind::General, 0, "Format", InfoKind::Text), "Matroska");
+    assert_eq!(mi.get(StreamKind::Video, 0, "Width", InfoKind::Text), "64");
+    let data = std::fs::read(&path).unwrap();
+    assert!(mi.try_open_bytes(data, Some("in-memory.mkv")).unwrap());
+    assert_eq!(mi.count_get(StreamKind::Video, None), 1);
+    assert_eq!(mi.count_get(StreamKind::Audio, None), 1);
+    assert_eq!(mi.count_get(StreamKind::Text, None), 1);
+    assert_eq!(mi.get(StreamKind::General, 0, "CompleteName", InfoKind::Text), "in-memory.mkv");
+    assert_eq!(mi.get(StreamKind::Text, 0, "Language", InfoKind::Text), "ja");
+    assert!(mi.try_open_bytes(std::fs::read(fixture("wav16.wav")).unwrap(), None).unwrap());
+    assert_eq!(mi.count_get(StreamKind::Video, None), 0);
+    assert_eq!(mi.count_get(StreamKind::Audio, None), 1);
+}
+
+#[test]
+fn api_try_open_unrecognised_input_keeps_general_information() {
+    use mediainfo::{InfoKind, MediaInfo, StreamKind};
+    let mut mi = MediaInfo::new();
+    for name in ["empty.bin", "random.bin", "text.txt"] {
+        assert!(mi.try_open(fixture("h264_aac_srt.mkv")).unwrap());
+        let path = fixture(name);
+        assert!(!mi.try_open(&path).unwrap(), "{name}");
+        assert!(mi.is_open(), "{name}");
+        assert_eq!(mi.count_get(StreamKind::Video, None), 0);
+        assert_eq!(mi.get(StreamKind::General, 0, "Format", InfoKind::Text), "");
+        let data = std::fs::read(path).unwrap();
+        let size = data.len().to_string();
+        assert_eq!(mi.get(StreamKind::General, 0, "FileSize", InfoKind::Text), size);
+        assert!(!mi.try_open_bytes(data, Some(name)).unwrap(), "{name}");
+        assert!(mi.is_open(), "{name}");
+        assert_eq!(mi.get(StreamKind::General, 0, "FileSize", InfoKind::Text), size);
+    }
+}
+
+#[test]
+fn api_try_open_io_errors_clear_results_and_allow_reuse() {
+    use mediainfo::{MediaInfo, OpenError, Output, StreamKind};
+    use std::error::Error;
+    let mut mi = MediaInfo::new();
+    mi.option("Output", "JSON");
+    assert!(mi.try_open(fixture("h264_aac_srt.mkv")).unwrap());
+    let error = mi.try_open(fixture("missing-media-file.mkv")).unwrap_err();
+    assert!(matches!(&error, OpenError::Io(io) if io.kind() == std::io::ErrorKind::NotFound));
+    assert_eq!(error.source().unwrap().downcast_ref::<std::io::Error>().unwrap().kind(), std::io::ErrorKind::NotFound);
+    assert!(!error.to_string().is_empty());
+    assert!(!mi.is_open());
+    assert_eq!(mi.count_get(StreamKind::Video, None), 0);
+    assert!(matches!(mi.options.output, Output::Json));
+    assert!(mi.try_open(fixture("wav16.wav")).unwrap());
+    // Some platforms can open a directory as a file, then fail when reading it.
+    assert!(matches!(mi.try_open(fixture("")), Err(OpenError::Io(_))));
+    assert!(!mi.is_open());
+    assert_eq!(mi.count_get(StreamKind::Audio, None), 0);
+    assert!(mi.try_open(fixture("wav16.wav")).unwrap());
+    assert!(!mi.open(fixture("missing-media-file.mkv")));
+    assert!(!mi.is_open());
+}

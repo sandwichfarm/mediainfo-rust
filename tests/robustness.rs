@@ -29,12 +29,12 @@ fn truncated_files_do_not_panic() {
                 continue;
             }
             let mut mi = MediaInfo::new();
-            mi.open_bytes(data[..cut].to_vec(), Some(&name));
+            mi.try_open_bytes(data[..cut].to_vec(), Some(&name)).unwrap_or_else(|error| panic!("{name}: truncated at {cut}: {error}"));
             let _ = mi.inform();
         }
         let half = data.len() / 2;
         let mut mi = MediaInfo::new();
-        mi.open_bytes(data[..half].to_vec(), Some(&name));
+        mi.try_open_bytes(data[..half].to_vec(), Some(&name)).unwrap_or_else(|error| panic!("{name}: truncated at {half}: {error}"));
         let _ = mi.inform();
     }
 }
@@ -54,7 +54,7 @@ fn corrupted_files_do_not_panic() {
                 d[i] = rng.next() as u8;
             }
             let mut mi = MediaInfo::new();
-            mi.open_bytes(d, Some(&name));
+            mi.try_open_bytes(d, Some(&name)).unwrap_or_else(|error| panic!("{name}: corruption round {round}: {error}"));
             let _ = mi.inform();
             mi.option("Output", "XML");
             let _ = mi.inform();

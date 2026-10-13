@@ -24,9 +24,64 @@ pub use model::{Doc, Field, InfoKind, Stream, StreamKind};
 
 use finish::FileInfo;
 use io::Reader;
+use std::any::Any;
+use std::fmt;
+use std::panic::{catch_unwind, AssertUnwindSafe, UnwindSafe};
 use std::path::Path;
 
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
+
+/// An error encountered while opening or analysing media.
+#[derive(Debug)]
+#[non_exhaustive]
+pub enum OpenError {
+    /// Opening, seeking or reading the file failed. The original I/O error is retained.
+    Io(std::io::Error),
+    /// Format detection, parsing or metadata processing unexpectedly panicked.
+    ParserPanic { message: String },
+}
+
+impl fmt::Display for OpenError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::Io(error) => write!(f, "media I/O error: {error}"),
+            Self::ParserPanic { message } => write!(f, "media analysis panicked: {message}"),
+        }
+    }
+}
+
+impl std::error::Error for OpenError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Self::Io(error) => Some(error),
+            Self::ParserPanic { .. } => None,
+        }
+    }
+}
+
+impl From<std::io::Error> for OpenError {
+    fn from(error: std::io::Error) -> Self {
+        Self::Io(error)
+    }
+}
+
+impl OpenError {
+    fn from_panic(payload: Box<dyn Any + Send>) -> Self {
+        let message = match payload.downcast::<String>() {
+            Ok(message) => *message,
+            Err(payload) => match payload.downcast::<&'static str>() {
+                Ok(message) => (*message).to_string(),
+                Err(payload) => {
+                    // An opaque payload's destructor can itself panic. Do not let it escape
+                    // the error boundary; ordinary string panic payloads are freed normally.
+                    std::mem::forget(payload);
+                    "non-string panic payload".to_string()
+                }
+            },
+        };
+        Self::ParserPanic { message }
+    }
+}
 
 /// Report flavour selected with `Option("Output", ...)`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
@@ -65,36 +120,88 @@ impl MediaInfo {
         Self { doc: Doc::new(), opened: false, options: Options::default() }
     }
 
-    /// Analyse a file. Returns `true` when the format was recognised. General file information is
-    /// available either way.
+    /// Analyse a file. Returns `true` when the format was recognised, or `false` for unrecognised
+    /// input, I/O errors or caught parser panics. Use [`Self::try_open`] for error details.
+    /// General file information is available for unrecognised input.
     pub fn open(&mut self, path: impl AsRef<Path>) -> bool {
+        self.try_open(path).unwrap_or(false)
+    }
+
+    /// Analyse a file, retaining I/O errors and catching unwinding parser panics.
+    ///
+    /// `Ok(true)` means a parser recognised the format, not that all input was validated.
+    /// `Ok(false)` means no parser accepted the input; general file information is still available
+    /// and [`Self::is_open`] returns `true`. On `Err`, previous results are cleared and the handle
+    /// is closed and reusable. Runtime options are preserved.
+    ///
+    /// The panic guard covers format detection, parsing and metadata processing. It cannot catch
+    /// process aborts (including `panic = "abort"`); the application's panic hook still runs.
+    ///
+    /// ```no_run
+    /// let mut mi = mediainfo::MediaInfo::new();
+    /// match mi.try_open("movie.mkv") {
+    ///     Ok(true) => println!("{}", mi.inform()),
+    ///     Ok(false) => eprintln!("Unrecognised media format"),
+    ///     Err(error) => eprintln!("Unable to analyse media: {error}"),
+    /// }
+    /// ```
+    pub fn try_open(&mut self, path: impl AsRef<Path>) -> Result<bool, OpenError> {
         let path = path.as_ref();
         self.close();
-        let mut reader = match Reader::open(path) {
-            Ok(r) => r,
-            Err(_) => return false,
-        };
+        let reader = Reader::open(path)?;
         let meta = std::fs::metadata(path).ok();
         let info = FileInfo { path: Some(path.to_path_buf()), size: reader.len(), modified: meta.and_then(|m| m.modified().ok()) };
         let ext = finish::extension_of(path);
-        self.run(&mut reader, &ext, &info)
+        self.run(reader, &ext, &info)
     }
 
     /// Analyse an in-memory buffer. `name` supplies the extension hint and `CompleteName`.
+    /// Returns `false` for unrecognised input or caught parser panics; use [`Self::try_open_bytes`]
+    /// for error details.
     pub fn open_bytes(&mut self, data: Vec<u8>, name: Option<&str>) -> bool {
-        self.close();
-        let mut reader = Reader::from_bytes(data);
-        let info = FileInfo { path: name.map(Into::into), size: reader.len(), modified: None };
-        let ext = name.map(|n| finish::extension_of(Path::new(n))).unwrap_or_default();
-        self.run(&mut reader, &ext, &info)
+        self.try_open_bytes(data, name).unwrap_or(false)
     }
 
-    fn run(&mut self, reader: &mut Reader, ext: &str, info: &FileInfo) -> bool {
-        let (recognised, mut doc) = parsers::parse(reader, ext);
-        finish::finish(&mut doc, info);
-        self.doc = doc;
-        self.opened = true;
-        recognised
+    /// Analyse an in-memory buffer, catching unwinding parser panics.
+    /// `name` supplies the extension hint and `CompleteName`.
+    ///
+    /// Recognition results, handle state and panic-guard limitations match [`Self::try_open`].
+    pub fn try_open_bytes(&mut self, data: Vec<u8>, name: Option<&str>) -> Result<bool, OpenError> {
+        self.close();
+        let reader = Reader::from_bytes(data);
+        let info = FileInfo { path: name.map(Into::into), size: reader.len(), modified: None };
+        let ext = name.map(|n| finish::extension_of(Path::new(n))).unwrap_or_default();
+        self.run(reader, &ext, &info)
+    }
+
+    fn run(&mut self, reader: Reader, ext: &str, info: &FileInfo) -> Result<bool, OpenError> {
+        // The reader (including any I/O error) and document belong to this operation and are
+        // discarded on panic. No partially updated handle or reader crosses the unwind boundary.
+        self.run_guarded(AssertUnwindSafe(move || {
+            let mut reader = reader;
+            let (recognised, mut doc) = parsers::parse(&mut reader, ext);
+            if let Some(error) = reader.take_error() {
+                return Err(error.into());
+            }
+            finish::finish(&mut doc, info);
+            Ok((recognised, doc))
+        }))
+    }
+
+    /// Analyse in isolated state and publish results only after the entire operation succeeds.
+    fn run_guarded(&mut self, analyse: impl FnOnce() -> Result<(bool, Doc), OpenError> + UnwindSafe) -> Result<bool, OpenError> {
+        let result = catch_unwind(analyse).map_err(OpenError::from_panic).and_then(|result| result);
+        match result {
+            Ok((recognised, doc)) => {
+                self.doc = doc;
+                self.opened = true;
+                Ok(recognised)
+            }
+            Err(error) => {
+                self.close();
+                Err(error)
+            }
+        }
     }
 
     pub fn close(&mut self) {
@@ -237,4 +344,51 @@ pub fn inform_file(path: impl AsRef<Path>) -> String {
     let mut mi = MediaInfo::new();
     mi.open(path);
     mi.inform()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parser_panics_clear_results_preserve_options_and_allow_reuse() {
+        let panics: &[(&str, fn() -> !)] = &[
+            ("borrowed panic message", || panic!("borrowed panic message")),
+            ("owned panic message", || std::panic::panic_any("owned panic message".to_string())),
+        ];
+        for &(message, panic) in panics {
+            let mut mi = MediaInfo::new();
+            mi.option("Output", "XML");
+            mi.doc.add(StreamKind::Video).set("Format", "AVC");
+            mi.opened = true;
+            let error = mi.run_guarded(|| {
+                let mut partial = Doc::new();
+                partial.add(StreamKind::Audio).set("Format", "PCM");
+                panic()
+            }).unwrap_err();
+            assert!(matches!(&error, OpenError::ParserPanic { message: m } if m == message));
+            assert!(error.to_string().contains(message));
+            assert!(std::error::Error::source(&error).is_none());
+            assert!(!mi.is_open());
+            assert_eq!(mi.count_get(StreamKind::Video, None), 0);
+            assert_eq!(mi.count_get(StreamKind::Audio, None), 0);
+            assert!(matches!(mi.options.output, Output::Xml));
+            assert!(!mi.try_open_bytes(Vec::new(), None).unwrap());
+            assert!(mi.is_open());
+        }
+    }
+
+    #[test]
+    fn opaque_panic_payload_cannot_panic_again_when_dropped() {
+        struct PanicOnDrop;
+        impl Drop for PanicOnDrop {
+            fn drop(&mut self) {
+                panic!("opaque payload destructor");
+            }
+        }
+        let mut mi = MediaInfo::new();
+        let error = mi.run_guarded(|| std::panic::panic_any(PanicOnDrop)).unwrap_err();
+        assert!(matches!(error, OpenError::ParserPanic { message } if message == "non-string panic payload"));
+        assert!(!mi.is_open());
+    }
 }
