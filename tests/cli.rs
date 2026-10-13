@@ -116,3 +116,43 @@ fn api_get_and_count() {
     mi.close();
     assert_eq!(mi.count_get(StreamKind::Video, None), 0);
 }
+
+fn assert_matroska_track_languages(cases: &[(usize, &str, &str, &str)]) {
+    use mediainfo::{InfoKind, MediaInfo, StreamKind};
+    let mut mi = MediaInfo::new();
+    assert!(mi.open(fixture("matroska_track_languages.mkv")));
+    assert_eq!(mi.get(StreamKind::General, 0, "Format", InfoKind::Text), "Matroska");
+    mi.option("Output", "XML");
+    let xml = mi.inform();
+    for kind in [StreamKind::Video, StreamKind::Audio, StreamKind::Text] {
+        assert_eq!(mi.count_get(kind, None), 6, "{kind:?}");
+        for &(index, title, language, name) in cases {
+            assert_eq!(mi.get(kind, index, "Title", InfoKind::Text), title, "{kind:?}#{index}");
+            assert_eq!(mi.get(kind, index, "Language", InfoKind::Text), language, "{kind:?}: {title}");
+            assert_eq!(mi.get(kind, index, "Language/String", InfoKind::Text), name, "{kind:?}: {title}");
+            let start = format!("<track type=\"{}\" typeorder=\"{}\">", kind.name(), index + 1);
+            let track = xml.split_once(&start).unwrap().1.split_once("</track>").unwrap().0;
+            if language.is_empty() {
+                assert!(!track.contains("<Language>"), "{kind:?}: {title} must omit Language");
+            } else {
+                assert!(track.contains(&format!("<Language>{language}</Language>")), "{kind:?}: {title}");
+            }
+        }
+    }
+}
+
+#[test]
+fn matroska_missing_language_defaults_to_english() {
+    assert_matroska_track_languages(&[(0, "missing", "en", "English")]);
+}
+
+#[test]
+fn matroska_explicit_track_languages() {
+    assert_matroska_track_languages(&[
+        (1, "legacy_french", "fr", "French"),
+        (2, "legacy_und", "", ""),
+        (3, "bcp47_over_legacy", "de-DE", "German (DE)"),
+        (4, "bcp47_only", "ja-JP", "Japanese (JP)"),
+        (5, "bcp47_und", "", ""),
+    ]);
+}

@@ -414,7 +414,11 @@ fn parse_tracks(r: &mut Reader, end: u64, ctx: &mut Ctx) {
             ctx.crc_level1 = true;
         }
         if id == TRACK_ENTRY {
-            let mut t = Track { enabled: true, ..Default::default() };
+            let mut t = Track {
+                enabled: true,
+                language: "eng".into(),
+                ..Default::default()
+            };
             parse_track_entry(r, next, &mut t);
             ctx.tracks.push(t);
         }
@@ -1695,4 +1699,3 @@ fn apply_codec(s: &mut Stream, t: &Track, _ctx: &Ctx, kind: StreamKind) {
         _ => {}
     }
 }
-
